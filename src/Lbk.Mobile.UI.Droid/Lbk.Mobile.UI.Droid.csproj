@@ -150,10 +150,6 @@
     <AndroidResource Include="Resources\Drawable\button_menuOfTheDay.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AndroidClassLibrary\AndroidClassLibrary.csproj">
-      <Project>{B080457F-3282-4B85-96D6-6FBFBEADDCA4}</Project>
-      <Name>AndroidClassLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Portable.Core\Lbk.Mobile.Portable.Core.csproj">
       <Project>{64E36D12-5247-4D85-B9C4-BE09937B9185}</Project>
       <Name>Lbk.Mobile.Portable.Core</Name>
