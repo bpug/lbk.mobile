@@ -1,0 +1,41 @@
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="StartApplication.cs" company="ip-connect GmbH">
+//   Copyright (c) ip-connect GmbH. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Lbk.Mobile.Core.ApplicationObjects
+{
+    using Cirrious.MvvmCross.ViewModels;
+    using Lbk.Mobile.Core.ViewModels.Home;
+
+    public class AppStart : MvxNavigatingObject, IMvxAppStart
+    {
+        private readonly bool showSplashScreen;
+
+        public AppStart(bool showSplashScreen = true)
+        {
+            this.showSplashScreen = showSplashScreen;
+        }
+
+        public bool ApplicationCanOpenBookmarks
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public void Start(object hint = null)
+        {
+            if (this.showSplashScreen)
+            {
+                ShowViewModel<SplashScreenViewModel>();
+            }
+            else
+            {
+                ShowViewModel<HomeViewModel>();
+            }
+        }
+    }
+}
