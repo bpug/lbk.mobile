@@ -31,6 +31,14 @@ namespace Lbk.Mobile.Data.Service.Extensions
             return tcs.Task;
         }
 
+        public static Task<DishesOfTheDay> GetDishesOfTheDayAsyncTask(this Service1SoapClient client, DateTime date, string fingerprint)
+        {
+            var tcs = CreateSource<DishesOfTheDay>(null);
+            client.TodaysMenuCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+            client.TodaysMenuAsync(date.ToString("yyyy-MM-dd"), fingerprint);
+            return tcs.Task;
+        }
+
         private static TaskCompletionSource<T> CreateSource<T>(object state)
         {
             return new TaskCompletionSource<T>(state, TaskCreationOptions.None);

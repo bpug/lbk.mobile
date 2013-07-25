@@ -6,6 +6,7 @@
 
 namespace Lbk.Mobile.Data.Service.Service
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -14,5 +15,7 @@ namespace Lbk.Mobile.Data.Service.Service
     public interface ILbkMobileService
     {
         Task<List<Event>> GetEventsAsync(string fingerprint);
+
+        Task<DishesOfTheDay> GetDishesOfTheDayAsync(DateTime date, string fingerprint);
     }
 }

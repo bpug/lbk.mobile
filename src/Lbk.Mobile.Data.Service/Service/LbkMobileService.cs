@@ -6,6 +6,7 @@
 
 namespace Lbk.Mobile.Data.Service.Service
 {
+    using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
@@ -17,6 +18,12 @@ namespace Lbk.Mobile.Data.Service.Service
         public async Task<List<Event>> GetEventsAsync(string fingerprint)
         {
             var result = await this.Service.GetEventsAsyncTask(fingerprint);
+            return result;
+        }
+
+        public async Task<DishesOfTheDay> GetDishesOfTheDayAsync(DateTime date, string fingerprint)
+        {
+            var result = await this.Service.GetDishesOfTheDayAsyncTask(date, fingerprint);
             return result;
         }
     }
