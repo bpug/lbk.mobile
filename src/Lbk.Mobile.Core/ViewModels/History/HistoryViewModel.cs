@@ -1,13 +1,13 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="HistoryViewModel.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="HistoryViewModel.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ViewModels.History
 {
     /// <summary>
-    ///   TODO: Update summary.
+    ///     TODO: Update summary.
     /// </summary>
     public class HistoryViewModel : BaseViewModel
     {

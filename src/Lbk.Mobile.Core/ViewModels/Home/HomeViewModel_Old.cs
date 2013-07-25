@@ -1,4 +1,10 @@
-﻿namespace Lbk.Mobile.Core.ViewModels.Home
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="HomeViewModel_Old.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
+namespace Lbk.Mobile.Core.ViewModels.Home
 {
     using System.Collections.Generic;
     using System.Windows.Input;

@@ -1,8 +1,8 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="HomeViewModel.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="HomeViewModel.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ViewModels.Home
 {
@@ -29,14 +29,6 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         public HomeViewModel(IMvxTextProvider textProvider)
         {
             this.textProvider = textProvider;
-        }
-
-        public IMvxTextProvider TextProvider
-        {
-            get
-            {
-                return textProvider;
-            }
         }
 
         public ICommand ShowContactCommand
@@ -95,6 +87,16 @@ namespace Lbk.Mobile.Core.ViewModels.Home
             }
         }
 
+        public ICommand ShowRecommendCommand
+        {
+            get
+            {
+                string subject = this.TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "MailSubject");
+                string body = this.TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "MailBody");
+                return new MvxCommand(() => this.ComposeEmail("", subject, body));
+            }
+        }
+
         public ICommand ShowReservationCommand
         {
             get
@@ -119,17 +121,11 @@ namespace Lbk.Mobile.Core.ViewModels.Home
             }
         }
 
-        public ICommand ShowRecommendCommand
+        public IMvxTextProvider TextProvider
         {
-            
             get
             {
-                var subject = TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "MailSubject");
-                var body = TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "MailBody");
-                return
-                    new MvxCommand(
-                        () =>
-                        ComposeEmail("", subject, body));
+                return this.textProvider;
             }
         }
     }

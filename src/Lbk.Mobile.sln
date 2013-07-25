@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.UI.Droid", "Lbk.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Localization", "Lbk.Mobile.Localization\Lbk.Mobile.Localization.csproj", "{1519D84E-FCDD-45BA-9F1C-161A01E24FE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Data.Service", "Lbk.Mobile.Data.Service\Lbk.Mobile.Data.Service.csproj", "{10700230-8C64-41F7-8DD2-9A693E7DD0F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Model", "Lbk.Mobile.Model\Lbk.Mobile.Model.csproj", "{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,14 @@ Global
 		{1519D84E-FCDD-45BA-9F1C-161A01E24FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1519D84E-FCDD-45BA-9F1C-161A01E24FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1519D84E-FCDD-45BA-9F1C-161A01E24FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"
+      encoding="utf-8"?>
+
 <StyleCopSettings Version="105">
-    <Analyzers>
-        <Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
-            <AnalyzerSettings>
-                <StringProperty Name="CompanyName">ip-connect GmbH</StringProperty>
-                <StringProperty Name="Copyright">Copyright (c) ip-connect GmbH. All rights reserved.</StringProperty>
-            </AnalyzerSettings>
-        </Analyzer>
-    </Analyzers>
+  <Analyzers>
+    <Analyzer AnalyzerId="StyleCop.CSharp.DocumentationRules">
+      <AnalyzerSettings>
+        <StringProperty Name="CompanyName">ip-connect GmbH</StringProperty>
+        <StringProperty Name="Copyright">Copyright (c) ip-connect GmbH. All rights reserved.</StringProperty>
+      </AnalyzerSettings>
+    </Analyzer>
+  </Analyzers>
 </StyleCopSettings>

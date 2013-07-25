@@ -1,4 +1,10 @@
-﻿namespace Lbk.Mobile.Core.Services
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="FirstService.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
+namespace Lbk.Mobile.Core.Services
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +16,8 @@
     {
         public void GetItems(string key, Action<List<SimpleItem>> onSuccess, Action<FirstServiceError> onError)
         {
-            ThreadPool.QueueUserWorkItem(ignored =>
+            ThreadPool.QueueUserWorkItem(
+                ignored =>
                 {
                     if (string.IsNullOrWhiteSpace(key))
                     {
@@ -19,13 +26,18 @@
                     }
 
                     var success = new List<SimpleItem>();
-                    for (var i = 0; i < 10; i++)
+                    for (int i = 0; i < 10; i++)
                     {
-                        success.Add(new SimpleItem()
+                        success.Add(
+                            new SimpleItem()
                             {
                                 Id = i,
                                 Title = "Title " + i + "(" + key + ")",
-                                Notes = string.Format("This item returned from {0} - here's a GUID: {1}", key, Guid.NewGuid().ToString("N")),
+                                Notes =
+                                    string.Format(
+                                        "This item returned from {0} - here's a GUID: {1}",
+                                        key,
+                                        Guid.NewGuid().ToString("N")),
                                 When = DateTime.UtcNow.AddMinutes(-i)
                             });
                     }

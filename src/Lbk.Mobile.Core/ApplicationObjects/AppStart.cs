@@ -1,12 +1,13 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StartApplication.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="AppStart.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ApplicationObjects
 {
     using Cirrious.MvvmCross.ViewModels;
+
     using Lbk.Mobile.Core.ViewModels.Home;
 
     public class AppStart : MvxNavigatingObject, IMvxAppStart
@@ -30,11 +31,11 @@ namespace Lbk.Mobile.Core.ApplicationObjects
         {
             if (this.showSplashScreen)
             {
-                ShowViewModel<SplashScreenViewModel>();
+                this.ShowViewModel<SplashScreenViewModel>();
             }
             else
             {
-                ShowViewModel<HomeViewModel>();
+                this.ShowViewModel<HomeViewModel>();
             }
         }
     }

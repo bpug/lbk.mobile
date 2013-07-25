@@ -1,4 +1,9 @@
-﻿
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="LocalizedStrings.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
 namespace Lbk.Mobile.Localization
 {
     public class LocalizedStrings
@@ -7,7 +12,10 @@ namespace Lbk.Mobile.Localization
 
         public Strings Strings
         {
-            get { return LocalizedStringsResources; }
+            get
+            {
+                return LocalizedStringsResources;
+            }
         }
     }
 }

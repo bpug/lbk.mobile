@@ -1,8 +1,8 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="BaseViewModel.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="BaseViewModel.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ViewModels
 {
@@ -18,34 +18,29 @@ namespace Lbk.Mobile.Core.ViewModels
 
     public class BaseViewModel : MvxViewModel
     {
-        private bool isLoading;
-        
+        private bool isBusy;
 
-        public bool IsLoading
+        public bool IsBusy
         {
             get
             {
-                return this.isLoading;
+                return this.isBusy;
             }
 
             set
             {
-                this.isLoading = value;
-                this.RaisePropertyChanged(() => this.IsLoading);
+                this.isBusy = value;
+                this.RaisePropertyChanged(() => this.IsBusy);
             }
         }
 
         public IMvxLanguageBinder TextSource
         {
-            get { return new MvxLanguageBinder(Constants.GeneralNamespace, GetType().Name); }
+            get
+            {
+                return new MvxLanguageBinder(Constants.GeneralNamespace, this.GetType().Name);
+            }
         }
-
-        protected void ComposeEmail(string to, string subject, string body)
-        {
-            var task = Mvx.Resolve<IMvxComposeEmailTask>();
-            task.ComposeEmail(to, null, subject, body, false);
-        }
-
 
         private IMvxMessenger MvxMessenger
         {
@@ -60,15 +55,18 @@ namespace Lbk.Mobile.Core.ViewModels
             Mvx.Resolve<IErrorReporter>().ReportError(error);
         }
 
+        protected void ComposeEmail(string to, string subject, string body)
+        {
+            var task = Mvx.Resolve<IMvxComposeEmailTask>();
+            task.ComposeEmail(to, null, subject, body, false);
+        }
 
-        protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action)
-            where TMessage : MvxMessage
+        protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage
         {
             return this.MvxMessenger.Subscribe<TMessage>(action, MvxReference.Weak);
         }
 
-        protected void Unsubscribe<TMessage>(MvxSubscriptionToken id)
-            where TMessage : MvxMessage
+        protected void Unsubscribe<TMessage>(MvxSubscriptionToken id) where TMessage : MvxMessage
         {
             this.MvxMessenger.Unsubscribe<TMessage>(id);
         }

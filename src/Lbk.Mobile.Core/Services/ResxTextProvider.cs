@@ -1,4 +1,9 @@
-﻿
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="ResxTextProvider.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
 namespace Lbk.Mobile.Core.Services
 {
     using System.Globalization;
@@ -14,7 +19,7 @@ namespace Lbk.Mobile.Core.Services
         public ResxTextProvider(ResourceManager resourceManager)
         {
             this.resourceManager = resourceManager;
-            CurrentLanguage = Thread.CurrentThread.CurrentUICulture;
+            this.CurrentLanguage = Thread.CurrentThread.CurrentUICulture;
         }
 
         public CultureInfo CurrentLanguage { get; set; }
@@ -33,12 +38,12 @@ namespace Lbk.Mobile.Core.Services
                 resolvedKey = string.Format("{0}.{1}", namespaceKey, resolvedKey);
             }
 
-            return this.resourceManager.GetString(resolvedKey, CurrentLanguage);
+            return this.resourceManager.GetString(resolvedKey, this.CurrentLanguage);
         }
 
         public string GetText(string namespaceKey, string typeKey, string name, params object[] formatArgs)
         {
-            string baseText = GetText(namespaceKey, typeKey, name);
+            string baseText = this.GetText(namespaceKey, typeKey, name);
 
             if (string.IsNullOrEmpty(baseText))
             {

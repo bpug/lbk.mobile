@@ -1,4 +1,10 @@
-﻿namespace Lbk.Mobile.Core
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="Trace.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
+namespace Lbk.Mobile.Core
 {
     using Cirrious.CrossCore.Platform;
 

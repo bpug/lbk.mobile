@@ -1,8 +1,8 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ErrorApplicationObject.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="ErrorApplicationObject.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ApplicationObjects
 {
@@ -26,7 +26,7 @@ namespace Lbk.Mobile.Core.ApplicationObjects
             this.InvokeOnMainThread(
                 () =>
                 {
-                    EventHandler<ErrorEventArgs> handler = this.ErrorReported;
+                    var handler = this.ErrorReported;
                     if (handler != null)
                     {
                         handler(this, new ErrorEventArgs(error));

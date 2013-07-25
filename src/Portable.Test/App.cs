@@ -1,17 +1,23 @@
-using Cirrious.CrossCore.IoC;
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="App.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace PortableTest
 {
-    public class App : Cirrious.MvvmCross.ViewModels.MvxApplication
+    using Cirrious.CrossCore.IoC;
+    using Cirrious.MvvmCross.ViewModels;
+
+    using PortableTest.ViewModels;
+
+    public class App : MvxApplication
     {
         public override void Initialize()
         {
-            CreatableTypes()
-                .EndingWith("Service")
-                .AsInterfaces()
-                .RegisterAsLazySingleton();
-				
-            RegisterAppStart<ViewModels.FirstViewModel>();
+            this.CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
+
+            this.RegisterAppStart<FirstViewModel>();
         }
     }
 }

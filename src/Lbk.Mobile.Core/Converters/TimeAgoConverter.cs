@@ -1,16 +1,22 @@
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="TimeAgoConverter.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
 namespace Lbk.Mobile.Core.Converters
 {
     using System;
+    using System.Globalization;
 
     using Cirrious.CrossCore.Converters;
 
-    public class TimeAgoConverter
-        : MvxValueConverter
+    public class TimeAgoConverter : MvxValueConverter
     {
-        public override object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var when = (DateTime)value;
-            var difference = (DateTime.UtcNow - when).TotalSeconds;
+            double difference = (DateTime.UtcNow - when).TotalSeconds;
 
             string whichFormat;
             int valueToFormat;

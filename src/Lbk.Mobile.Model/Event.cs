@@ -1,10 +1,10 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Event.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="Event.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Model
+namespace Lbk.Mobile.Model
 {
     using System;
 

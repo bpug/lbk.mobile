@@ -1,44 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="SplashScreenViewModel.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ViewModels.Home
 {
     using Cirrious.MvvmCross.ViewModels;
 
-    public class SplashScreenViewModel
-        : MvxViewModel
+    public class SplashScreenViewModel : MvxViewModel
     {
+        private bool splashScreenComplete;
+
         public SplashScreenViewModel()
         {
-            SplashScreenComplete = false;
+            this.SplashScreenComplete = false;
             this.PropertyChanged += (sender, args) =>
             {
                 if (args.PropertyName == "IsSearching")
                 {
-                    MoveForwardsIfPossible();
+                    this.MoveForwardsIfPossible();
                 }
             };
         }
 
-        private bool splashScreenComplete;
         public bool SplashScreenComplete
         {
-            get { return this.splashScreenComplete; }
+            get
+            {
+                return this.splashScreenComplete;
+            }
             set
             {
                 this.splashScreenComplete = value;
-                MoveForwardsIfPossible();
+                this.MoveForwardsIfPossible();
             }
         }
 
         private void MoveForwardsIfPossible()
         {
-            if (!SplashScreenComplete)
+            if (!this.SplashScreenComplete)
+            {
                 return;
+            }
 
-            ShowViewModel<HomeViewModel>(true);
+            this.ShowViewModel<HomeViewModel>(true);
         }
     }
 }
