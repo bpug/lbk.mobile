@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6595ec66-0205-4e8e-a083-c9023be5c706" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3035a18d-8f15-4fe2-bf40-7cd53d1797a1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -20,10 +20,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://lbkmobile.loewenbraeukeller.com/service/service1.asmx?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="D:\Projects\Loewenbraeu\mono\Lbk.Mobile\branches\dev\src\Lbk.Mobile.Data.Service\Proxies\lbk.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="7b0f5b49-668b-4a59-b0b1-ea2c8d7d8dcc" SourceId="1" SourceUrl="https://lbkmobile.loewenbraeukeller.com/service/service1.asmx?WSDL" />
+    <MetadataFile FileName="lbk.wsdl" MetadataType="Wsdl" ID="d2a62b00-2c8e-41c3-90e6-6777e721ed2a" SourceId="1" SourceUrl="file:///D:/Projects/Loewenbraeu/mono/Lbk.Mobile/branches/dev/src/Lbk.Mobile.Data.Service/Proxies/lbk.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

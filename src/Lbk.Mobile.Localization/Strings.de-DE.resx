@@ -123,7 +123,7 @@
   <data name="Lbk.Recommend.MailSubject" xml:space="preserve">
     <value>Löwenbräukeller-App Empfelung</value>
   </data>
-  <data name="String1" xml:space="preserve">
+  <data name="Lbk.Test.Text" xml:space="preserve">
     <value>Deutsch</value>
   </data>
 </root>

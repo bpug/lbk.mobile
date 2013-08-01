@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://liveviewing.hampel-auctions.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" targetNamespace="http://liveviewing.hampel-auctions.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://liveviewing.hampel-auctions.com/">
+      <s:element name="getArtilce">
+        <s:complexType />
+      </s:element>
+      <s:element name="getArtilceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtilceResult" type="tns:Article" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Article">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CatalogNumber" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Code" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Headline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Link" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartPrice" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getArtilceLng">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="culture" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtilceLngResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtilceLngResult" type="tns:Article" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setArtilce">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="code" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setArtilceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setArtilceResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCurrentOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cOffer" type="tns:Offer" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Offer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EUR" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="USD" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="JPY" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="GBR" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RUR" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="setCurrentOfferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setCurrentOfferResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCurrentOffer">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCurrentOfferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCurrentOfferResult" type="tns:Offer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetCurrentOffer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="resetCurrentOfferResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="setCurrentOffer2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eur" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="usd" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="gbr" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="rur" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="jpy" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setCurrentOffer2Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="Article" nillable="true" type="tns:Article" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="Offer" nillable="true" type="tns:Offer" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getArtilceSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtilce" />
+  </wsdl:message>
+  <wsdl:message name="getArtilceSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtilceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getArtilceLngSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtilceLng" />
+  </wsdl:message>
+  <wsdl:message name="getArtilceLngSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtilceLngResponse" />
+  </wsdl:message>
+  <wsdl:message name="setArtilceSoapIn">
+    <wsdl:part name="parameters" element="tns:setArtilce" />
+  </wsdl:message>
+  <wsdl:message name="setArtilceSoapOut">
+    <wsdl:part name="parameters" element="tns:setArtilceResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCurrentOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:setCurrentOffer" />
+  </wsdl:message>
+  <wsdl:message name="setCurrentOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:setCurrentOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:getCurrentOffer" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:getCurrentOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="resetCurrentOfferSoapIn">
+    <wsdl:part name="parameters" element="tns:resetCurrentOffer" />
+  </wsdl:message>
+  <wsdl:message name="resetCurrentOfferSoapOut">
+    <wsdl:part name="parameters" element="tns:resetCurrentOfferResponse" />
+  </wsdl:message>
+  <wsdl:message name="setCurrentOffer2SoapIn">
+    <wsdl:part name="parameters" element="tns:setCurrentOffer2" />
+  </wsdl:message>
+  <wsdl:message name="setCurrentOffer2SoapOut">
+    <wsdl:part name="parameters" element="tns:setCurrentOffer2Response" />
+  </wsdl:message>
+  <wsdl:message name="getArtilceHttpGetIn" />
+  <wsdl:message name="getArtilceHttpGetOut">
+    <wsdl:part name="Body" element="tns:Article" />
+  </wsdl:message>
+  <wsdl:message name="getArtilceLngHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+    <wsdl:part name="culture" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getArtilceLngHttpGetOut">
+    <wsdl:part name="Body" element="tns:Article" />
+  </wsdl:message>
+  <wsdl:message name="setArtilceHttpGetIn">
+    <wsdl:part name="code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setArtilceHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getCurrentOfferHttpGetIn" />
+  <wsdl:message name="getCurrentOfferHttpGetOut">
+    <wsdl:part name="Body" element="tns:Offer" />
+  </wsdl:message>
+  <wsdl:message name="resetCurrentOfferHttpGetIn">
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="resetCurrentOfferHttpGetOut" />
+  <wsdl:message name="setCurrentOffer2HttpGetIn">
+    <wsdl:part name="eur" type="s:string" />
+    <wsdl:part name="usd" type="s:string" />
+    <wsdl:part name="gbr" type="s:string" />
+    <wsdl:part name="rur" type="s:string" />
+    <wsdl:part name="jpy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setCurrentOffer2HttpGetOut" />
+  <wsdl:portType name="ArticleWebServiceSoap">
+    <wsdl:operation name="getArtilce">
+      <wsdl:input message="tns:getArtilceSoapIn" />
+      <wsdl:output message="tns:getArtilceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtilceLng">
+      <wsdl:input message="tns:getArtilceLngSoapIn" />
+      <wsdl:output message="tns:getArtilceLngSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setArtilce">
+      <wsdl:input message="tns:setArtilceSoapIn" />
+      <wsdl:output message="tns:setArtilceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer">
+      <wsdl:input message="tns:setCurrentOfferSoapIn" />
+      <wsdl:output message="tns:setCurrentOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentOffer">
+      <wsdl:input message="tns:getCurrentOfferSoapIn" />
+      <wsdl:output message="tns:getCurrentOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetCurrentOffer">
+      <wsdl:input message="tns:resetCurrentOfferSoapIn" />
+      <wsdl:output message="tns:resetCurrentOfferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer2">
+      <wsdl:input message="tns:setCurrentOffer2SoapIn" />
+      <wsdl:output message="tns:setCurrentOffer2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ArticleWebServiceHttpGet">
+    <wsdl:operation name="getArtilce">
+      <wsdl:input message="tns:getArtilceHttpGetIn" />
+      <wsdl:output message="tns:getArtilceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtilceLng">
+      <wsdl:input message="tns:getArtilceLngHttpGetIn" />
+      <wsdl:output message="tns:getArtilceLngHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setArtilce">
+      <wsdl:input message="tns:setArtilceHttpGetIn" />
+      <wsdl:output message="tns:setArtilceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentOffer">
+      <wsdl:input message="tns:getCurrentOfferHttpGetIn" />
+      <wsdl:output message="tns:getCurrentOfferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="resetCurrentOffer">
+      <wsdl:input message="tns:resetCurrentOfferHttpGetIn" />
+      <wsdl:output message="tns:resetCurrentOfferHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer2">
+      <wsdl:input message="tns:setCurrentOffer2HttpGetIn" />
+      <wsdl:output message="tns:setCurrentOffer2HttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ArticleWebServiceSoap" type="tns:ArticleWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getArtilce">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/getArtilce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtilceLng">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/getArtilceLng" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setArtilce">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/setArtilce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/setCurrentOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentOffer">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/getCurrentOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetCurrentOffer">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/resetCurrentOffer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer2">
+      <soap:operation soapAction="http://liveviewing.hampel-auctions.com/setCurrentOffer2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ArticleWebServiceSoap12" type="tns:ArticleWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getArtilce">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/getArtilce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtilceLng">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/getArtilceLng" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setArtilce">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/setArtilce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/setCurrentOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentOffer">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/getCurrentOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetCurrentOffer">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/resetCurrentOffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer2">
+      <soap12:operation soapAction="http://liveviewing.hampel-auctions.com/setCurrentOffer2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ArticleWebServiceHttpGet" type="tns:ArticleWebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getArtilce">
+      <http:operation location="/getArtilce" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtilceLng">
+      <http:operation location="/getArtilceLng" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setArtilce">
+      <http:operation location="/setArtilce" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentOffer">
+      <http:operation location="/getCurrentOffer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetCurrentOffer">
+      <http:operation location="/resetCurrentOffer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="setCurrentOffer2">
+      <http:operation location="/setCurrentOffer2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ArticleWebService">
+    <wsdl:port name="ArticleWebServiceSoap" binding="tns:ArticleWebServiceSoap">
+      <soap:address location="http://liveviewing.hampel-auctions.com/articlewebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ArticleWebServiceSoap12" binding="tns:ArticleWebServiceSoap12">
+      <soap12:address location="http://liveviewing.hampel-auctions.com/articlewebservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ArticleWebServiceHttpGet" binding="tns:ArticleWebServiceHttpGet">
+      <http:address location="http://liveviewing.hampel-auctions.com/articlewebservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

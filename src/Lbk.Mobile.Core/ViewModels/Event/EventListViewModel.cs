@@ -11,6 +11,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 
     using Cirrious.MvvmCross.ViewModels;
 
+    using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.Service;
 
     public class EventListViewModel : BaseViewModel
@@ -34,7 +35,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         {
             this.IsBusy = true;
 
-            await Task.Factory.StartNew(() => { this.service.GetEventsAsync("1234"); });
+            await Task.Factory.StartNew(() => { this.service.GetEventsAsync(); });
 
             this.IsBusy = false;
         }

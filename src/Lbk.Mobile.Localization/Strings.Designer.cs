@@ -81,9 +81,9 @@ namespace Lbk.Mobile.Localization {
         /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
-        public static string String1 {
+        public static string Lbk_Test_Text {
             get {
-                return ResourceManager.GetString("String1", resourceCulture);
+                return ResourceManager.GetString("Lbk.Test.Text", resourceCulture);
             }
         }
     }

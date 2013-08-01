@@ -10,21 +10,75 @@ namespace Lbk.Mobile.Data.Service.Service
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using Cirrious.MvvmCross.Plugins.DeviceIdentifier.Interfaces;
+
     using Lbk.Mobile.Data.Service.Extensions;
+    using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.LbkMobileService;
 
-    public class LbkMobileService : BaseService<Service1SoapClient>, ILbkMobileService
+    public class LbkMobileService : LbkMobileServiceBase<Service1SoapClient>, ILbkMobileService
     {
-        public async Task<List<Event>> GetEventsAsync(string fingerprint)
+        private readonly IDeviceUidService deviceUidService;
+
+        private string deviceUid;
+
+        public LbkMobileService(IDeviceUidService deviceUidService)
         {
-            var result = await this.Service.GetEventsAsyncTask(fingerprint);
+            this.deviceUidService = deviceUidService;
+
+            this.GetDeviceUid();
+        }
+
+        public async Task<DishesOfTheDay> GetDishesOfTheDayAsync(DateTime date)
+        {
+            var result = await this.Service.GetDishesOfTheDayAsyncTask(date, this.deviceUid);
             return result;
         }
 
-        public async Task<DishesOfTheDay> GetDishesOfTheDayAsync(DateTime date, string fingerprint)
+        public async Task<List<Event>> GetEventsAsync()
         {
-            var result = await this.Service.GetDishesOfTheDayAsyncTask(date, fingerprint);
-            return result;
+            return await this.Service.GetEventsAsyncTask(this.deviceUid);
+        }
+
+        public async Task<DateTime?> GetGetMenuLastUpdateAsync()
+        {
+            return await this.Service.GetGetMenuLastUpdateAsyncTask(this.deviceUid);
+        }
+
+        public async Task<List<Picture>> GetPicturesAsync()
+        {
+            return await this.Service.GetPicturesAsyncTask(this.deviceUid);
+        }
+
+        public async Task<Quiz> GetQuizAsync(int questionCount)
+        {
+            return await this.Service.GetQuizAsyncTask(this.deviceUid, questionCount);
+        }
+
+        public async Task<Guid> GetReservationAsync(Reservation reservation)
+        {
+            return await this.Service.CreateReservationAsyncTask(reservation);
+        }
+
+        public async Task<List<Video>> GetVideosAsyn()
+        {
+            return await this.Service.GetVideosAsyncTask(this.deviceUid);
+        }
+
+        private void GetDeviceUid()
+        {
+            //this.deviceUid = deviceUidService.GetDeviceUid();
+            this.deviceUidService.GetDeviceUid(onSuccess: this.OnDeviceUidSuccess, onError: this.OnDeviceUidError);
+        }
+
+        private void OnDeviceUidError(Exception ex)
+        {
+            this.deviceUid = Guid.NewGuid().ToString();
+        }
+
+        private void OnDeviceUidSuccess(string uid)
+        {
+            this.deviceUid = uid;
         }
     }
 }

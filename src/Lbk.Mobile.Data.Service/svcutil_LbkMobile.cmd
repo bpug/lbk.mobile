@@ -25,19 +25,19 @@ REM same as set OUTPUTPATH="%cd%"
 
 set CONFIGNAME=
 REM set CONFIGNAME="%CLASS%.config"
-set OUTPUTFILE="%CLASS%Proxy.cs"
-set NAMESPACE="Lbk.Mobile.Data.Service.Proxies.%CLASS%"
+set OUTPUTFILE="%CLASS%ProxyAsync.cs"
+set NAMESPACE="Lbk.Mobile.Data.Service.Proxies"
 set COLLECTIONTYPE=System.Collections.Generic.List`1
-set TARGETCLIENTVERSION=
-REM set TARGETCLIENTVERSION=Version35
+REM set TARGETCLIENTVERSION=
+set TARGETCLIENTVERSION=Version35
 
 set REFERENCEDASSEMBLYFLAG1=
 set REFERENCEDASSEMBLYFLAG2=
 set REFERENCEDASSEMBLYFLAG3=
 REM set REFERENCEDASSEMBLYFLAG?=/reference:"%DIR%\..\..\lib\AssemblyDto.dll"
 
-set ASYNCFLAG=
-REM set ASYNCFLAG=/async
+REM set ASYNCFLAG=
+set ASYNCFLAG=/async
 
 set SERIALIZABLEFLAG=
 REM set SERIALIZABLEFLAG=/serializable
@@ -66,7 +66,6 @@ REM set ENABLEDATABINDINGFLAG=/enableDataBinding
 %ENABLEDATABINDINGFLAG% ^
 %SERVICEURL%
 goto end
-
 
 :end
 pause

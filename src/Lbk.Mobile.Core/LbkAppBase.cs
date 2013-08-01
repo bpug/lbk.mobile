@@ -15,6 +15,7 @@ namespace Lbk.Mobile.Core
     using Lbk.Mobile.Core.AutoMapper;
     using Lbk.Mobile.Core.Interfaces.Errors;
     using Lbk.Mobile.Core.Services;
+    using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.Service;
     using Lbk.Mobile.Localization;
 
@@ -40,6 +41,7 @@ namespace Lbk.Mobile.Core
         private void InitaliseServices()
         {
             Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
+            Mvx.RegisterType<IDataStoreService, DataStoreService>();
             Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
             //this.RegisterServiceInstance<IFirstService>(new FirstService());
         }
@@ -48,9 +50,11 @@ namespace Lbk.Mobile.Core
         {
             // initialise any plugins where are required at app startup
             // e.g. Cirrious.MvvmCross.Plugins.Visibility.PluginLoader.Instance.EnsureLoaded();
-            PluginLoader.Instance.EnsureLoaded();
+            //PluginLoader.Instance.EnsureLoaded();
+            Cirrious.MvvmCross.Plugins.File.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Sqlite.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Email.PluginLoader.Instance.EnsureLoaded();
+            Cirrious.MvvmCross.Plugins.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();
         }
     }
 }

@@ -52,7 +52,6 @@
     <Compile Include="Services\FirstService.cs" />
     <Compile Include="ApplicationObjects\AppStart.cs" />
     <Compile Include="Services\ResxTextProvider.cs" />
-    <Compile Include="Trace.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ViewModels\BaseLbkViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
@@ -86,6 +85,9 @@
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Email">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Email.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Location">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Location.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Location.dll</HintPath>
@@ -122,6 +124,10 @@
       <Project>{10700230-8c64-41f7-8dd2-9a693e7dd0f0}</Project>
       <Name>Lbk.Mobile.Data.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lbk.Mobile.Infrastructure\Lbk.Mobile.Infrastructure.csproj">
+      <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
+      <Name>Lbk.Mobile.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Localization\Lbk.Mobile.Localization.csproj">
       <Project>{1519d84e-fcdd-45ba-9f1c-161a01e24fe0}</Project>
       <Name>Lbk.Mobile.Localization</Name>
@@ -130,12 +136,13 @@
       <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
       <Name>Lbk.Mobile.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\Plugins\DeviceIdentifier\Cirrious.MvvmCross.Plugins.DeviceIdentifier\Cirrious.MvvmCross.Plugins.DeviceIdentifier.csproj">
+      <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
+      <Name>Cirrious.MvvmCross.Plugins.DeviceIdentifier</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.7\tools\Microsoft.Bcl.Build.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

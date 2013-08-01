@@ -9,2062 +9,1142 @@
 //------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Data.Service.LbkMobileService {
-    using System.Runtime.Serialization;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DishesOfTheDay", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class DishesOfTheDay : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private Lbk.Mobile.Data.Service.LbkMobileService.ArrayOfCategory DishOfTheDayField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.ArrayOfCategory DishOfTheDay {
-            get {
-                return this.DishOfTheDayField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DishOfTheDayField, value) != true)) {
-                    this.DishOfTheDayField = value;
-                    this.RaisePropertyChanged("DishOfTheDay");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfCategory", Namespace="http://loewenbraeuservice.ip-connect.de/", ItemName="category")]
-    public class ArrayOfCategory : System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.category> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="category", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class category : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string TitleField;
-        
-        private Lbk.Mobile.Data.Service.LbkMobileService.ArrayOfDish DishesField;
-        
-        private string SubtitleField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.ArrayOfDish Dishes {
-            get {
-                return this.DishesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DishesField, value) != true)) {
-                    this.DishesField = value;
-                    this.RaisePropertyChanged("Dishes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Subtitle {
-            get {
-                return this.SubtitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubtitleField, value) != true)) {
-                    this.SubtitleField = value;
-                    this.RaisePropertyChanged("Subtitle");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfDish", Namespace="http://loewenbraeuservice.ip-connect.de/", ItemName="dish")]
-    public class ArrayOfDish : System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.dish> {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="dish", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class dish : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string HeadlineField;
-        
-        private string DescriptionField;
-        
-        private string PriceField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Headline {
-            get {
-                return this.HeadlineField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HeadlineField, value) != true)) {
-                    this.HeadlineField = value;
-                    this.RaisePropertyChanged("Headline");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Price {
-            get {
-                return this.PriceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PriceField, value) != true)) {
-                    this.PriceField = value;
-                    this.RaisePropertyChanged("Price");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Reservation", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Reservation : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Guid ReservationIdField;
-        
-        private System.DateTime ReservationTimeField;
-        
-        private string FingerprintField;
-        
-        private string MobileField;
-        
-        private string GuestNameField;
-        
-        private int SeatsField;
-        
-        private string AdviceField;
-        
-        private string ConfirmCodeField;
-        
-        private Lbk.Mobile.Data.Service.LbkMobileService.StatusArt StatusField;
-        
-        private string DeclineReasonField;
-        
-        private System.DateTime LastChangeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Guid ReservationId {
-            get {
-                return this.ReservationIdField;
-            }
-            set {
-                if ((this.ReservationIdField.Equals(value) != true)) {
-                    this.ReservationIdField = value;
-                    this.RaisePropertyChanged("ReservationId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime ReservationTime {
-            get {
-                return this.ReservationTimeField;
-            }
-            set {
-                if ((this.ReservationTimeField.Equals(value) != true)) {
-                    this.ReservationTimeField = value;
-                    this.RaisePropertyChanged("ReservationTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Fingerprint {
-            get {
-                return this.FingerprintField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FingerprintField, value) != true)) {
-                    this.FingerprintField = value;
-                    this.RaisePropertyChanged("Fingerprint");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Mobile {
-            get {
-                return this.MobileField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MobileField, value) != true)) {
-                    this.MobileField = value;
-                    this.RaisePropertyChanged("Mobile");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string GuestName {
-            get {
-                return this.GuestNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GuestNameField, value) != true)) {
-                    this.GuestNameField = value;
-                    this.RaisePropertyChanged("GuestName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public int Seats {
-            get {
-                return this.SeatsField;
-            }
-            set {
-                if ((this.SeatsField.Equals(value) != true)) {
-                    this.SeatsField = value;
-                    this.RaisePropertyChanged("Seats");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Advice {
-            get {
-                return this.AdviceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdviceField, value) != true)) {
-                    this.AdviceField = value;
-                    this.RaisePropertyChanged("Advice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string ConfirmCode {
-            get {
-                return this.ConfirmCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ConfirmCodeField, value) != true)) {
-                    this.ConfirmCodeField = value;
-                    this.RaisePropertyChanged("ConfirmCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.StatusArt Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((this.StatusField.Equals(value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string DeclineReason {
-            get {
-                return this.DeclineReasonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DeclineReasonField, value) != true)) {
-                    this.DeclineReasonField = value;
-                    this.RaisePropertyChanged("DeclineReason");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
-        public System.DateTime LastChange {
-            get {
-                return this.LastChangeField;
-            }
-            set {
-                if ((this.LastChangeField.Equals(value) != true)) {
-                    this.LastChangeField = value;
-                    this.RaisePropertyChanged("LastChange");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatusArt", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public enum StatusArt : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Requested = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConfirmedByRestaurant = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConfirmedByCustomer = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeclinedByRestaurant = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DeclinedAfterConfirmedByRestaurant = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AbortedByCustomer = 6,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Event", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Event : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.DateTime ActivatedAtField;
-        
-        private string DateField;
-        
-        private System.DateTime DateOrderField;
-        
-        private string DescriptionField;
-        
-        private System.DateTime ExpiresAtField;
-        
-        private bool IsActivatedField;
-        
-        private string ReservationLinkField;
-        
-        private string ThumbnailLinkField;
-        
-        private string TitleField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime ActivatedAt {
-            get {
-                return this.ActivatedAtField;
-            }
-            set {
-                if ((this.ActivatedAtField.Equals(value) != true)) {
-                    this.ActivatedAtField = value;
-                    this.RaisePropertyChanged("ActivatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Date {
-            get {
-                return this.DateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DateField, value) != true)) {
-                    this.DateField = value;
-                    this.RaisePropertyChanged("Date");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime DateOrder {
-            get {
-                return this.DateOrderField;
-            }
-            set {
-                if ((this.DateOrderField.Equals(value) != true)) {
-                    this.DateOrderField = value;
-                    this.RaisePropertyChanged("DateOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime ExpiresAt {
-            get {
-                return this.ExpiresAtField;
-            }
-            set {
-                if ((this.ExpiresAtField.Equals(value) != true)) {
-                    this.ExpiresAtField = value;
-                    this.RaisePropertyChanged("ExpiresAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IsActivated {
-            get {
-                return this.IsActivatedField;
-            }
-            set {
-                if ((this.IsActivatedField.Equals(value) != true)) {
-                    this.IsActivatedField = value;
-                    this.RaisePropertyChanged("IsActivated");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ReservationLink {
-            get {
-                return this.ReservationLinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReservationLinkField, value) != true)) {
-                    this.ReservationLinkField = value;
-                    this.RaisePropertyChanged("ReservationLink");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ThumbnailLink {
-            get {
-                return this.ThumbnailLinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThumbnailLinkField, value) != true)) {
-                    this.ThumbnailLinkField = value;
-                    this.RaisePropertyChanged("ThumbnailLink");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Picture", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Picture : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string DescriptionField;
-        
-        private string TitleField;
-        
-        private string FileNameField;
-        
-        private string LinkField;
-        
-        private int SortOrderField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string FileName {
-            get {
-                return this.FileNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
-                    this.FileNameField = value;
-                    this.RaisePropertyChanged("FileName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Link {
-            get {
-                return this.LinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LinkField, value) != true)) {
-                    this.LinkField = value;
-                    this.RaisePropertyChanged("Link");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int SortOrder {
-            get {
-                return this.SortOrderField;
-            }
-            set {
-                if ((this.SortOrderField.Equals(value) != true)) {
-                    this.SortOrderField = value;
-                    this.RaisePropertyChanged("SortOrder");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Video", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Video : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string DescriptionField;
-        
-        private string FileNameField;
-        
-        private string LinkField;
-        
-        private int SortOrderField;
-        
-        private string ThumbnailLinkField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string FileName {
-            get {
-                return this.FileNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
-                    this.FileNameField = value;
-                    this.RaisePropertyChanged("FileName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Link {
-            get {
-                return this.LinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LinkField, value) != true)) {
-                    this.LinkField = value;
-                    this.RaisePropertyChanged("Link");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int SortOrder {
-            get {
-                return this.SortOrderField;
-            }
-            set {
-                if ((this.SortOrderField.Equals(value) != true)) {
-                    this.SortOrderField = value;
-                    this.RaisePropertyChanged("SortOrder");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string ThumbnailLink {
-            get {
-                return this.ThumbnailLinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ThumbnailLinkField, value) != true)) {
-                    this.ThumbnailLinkField = value;
-                    this.RaisePropertyChanged("ThumbnailLink");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Question", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Question : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Answer> AnswersField;
-        
-        private string DescriptionField;
-        
-        private int NumberField;
-        
-        private int PointsField;
-        
-        private Lbk.Mobile.Data.Service.LbkMobileService.Serie SerieField;
-        
-        private long SerieIdField;
-        
-        private Lbk.Mobile.Data.Service.LbkMobileService.QuestionCategory CategoryField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Answer> Answers {
-            get {
-                return this.AnswersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AnswersField, value) != true)) {
-                    this.AnswersField = value;
-                    this.RaisePropertyChanged("Answers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Number {
-            get {
-                return this.NumberField;
-            }
-            set {
-                if ((this.NumberField.Equals(value) != true)) {
-                    this.NumberField = value;
-                    this.RaisePropertyChanged("Number");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Points {
-            get {
-                return this.PointsField;
-            }
-            set {
-                if ((this.PointsField.Equals(value) != true)) {
-                    this.PointsField = value;
-                    this.RaisePropertyChanged("Points");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.Serie Serie {
-            get {
-                return this.SerieField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SerieField, value) != true)) {
-                    this.SerieField = value;
-                    this.RaisePropertyChanged("Serie");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long SerieId {
-            get {
-                return this.SerieIdField;
-            }
-            set {
-                if ((this.SerieIdField.Equals(value) != true)) {
-                    this.SerieIdField = value;
-                    this.RaisePropertyChanged("SerieId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.QuestionCategory Category {
-            get {
-                return this.CategoryField;
-            }
-            set {
-                if ((this.CategoryField.Equals(value) != true)) {
-                    this.CategoryField = value;
-                    this.RaisePropertyChanged("Category");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Serie", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Serie : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.DateTime ActivatedAtField;
-        
-        private string DescriptionField;
-        
-        private System.DateTime ExpiresAtField;
-        
-        private bool IsActivatedField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime ActivatedAt {
-            get {
-                return this.ActivatedAtField;
-            }
-            set {
-                if ((this.ActivatedAtField.Equals(value) != true)) {
-                    this.ActivatedAtField = value;
-                    this.RaisePropertyChanged("ActivatedAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime ExpiresAt {
-            get {
-                return this.ExpiresAtField;
-            }
-            set {
-                if ((this.ExpiresAtField.Equals(value) != true)) {
-                    this.ExpiresAtField = value;
-                    this.RaisePropertyChanged("ExpiresAt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public bool IsActivated {
-            get {
-                return this.IsActivatedField;
-            }
-            set {
-                if ((this.IsActivatedField.Equals(value) != true)) {
-                    this.IsActivatedField = value;
-                    this.RaisePropertyChanged("IsActivated");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Answer", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Answer : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int IdField;
-        
-        private string DescriptionField;
-        
-        private string ExplanationField;
-        
-        private bool IsRightField;
-        
-        private int QuestionIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Explanation {
-            get {
-                return this.ExplanationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExplanationField, value) != true)) {
-                    this.ExplanationField = value;
-                    this.RaisePropertyChanged("Explanation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public bool IsRight {
-            get {
-                return this.IsRightField;
-            }
-            set {
-                if ((this.IsRightField.Equals(value) != true)) {
-                    this.IsRightField = value;
-                    this.RaisePropertyChanged("IsRight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public int QuestionId {
-            get {
-                return this.QuestionIdField;
-            }
-            set {
-                if ((this.QuestionIdField.Equals(value) != true)) {
-                    this.QuestionIdField = value;
-                    this.RaisePropertyChanged("QuestionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QuestionCategory", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public enum QuestionCategory : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BAY = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BIE = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FOD = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LBK = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MUC = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SCH = 6,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Quiz", Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class Quiz : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Question> QuestionsField;
-        
-        private int PointsProAnswerField;
-        
-        private int IdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Question> Questions {
-            get {
-                return this.QuestionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.QuestionsField, value) != true)) {
-                    this.QuestionsField = value;
-                    this.RaisePropertyChanged("Questions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public int PointsProAnswer {
-            get {
-                return this.PointsProAnswerField;
-            }
-            set {
-                if ((this.PointsProAnswerField.Equals(value) != true)) {
-                    this.PointsProAnswerField = value;
-                    this.RaisePropertyChanged("PointsProAnswer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/", ConfigurationName="LbkMobileService.Service1Soap")]
     public interface Service1Soap {
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/TodaysMenu", ReplyAction="*")]
-        System.IAsyncResult BeginTodaysMenu(Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginTodaysMenu(string requestedDate, string fingerprint, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponse EndTodaysMenu(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay EndTodaysMenu(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/CreateReservation", ReplyAction="*")]
-        System.IAsyncResult BeginCreateReservation(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginCreateReservation(string when, int seats, string mobile, string fingerprint, string name, string advice, string confirmcode, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponse EndCreateReservation(System.IAsyncResult result);
+        string EndCreateReservation(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetReservationById", ReplyAction="*")]
-        System.IAsyncResult BeginGetReservationById(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetReservationById(System.Guid reservationId, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponse EndGetReservationById(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Reservation EndGetReservationById(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/CreateReservationByObject", ReplyAction="*")]
-        System.IAsyncResult BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponse EndCreateReservationByObject(System.IAsyncResult result);
+        System.Guid EndCreateReservationByObject(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/SetReservationConfirm", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
         System.IAsyncResult BeginSetReservationConfirm(System.Guid reservationId, System.AsyncCallback callback, object asyncState);
         
         bool EndSetReservationConfirm(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/IsDeclinedByRestaurant", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
         System.IAsyncResult BeginIsDeclinedByRestaurant(System.Guid reservationId, System.AsyncCallback callback, object asyncState);
         
         bool EndIsDeclinedByRestaurant(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/SetReservationConfirmCustomer", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
         System.IAsyncResult BeginSetReservationConfirmCustomer(System.Guid reservationId, System.AsyncCallback callback, object asyncState);
         
         bool EndSetReservationConfirmCustomer(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/SetDeclining", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
         System.IAsyncResult BeginSetDeclining(System.Guid reservationId, System.AsyncCallback callback, object asyncState);
         
         bool EndSetDeclining(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetReservationsByStatus", ReplyAction="*")]
-        System.IAsyncResult BeginGetReservationsByStatus(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetReservationsByStatus(int status, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponse EndGetReservationsByStatus(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Reservation[] EndGetReservationsByStatus(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetEvents", ReplyAction="*")]
-        System.IAsyncResult BeginGetEvents(Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetEvents(string fingerprint, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponse EndGetEvents(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Event[] EndGetEvents(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetPictures", ReplyAction="*")]
-        System.IAsyncResult BeginGetPictures(Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetPictures(string fingerprint, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponse EndGetPictures(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Picture[] EndGetPictures(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetVideos", ReplyAction="*")]
-        System.IAsyncResult BeginGetVideos(Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetVideos(string fingerprint, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponse EndGetVideos(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Video[] EndGetVideos(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetQuestion", ReplyAction="*")]
-        System.IAsyncResult BeginGetQuestion(Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetQuestion(int id, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponse EndGetQuestion(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Question EndGetQuestion(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetQuiz", ReplyAction="*")]
-        System.IAsyncResult BeginGetQuiz(Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginGetQuiz(string fingerprint, int anzahlFragen, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponse EndGetQuiz(System.IAsyncResult result);
+        Lbk.Mobile.Data.Service.LbkMobileService.Quiz EndGetQuiz(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/ActivateVoucher", ReplyAction="*")]
-        System.IAsyncResult BeginActivateVoucher(Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginActivateVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponse EndActivateVoucher(System.IAsyncResult result);
+        bool EndActivateVoucher(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/DischargeVoucher", ReplyAction="*")]
-        System.IAsyncResult BeginDischargeVoucher(Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequest request, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        System.IAsyncResult BeginDischargeVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState);
         
-        Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponse EndDischargeVoucher(System.IAsyncResult result);
+        bool EndDischargeVoucher(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://loewenbraeuservice.ip-connect.de/GetMenuLastUpdate", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
         System.IAsyncResult BeginGetMenuLastUpdate(Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateRequest request, System.AsyncCallback callback, object asyncState);
         
         Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateResponse EndGetMenuLastUpdate(System.IAsyncResult result);
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class TodaysMenuRequest {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class DishesOfTheDay : object, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TodaysMenu", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequestBody Body;
+        private category[] dishOfTheDayField;
         
-        public TodaysMenuRequest() {
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public category[] DishOfTheDay {
+            get {
+                return this.dishOfTheDayField;
+            }
+            set {
+                this.dishOfTheDayField = value;
+                this.RaisePropertyChanged("DishOfTheDay");
+            }
         }
         
-        public TodaysMenuRequest(Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequestBody Body) {
-            this.Body = Body;
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
         }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class category : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string titleField;
+        
+        private dish[] dishesField;
+        
+        private string subtitleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+                this.RaisePropertyChanged("Title");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=1)]
+        public dish[] Dishes {
+            get {
+                return this.dishesField;
+            }
+            set {
+                this.dishesField = value;
+                this.RaisePropertyChanged("Dishes");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Subtitle {
+            get {
+                return this.subtitleField;
+            }
+            set {
+                this.subtitleField = value;
+                this.RaisePropertyChanged("Subtitle");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class dish : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string headlineField;
+        
+        private string descriptionField;
+        
+        private string priceField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Headline {
+            get {
+                return this.headlineField;
+            }
+            set {
+                this.headlineField = value;
+                this.RaisePropertyChanged("Headline");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Price {
+            get {
+                return this.priceField;
+            }
+            set {
+                this.priceField = value;
+                this.RaisePropertyChanged("Price");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Quiz : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Question[] questionsField;
+        
+        private int pointsProAnswerField;
+        
+        private int idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public Question[] Questions {
+            get {
+                return this.questionsField;
+            }
+            set {
+                this.questionsField = value;
+                this.RaisePropertyChanged("Questions");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int PointsProAnswer {
+            get {
+                return this.pointsProAnswerField;
+            }
+            set {
+                this.pointsProAnswerField = value;
+                this.RaisePropertyChanged("PointsProAnswer");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Question : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private Answer[] answersField;
+        
+        private string descriptionField;
+        
+        private int numberField;
+        
+        private int pointsField;
+        
+        private Serie serieField;
+        
+        private long serieIdField;
+        
+        private QuestionCategory categoryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        public Answer[] Answers {
+            get {
+                return this.answersField;
+            }
+            set {
+                this.answersField = value;
+                this.RaisePropertyChanged("Answers");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int Number {
+            get {
+                return this.numberField;
+            }
+            set {
+                this.numberField = value;
+                this.RaisePropertyChanged("Number");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int Points {
+            get {
+                return this.pointsField;
+            }
+            set {
+                this.pointsField = value;
+                this.RaisePropertyChanged("Points");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public Serie Serie {
+            get {
+                return this.serieField;
+            }
+            set {
+                this.serieField = value;
+                this.RaisePropertyChanged("Serie");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public long SerieId {
+            get {
+                return this.serieIdField;
+            }
+            set {
+                this.serieIdField = value;
+                this.RaisePropertyChanged("SerieId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public QuestionCategory Category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+                this.RaisePropertyChanged("Category");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Answer : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int idField;
+        
+        private string descriptionField;
+        
+        private string explanationField;
+        
+        private bool isRightField;
+        
+        private int questionIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int Id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("Id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Explanation {
+            get {
+                return this.explanationField;
+            }
+            set {
+                this.explanationField = value;
+                this.RaisePropertyChanged("Explanation");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool IsRight {
+            get {
+                return this.isRightField;
+            }
+            set {
+                this.isRightField = value;
+                this.RaisePropertyChanged("IsRight");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int QuestionId {
+            get {
+                return this.questionIdField;
+            }
+            set {
+                this.questionIdField = value;
+                this.RaisePropertyChanged("QuestionId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Serie : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime activatedAtField;
+        
+        private string descriptionField;
+        
+        private System.DateTime expiresAtField;
+        
+        private bool isActivatedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime ActivatedAt {
+            get {
+                return this.activatedAtField;
+            }
+            set {
+                this.activatedAtField = value;
+                this.RaisePropertyChanged("ActivatedAt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime ExpiresAt {
+            get {
+                return this.expiresAtField;
+            }
+            set {
+                this.expiresAtField = value;
+                this.RaisePropertyChanged("ExpiresAt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public bool IsActivated {
+            get {
+                return this.isActivatedField;
+            }
+            set {
+                this.isActivatedField = value;
+                this.RaisePropertyChanged("IsActivated");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public enum QuestionCategory {
+        
+        /// <remarks/>
+        None,
+        
+        /// <remarks/>
+        BAY,
+        
+        /// <remarks/>
+        BIE,
+        
+        /// <remarks/>
+        FOD,
+        
+        /// <remarks/>
+        LBK,
+        
+        /// <remarks/>
+        MUC,
+        
+        /// <remarks/>
+        SCH,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Video : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string descriptionField;
+        
+        private string fileNameField;
+        
+        private string linkField;
+        
+        private int sortOrderField;
+        
+        private string thumbnailLinkField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string FileName {
+            get {
+                return this.fileNameField;
+            }
+            set {
+                this.fileNameField = value;
+                this.RaisePropertyChanged("FileName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Link {
+            get {
+                return this.linkField;
+            }
+            set {
+                this.linkField = value;
+                this.RaisePropertyChanged("Link");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int SortOrder {
+            get {
+                return this.sortOrderField;
+            }
+            set {
+                this.sortOrderField = value;
+                this.RaisePropertyChanged("SortOrder");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ThumbnailLink {
+            get {
+                return this.thumbnailLinkField;
+            }
+            set {
+                this.thumbnailLinkField = value;
+                this.RaisePropertyChanged("ThumbnailLink");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Picture : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string descriptionField;
+        
+        private string titleField;
+        
+        private string fileNameField;
+        
+        private string linkField;
+        
+        private int sortOrderField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+                this.RaisePropertyChanged("Title");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string FileName {
+            get {
+                return this.fileNameField;
+            }
+            set {
+                this.fileNameField = value;
+                this.RaisePropertyChanged("FileName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Link {
+            get {
+                return this.linkField;
+            }
+            set {
+                this.linkField = value;
+                this.RaisePropertyChanged("Link");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public int SortOrder {
+            get {
+                return this.sortOrderField;
+            }
+            set {
+                this.sortOrderField = value;
+                this.RaisePropertyChanged("SortOrder");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Event : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime activatedAtField;
+        
+        private string dateField;
+        
+        private System.DateTime dateOrderField;
+        
+        private string descriptionField;
+        
+        private System.DateTime expiresAtField;
+        
+        private bool isActivatedField;
+        
+        private string reservationLinkField;
+        
+        private string thumbnailLinkField;
+        
+        private string titleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime ActivatedAt {
+            get {
+                return this.activatedAtField;
+            }
+            set {
+                this.activatedAtField = value;
+                this.RaisePropertyChanged("ActivatedAt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+                this.RaisePropertyChanged("Date");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime DateOrder {
+            get {
+                return this.dateOrderField;
+            }
+            set {
+                this.dateOrderField = value;
+                this.RaisePropertyChanged("DateOrder");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+                this.RaisePropertyChanged("Description");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime ExpiresAt {
+            get {
+                return this.expiresAtField;
+            }
+            set {
+                this.expiresAtField = value;
+                this.RaisePropertyChanged("ExpiresAt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool IsActivated {
+            get {
+                return this.isActivatedField;
+            }
+            set {
+                this.isActivatedField = value;
+                this.RaisePropertyChanged("IsActivated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string ReservationLink {
+            get {
+                return this.reservationLinkField;
+            }
+            set {
+                this.reservationLinkField = value;
+                this.RaisePropertyChanged("ReservationLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string ThumbnailLink {
+            get {
+                return this.thumbnailLinkField;
+            }
+            set {
+                this.thumbnailLinkField = value;
+                this.RaisePropertyChanged("ThumbnailLink");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string Title {
+            get {
+                return this.titleField;
+            }
+            set {
+                this.titleField = value;
+                this.RaisePropertyChanged("Title");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public partial class Reservation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.Guid reservationIdField;
+        
+        private System.DateTime reservationTimeField;
+        
+        private string fingerprintField;
+        
+        private string mobileField;
+        
+        private string guestNameField;
+        
+        private int seatsField;
+        
+        private string adviceField;
+        
+        private string confirmCodeField;
+        
+        private StatusArt statusField;
+        
+        private string declineReasonField;
+        
+        private System.DateTime lastChangeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.Guid ReservationId {
+            get {
+                return this.reservationIdField;
+            }
+            set {
+                this.reservationIdField = value;
+                this.RaisePropertyChanged("ReservationId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime ReservationTime {
+            get {
+                return this.reservationTimeField;
+            }
+            set {
+                this.reservationTimeField = value;
+                this.RaisePropertyChanged("ReservationTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Fingerprint {
+            get {
+                return this.fingerprintField;
+            }
+            set {
+                this.fingerprintField = value;
+                this.RaisePropertyChanged("Fingerprint");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Mobile {
+            get {
+                return this.mobileField;
+            }
+            set {
+                this.mobileField = value;
+                this.RaisePropertyChanged("Mobile");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string GuestName {
+            get {
+                return this.guestNameField;
+            }
+            set {
+                this.guestNameField = value;
+                this.RaisePropertyChanged("GuestName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int Seats {
+            get {
+                return this.seatsField;
+            }
+            set {
+                this.seatsField = value;
+                this.RaisePropertyChanged("Seats");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string Advice {
+            get {
+                return this.adviceField;
+            }
+            set {
+                this.adviceField = value;
+                this.RaisePropertyChanged("Advice");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string ConfirmCode {
+            get {
+                return this.confirmCodeField;
+            }
+            set {
+                this.confirmCodeField = value;
+                this.RaisePropertyChanged("ConfirmCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public StatusArt Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string DeclineReason {
+            get {
+                return this.declineReasonField;
+            }
+            set {
+                this.declineReasonField = value;
+                this.RaisePropertyChanged("DeclineReason");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public System.DateTime LastChange {
+            get {
+                return this.lastChangeField;
+            }
+            set {
+                this.lastChangeField = value;
+                this.RaisePropertyChanged("LastChange");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
+    public enum StatusArt {
+        
+        /// <remarks/>
+        None,
+        
+        /// <remarks/>
+        Requested,
+        
+        /// <remarks/>
+        ConfirmedByRestaurant,
+        
+        /// <remarks/>
+        ConfirmedByCustomer,
+        
+        /// <remarks/>
+        DeclinedByRestaurant,
+        
+        /// <remarks/>
+        DeclinedAfterConfirmedByRestaurant,
+        
+        /// <remarks/>
+        AbortedByCustomer,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class TodaysMenuRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string requestedDate;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string fingerprint;
-        
-        public TodaysMenuRequestBody() {
-        }
-        
-        public TodaysMenuRequestBody(string requestedDate, string fingerprint) {
-            this.requestedDate = requestedDate;
-            this.fingerprint = fingerprint;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class TodaysMenuResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TodaysMenuResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponseBody Body;
-        
-        public TodaysMenuResponse() {
-        }
-        
-        public TodaysMenuResponse(Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class TodaysMenuResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay TodaysMenuResult;
-        
-        public TodaysMenuResponseBody() {
-        }
-        
-        public TodaysMenuResponseBody(Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay TodaysMenuResult) {
-            this.TodaysMenuResult = TodaysMenuResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class CreateReservationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReservation", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequestBody Body;
-        
-        public CreateReservationRequest() {
-        }
-        
-        public CreateReservationRequest(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class CreateReservationRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string when;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int seats;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string mobile;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string fingerprint;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public string name;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string advice;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string confirmcode;
-        
-        public CreateReservationRequestBody() {
-        }
-        
-        public CreateReservationRequestBody(string when, int seats, string mobile, string fingerprint, string name, string advice, string confirmcode) {
-            this.when = when;
-            this.seats = seats;
-            this.mobile = mobile;
-            this.fingerprint = fingerprint;
-            this.name = name;
-            this.advice = advice;
-            this.confirmcode = confirmcode;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class CreateReservationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReservationResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponseBody Body;
-        
-        public CreateReservationResponse() {
-        }
-        
-        public CreateReservationResponse(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class CreateReservationResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string CreateReservationResult;
-        
-        public CreateReservationResponseBody() {
-        }
-        
-        public CreateReservationResponseBody(string CreateReservationResult) {
-            this.CreateReservationResult = CreateReservationResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetReservationByIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReservationById", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequestBody Body;
-        
-        public GetReservationByIdRequest() {
-        }
-        
-        public GetReservationByIdRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetReservationByIdRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public System.Guid reservationId;
-        
-        public GetReservationByIdRequestBody() {
-        }
-        
-        public GetReservationByIdRequestBody(System.Guid reservationId) {
-            this.reservationId = reservationId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetReservationByIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReservationByIdResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponseBody Body;
-        
-        public GetReservationByIdResponse() {
-        }
-        
-        public GetReservationByIdResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetReservationByIdResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.Reservation GetReservationByIdResult;
-        
-        public GetReservationByIdResponseBody() {
-        }
-        
-        public GetReservationByIdResponseBody(Lbk.Mobile.Data.Service.LbkMobileService.Reservation GetReservationByIdResult) {
-            this.GetReservationByIdResult = GetReservationByIdResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class CreateReservationByObjectRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReservationByObject", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequestBody Body;
-        
-        public CreateReservationByObjectRequest() {
-        }
-        
-        public CreateReservationByObjectRequest(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class CreateReservationByObjectRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation;
-        
-        public CreateReservationByObjectRequestBody() {
-        }
-        
-        public CreateReservationByObjectRequestBody(Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation) {
-            this.tmpReservation = tmpReservation;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class CreateReservationByObjectResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateReservationByObjectResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponseBody Body;
-        
-        public CreateReservationByObjectResponse() {
-        }
-        
-        public CreateReservationByObjectResponse(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class CreateReservationByObjectResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public System.Guid CreateReservationByObjectResult;
-        
-        public CreateReservationByObjectResponseBody() {
-        }
-        
-        public CreateReservationByObjectResponseBody(System.Guid CreateReservationByObjectResult) {
-            this.CreateReservationByObjectResult = CreateReservationByObjectResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetReservationsByStatusRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReservationsByStatus", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequestBody Body;
-        
-        public GetReservationsByStatusRequest() {
-        }
-        
-        public GetReservationsByStatusRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetReservationsByStatusRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int status;
-        
-        public GetReservationsByStatusRequestBody() {
-        }
-        
-        public GetReservationsByStatusRequestBody(int status) {
-            this.status = status;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetReservationsByStatusResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReservationsByStatusResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponseBody Body;
-        
-        public GetReservationsByStatusResponse() {
-        }
-        
-        public GetReservationsByStatusResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetReservationsByStatusResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Reservation> GetReservationsByStatusResult;
-        
-        public GetReservationsByStatusResponseBody() {
-        }
-        
-        public GetReservationsByStatusResponseBody(System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Reservation> GetReservationsByStatusResult) {
-            this.GetReservationsByStatusResult = GetReservationsByStatusResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetEventsRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEvents", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequestBody Body;
-        
-        public GetEventsRequest() {
-        }
-        
-        public GetEventsRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetEventsRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        public GetEventsRequestBody() {
-        }
-        
-        public GetEventsRequestBody(string fingerprint) {
-            this.fingerprint = fingerprint;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetEventsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetEventsResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponseBody Body;
-        
-        public GetEventsResponse() {
-        }
-        
-        public GetEventsResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetEventsResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Event> GetEventsResult;
-        
-        public GetEventsResponseBody() {
-        }
-        
-        public GetEventsResponseBody(System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Event> GetEventsResult) {
-            this.GetEventsResult = GetEventsResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetPicturesRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPictures", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequestBody Body;
-        
-        public GetPicturesRequest() {
-        }
-        
-        public GetPicturesRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetPicturesRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        public GetPicturesRequestBody() {
-        }
-        
-        public GetPicturesRequestBody(string fingerprint) {
-            this.fingerprint = fingerprint;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetPicturesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPicturesResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponseBody Body;
-        
-        public GetPicturesResponse() {
-        }
-        
-        public GetPicturesResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetPicturesResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Picture> GetPicturesResult;
-        
-        public GetPicturesResponseBody() {
-        }
-        
-        public GetPicturesResponseBody(System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Picture> GetPicturesResult) {
-            this.GetPicturesResult = GetPicturesResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetVideosRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetVideos", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequestBody Body;
-        
-        public GetVideosRequest() {
-        }
-        
-        public GetVideosRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetVideosRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        public GetVideosRequestBody() {
-        }
-        
-        public GetVideosRequestBody(string fingerprint) {
-            this.fingerprint = fingerprint;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetVideosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetVideosResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponseBody Body;
-        
-        public GetVideosResponse() {
-        }
-        
-        public GetVideosResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetVideosResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Video> GetVideosResult;
-        
-        public GetVideosResponseBody() {
-        }
-        
-        public GetVideosResponseBody(System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Video> GetVideosResult) {
-            this.GetVideosResult = GetVideosResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetQuestionRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetQuestion", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequestBody Body;
-        
-        public GetQuestionRequest() {
-        }
-        
-        public GetQuestionRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetQuestionRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int id;
-        
-        public GetQuestionRequestBody() {
-        }
-        
-        public GetQuestionRequestBody(int id) {
-            this.id = id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetQuestionResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetQuestionResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponseBody Body;
-        
-        public GetQuestionResponse() {
-        }
-        
-        public GetQuestionResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetQuestionResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.Question GetQuestionResult;
-        
-        public GetQuestionResponseBody() {
-        }
-        
-        public GetQuestionResponseBody(Lbk.Mobile.Data.Service.LbkMobileService.Question GetQuestionResult) {
-            this.GetQuestionResult = GetQuestionResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetQuizRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetQuiz", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequestBody Body;
-        
-        public GetQuizRequest() {
-        }
-        
-        public GetQuizRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetQuizRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int anzahlFragen;
-        
-        public GetQuizRequestBody() {
-        }
-        
-        public GetQuizRequestBody(string fingerprint, int anzahlFragen) {
-            this.fingerprint = fingerprint;
-            this.anzahlFragen = anzahlFragen;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class GetQuizResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetQuizResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponseBody Body;
-        
-        public GetQuizResponse() {
-        }
-        
-        public GetQuizResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetQuizResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.Quiz GetQuizResult;
-        
-        public GetQuizResponseBody() {
-        }
-        
-        public GetQuizResponseBody(Lbk.Mobile.Data.Service.LbkMobileService.Quiz GetQuizResult) {
-            this.GetQuizResult = GetQuizResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class ActivateVoucherRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ActivateVoucher", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequestBody Body;
-        
-        public ActivateVoucherRequest() {
-        }
-        
-        public ActivateVoucherRequest(Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class ActivateVoucherRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int quizId;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string code;
-        
-        public ActivateVoucherRequestBody() {
-        }
-        
-        public ActivateVoucherRequestBody(string fingerprint, int quizId, string code) {
-            this.fingerprint = fingerprint;
-            this.quizId = quizId;
-            this.code = code;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class ActivateVoucherResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ActivateVoucherResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponseBody Body;
-        
-        public ActivateVoucherResponse() {
-        }
-        
-        public ActivateVoucherResponse(Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class ActivateVoucherResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool ActivateVoucherResult;
-        
-        public ActivateVoucherResponseBody() {
-        }
-        
-        public ActivateVoucherResponseBody(bool ActivateVoucherResult) {
-            this.ActivateVoucherResult = ActivateVoucherResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class DischargeVoucherRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DischargeVoucher", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequestBody Body;
-        
-        public DischargeVoucherRequest() {
-        }
-        
-        public DischargeVoucherRequest(Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class DischargeVoucherRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int quizId;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string code;
-        
-        public DischargeVoucherRequestBody() {
-        }
-        
-        public DischargeVoucherRequestBody(string fingerprint, int quizId, string code) {
-            this.fingerprint = fingerprint;
-            this.quizId = quizId;
-            this.code = code;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
-    public partial class DischargeVoucherResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DischargeVoucherResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponseBody Body;
-        
-        public DischargeVoucherResponse() {
-        }
-        
-        public DischargeVoucherResponse(Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class DischargeVoucherResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public bool DischargeVoucherResult;
-        
-        public DischargeVoucherResponseBody() {
-        }
-        
-        public DischargeVoucherResponseBody(bool DischargeVoucherResult) {
-            this.DischargeVoucherResult = DischargeVoucherResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMenuLastUpdate", WrapperNamespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class GetMenuLastUpdateRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMenuLastUpdate", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
+        public string fingerprint;
         
         public GetMenuLastUpdateRequest() {
         }
         
-        public GetMenuLastUpdateRequest(Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetMenuLastUpdateRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string fingerprint;
-        
-        public GetMenuLastUpdateRequestBody() {
-        }
-        
-        public GetMenuLastUpdateRequestBody(string fingerprint) {
+        public GetMenuLastUpdateRequest(string fingerprint) {
             this.fingerprint = fingerprint;
         }
     }
@@ -2072,33 +1152,17 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute()]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GetMenuLastUpdateResponse", WrapperNamespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class GetMenuLastUpdateResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMenuLastUpdateResponse", Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
-        public Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<System.DateTime> GetMenuLastUpdateResult;
         
         public GetMenuLastUpdateResponse() {
         }
         
-        public GetMenuLastUpdateResponse(Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
-    public partial class GetMenuLastUpdateResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public System.Nullable<System.DateTime> GetMenuLastUpdateResult;
-        
-        public GetMenuLastUpdateResponseBody() {
-        }
-        
-        public GetMenuLastUpdateResponseBody(System.Nullable<System.DateTime> GetMenuLastUpdateResult) {
+        public GetMenuLastUpdateResponse(System.Nullable<System.DateTime> GetMenuLastUpdateResult) {
             this.GetMenuLastUpdateResult = GetMenuLastUpdateResult;
         }
     }
@@ -2270,10 +1334,10 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
             this.results = results;
         }
         
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Reservation> Result {
+        public Lbk.Mobile.Data.Service.LbkMobileService.Reservation[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Reservation>)(this.results[0]));
+                return ((Lbk.Mobile.Data.Service.LbkMobileService.Reservation[])(this.results[0]));
             }
         }
     }
@@ -2289,10 +1353,10 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
             this.results = results;
         }
         
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Event> Result {
+        public Lbk.Mobile.Data.Service.LbkMobileService.Event[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Event>)(this.results[0]));
+                return ((Lbk.Mobile.Data.Service.LbkMobileService.Event[])(this.results[0]));
             }
         }
     }
@@ -2308,10 +1372,10 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
             this.results = results;
         }
         
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Picture> Result {
+        public Lbk.Mobile.Data.Service.LbkMobileService.Picture[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Picture>)(this.results[0]));
+                return ((Lbk.Mobile.Data.Service.LbkMobileService.Picture[])(this.results[0]));
             }
         }
     }
@@ -2327,10 +1391,10 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
             this.results = results;
         }
         
-        public System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Video> Result {
+        public Lbk.Mobile.Data.Service.LbkMobileService.Video[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Video>)(this.results[0]));
+                return ((Lbk.Mobile.Data.Service.LbkMobileService.Video[])(this.results[0]));
             }
         }
     }
@@ -2629,38 +1693,23 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginTodaysMenu(Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginTodaysMenu(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginTodaysMenu(string requestedDate, string fingerprint, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTodaysMenu(requestedDate, fingerprint, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginTodaysMenu(string requestedDate, string fingerprint, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequestBody();
-            inValue.Body.requestedDate = requestedDate;
-            inValue.Body.fingerprint = fingerprint;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginTodaysMenu(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndTodaysMenu(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndTodaysMenu(System.IAsyncResult result) {
             return base.Channel.EndTodaysMenu(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay EndTodaysMenu(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndTodaysMenu(result);
-            return retVal.Body.TodaysMenuResult;
         }
         
         private System.IAsyncResult OnBeginTodaysMenu(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string requestedDate = ((string)(inValues[0]));
             string fingerprint = ((string)(inValues[1]));
-            return this.BeginTodaysMenu(requestedDate, fingerprint, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginTodaysMenu(requestedDate, fingerprint, callback, asyncState);
         }
         
         private object[] OnEndTodaysMenu(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay retVal = this.EndTodaysMenu(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndTodaysMenu(result);
             return new object[] {
                     retVal};
         }
@@ -2692,33 +1741,13 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginCreateReservation(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginCreateReservation(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginCreateReservation(string when, int seats, string mobile, string fingerprint, string name, string advice, string confirmcode, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateReservation(when, seats, mobile, fingerprint, name, advice, confirmcode, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginCreateReservation(string when, int seats, string mobile, string fingerprint, string name, string advice, string confirmcode, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequestBody();
-            inValue.Body.when = when;
-            inValue.Body.seats = seats;
-            inValue.Body.mobile = mobile;
-            inValue.Body.fingerprint = fingerprint;
-            inValue.Body.name = name;
-            inValue.Body.advice = advice;
-            inValue.Body.confirmcode = confirmcode;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginCreateReservation(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndCreateReservation(System.IAsyncResult result) {
+        string Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndCreateReservation(System.IAsyncResult result) {
             return base.Channel.EndCreateReservation(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private string EndCreateReservation(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndCreateReservation(result);
-            return retVal.Body.CreateReservationResult;
         }
         
         private System.IAsyncResult OnBeginCreateReservation(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -2729,11 +1758,11 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
             string name = ((string)(inValues[4]));
             string advice = ((string)(inValues[5]));
             string confirmcode = ((string)(inValues[6]));
-            return this.BeginCreateReservation(when, seats, mobile, fingerprint, name, advice, confirmcode, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginCreateReservation(when, seats, mobile, fingerprint, name, advice, confirmcode, callback, asyncState);
         }
         
         private object[] OnEndCreateReservation(System.IAsyncResult result) {
-            string retVal = this.EndCreateReservation(result);
+            string retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndCreateReservation(result);
             return new object[] {
                     retVal};
         }
@@ -2770,36 +1799,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetReservationById(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetReservationById(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetReservationById(System.Guid reservationId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetReservationById(reservationId, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetReservationById(System.Guid reservationId, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequestBody();
-            inValue.Body.reservationId = reservationId;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetReservationById(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetReservationById(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Reservation Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetReservationById(System.IAsyncResult result) {
             return base.Channel.EndGetReservationById(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private Lbk.Mobile.Data.Service.LbkMobileService.Reservation EndGetReservationById(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetReservationById(result);
-            return retVal.Body.GetReservationByIdResult;
         }
         
         private System.IAsyncResult OnBeginGetReservationById(object[] inValues, System.AsyncCallback callback, object asyncState) {
             System.Guid reservationId = ((System.Guid)(inValues[0]));
-            return this.BeginGetReservationById(reservationId, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetReservationById(reservationId, callback, asyncState);
         }
         
         private object[] OnEndGetReservationById(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.Reservation retVal = this.EndGetReservationById(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Reservation retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetReservationById(result);
             return new object[] {
                     retVal};
         }
@@ -2830,36 +1845,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginCreateReservationByObject(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateReservationByObject(tmpReservation, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequestBody();
-            inValue.Body.tmpReservation = tmpReservation;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginCreateReservationByObject(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndCreateReservationByObject(System.IAsyncResult result) {
+        System.Guid Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndCreateReservationByObject(System.IAsyncResult result) {
             return base.Channel.EndCreateReservationByObject(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.Guid EndCreateReservationByObject(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndCreateReservationByObject(result);
-            return retVal.Body.CreateReservationByObjectResult;
         }
         
         private System.IAsyncResult OnBeginCreateReservationByObject(object[] inValues, System.AsyncCallback callback, object asyncState) {
             Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation = ((Lbk.Mobile.Data.Service.LbkMobileService.Reservation)(inValues[0]));
-            return this.BeginCreateReservationByObject(tmpReservation, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginCreateReservationByObject(tmpReservation, callback, asyncState);
         }
         
         private object[] OnEndCreateReservationByObject(System.IAsyncResult result) {
-            System.Guid retVal = this.EndCreateReservationByObject(result);
+            System.Guid retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndCreateReservationByObject(result);
             return new object[] {
                     retVal};
         }
@@ -3074,36 +2075,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetReservationsByStatus(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetReservationsByStatus(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetReservationsByStatus(int status, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetReservationsByStatus(status, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetReservationsByStatus(int status, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequestBody();
-            inValue.Body.status = status;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetReservationsByStatus(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetReservationsByStatus(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Reservation[] Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetReservationsByStatus(System.IAsyncResult result) {
             return base.Channel.EndGetReservationsByStatus(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Reservation> EndGetReservationsByStatus(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetReservationsByStatus(result);
-            return retVal.Body.GetReservationsByStatusResult;
         }
         
         private System.IAsyncResult OnBeginGetReservationsByStatus(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int status = ((int)(inValues[0]));
-            return this.BeginGetReservationsByStatus(status, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetReservationsByStatus(status, callback, asyncState);
         }
         
         private object[] OnEndGetReservationsByStatus(System.IAsyncResult result) {
-            System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Reservation> retVal = this.EndGetReservationsByStatus(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Reservation[] retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetReservationsByStatus(result);
             return new object[] {
                     retVal};
         }
@@ -3134,36 +2121,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetEvents(Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetEvents(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetEvents(string fingerprint, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetEvents(fingerprint, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetEvents(string fingerprint, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequestBody();
-            inValue.Body.fingerprint = fingerprint;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetEvents(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetEvents(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Event[] Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetEvents(System.IAsyncResult result) {
             return base.Channel.EndGetEvents(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Event> EndGetEvents(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetEvents(result);
-            return retVal.Body.GetEventsResult;
         }
         
         private System.IAsyncResult OnBeginGetEvents(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string fingerprint = ((string)(inValues[0]));
-            return this.BeginGetEvents(fingerprint, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetEvents(fingerprint, callback, asyncState);
         }
         
         private object[] OnEndGetEvents(System.IAsyncResult result) {
-            System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Event> retVal = this.EndGetEvents(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Event[] retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetEvents(result);
             return new object[] {
                     retVal};
         }
@@ -3194,36 +2167,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetPictures(Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetPictures(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetPictures(string fingerprint, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetPictures(fingerprint, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetPictures(string fingerprint, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequestBody();
-            inValue.Body.fingerprint = fingerprint;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetPictures(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetPictures(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Picture[] Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetPictures(System.IAsyncResult result) {
             return base.Channel.EndGetPictures(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Picture> EndGetPictures(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetPictures(result);
-            return retVal.Body.GetPicturesResult;
         }
         
         private System.IAsyncResult OnBeginGetPictures(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string fingerprint = ((string)(inValues[0]));
-            return this.BeginGetPictures(fingerprint, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetPictures(fingerprint, callback, asyncState);
         }
         
         private object[] OnEndGetPictures(System.IAsyncResult result) {
-            System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Picture> retVal = this.EndGetPictures(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Picture[] retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetPictures(result);
             return new object[] {
                     retVal};
         }
@@ -3254,36 +2213,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetVideos(Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetVideos(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetVideos(string fingerprint, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetVideos(fingerprint, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetVideos(string fingerprint, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequestBody();
-            inValue.Body.fingerprint = fingerprint;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetVideos(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetVideos(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Video[] Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetVideos(System.IAsyncResult result) {
             return base.Channel.EndGetVideos(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Video> EndGetVideos(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetVideos(result);
-            return retVal.Body.GetVideosResult;
         }
         
         private System.IAsyncResult OnBeginGetVideos(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string fingerprint = ((string)(inValues[0]));
-            return this.BeginGetVideos(fingerprint, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetVideos(fingerprint, callback, asyncState);
         }
         
         private object[] OnEndGetVideos(System.IAsyncResult result) {
-            System.Collections.Generic.List<Lbk.Mobile.Data.Service.LbkMobileService.Video> retVal = this.EndGetVideos(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Video[] retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetVideos(result);
             return new object[] {
                     retVal};
         }
@@ -3314,36 +2259,22 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetQuestion(Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetQuestion(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetQuestion(int id, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetQuestion(id, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetQuestion(int id, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequestBody();
-            inValue.Body.id = id;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetQuestion(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetQuestion(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Question Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetQuestion(System.IAsyncResult result) {
             return base.Channel.EndGetQuestion(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private Lbk.Mobile.Data.Service.LbkMobileService.Question EndGetQuestion(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetQuestion(result);
-            return retVal.Body.GetQuestionResult;
         }
         
         private System.IAsyncResult OnBeginGetQuestion(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int id = ((int)(inValues[0]));
-            return this.BeginGetQuestion(id, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetQuestion(id, callback, asyncState);
         }
         
         private object[] OnEndGetQuestion(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.Question retVal = this.EndGetQuestion(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Question retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetQuestion(result);
             return new object[] {
                     retVal};
         }
@@ -3374,38 +2305,23 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetQuiz(Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetQuiz(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginGetQuiz(string fingerprint, int anzahlFragen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetQuiz(fingerprint, anzahlFragen, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginGetQuiz(string fingerprint, int anzahlFragen, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequestBody();
-            inValue.Body.fingerprint = fingerprint;
-            inValue.Body.anzahlFragen = anzahlFragen;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetQuiz(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetQuiz(System.IAsyncResult result) {
+        Lbk.Mobile.Data.Service.LbkMobileService.Quiz Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndGetQuiz(System.IAsyncResult result) {
             return base.Channel.EndGetQuiz(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private Lbk.Mobile.Data.Service.LbkMobileService.Quiz EndGetQuiz(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetQuiz(result);
-            return retVal.Body.GetQuizResult;
         }
         
         private System.IAsyncResult OnBeginGetQuiz(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string fingerprint = ((string)(inValues[0]));
             int anzahlFragen = ((int)(inValues[1]));
-            return this.BeginGetQuiz(fingerprint, anzahlFragen, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetQuiz(fingerprint, anzahlFragen, callback, asyncState);
         }
         
         private object[] OnEndGetQuiz(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.Quiz retVal = this.EndGetQuiz(result);
+            Lbk.Mobile.Data.Service.LbkMobileService.Quiz retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetQuiz(result);
             return new object[] {
                     retVal};
         }
@@ -3437,40 +2353,24 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginActivateVoucher(Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginActivateVoucher(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginActivateVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginActivateVoucher(fingerprint, quizId, code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginActivateVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequestBody();
-            inValue.Body.fingerprint = fingerprint;
-            inValue.Body.quizId = quizId;
-            inValue.Body.code = code;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginActivateVoucher(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndActivateVoucher(System.IAsyncResult result) {
+        bool Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndActivateVoucher(System.IAsyncResult result) {
             return base.Channel.EndActivateVoucher(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private bool EndActivateVoucher(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndActivateVoucher(result);
-            return retVal.Body.ActivateVoucherResult;
         }
         
         private System.IAsyncResult OnBeginActivateVoucher(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string fingerprint = ((string)(inValues[0]));
             int quizId = ((int)(inValues[1]));
             string code = ((string)(inValues[2]));
-            return this.BeginActivateVoucher(fingerprint, quizId, code, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginActivateVoucher(fingerprint, quizId, code, callback, asyncState);
         }
         
         private object[] OnEndActivateVoucher(System.IAsyncResult result) {
-            bool retVal = this.EndActivateVoucher(result);
+            bool retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndActivateVoucher(result);
             return new object[] {
                     retVal};
         }
@@ -3503,40 +2403,24 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginDischargeVoucher(Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginDischargeVoucher(request, callback, asyncState);
+        System.IAsyncResult Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.BeginDischargeVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDischargeVoucher(fingerprint, quizId, code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private System.IAsyncResult BeginDischargeVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState) {
-            Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequestBody();
-            inValue.Body.fingerprint = fingerprint;
-            inValue.Body.quizId = quizId;
-            inValue.Body.code = code;
-            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginDischargeVoucher(inValue, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponse Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndDischargeVoucher(System.IAsyncResult result) {
+        bool Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap.EndDischargeVoucher(System.IAsyncResult result) {
             return base.Channel.EndDischargeVoucher(result);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        private bool EndDischargeVoucher(System.IAsyncResult result) {
-            Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndDischargeVoucher(result);
-            return retVal.Body.DischargeVoucherResult;
         }
         
         private System.IAsyncResult OnBeginDischargeVoucher(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string fingerprint = ((string)(inValues[0]));
             int quizId = ((int)(inValues[1]));
             string code = ((string)(inValues[2]));
-            return this.BeginDischargeVoucher(fingerprint, quizId, code, callback, asyncState);
+            return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginDischargeVoucher(fingerprint, quizId, code, callback, asyncState);
         }
         
         private object[] OnEndDischargeVoucher(System.IAsyncResult result) {
-            bool retVal = this.EndDischargeVoucher(result);
+            bool retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndDischargeVoucher(result);
             return new object[] {
                     retVal};
         }
@@ -3576,8 +2460,7 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         private System.IAsyncResult BeginGetMenuLastUpdate(string fingerprint, System.AsyncCallback callback, object asyncState) {
             Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateRequest inValue = new Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateRequest();
-            inValue.Body = new Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateRequestBody();
-            inValue.Body.fingerprint = fingerprint;
+            inValue.fingerprint = fingerprint;
             return ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).BeginGetMenuLastUpdate(inValue, callback, asyncState);
         }
         
@@ -3589,7 +2472,7 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         private System.Nullable<System.DateTime> EndGetMenuLastUpdate(System.IAsyncResult result) {
             Lbk.Mobile.Data.Service.LbkMobileService.GetMenuLastUpdateResponse retVal = ((Lbk.Mobile.Data.Service.LbkMobileService.Service1Soap)(this)).EndGetMenuLastUpdate(result);
-            return retVal.Body.GetMenuLastUpdateResult;
+            return retVal.GetMenuLastUpdateResult;
         }
         
         private System.IAsyncResult OnBeginGetMenuLastUpdate(object[] inValues, System.AsyncCallback callback, object asyncState) {
@@ -3703,7 +2586,6 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
                 result.MaxReceivedMessageSize = int.MaxValue;
-                result.Security.Mode = System.ServiceModel.BasicHttpSecurityMode.Transport;
                 return result;
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
@@ -3711,7 +2593,7 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration) {
             if ((endpointConfiguration == EndpointConfiguration.Service1Soap)) {
-                return new System.ServiceModel.EndpointAddress("https://lbkmobile.loewenbraeukeller.com/service/service1.asmx");
+                return new System.ServiceModel.EndpointAddress("http://lbkmobile.loewenbraeukeller.com/service/Service1.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
@@ -3730,55 +2612,62 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
                     base(client) {
             }
             
-            public System.IAsyncResult BeginTodaysMenu(Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuRequest request, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = request;
+            public System.IAsyncResult BeginTodaysMenu(string requestedDate, string fingerprint, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = requestedDate;
+                _args[1] = fingerprint;
                 System.IAsyncResult _result = base.BeginInvoke("TodaysMenu", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponse EndTodaysMenu(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay EndTodaysMenu(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.TodaysMenuResponse)(base.EndInvoke("TodaysMenu", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay _result = ((Lbk.Mobile.Data.Service.LbkMobileService.DishesOfTheDay)(base.EndInvoke("TodaysMenu", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginCreateReservation(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationRequest request, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = request;
+            public System.IAsyncResult BeginCreateReservation(string when, int seats, string mobile, string fingerprint, string name, string advice, string confirmcode, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[7];
+                _args[0] = when;
+                _args[1] = seats;
+                _args[2] = mobile;
+                _args[3] = fingerprint;
+                _args[4] = name;
+                _args[5] = advice;
+                _args[6] = confirmcode;
                 System.IAsyncResult _result = base.BeginInvoke("CreateReservation", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponse EndCreateReservation(System.IAsyncResult result) {
+            public string EndCreateReservation(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationResponse)(base.EndInvoke("CreateReservation", _args, result)));
+                string _result = ((string)(base.EndInvoke("CreateReservation", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetReservationById(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetReservationById(System.Guid reservationId, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = reservationId;
                 System.IAsyncResult _result = base.BeginInvoke("GetReservationById", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponse EndGetReservationById(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Reservation EndGetReservationById(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetReservationByIdResponse)(base.EndInvoke("GetReservationById", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Reservation _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Reservation)(base.EndInvoke("GetReservationById", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginCreateReservationByObject(Lbk.Mobile.Data.Service.LbkMobileService.Reservation tmpReservation, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = tmpReservation;
                 System.IAsyncResult _result = base.BeginInvoke("CreateReservationByObject", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponse EndCreateReservationByObject(System.IAsyncResult result) {
+            public System.Guid EndCreateReservationByObject(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.CreateReservationByObjectResponse)(base.EndInvoke("CreateReservationByObject", _args, result)));
+                System.Guid _result = ((System.Guid)(base.EndInvoke("CreateReservationByObject", _args, result)));
                 return _result;
             }
             
@@ -3834,107 +2723,112 @@ namespace Lbk.Mobile.Data.Service.LbkMobileService {
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetReservationsByStatus(Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetReservationsByStatus(int status, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = status;
                 System.IAsyncResult _result = base.BeginInvoke("GetReservationsByStatus", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponse EndGetReservationsByStatus(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Reservation[] EndGetReservationsByStatus(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetReservationsByStatusResponse)(base.EndInvoke("GetReservationsByStatus", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Reservation[] _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Reservation[])(base.EndInvoke("GetReservationsByStatus", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetEvents(Lbk.Mobile.Data.Service.LbkMobileService.GetEventsRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetEvents(string fingerprint, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = fingerprint;
                 System.IAsyncResult _result = base.BeginInvoke("GetEvents", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponse EndGetEvents(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Event[] EndGetEvents(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetEventsResponse)(base.EndInvoke("GetEvents", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Event[] _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Event[])(base.EndInvoke("GetEvents", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetPictures(Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetPictures(string fingerprint, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = fingerprint;
                 System.IAsyncResult _result = base.BeginInvoke("GetPictures", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponse EndGetPictures(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Picture[] EndGetPictures(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetPicturesResponse)(base.EndInvoke("GetPictures", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Picture[] _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Picture[])(base.EndInvoke("GetPictures", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetVideos(Lbk.Mobile.Data.Service.LbkMobileService.GetVideosRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetVideos(string fingerprint, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = fingerprint;
                 System.IAsyncResult _result = base.BeginInvoke("GetVideos", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponse EndGetVideos(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Video[] EndGetVideos(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetVideosResponse)(base.EndInvoke("GetVideos", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Video[] _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Video[])(base.EndInvoke("GetVideos", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetQuestion(Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionRequest request, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetQuestion(int id, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
-                _args[0] = request;
+                _args[0] = id;
                 System.IAsyncResult _result = base.BeginInvoke("GetQuestion", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponse EndGetQuestion(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Question EndGetQuestion(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetQuestionResponse)(base.EndInvoke("GetQuestion", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Question _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Question)(base.EndInvoke("GetQuestion", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetQuiz(Lbk.Mobile.Data.Service.LbkMobileService.GetQuizRequest request, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = request;
+            public System.IAsyncResult BeginGetQuiz(string fingerprint, int anzahlFragen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = fingerprint;
+                _args[1] = anzahlFragen;
                 System.IAsyncResult _result = base.BeginInvoke("GetQuiz", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponse EndGetQuiz(System.IAsyncResult result) {
+            public Lbk.Mobile.Data.Service.LbkMobileService.Quiz EndGetQuiz(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.GetQuizResponse)(base.EndInvoke("GetQuiz", _args, result)));
+                Lbk.Mobile.Data.Service.LbkMobileService.Quiz _result = ((Lbk.Mobile.Data.Service.LbkMobileService.Quiz)(base.EndInvoke("GetQuiz", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginActivateVoucher(Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherRequest request, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = request;
+            public System.IAsyncResult BeginActivateVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = fingerprint;
+                _args[1] = quizId;
+                _args[2] = code;
                 System.IAsyncResult _result = base.BeginInvoke("ActivateVoucher", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponse EndActivateVoucher(System.IAsyncResult result) {
+            public bool EndActivateVoucher(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.ActivateVoucherResponse)(base.EndInvoke("ActivateVoucher", _args, result)));
+                bool _result = ((bool)(base.EndInvoke("ActivateVoucher", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginDischargeVoucher(Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherRequest request, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
-                _args[0] = request;
+            public System.IAsyncResult BeginDischargeVoucher(string fingerprint, int quizId, string code, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[3];
+                _args[0] = fingerprint;
+                _args[1] = quizId;
+                _args[2] = code;
                 System.IAsyncResult _result = base.BeginInvoke("DischargeVoucher", _args, callback, asyncState);
                 return _result;
             }
             
-            public Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponse EndDischargeVoucher(System.IAsyncResult result) {
+            public bool EndDischargeVoucher(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponse _result = ((Lbk.Mobile.Data.Service.LbkMobileService.DischargeVoucherResponse)(base.EndInvoke("DischargeVoucher", _args, result)));
+                bool _result = ((bool)(base.EndInvoke("DischargeVoucher", _args, result)));
                 return _result;
             }
             
