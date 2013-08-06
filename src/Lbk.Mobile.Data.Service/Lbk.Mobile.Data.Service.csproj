@@ -73,7 +73,9 @@
     <Compile Include="Partials\Reservation.Partial.cs" />
     <Compile Include="Service\DataServiceBase.cs" />
     <Compile Include="Service\QuizVoucherDataService.cs" />
-    <Compile Include="Service\ReservationDataService.cs" />
+    <Compile Include="Service\ReservationDataService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Utility\XmlSerializer.cs" />
     <Compile Include="Interfaces\IXmlDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

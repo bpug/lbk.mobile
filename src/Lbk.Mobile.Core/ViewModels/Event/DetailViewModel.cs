@@ -6,10 +6,20 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Event
 {
-    /// <summary>
-    ///     TODO: Update summary.
-    /// </summary>
-    public class EventViewModel : BaseViewModel
+    public class DetailViewModel : BaseViewModel
     {
+
+        public class Nav
+        {
+            public string ReservationLink { get; set; }
+        }
+
+        public string ReservationLink { get; set; }
+
+        public void Init(Nav navigation)
+        {
+            ReservationLink = navigation.ReservationLink;
+        }
+
     }
 }

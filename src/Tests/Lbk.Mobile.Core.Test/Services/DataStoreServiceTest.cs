@@ -4,14 +4,13 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Test.Tests
+namespace Lbk.Mobile.Core.Test.Services
 {
     using System;
     using System.Collections.Generic;
 
     using Cirrious.MvvmCross.Plugins.File;
 
-    using Lbk.Mobile.Core.Test.Services;
     using Lbk.Mobile.Data.Service.Service;
     using Lbk.Mobile.Data.Service.Utility;
     using Lbk.Mobile.Infrastructure.Interfaces;

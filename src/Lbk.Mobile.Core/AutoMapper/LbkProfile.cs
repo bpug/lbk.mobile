@@ -20,9 +20,9 @@ namespace Lbk.Mobile.Core.AutoMapper
             }
         }
 
-        protected override void Configure()
-        {
-            this.CreateMap<Event, Model.Event>();
-        }
+        //protected override void Configure()
+        //{
+        //    this.CreateMap<Event, Model.Event>();
+        //}
     }
 }

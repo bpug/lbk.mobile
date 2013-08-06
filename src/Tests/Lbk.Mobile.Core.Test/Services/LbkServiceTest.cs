@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Test.Tests
+namespace Lbk.Mobile.Core.Test.Services
 {
     using System;
     using System.Linq;
@@ -20,7 +20,7 @@ namespace Lbk.Mobile.Core.Test.Tests
     [TestFixture]
     public class LbkServiceTest : TestBase
     {
-        private const string DeviceUidTest = "NUnit-Key";
+       
 
         //[Test]
         //public async void TestGetEventsAsync()
@@ -52,7 +52,7 @@ namespace Lbk.Mobile.Core.Test.Tests
             //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
 
             var service = new LbkMobileService(mock.Object);
-            onDeviceUidSuccess(DeviceUidTest);
+            onDeviceUidSuccess(Constants.DeviceUidTest);
 
             var result = await service.GetDishesOfTheDayAsync(DateTime.Now);
 
@@ -78,7 +78,7 @@ namespace Lbk.Mobile.Core.Test.Tests
             //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
 
             var service = new LbkMobileService(mock.Object);
-            onDeviceUidSuccess(DeviceUidTest);
+            onDeviceUidSuccess(Constants.DeviceUidTest);
 
             var result = await service.GetEventsAsync();
 
@@ -106,7 +106,7 @@ namespace Lbk.Mobile.Core.Test.Tests
             //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
 
             var service = new LbkMobileService(mock.Object);
-            onDeviceUidSuccess(DeviceUidTest);
+            onDeviceUidSuccess(Constants.DeviceUidTest);
 
             var result = await service.GetQuizAsync(QuestionsCount);
 

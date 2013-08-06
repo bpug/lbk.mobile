@@ -24,21 +24,21 @@ namespace Lbk.Mobile.Data.Service.Extensions
         //    return tcs.Task;
         //}
 
-        public static Task<string> CreateReservationAsyncTask(
-            this Service1SoapClient client,
-            string fingerprint,
-            string when,
-            int seats,
-            string mobile,
-            string name,
-            string advice,
-            string confitmcode)
-        {
-            var tcs = CreateSource<string>(null);
-            client.CreateReservationCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
-            client.CreateReservationAsync(when, seats, mobile, fingerprint, name, advice, confitmcode);
-            return tcs.Task;
-        }
+        //public static Task<string> CreateReservationAsyncTask(
+        //    this Service1SoapClient client,
+        //    string fingerprint,
+        //    string when,
+        //    int seats,
+        //    string mobile,
+        //    string name,
+        //    string advice,
+        //    string confitmcode)
+        //{
+        //    var tcs = CreateSource<string>(null);
+        //    client.CreateReservationCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+        //    client.CreateReservationAsync(when, seats, mobile, fingerprint, name, advice, confitmcode);
+        //    return tcs.Task;
+        //}
 
         public static Task<Guid> CreateReservationAsyncTask(this Service1SoapClient client, Reservation reservation)
         {

@@ -43,7 +43,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<EventListViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<ListViewModel>());
             }
         }
 

@@ -53,6 +53,7 @@
     <Compile Include="ApplicationObjects\AppStart.cs" />
     <Compile Include="Services\ResxTextProvider.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="Utils\MvxAsyncCommand.cs" />
     <Compile Include="ViewModels\BaseLbkViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />

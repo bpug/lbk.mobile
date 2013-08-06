@@ -9,6 +9,7 @@ namespace Lbk.Mobile.Infrastructure.Test
     using System;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Threading.Tasks;
 
     using Lbk.Mobile.Infrastructure.Extensions;
 
@@ -36,6 +37,7 @@ namespace Lbk.Mobile.Infrastructure.Test
         [Test]
         public void TestTruncate()
         {
+            
             double[] values =
             {
                 0.1, 0.897, 7.03, 7.64, 9.999, -0.1, -0.897, -7.03, -7.64, -9.999

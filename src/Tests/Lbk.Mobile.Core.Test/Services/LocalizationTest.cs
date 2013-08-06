@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Test.Tests
+namespace Lbk.Mobile.Core.Test.Services
 {
     using System.Globalization;
     using System.Threading;
