@@ -7,6 +7,7 @@
 namespace Lbk.Mobile.Core.ViewModels
 {
     using System;
+    using System.Threading.Tasks;
 
     using Cirrious.CrossCore;
     using Cirrious.MvvmCross.Localization;
@@ -15,6 +16,7 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Core.Interfaces.Errors;
+    using Lbk.Mobile.Infrastructure;
 
     public class BaseViewModel : MvxViewModel
     {
@@ -32,6 +34,33 @@ namespace Lbk.Mobile.Core.ViewModels
                 this.isBusy = value;
                 this.RaisePropertyChanged(() => this.IsBusy);
             }
+        }
+
+        protected async void OnAsyncExecute<T>(Func<Task<T>> execute, Action<T> success)
+        {
+            if (IsBusy)
+                return;
+
+            this.IsBusy = true;
+
+            //object param = null;
+
+           var task = execute();
+
+            await task.ContinueWith(
+                t =>
+                {
+                    if (t.IsFaulted)
+                    {
+                        var ex = (Exception)t.Exception;
+                        Trace.Error("OnLoadExecute Error: " + ex.Message);
+                    }
+                    else
+                    {
+                        success(t.Result);
+                    }
+                    this.IsBusy = false;
+                });
         }
 
         public IMvxLanguageBinder TextSource

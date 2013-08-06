@@ -36,7 +36,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             
             var service = new LbkMobileService(mock.Object);
 
-            var eventViewModel = new EventListViewModel(service);
+            var eventViewModel = new ListViewModel(service);
             onDeviceUidSuccess(Constants.DeviceUidTest);
 
             //var result = await eventViewModel.service.GetEventsAsync();

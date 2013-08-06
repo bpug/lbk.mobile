@@ -9,10 +9,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using System;
     using System.Collections.Generic;
     using System.Windows.Input;
-
     using Cirrious.MvvmCross.ViewModels;
-
-    using Lbk.Mobile.Core.Utils;
     using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.LbkMobileService;
     using Lbk.Mobile.Infrastructure;
@@ -20,7 +17,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 
     public class ListViewModel : BaseViewModel
     {
-        public readonly ILbkMobileService service;
+        private readonly ILbkMobileService service;
 
         private List<Event> events;
 
@@ -111,23 +108,28 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 
         private async void OnLoadExecute()
         {
-            this.IsBusy = true;
+            OnAsyncExecute(() => this.service.GetEventsAsync(), list => this.Events = list);
+            
+            //if (IsBusy)
+            //    return;
 
-            var task = this.service.GetEventsAsync();
-            await task.ContinueWith(
-                t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        var ex = (Exception)t.Exception;
-                        Trace.Error("OnLoadExecute Error: " + ex.Message);
-                    }
-                    else
-                    {
-                        this.Events = t.Result;
-                    }
-                    this.IsBusy = false;
-                });
+            //this.IsBusy = true;
+
+            //var task = this.service.GetEventsAsync();
+            //await task.ContinueWith(
+            //    t =>
+            //    {
+            //        if (t.IsFaulted)
+            //        {
+            //            var ex = (Exception)t.Exception;
+            //            Trace.Error("OnLoadExecute Error: " + ex.Message);
+            //        }
+            //        else
+            //        {
+            //            this.Events = t.Result;
+            //        }
+            //        this.IsBusy = false;
+            //    });
         }
 
         //private async void OnLoadExecute2()

@@ -57,8 +57,8 @@
     <Compile Include="ViewModels\BaseLbkViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
-    <Compile Include="ViewModels\Event\EventListViewModel.cs" />
-    <Compile Include="ViewModels\Event\EventViewModel.cs" />
+    <Compile Include="ViewModels\Event\ListViewModel.cs" />
+    <Compile Include="ViewModels\Event\DetailViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel_Old.cs" />
