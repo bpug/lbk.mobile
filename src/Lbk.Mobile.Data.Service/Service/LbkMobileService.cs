@@ -40,9 +40,9 @@ namespace Lbk.Mobile.Data.Service.Service
             return await this.Service.GetEventsAsyncTask(this.deviceUid);
         }
 
-        public async Task<DateTime?> GetGetMenuLastUpdateAsync()
+        public async Task<DateTime?> GetMenuLastUpdateAsync()
         {
-            return await this.Service.GetGetMenuLastUpdateAsyncTask(this.deviceUid);
+            return await this.Service.GetMenuLastUpdateAsyncTask(this.deviceUid);
         }
 
         public async Task<List<Picture>> GetPicturesAsync()
@@ -55,7 +55,7 @@ namespace Lbk.Mobile.Data.Service.Service
             return await this.Service.GetQuizAsyncTask(this.deviceUid, questionCount);
         }
 
-        public async Task<Guid> GetReservationAsync(Reservation reservation)
+        public async Task<Guid> CreateReservationAsync(Reservation reservation)
         {
             return await this.Service.CreateReservationAsyncTask(reservation);
         }

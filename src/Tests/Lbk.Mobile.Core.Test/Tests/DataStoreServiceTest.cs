@@ -4,16 +4,19 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Test.Core.Tests
+namespace Lbk.Mobile.Core.Test.Tests
 {
     using System;
     using System.Collections.Generic;
+
     using Cirrious.MvvmCross.Plugins.File;
+
+    using Lbk.Mobile.Core.Test.Services;
     using Lbk.Mobile.Data.Service.Service;
     using Lbk.Mobile.Data.Service.Utility;
     using Lbk.Mobile.Infrastructure.Interfaces;
     using Lbk.Mobile.Model;
-    using Lbk.Mobile.Test.Core.Services;
+
     using NUnit.Framework;
 
     [TestFixture]
@@ -25,7 +28,7 @@ namespace Lbk.Mobile.Test.Core.Tests
             //var mockFinder = new Mock<IMvxFileStore>();
             //Ioc.RegisterSingleton(mockFinder.Object);
 
-            Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
+            this.Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
             //Ioc.RegisterType<IMvxResourceLoader, MvxTestResourceLoader>();
 
             var path = @"Xml/History.xml";
@@ -48,9 +51,9 @@ namespace Lbk.Mobile.Test.Core.Tests
          [Test]
          public void GetHistoriesTest()
          {
-             Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
+             this.Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
 
-             var service = new DataStoreService();
+             var service = new XmlDataService();
              var histories = service.GetHistories();
 
              Assert.NotNull(histories);
@@ -61,9 +64,9 @@ namespace Lbk.Mobile.Test.Core.Tests
          [Test]
          public void GetRoomsTest()
          {
-             Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
+             this.Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
 
-             var service = new DataStoreService();
+             var service = new XmlDataService();
              var rooms = service.GetRooms();
 
              Assert.NotNull(rooms);

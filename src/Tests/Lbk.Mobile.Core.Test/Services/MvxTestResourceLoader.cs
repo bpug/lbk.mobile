@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lbk.Mobile.Test.Core.Services
+﻿namespace Lbk.Mobile.Core.Test.Services
 {
+    using System;
     using System.IO;
 
     using Cirrious.MvvmCross.Plugins.ResourceLoader;

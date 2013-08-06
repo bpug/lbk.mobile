@@ -67,7 +67,7 @@ namespace Lbk.Mobile.Data.Service.Extensions
             return tcs.Task;
         }
 
-        public static Task<DateTime?> GetGetMenuLastUpdateAsyncTask(this Service1SoapClient client, string fingerprint)
+        public static Task<DateTime?> GetMenuLastUpdateAsyncTask(this Service1SoapClient client, string fingerprint)
         {
             var tcs = CreateSource<DateTime?>(null);
             client.GetMenuLastUpdateCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);

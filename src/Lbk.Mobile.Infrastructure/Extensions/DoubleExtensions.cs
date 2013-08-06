@@ -1,21 +1,18 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="TestBase.cs" company="ip-connect GmbH">
+//  <copyright file="DoubleExtensions.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Test.Core
+namespace Lbk.Mobile.Infrastructure.Extensions
 {
-    using Cirrious.MvvmCross.Test.Core;
+    using System;
 
-    using NUnit.Framework;
-
-    public class TestBase : MvxIoCSupportingTest
+    public static class DoubleExtensions
     {
-        [SetUp]
-        public void Init()
+        public static double Truncate(this double value)
         {
-            this.Setup();
+            return value >= 0 ? Math.Floor(value) : Math.Ceiling(value);
         }
     }
 }

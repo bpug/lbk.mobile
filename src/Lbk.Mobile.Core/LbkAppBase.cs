@@ -7,6 +7,7 @@
 namespace Lbk.Mobile.Core
 {
     using Cirrious.CrossCore;
+    using Cirrious.CrossCore.IoC;
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
@@ -41,9 +42,15 @@ namespace Lbk.Mobile.Core
         private void InitaliseServices()
         {
             Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
-            Mvx.RegisterType<IDataStoreService, DataStoreService>();
-            Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
-            //this.RegisterServiceInstance<IFirstService>(new FirstService());
+
+            CreatableTypes()
+               .EndingWith("Service")
+               .AsInterfaces()
+               .RegisterAsLazySingleton();
+
+            //Mvx.RegisterType<IXmlDataService, XmlDataService>();
+            //Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
+            
         }
 
         private void InitialisePlugins()

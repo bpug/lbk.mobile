@@ -18,7 +18,7 @@ namespace Lbk.Mobile.Data.Service.Service
     using Lbk.Mobile.Infrastructure.Interfaces;
     using Lbk.Mobile.Model;
 
-    public class DataStoreService : IDataStoreService
+    public class XmlDataService : IXmlDataService
     {
         private IMvxResourceLoader resourceLoader;
 

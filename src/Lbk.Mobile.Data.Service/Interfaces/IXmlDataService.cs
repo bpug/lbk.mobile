@@ -9,7 +9,7 @@ namespace Lbk.Mobile.Data.Service.Interfaces
     using Lbk.Mobile.Infrastructure.Interfaces;
     using Lbk.Mobile.Model;
 
-    public interface IDataStoreService
+    public interface IXmlDataService
     {
         IObservableCollection<History> GetHistories();
 

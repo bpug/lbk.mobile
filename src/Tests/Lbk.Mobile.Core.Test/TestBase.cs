@@ -1,15 +1,21 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="Constants.cs" company="ip-connect GmbH">
+//  <copyright file="TestBase.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Core.Test
 {
-    public class Constants
+    using Cirrious.MvvmCross.Test.Core;
+
+    using NUnit.Framework;
+
+    public class TestBase : MvxIoCSupportingTest
     {
-        public const string HistoryResourceFileName = @"Xml/History.xml";
-        public const string RoomResourceFileName = @"Xml/Room.xml";
-        public const string DbName = @"lbk.sql";
+        [SetUp]
+        public void Init()
+        {
+            this.Setup();
+        }
     }
 }

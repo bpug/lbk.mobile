@@ -18,13 +18,13 @@ namespace Lbk.Mobile.Data.Service.Interfaces
 
         Task<List<Event>> GetEventsAsync();
 
-        Task<DateTime?> GetGetMenuLastUpdateAsync();
+        Task<DateTime?> GetMenuLastUpdateAsync();
 
         Task<List<Picture>> GetPicturesAsync();
 
         Task<Quiz> GetQuizAsync(int questionCount);
 
-        Task<Guid> GetReservationAsync(Reservation reservation);
+        Task<Guid> CreateReservationAsync(Reservation reservation);
 
         Task<List<Video>> GetVideosAsyn();
     }
