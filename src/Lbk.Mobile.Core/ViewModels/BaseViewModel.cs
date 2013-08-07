@@ -36,7 +36,8 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        protected async void OnAsyncExecute<T>(Func<Task<T>> execute, Action<T> success)
+        
+        protected async void AsyncExecute<T>(Func<Task<T>> execute, Action<T> onSuccess, Action<Exception> onError = null)
         {
             if (IsBusy)
                 return;
@@ -54,10 +55,109 @@ namespace Lbk.Mobile.Core.ViewModels
                     {
                         var ex = (Exception)t.Exception;
                         Trace.Error("OnLoadExecute Error: " + ex.Message);
+                        if (onError != null)
+                        {
+                            onError(ex);
+                        }
                     }
                     else
                     {
-                        success(t.Result);
+                        onSuccess(t.Result);
+                    }
+                    this.IsBusy = false;
+                });
+        }
+
+        protected async void AsyncExecute<TResult, T1>(
+            Func<T1, Task<TResult>> execute,
+            T1 parameter1,
+            Action<TResult> onSuccess,
+            Action<Exception> onError = null)
+        {
+            if (IsBusy)
+                return;
+
+            this.IsBusy = true;
+
+            var task = execute(parameter1);
+
+            await task.ContinueWith(
+                t =>
+                {
+                    if (t.IsFaulted)
+                    {
+                        var ex = (Exception)t.Exception;
+                        Trace.Error("OnLoadExecute Error: " + ex.Message);
+                        if (onError != null)
+                        {
+                            onError(ex);
+                        }
+                    }
+                    else
+                    {
+                        onSuccess(t.Result);
+                    }
+                    this.IsBusy = false;
+                });
+        }
+
+        protected async void AsyncExecute<TResult, T1, T2>(Func<T1, T2, Task<TResult>> execute, T1 parameter1, T2 parameter2, Action<TResult> onSuccess, Action<Exception> onError = null)
+        {
+            if (IsBusy)
+                return;
+
+            this.IsBusy = true;
+
+            //object param = null;
+
+            var task = execute(parameter1, parameter2);
+
+            await task.ContinueWith(
+                t =>
+                {
+                    if (t.IsFaulted)
+                    {
+                        var ex = (Exception)t.Exception;
+                        Trace.Error("OnLoadExecute Error: " + ex.Message);
+                        if (onError != null)
+                        {
+                            onError(ex);
+                        }
+                    }
+                    else
+                    {
+                        onSuccess(t.Result);
+                    }
+                    this.IsBusy = false;
+                });
+        }
+
+        protected async void AsyncExecute<TResult, T1, T2, T3>(Func<T1, T2, T3, Task<TResult>> execute, T1 parameter1, T2 parameter2, T3 parameter3, Action<TResult> onSuccess, Action<Exception> onError = null)
+        {
+            if (IsBusy)
+                return;
+
+            this.IsBusy = true;
+
+            //object param = null;
+
+            var task = execute(parameter1, parameter2, parameter3);
+
+            await task.ContinueWith(
+                t =>
+                {
+                    if (t.IsFaulted)
+                    {
+                        var ex = (Exception)t.Exception;
+                        Trace.Error("OnLoadExecute Error: " + ex.Message);
+                        if (onError != null)
+                        {
+                            onError(ex);
+                        }
+                    }
+                    else
+                    {
+                        onSuccess(t.Result);
                     }
                     this.IsBusy = false;
                 });
