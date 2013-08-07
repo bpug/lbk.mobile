@@ -36,133 +36,6 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        
-        protected async void AsyncExecute<T>(Func<Task<T>> execute, Action<T> onSuccess, Action<Exception> onError = null)
-        {
-            if (IsBusy)
-                return;
-
-            this.IsBusy = true;
-
-            //object param = null;
-
-           var task = execute();
-
-            await task.ContinueWith(
-                t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        var ex = (Exception)t.Exception;
-                        Trace.Error("OnLoadExecute Error: " + ex.Message);
-                        if (onError != null)
-                        {
-                            onError(ex);
-                        }
-                    }
-                    else
-                    {
-                        onSuccess(t.Result);
-                    }
-                    this.IsBusy = false;
-                });
-        }
-
-        protected async void AsyncExecute<TResult, T1>(
-            Func<T1, Task<TResult>> execute,
-            T1 parameter1,
-            Action<TResult> onSuccess,
-            Action<Exception> onError = null)
-        {
-            if (IsBusy)
-                return;
-
-            this.IsBusy = true;
-
-            var task = execute(parameter1);
-
-            await task.ContinueWith(
-                t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        var ex = (Exception)t.Exception;
-                        Trace.Error("OnLoadExecute Error: " + ex.Message);
-                        if (onError != null)
-                        {
-                            onError(ex);
-                        }
-                    }
-                    else
-                    {
-                        onSuccess(t.Result);
-                    }
-                    this.IsBusy = false;
-                });
-        }
-
-        protected async void AsyncExecute<TResult, T1, T2>(Func<T1, T2, Task<TResult>> execute, T1 parameter1, T2 parameter2, Action<TResult> onSuccess, Action<Exception> onError = null)
-        {
-            if (IsBusy)
-                return;
-
-            this.IsBusy = true;
-
-            //object param = null;
-
-            var task = execute(parameter1, parameter2);
-
-            await task.ContinueWith(
-                t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        var ex = (Exception)t.Exception;
-                        Trace.Error("OnLoadExecute Error: " + ex.Message);
-                        if (onError != null)
-                        {
-                            onError(ex);
-                        }
-                    }
-                    else
-                    {
-                        onSuccess(t.Result);
-                    }
-                    this.IsBusy = false;
-                });
-        }
-
-        protected async void AsyncExecute<TResult, T1, T2, T3>(Func<T1, T2, T3, Task<TResult>> execute, T1 parameter1, T2 parameter2, T3 parameter3, Action<TResult> onSuccess, Action<Exception> onError = null)
-        {
-            if (IsBusy)
-                return;
-
-            this.IsBusy = true;
-
-            //object param = null;
-
-            var task = execute(parameter1, parameter2, parameter3);
-
-            await task.ContinueWith(
-                t =>
-                {
-                    if (t.IsFaulted)
-                    {
-                        var ex = (Exception)t.Exception;
-                        Trace.Error("OnLoadExecute Error: " + ex.Message);
-                        if (onError != null)
-                        {
-                            onError(ex);
-                        }
-                    }
-                    else
-                    {
-                        onSuccess(t.Result);
-                    }
-                    this.IsBusy = false;
-                });
-        }
-
         public IMvxLanguageBinder TextSource
         {
             get
@@ -184,6 +57,99 @@ namespace Lbk.Mobile.Core.ViewModels
             Mvx.Resolve<IErrorReporter>().ReportError(error);
         }
 
+        protected async Task AsyncExecute<T>(
+            Func<Task<T>> execute,
+            Action<T> onSuccess,
+            Action<Exception> onError = null)
+        {
+            if (this.IsBusy)
+            {
+                return;
+            }
+
+            this.IsBusy = true;
+
+            var task = execute();
+
+            await AsyncExecute(task, onSuccess, onError);
+
+            //await task.ContinueWith(
+            //    t =>
+            //    {
+            //        if (t.IsFaulted)
+            //        {
+            //            var ex = (Exception)t.Exception;
+            //            Trace.Error("OnLoadExecute Error: " + ex.Message);
+            //            if (onError != null)
+            //            {
+            //                onError(ex);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            onSuccess(t.Result);
+            //        }
+            //        this.IsBusy = false;
+            //    });
+        }
+
+        protected async Task AsyncExecute<TResult, T1>(
+            Func<T1, Task<TResult>> execute,
+            T1 parameter1,
+            Action<TResult> onSuccess,
+            Action<Exception> onError = null)
+        {
+            if (this.IsBusy)
+            {
+                return;
+            }
+
+            this.IsBusy = true;
+
+            var task = execute(parameter1);
+
+            await AsyncExecute(task, onSuccess, onError);
+        }
+
+        protected async Task AsyncExecute<TResult, T1, T2>(
+            Func<T1, T2, Task<TResult>> execute,
+            T1 parameter1,
+            T2 parameter2,
+            Action<TResult> onSuccess,
+            Action<Exception> onError = null)
+        {
+            if (this.IsBusy)
+            {
+                return;
+            }
+
+            this.IsBusy = true;
+
+            var task = execute(parameter1, parameter2);
+
+            await AsyncExecute(task, onSuccess, onError);
+        }
+
+        protected async Task AsyncExecute<TResult, T1, T2, T3>(
+            Func<T1, T2, T3, Task<TResult>> execute,
+            T1 parameter1,
+            T2 parameter2,
+            T3 parameter3,
+            Action<TResult> onSuccess,
+            Action<Exception> onError = null)
+        {
+            if (this.IsBusy)
+            {
+                return;
+            }
+
+            this.IsBusy = true;
+
+            var task = execute(parameter1, parameter2, parameter3);
+
+            await AsyncExecute(task, onSuccess, onError);
+        }
+
         protected void ComposeEmail(string to, string subject, string body)
         {
             var task = Mvx.Resolve<IMvxComposeEmailTask>();
@@ -198,6 +164,31 @@ namespace Lbk.Mobile.Core.ViewModels
         protected void Unsubscribe<TMessage>(MvxSubscriptionToken id) where TMessage : MvxMessage
         {
             this.MvxMessenger.Unsubscribe<TMessage>(id);
+        }
+
+        private async Task AsyncExecute<TResult>(
+            Task<TResult> task,
+            Action<TResult> onSuccess,
+            Action<Exception> onError = null)
+        {
+            await task.ContinueWith(
+                t =>
+                {
+                    if (t.IsFaulted)
+                    {
+                        var ex = (Exception)t.Exception;
+                        Trace.Error("OnLoadExecute Error: " + ex.Message);
+                        if (onError != null)
+                        {
+                            onError(ex);
+                        }
+                    }
+                    else
+                    {
+                        onSuccess(t.Result);
+                    }
+                    this.IsBusy = false;
+                });
         }
     }
 }

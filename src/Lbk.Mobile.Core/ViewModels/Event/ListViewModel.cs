@@ -8,6 +8,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using System.Windows.Input;
     using Cirrious.MvvmCross.ViewModels;
     using Lbk.Mobile.Data.Service.Interfaces;
@@ -52,7 +53,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         {
             get
             {
-                return new MvxCommand(this.OnLoadExecute);
+                return new MvxCommand(async () => await this.OnLoadExecute());
             }
         }
 
@@ -106,9 +107,9 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         //    //this.IsBusy = false;
         //}
 
-        private async void OnLoadExecute()
+        private async Task OnLoadExecute()
         {
-            OnAsyncExecute(() => this.service.GetEventsAsync(), list => this.Events = list);
+            await this.AsyncExecute(() => this.service.GetEventsAsync(), list => this.Events = list);
             
             //if (IsBusy)
             //    return;
