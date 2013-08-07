@@ -29,9 +29,9 @@ namespace Lbk.Mobile.Data.Service.Service
             this.GetDeviceUid();
         }
 
-        public async Task<DishesOfTheDay> GetDishesOfTheDayAsync(DateTime date)
+        public async Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
         {
-            var result = await this.Service.GetDishesOfTheDayAsyncTask(date, this.deviceUid);
+            var result = await this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
             return result;
         }
 

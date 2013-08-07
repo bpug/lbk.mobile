@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace Lbk.Mobile.Core.Test.ViewModels
 {
     using Cirrious.MvvmCross.Plugins.DeviceIdentifier.Interfaces;
+    using Cirrious.MvvmCross.Plugins.Network.Reachability;
 
+    using Lbk.Mobile.Core.Test.Services;
     using Lbk.Mobile.Core.ViewModels.Event;
     using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.Service;
@@ -46,6 +48,11 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             var test = eventViewModel.Events;
 
             
+        }
+
+        protected override void AdditionalSetup()
+        {
+            this.Ioc.RegisterType<IMvxReachability, MvxTestReachability>();
         }
     }
 }

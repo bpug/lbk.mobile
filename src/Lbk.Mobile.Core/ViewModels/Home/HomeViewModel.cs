@@ -75,7 +75,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<MenuOfTheDayViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<TodaysMenuViewModel>());
             }
         }
 

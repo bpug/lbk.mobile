@@ -14,10 +14,12 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.Plugins.Email;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
+    using Cirrious.MvvmCross.Plugins.WebBrowser;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Core.Interfaces.Errors;
     using Lbk.Mobile.Infrastructure;
+    using Lbk.Mobile.Infrastructure.Exceptions;
 
     public class BaseViewModel : MvxViewModel
     {
@@ -45,6 +47,12 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
+        protected void ShowWebPage(string webPage)
+        {
+            var task = Mvx.Resolve<IMvxWebBrowserTask>();
+            task.ShowWebPage(webPage);
+        }
+
         private IMvxMessenger MvxMessenger
         {
             get
@@ -63,12 +71,10 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<T> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy || !IsReachable())
+            if (!this.CanAsyncExecute(onError))
             {
                 return;
             }
-
-            this.IsBusy = true;
 
             var task = execute();
 
@@ -100,12 +106,10 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy || !IsReachable())
+            if (!this.CanAsyncExecute(onError))
             {
                 return;
             }
-
-            this.IsBusy = true;
 
             var task = execute(parameter1);
 
@@ -119,12 +123,10 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy || !IsReachable())
+            if (!this.CanAsyncExecute(onError))
             {
                 return;
             }
-
-            this.IsBusy = true;
 
             var task = execute(parameter1, parameter2);
 
@@ -139,7 +141,7 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy || !IsReachable())
+            if (!this.CanAsyncExecute(onError))
             {
                 return;
             }
@@ -149,6 +151,26 @@ namespace Lbk.Mobile.Core.ViewModels
             var task = execute(parameter1, parameter2, parameter3);
 
             await AsyncExecute(task, onSuccess, onError);
+        }
+
+        private bool CanAsyncExecute(Action<Exception> onError)
+        {
+            if (!IsReachable())
+            {
+                if (onError != null)
+                {
+                    onError(new ReachabilityException());
+                }
+                return false;
+            }
+
+            if (this.IsBusy)
+            {
+                return false;
+            }
+
+            this.IsBusy = true;
+            return true;
         }
 
         protected void ComposeEmail(string to, string subject, string body)

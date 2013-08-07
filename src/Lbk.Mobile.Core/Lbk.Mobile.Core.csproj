@@ -64,7 +64,7 @@
     <Compile Include="ViewModels\Home\HomeViewModel_Old.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
-    <Compile Include="ViewModels\MenuOfTheDay\MenuOfTheDayViewModel.cs" />
+    <Compile Include="ViewModels\TodaysMenu\TodaysMenuViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizHomeViewModel.cs" />
     <Compile Include="ViewModels\Reservation\ReservationViewModel.cs" />

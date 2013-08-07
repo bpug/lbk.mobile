@@ -55,6 +55,12 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
       <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.0.10\lib\net45\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Network">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Network.3.0.10\lib\net45\Cirrious.MvvmCross.Plugins.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Network.Wpf">
+      <HintPath>..\..\packages\MvvmCross.HotTuna.Plugin.Network.3.0.10\lib\net45\Cirrious.MvvmCross.Plugins.Network.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.10\lib\net45\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
@@ -98,8 +104,10 @@
   <ItemGroup>
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ResourceLoaderPluginBootstrap.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Services\MvxTestReachability.cs" />
     <Compile Include="Services\MvxTestFileStore.cs" />
     <Compile Include="Services\MvxTestResourceLoader.cs" />
     <Compile Include="Services\LbkServiceTest.cs" />

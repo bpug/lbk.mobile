@@ -48,7 +48,7 @@ namespace Lbk.Mobile.Data.Service.Extensions
             return tcs.Task;
         }
 
-        public static Task<DishesOfTheDay> GetDishesOfTheDayAsyncTask(
+        public static Task<DishesOfTheDay> TodaysMenuAsyncTask(
             this Service1SoapClient client,
             DateTime date,
             string fingerprint)

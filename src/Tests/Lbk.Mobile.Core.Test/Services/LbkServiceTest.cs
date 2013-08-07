@@ -54,7 +54,7 @@ namespace Lbk.Mobile.Core.Test.Services
             var service = new LbkMobileService(mock.Object);
             onDeviceUidSuccess(Constants.DeviceUidTest);
 
-            var result = await service.GetDishesOfTheDayAsync(DateTime.Now);
+            var result = await service.GetTodaysMenuAsync(DateTime.Now);
 
             Assert.NotNull(result);
             Assert.Greater(result.DishOfTheDay.Count(), 0);

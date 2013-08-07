@@ -63,6 +63,7 @@ namespace Lbk.Mobile.Core
             Cirrious.MvvmCross.Plugins.Email.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Network.PluginLoader.Instance.EnsureLoaded();
+            Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader.Instance.EnsureLoaded();
         }
     }
 }

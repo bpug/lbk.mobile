@@ -14,6 +14,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.LbkMobileService;
     using Lbk.Mobile.Infrastructure;
+    using Lbk.Mobile.Infrastructure.Exceptions;
     using Lbk.Mobile.Infrastructure.Extensions;
 
     public class ListViewModel : BaseViewModel
@@ -25,7 +26,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         public ListViewModel(ILbkMobileService service)
         {
             this.service = service;
-            this.OnLoadExecute();
+            LoadCommand.Execute(null);
         }
 
         public List<Event> Events
@@ -79,6 +80,14 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             }
         }
 
+        public ICommand ShowOrderCommand
+        {
+            get
+            {
+                return new MvxCommand<Event>(item => this.ShowWebPage(item.ReservationLink));
+            }
+        }
+
         //public async Task OnLoadEventsExecute()
         //{
         //    this.IsBusy = true;
@@ -109,7 +118,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 
         private async Task OnLoadExecute()
         {
-            await this.AsyncExecute(() => this.service.GetEventsAsync(), list => this.Events = list);
+            await this.AsyncExecute(() => this.service.GetEventsAsync(), list => this.Events = list, OnLoadError);
             
             //if (IsBusy)
             //    return;
@@ -131,6 +140,14 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             //        }
             //        this.IsBusy = false;
             //    });
+        }
+
+        private void OnLoadError(Exception exception)
+        {
+            if (exception is ReachabilityException)
+            {
+                Trace.Warn("Not Reachability");
+            }
         }
 
         //private async void OnLoadExecute2()

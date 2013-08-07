@@ -14,7 +14,7 @@ namespace Lbk.Mobile.Data.Service.Interfaces
 
     public interface ILbkMobileService
     {
-        Task<DishesOfTheDay> GetDishesOfTheDayAsync(DateTime date);
+        Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date);
 
         Task<List<Event>> GetEventsAsync();
 
