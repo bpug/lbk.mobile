@@ -13,6 +13,7 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Email;
     using Cirrious.MvvmCross.Plugins.Messenger;
+    using Cirrious.MvvmCross.Plugins.Network.Reachability;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Core.Interfaces.Errors;
@@ -62,7 +63,7 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<T> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy)
+            if (this.IsBusy || !IsReachable())
             {
                 return;
             }
@@ -99,7 +100,7 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy)
+            if (this.IsBusy || !IsReachable())
             {
                 return;
             }
@@ -118,7 +119,7 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy)
+            if (this.IsBusy || !IsReachable())
             {
                 return;
             }
@@ -138,7 +139,7 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
-            if (this.IsBusy)
+            if (this.IsBusy || !IsReachable())
             {
                 return;
             }
@@ -166,6 +167,12 @@ namespace Lbk.Mobile.Core.ViewModels
             this.MvxMessenger.Unsubscribe<TMessage>(id);
         }
 
+        private static bool IsReachable()
+        {
+            var reachability = Mvx.Resolve<IMvxReachability>();
+            return reachability.IsHostReachable(Constants.HostReachableName);
+        }
+
         private async Task AsyncExecute<TResult>(
             Task<TResult> task,
             Action<TResult> onSuccess,
@@ -177,7 +184,8 @@ namespace Lbk.Mobile.Core.ViewModels
                     if (t.IsFaulted)
                     {
                         var ex = (Exception)t.Exception;
-                        Trace.Error("OnLoadExecute Error: " + ex.Message);
+                        Trace.Error("OnAsyncExecute Error: " + ex.Message);
+                        ReportError("OnAsyncExecute Error: " + ex.Message);
                         if (onError != null)
                         {
                             onError(ex);

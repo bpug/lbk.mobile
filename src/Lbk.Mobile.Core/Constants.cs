@@ -9,5 +9,6 @@ namespace Lbk.Mobile.Core
     public class Constants
     {
         public const string GeneralNamespace = "Lbk";
+        public const string HostReachableName = "www.google.com";
     }
 }
