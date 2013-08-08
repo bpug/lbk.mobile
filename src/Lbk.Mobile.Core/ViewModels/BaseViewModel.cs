@@ -17,13 +17,23 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.Plugins.WebBrowser;
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Core.Interfaces.Errors;
+    using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Infrastructure;
     using Lbk.Mobile.Infrastructure.Exceptions;
 
     public class BaseViewModel : MvxViewModel
     {
         private bool isBusy;
+
+        private IMvxMessenger mvxMessenger;
+
+        public IMvxLanguageBinder ErrorTextSource
+        {
+            get
+            {
+                return new MvxLanguageBinder(Constants.GeneralNamespace, Constants.ErrorType);
+            }
+        }
 
         public bool IsBusy
         {
@@ -39,6 +49,14 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
+        public IMvxLanguageBinder SharedTextSource
+        {
+            get
+            {
+                return new MvxLanguageBinder(Constants.GeneralNamespace, Constants.ShareType);
+            }
+        }
+
         public IMvxLanguageBinder TextSource
         {
             get
@@ -47,23 +65,19 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        protected void ShowWebPage(string webPage)
-        {
-            var task = Mvx.Resolve<IMvxWebBrowserTask>();
-            task.ShowWebPage(webPage);
-        }
-
         private IMvxMessenger MvxMessenger
         {
             get
             {
-                return Mvx.Resolve<IMvxMessenger>();
+                return this.mvxMessenger ?? (this.mvxMessenger = Mvx.Resolve<IMvxMessenger>());
             }
         }
 
+
+
         public void ReportError(string error)
         {
-            Mvx.Resolve<IErrorReporter>().ReportError(error);
+            Mvx.Resolve<IErrorService>().ReportError(error);
         }
 
         protected async Task AsyncExecute<T>(
@@ -153,30 +167,16 @@ namespace Lbk.Mobile.Core.ViewModels
             await AsyncExecute(task, onSuccess, onError);
         }
 
-        private bool CanAsyncExecute(Action<Exception> onError)
-        {
-            if (!IsReachable())
-            {
-                if (onError != null)
-                {
-                    onError(new ReachabilityException());
-                }
-                return false;
-            }
-
-            if (this.IsBusy)
-            {
-                return false;
-            }
-
-            this.IsBusy = true;
-            return true;
-        }
-
         protected void ComposeEmail(string to, string subject, string body)
         {
             var task = Mvx.Resolve<IMvxComposeEmailTask>();
             task.ComposeEmail(to, null, subject, body, false);
+        }
+
+        protected void ShowWebPage(string webPage)
+        {
+            var task = Mvx.Resolve<IMvxWebBrowserTask>();
+            task.ShowWebPage(webPage);
         }
 
         protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage
@@ -184,9 +184,9 @@ namespace Lbk.Mobile.Core.ViewModels
             return this.MvxMessenger.Subscribe<TMessage>(action, MvxReference.Weak);
         }
 
-        protected void Unsubscribe<TMessage>(MvxSubscriptionToken id) where TMessage : MvxMessage
+        protected void Unsubscribe<TMessage>(MvxSubscriptionToken token) where TMessage : MvxMessage
         {
-            this.MvxMessenger.Unsubscribe<TMessage>(id);
+            this.MvxMessenger.Unsubscribe<TMessage>(token);
         }
 
         private static bool IsReachable()
@@ -207,7 +207,7 @@ namespace Lbk.Mobile.Core.ViewModels
                     {
                         var ex = (Exception)t.Exception;
                         Trace.Error("OnAsyncExecute Error: " + ex.Message);
-                        ReportError("OnAsyncExecute Error: " + ex.Message);
+                        this.ReportError(this.ErrorTextSource.GetText("OnAsyncExecute") + ex.Message);
                         if (onError != null)
                         {
                             onError(ex);
@@ -219,6 +219,27 @@ namespace Lbk.Mobile.Core.ViewModels
                     }
                     this.IsBusy = false;
                 });
+        }
+
+        private bool CanAsyncExecute(Action<Exception> onError)
+        {
+            if (!IsReachable())
+            {
+                this.ReportError(this.ErrorTextSource.GetText("NotReachable"));
+                if (onError != null)
+                {
+                    onError(new ReachabilityException());
+                }
+                return false;
+            }
+
+            if (this.IsBusy)
+            {
+                return false;
+            }
+
+            this.IsBusy = true;
+            return true;
         }
     }
 }

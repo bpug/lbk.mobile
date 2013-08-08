@@ -61,20 +61,38 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No internet connection.
+        /// </summary>
+        public static string Lbk_Error_NotReachable {
+            get {
+                return ResourceManager.GetString("Lbk.Error.NotReachable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Error: .
+        /// </summary>
+        public static string Lbk_Error_OnAsyncExecute {
+            get {
+                return ResourceManager.GetString("Lbk.Error.OnAsyncExecute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to (Eng) Hallo ......
         /// </summary>
-        public static string Lbk_Recommend_MailBody {
+        public static string Lbk_HomeViewModel_Recommend_MailBody {
             get {
-                return ResourceManager.GetString("Lbk.Recommend.MailBody", resourceCulture);
+                return ResourceManager.GetString("Lbk.HomeViewModel.Recommend.MailBody", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (Eng) Löwenbräukeller-App Empfelung.
         /// </summary>
-        public static string Lbk_Recommend_MailSubject {
+        public static string Lbk_HomeViewModel_Recommend_MailSubject {
             get {
-                return ResourceManager.GetString("Lbk.Recommend.MailSubject", resourceCulture);
+                return ResourceManager.GetString("Lbk.HomeViewModel.Recommend.MailSubject", resourceCulture);
             }
         }
         

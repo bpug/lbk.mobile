@@ -1,16 +1,13 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="IFirstService.cs" company="ip-connect GmbH">
+//  <copyright file="IErrorService.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Interfaces.First
+namespace Lbk.Mobile.Core.Services.Error
 {
-    using System;
-    using System.Collections.Generic;
-
-    public interface IFirstService
+    public interface IErrorService
     {
-        void GetItems(string key, Action<List<SimpleItem>> onSuccess, Action<FirstServiceError> onError);
+        void ReportError(string error);
     }
 }

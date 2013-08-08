@@ -24,12 +24,6 @@ namespace Lbk.Mobile.Core.ViewModels.Home
 
     public class HomeViewModel : BaseViewModel
     {
-        private readonly IMvxTextProvider textProvider;
-
-        public HomeViewModel(IMvxTextProvider textProvider)
-        {
-            this.textProvider = textProvider;
-        }
 
         public ICommand ShowContactCommand
         {
@@ -91,8 +85,9 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                string subject = this.TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "MailSubject");
-                string body = this.TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "MailBody");
+                //string subject = this.TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "Recommend.MailSubject");
+                string subject = this.TextSource.GetText("Recommend.MailSubject");
+                string body = this.TextSource.GetText("Recommend.MailBody");
                 return new MvxCommand(() => this.ComposeEmail("", subject, body));
             }
         }
@@ -121,12 +116,6 @@ namespace Lbk.Mobile.Core.ViewModels.Home
             }
         }
 
-        public IMvxTextProvider TextProvider
-        {
-            get
-            {
-                return this.textProvider;
-            }
-        }
+        
     }
 }

@@ -4,13 +4,11 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.ApplicationObjects
+namespace Lbk.Mobile.Core.Services.Error
 {
     using System;
 
     using Cirrious.CrossCore.Core;
-
-    using Lbk.Mobile.Core.Interfaces.Errors;
 
     public class ErrorApplicationObject : MvxMainThreadDispatchingObject, IErrorReporter, IErrorSource
     {

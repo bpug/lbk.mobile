@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Lbk.Recommend.MailBody" xml:space="preserve">
+  <data name="Lbk.Error.NotReachable" xml:space="preserve">
+    <value>Keine Internetverbindung</value>
+  </data>
+  <data name="Lbk.Error.OnAsyncExecute" xml:space="preserve">
+    <value>Service Fehler: </value>
+  </data>
+  <data name="Lbk.HomeViewModel.Recommend.MailBody" xml:space="preserve">
     <value>Hallo .....</value>
   </data>
-  <data name="Lbk.Recommend.MailSubject" xml:space="preserve">
+  <data name="Lbk.HomeViewModel.Recommend.MailSubject" xml:space="preserve">
     <value>Löwenbräukeller-App Empfelung</value>
   </data>
   <data name="Lbk.Test.Text" xml:space="preserve">

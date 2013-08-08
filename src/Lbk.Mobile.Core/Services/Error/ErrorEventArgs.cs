@@ -1,13 +1,20 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="IErrorReporter.cs" company="ip-connect GmbH">
+//  <copyright file="ErrorEventArgs.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Interfaces.Errors
+namespace Lbk.Mobile.Core.Services.Error
 {
-    public interface IErrorReporter
+    using System;
+
+    public class ErrorEventArgs : EventArgs
     {
-        void ReportError(string error);
+        public ErrorEventArgs(string message)
+        {
+            this.Message = message;
+        }
+
+        public string Message { get; private set; }
     }
 }

@@ -1,15 +1,15 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="FirstServiceError.cs" company="ip-connect GmbH">
+//  <copyright file="IErrorSource.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Interfaces.First
+namespace Lbk.Mobile.Core.Services.Error
 {
-    public enum FirstServiceError
-    {
-        ErrorUnknown,
+    using System;
 
-        ErrorEmptyKey
+    public interface IErrorSource
+    {
+        event EventHandler<ErrorEventArgs> ErrorReported;
     }
 }

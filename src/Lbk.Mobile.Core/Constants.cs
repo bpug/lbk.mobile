@@ -9,6 +9,8 @@ namespace Lbk.Mobile.Core
     public class Constants
     {
         public const string GeneralNamespace = "Lbk";
+        public const string ShareType = "Share";
+        public const string ErrorType = "Error";
         public const string HostReachableName = "www.google.com";
     }
 }
