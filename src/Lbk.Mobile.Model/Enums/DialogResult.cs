@@ -1,12 +1,27 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="QuizHomeViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="DialogResult.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.ViewModels.Quiz
+namespace Lbk.Mobile.Model.Enums
 {
-    public class QuizHomeViewModel : BaseViewModel
+    public enum DialogResult
     {
+        None,
+
+        Ok,
+
+        Cancel,
+
+        Abort,
+
+        Retry,
+
+        Ignore,
+
+        Yes,
+
+        No
     }
 }

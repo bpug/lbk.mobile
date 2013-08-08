@@ -77,7 +77,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<QuizHomeViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<Quiz.HomeViewModel>());
             }
         }
 

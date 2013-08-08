@@ -55,6 +55,7 @@ namespace Lbk.Mobile.Core
             // e.g. Cirrious.MvvmCross.Plugins.Visibility.PluginLoader.Instance.EnsureLoaded();
             //PluginLoader.Instance.EnsureLoaded();
             PluginLoader.Instance.EnsureLoaded();
+            Cirrious.MvvmCross.Plugins.Messenger.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Sqlite.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Email.PluginLoader.Instance.EnsureLoaded();
             Plugin.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();

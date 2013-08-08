@@ -65,7 +65,7 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        private IMvxMessenger MvxMessenger
+        protected IMvxMessenger MvxMessenger
         {
             get
             {

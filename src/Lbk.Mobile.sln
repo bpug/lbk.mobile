@@ -40,6 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Infrastructure.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.DeviceIdentifier", "Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj", "{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{2A654FF5-A82D-4311-8826-ECA94C5FEF0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.Settings", "Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj", "{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +110,10 @@ Global
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +127,8 @@ Global
 		{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71} = {BF459CE8-0F92-4823-B1A3-2091E4183FA6}
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F} = {BF459CE8-0F92-4823-B1A3-2091E4183FA6}
 		{A853016C-6BCC-4946-BD0C-FDDF894A9A32} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
+		{2A654FF5-A82D-4311-8826-ECA94C5FEF0E} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B} = {A853016C-6BCC-4946-BD0C-FDDF894A9A32}
+		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D} = {2A654FF5-A82D-4311-8826-ECA94C5FEF0E}
 	EndGlobalSection
 EndGlobal

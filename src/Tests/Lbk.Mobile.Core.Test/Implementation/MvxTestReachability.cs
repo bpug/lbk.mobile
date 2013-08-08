@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Test.Services
+namespace Lbk.Mobile.Core.Test.Implementation
 {
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
 

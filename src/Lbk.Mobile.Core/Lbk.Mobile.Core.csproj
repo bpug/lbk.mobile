@@ -39,6 +39,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\Converters.cs" />
     <Compile Include="Converters\TimeAgoConverter.cs" />
+    <Compile Include="Messages\DialogMessage.cs" />
+    <Compile Include="Messages\YouthProtectionMessage.cs" />
     <Compile Include="Services\Error\ErrorService.cs" />
     <Compile Include="LbkApp.cs" />
     <Compile Include="Messages\ErrorMessage.cs" />
@@ -57,9 +59,12 @@
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
+    <Compile Include="ViewModels\Settings.cs" />
     <Compile Include="ViewModels\TodaysMenu\TodaysMenuViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuViewModel.cs" />
-    <Compile Include="ViewModels\Quiz\QuizHomeViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\HomeViewModel.cs" />
     <Compile Include="ViewModels\Reservation\ReservationViewModel.cs" />
     <Compile Include="ViewModels\Room\RoomViewModel.cs" />
     <Compile Include="ViewModels\Video\VideoViewModel.cs" />
@@ -136,6 +141,10 @@
     <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
       <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
       <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj">
+      <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
+      <Name>Lbk.Mobile.Plugin.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

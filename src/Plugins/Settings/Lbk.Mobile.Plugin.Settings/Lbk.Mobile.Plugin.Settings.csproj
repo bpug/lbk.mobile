@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}</ProjectGuid>
+    <ProjectGuid>{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lbk.Mobile.Model</RootNamespace>
-    <AssemblyName>Lbk.Mobile.Model</AssemblyName>
+    <RootNamespace>Lbk.Mobile.Plugin.Settings</RootNamespace>
+    <AssemblyName>Lbk.Mobile.Plugin.Settings</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile104</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -37,18 +37,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDbEntity.cs" />
-    <Compile Include="Enums\DialogResult.cs" />
-    <Compile Include="IDbEntity.cs" />
-    <Compile Include="Dish.cs" />
-    <Compile Include="History.cs" />
+    <Compile Include="ISettings.cs" />
+    <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuizVoucher.cs" />
-    <Compile Include="Room.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite">
-      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Sqlite.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
