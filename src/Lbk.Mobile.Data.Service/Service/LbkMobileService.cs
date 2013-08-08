@@ -10,11 +10,10 @@ namespace Lbk.Mobile.Data.Service.Service
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Cirrious.MvvmCross.Plugins.DeviceIdentifier.Interfaces;
-
     using Lbk.Mobile.Data.Service.Extensions;
     using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.LbkMobileService;
+    using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     public class LbkMobileService : LbkMobileServiceBase<Service1SoapClient>, ILbkMobileService
     {

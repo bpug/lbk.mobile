@@ -55,7 +55,6 @@
     <Compile Include="ViewModels\Event\DetailViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
-    <Compile Include="ViewModels\Home\HomeViewModel_Old.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
     <Compile Include="ViewModels\TodaysMenu\TodaysMenuViewModel.cs" />
@@ -134,9 +133,9 @@
       <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
       <Name>Lbk.Mobile.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\DeviceIdentifier\Cirrious.MvvmCross.Plugins.DeviceIdentifier\Cirrious.MvvmCross.Plugins.DeviceIdentifier.csproj">
+    <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
       <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
-      <Name>Cirrious.MvvmCross.Plugins.DeviceIdentifier</Name>
+      <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

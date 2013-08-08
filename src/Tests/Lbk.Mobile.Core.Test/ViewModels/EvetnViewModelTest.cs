@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="EvetnViewModelTest.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.Test.ViewModels
 {
-    using Cirrious.MvvmCross.Plugins.DeviceIdentifier.Interfaces;
+    using System;
+
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
 
     using Lbk.Mobile.Core.Test.Services;
     using Lbk.Mobile.Core.ViewModels.Event;
-    using Lbk.Mobile.Data.Service.Interfaces;
     using Lbk.Mobile.Data.Service.Service;
+    using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     using Moq;
 
@@ -35,7 +36,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
                         onDeviceUidSuccess = id;
                         onDeviceUidError = error;
                     });
-            
+
             var service = new LbkMobileService(mock.Object);
 
             var eventViewModel = new ListViewModel(service);
@@ -46,8 +47,6 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             //eventViewModel.LoadCommand.Execute(null);
 
             var test = eventViewModel.Events;
-
-            
         }
 
         protected override void AdditionalSetup()

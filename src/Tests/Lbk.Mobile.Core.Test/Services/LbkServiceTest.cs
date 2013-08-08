@@ -9,9 +9,8 @@ namespace Lbk.Mobile.Core.Test.Services
     using System;
     using System.Linq;
 
-    using Cirrious.MvvmCross.Plugins.DeviceIdentifier.Interfaces;
-
     using Lbk.Mobile.Data.Service.Service;
+    using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     using Moq;
 

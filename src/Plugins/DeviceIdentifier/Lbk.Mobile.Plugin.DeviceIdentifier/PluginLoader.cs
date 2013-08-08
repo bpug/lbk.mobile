@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Cirrious.MvvmCross.Plugins.DeviceIdentifier
+namespace Lbk.Mobile.Plugin.DeviceIdentifier
 {
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Plugins;

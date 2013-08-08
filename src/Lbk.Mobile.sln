@@ -22,8 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{AB9B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DeviceIdentifier", "DeviceIdentifier", "{A853016C-6BCC-4946-BD0C-FDDF894A9A32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cirrious.MvvmCross.Plugins.DeviceIdentifier", "Plugins\DeviceIdentifier\Cirrious.MvvmCross.Plugins.DeviceIdentifier\Cirrious.MvvmCross.Plugins.DeviceIdentifier.csproj", "{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidClassLibrary", "Tests\AndroidClassLibrary\AndroidClassLibrary.csproj", "{B080457F-3282-4B85-96D6-6FBFBEADDCA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidTest", "Tests\AndroidTest\AndroidTest.csproj", "{BF8B91DF-1962-497A-95B6-240D707CF702}"
@@ -39,6 +37,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Core.Test", "Tests\Lbk.Mobile.Core.Test\Lbk.Mobile.Core.Test.csproj", "{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Infrastructure.Test", "Tests\Lbk.Mobile.Infrastructure.Test\Lbk.Mobile.Infrastructure.Test.csproj", "{3E1DF4C3-9551-4847-94AD-1D07B525124F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.DeviceIdentifier", "Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj", "{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,10 +68,6 @@ Global
 		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B080457F-3282-4B85-96D6-6FBFBEADDCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B080457F-3282-4B85-96D6-6FBFBEADDCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B080457F-3282-4B85-96D6-6FBFBEADDCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -106,6 +102,10 @@ Global
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
