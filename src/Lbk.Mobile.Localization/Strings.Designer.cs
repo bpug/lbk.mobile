@@ -97,6 +97,15 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I confirm that I am at least 18 years old..
+        /// </summary>
+        public static string Lbk_QuizStartViewModel_YouthProtectionQuestion {
+            get {
+                return ResourceManager.GetString("Lbk.QuizStartViewModel.YouthProtectionQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string Lbk_Test_Text {

@@ -124,7 +124,7 @@
     <Compile Include="Services\DataStoreServiceTest.cs" />
     <Compile Include="Services\LocalizationTest.cs" />
     <Compile Include="ViewModels\QuizStartViewModelTest.cs" />
-    <Compile Include="ViewModels\EvetnViewModelTest.cs" />
+    <Compile Include="ViewModels\EventViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Lbk.Mobile.Common\Lbk.Mobile.Common.csproj">

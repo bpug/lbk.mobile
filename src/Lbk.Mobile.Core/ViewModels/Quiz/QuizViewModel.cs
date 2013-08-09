@@ -6,11 +6,36 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Quiz
 {
+    using System.Threading.Tasks;
+    using System.Windows.Input;
+
+    using Cirrious.MvvmCross.ViewModels;
+
+    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Data.Service;
+
     public class QuizViewModel : BaseViewModel
     {
-        private int quiz;
+        private const int QuestionCount = 10;
 
-        public int Quiz
+        private readonly ILbkMobileService service;
+
+        private Quiz quiz;
+
+        public QuizViewModel(ILbkMobileService service)
+        {
+            this.service = service;
+        }
+
+        public ICommand LoadCommand
+        {
+            get
+            {
+                return new MvxCommand(async () => await this.LoadExecute());
+            }
+        }
+
+        public Quiz Quiz
         {
             get
             {
@@ -23,9 +48,9 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public void Init(int quiz)
+        private async Task LoadExecute()
         {
-            this.Quiz = quiz;
+            await this.AsyncExecute(() => this.service.GetQuizAsync(QuestionCount), list => { this.Quiz = list; });
         }
     }
 }

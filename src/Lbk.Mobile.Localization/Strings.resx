@@ -129,6 +129,9 @@
   <data name="Lbk.HomeViewModel.Recommend.MailSubject" xml:space="preserve">
     <value>(Eng) Löwenbräukeller-App Empfelung</value>
   </data>
+  <data name="Lbk.QuizStartViewModel.YouthProtectionQuestion" xml:space="preserve">
+    <value>I confirm that I am at least 18 years old.</value>
+  </data>
   <data name="Lbk.Test.Text" xml:space="preserve">
     <value>English</value>
   </data>

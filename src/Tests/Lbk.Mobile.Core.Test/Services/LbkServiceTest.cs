@@ -8,9 +8,10 @@ namespace Lbk.Mobile.Core.Test.Services
 {
     using System;
     using System.Linq;
+    using System.Threading.Tasks;
 
+    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Service;
-    using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     using Moq;
 
@@ -19,8 +20,6 @@ namespace Lbk.Mobile.Core.Test.Services
     [TestFixture]
     public class LbkServiceTest : TestBase
     {
-       
-
         //[Test]
         //public async void TestGetEventsAsync()
         //{
@@ -36,76 +35,55 @@ namespace Lbk.Mobile.Core.Test.Services
         [Test]
         public async void GetDishesOfTheDayTest()
         {
-            Action<string> onDeviceUidSuccess = null;
-            Action<Exception> onDeviceUidError = null;
+            //this.InitLbkMobileService();
+            //var service = this.Ioc.Resolve<ILbkMobileService>();
 
-            var mock = new Mock<IDeviceUidService>();
-            mock.Setup(s => s.GetDeviceUid(It.IsAny<Action<string>>(), It.IsAny<Action<Exception>>()))
-                .Callback(
-                    (Action<string> id, Action<Exception> error) =>
-                    {
-                        onDeviceUidSuccess = id;
-                        onDeviceUidError = error;
-                    });
+            var mockService = this.CreateMockMobileService();
+            var service = mockService.Object;
+
+            //DishesOfTheDay result = null;
+            //mockService.Setup(m => m.GetTodaysMenuAsync(It.IsAny<DateTime>())).Callback( async (Task<DishesOfTheDay> e) => { result = await e; });
 
             //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
 
-            var service = new LbkMobileService(mock.Object);
-            onDeviceUidSuccess(Constants.DeviceUidTest);
+            this.OnDeviceUidSuccess(Constants.DeviceUidTest);
 
-            var result = await service.GetTodaysMenuAsync(DateTime.Now);
+            var dishOfTheDay = await service.GetTodaysMenuAsync(DateTime.Now);
 
-            Assert.NotNull(result);
-            Assert.Greater(result.DishOfTheDay.Count(), 0);
+            Assert.NotNull(dishOfTheDay);
+            Assert.Greater(dishOfTheDay.DishOfTheDay.Count(), 0);
+
+            //mockService.Verify(s => s.GetTodaysMenuAsync(It.IsAny<DateTime>()), Times.Once());
         }
 
         [Test]
         public async void GetEventsTest()
         {
-            Action<string> onDeviceUidSuccess = null;
-            Action<Exception> onDeviceUidError = null;
+            //this.InitLbkMobileService();
+            //var service = this.Ioc.Resolve<ILbkMobileService>();
 
-            var mock = new Mock<IDeviceUidService>();
-            mock.Setup(s => s.GetDeviceUid(It.IsAny<Action<string>>(), It.IsAny<Action<Exception>>()))
-                .Callback(
-                    (Action<string> id, Action<Exception> error) =>
-                    {
-                        onDeviceUidSuccess = id;
-                        onDeviceUidError = error;
-                    });
+            var mockService = this.CreateMockMobileService();
+            var service = mockService.Object;
 
-            //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
-
-            var service = new LbkMobileService(mock.Object);
-            onDeviceUidSuccess(Constants.DeviceUidTest);
+            this.OnDeviceUidSuccess(Constants.DeviceUidTest);
 
             var result = await service.GetEventsAsync();
 
             Assert.NotNull(result);
             Assert.Greater(result.Count, 0);
+
+            //mockService.Verify(s => s.GetEventsAsync(), Times.Once());
         }
 
         [Test]
         public async void GetQuizTest()
         {
-            Action<string> onDeviceUidSuccess = null;
-            Action<Exception> onDeviceUidError = null;
-
             const int QuestionsCount = 12;
-
-            var mock = new Mock<IDeviceUidService>();
-            mock.Setup(s => s.GetDeviceUid(It.IsAny<Action<string>>(), It.IsAny<Action<Exception>>()))
-                .Callback(
-                    (Action<string> id, Action<Exception> error) =>
-                    {
-                        onDeviceUidSuccess = id;
-                        onDeviceUidError = error;
-                    });
-
+            this.InitLbkMobileService();
+            var service = this.Ioc.Resolve<ILbkMobileService>();
             //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
 
-            var service = new LbkMobileService(mock.Object);
-            onDeviceUidSuccess(Constants.DeviceUidTest);
+            this.OnDeviceUidSuccess(Constants.DeviceUidTest);
 
             var result = await service.GetQuizAsync(QuestionsCount);
 
