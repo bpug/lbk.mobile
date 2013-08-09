@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Extensions
+namespace Lbk.Mobile.Common.Extensions
 {
     using System;
 

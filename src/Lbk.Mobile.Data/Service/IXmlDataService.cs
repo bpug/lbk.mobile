@@ -6,7 +6,7 @@
 
 namespace Lbk.Mobile.Data.Service
 {
-    using Lbk.Mobile.Infrastructure.Interfaces;
+    using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Model;
 
     public interface IXmlDataService

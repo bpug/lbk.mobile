@@ -1,19 +1,18 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="IEnumerableExtensions.cs" company="ip-connect GmbH">
+//  <copyright file="DoubleExtensions.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Extensions
+namespace Lbk.Mobile.Common.Extensions
 {
-    using System.Collections.Generic;
-    using System.Linq;
+    using System;
 
-    public static class IEnumerableExtensions
+    public static class DoubleExtensions
     {
-        public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
+        public static double Truncate(this double value)
         {
-            return source == null || !source.Any();
+            return value >= 0 ? Math.Floor(value) : Math.Ceiling(value);
         }
     }
 }

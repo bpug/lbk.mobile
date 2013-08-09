@@ -1,15 +1,19 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="IObservableCollection.cs" company="ip-connect GmbH">
+//  <copyright file="IEnumerableExtensions.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Interfaces
+namespace Lbk.Mobile.Common.Extensions
 {
     using System.Collections.Generic;
-    using System.Collections.Specialized;
+    using System.Linq;
 
-    public interface IObservableCollection<T> : IList<T>, INotifyCollectionChanged
+    public static class IEnumerableExtensions
     {
+        public static bool IsNullOrEmpty<T>(this IEnumerable<T> source)
+        {
+            return source == null || !source.Any();
+        }
     }
 }

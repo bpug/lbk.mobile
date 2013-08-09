@@ -4,9 +4,9 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Extensions
+namespace Lbk.Mobile.Common.Extensions
 {
-    using Lbk.Mobile.Infrastructure.Cryptography;
+    using Lbk.Mobile.Common.Cryptography;
 
     public static class StringExtensions
     {

@@ -4,12 +4,12 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure
+namespace Lbk.Mobile.Common
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    using Lbk.Mobile.Infrastructure.Interfaces;
+    using Lbk.Mobile.Common.Interfaces;
 
     public class SimpleObservableCollection<T> : ObservableCollection<T>, IObservableCollection<T>
     {

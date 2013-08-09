@@ -4,19 +4,18 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Test
+namespace Lbk.Mobile.Common.Test
 {
     using System;
     using System.Security.Cryptography;
     using System.Text;
-    using System.Threading.Tasks;
 
-    using Lbk.Mobile.Infrastructure.Extensions;
+    using Lbk.Mobile.Common.Extensions;
 
     using NUnit.Framework;
 
     using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-    using MD5 = Lbk.Mobile.Infrastructure.Cryptography.MD5;
+    using MD5 = Lbk.Mobile.Common.Cryptography.MD5;
 
     [TestFixture]
     public class InfrastructureTest

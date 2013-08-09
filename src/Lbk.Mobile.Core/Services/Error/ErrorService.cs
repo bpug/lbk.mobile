@@ -8,8 +8,8 @@ namespace Lbk.Mobile.Core.Services.Error
 {
     using Cirrious.MvvmCross.Plugins.Messenger;
 
+    using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Messages;
-    using Lbk.Mobile.Infrastructure;
 
     public class ErrorService : IErrorService
     {

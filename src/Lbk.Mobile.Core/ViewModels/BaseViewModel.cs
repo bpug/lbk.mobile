@@ -17,9 +17,9 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.Plugins.WebBrowser;
     using Cirrious.MvvmCross.ViewModels;
 
+    using Lbk.Mobile.Common;
+    using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Core.Services.Error;
-    using Lbk.Mobile.Infrastructure;
-    using Lbk.Mobile.Infrastructure.Exceptions;
 
     public class BaseViewModel : MvxViewModel
     {

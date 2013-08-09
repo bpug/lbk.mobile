@@ -127,6 +127,10 @@
     <Compile Include="ViewModels\EvetnViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Lbk.Mobile.Common\Lbk.Mobile.Common.csproj">
+      <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
+      <Name>Lbk.Mobile.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Lbk.Mobile.Core\Lbk.Mobile.Core.csproj">
       <Project>{64e36d12-5247-4d85-b9c4-be09937b9185}</Project>
       <Name>Lbk.Mobile.Core</Name>
@@ -134,10 +138,6 @@
     <ProjectReference Include="..\..\Lbk.Mobile.Data\Lbk.Mobile.Data.csproj">
       <Project>{10700230-8c64-41f7-8dd2-9a693e7dd0f0}</Project>
       <Name>Lbk.Mobile.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Lbk.Mobile.Infrastructure\Lbk.Mobile.Infrastructure.csproj">
-      <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
-      <Name>Lbk.Mobile.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Lbk.Mobile.Localization\Lbk.Mobile.Localization.csproj">
       <Project>{1519d84e-fcdd-45ba-9f1c-161a01e24fe0}</Project>

@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Exceptions
+namespace Lbk.Mobile.Common.Exceptions
 {
     using System;
 

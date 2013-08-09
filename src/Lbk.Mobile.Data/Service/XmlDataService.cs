@@ -11,9 +11,9 @@ namespace Lbk.Mobile.Data.Service
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Platform;
 
+    using Lbk.Mobile.Common;
+    using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Data.Utility;
-    using Lbk.Mobile.Infrastructure;
-    using Lbk.Mobile.Infrastructure.Interfaces;
     using Lbk.Mobile.Model;
 
     public class XmlDataService : IXmlDataService

@@ -30,11 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClient.Pcl", "Tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapTest", "Tests\SoapTest\SoapTest.csproj", "{71FAB04C-9187-41AA-AF74-B07CF25D916F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Infrastructure", "Lbk.Mobile.Infrastructure\Lbk.Mobile.Infrastructure.csproj", "{6A7D73D4-92CD-4760-9309-E211709DA0DF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Core.Test", "Tests\Lbk.Mobile.Core.Test\Lbk.Mobile.Core.Test.csproj", "{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Infrastructure.Test", "Tests\Lbk.Mobile.Infrastructure.Test\Lbk.Mobile.Infrastructure.Test.csproj", "{3E1DF4C3-9551-4847-94AD-1D07B525124F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.DeviceIdentifier", "Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj", "{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}"
 EndProject
@@ -43,6 +39,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.Settings", "Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj", "{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Data", "Lbk.Mobile.Data\Lbk.Mobile.Data.csproj", "{10700230-8C64-41F7-8DD2-9A693E7DD0F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Common", "Lbk.Mobile.Common\Lbk.Mobile.Common.csproj", "{6A7D73D4-92CD-4760-9309-E211709DA0DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Common.Test", "Tests\Lbk.Mobile.Common.Test\Lbk.Mobile.Common.Test.csproj", "{3E1DF4C3-9551-4847-94AD-1D07B525124F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,18 +90,10 @@ Global
 		{71FAB04C-9187-41AA-AF74-B07CF25D916F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71FAB04C-9187-41AA-AF74-B07CF25D916F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71FAB04C-9187-41AA-AF74-B07CF25D916F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D3F4B5D-409A-42EC-BB5C-FE3E05EA2B71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -114,6 +106,14 @@ Global
 		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10700230-8C64-41F7-8DD2-9A693E7DD0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7D73D4-92CD-4760-9309-E211709DA0DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

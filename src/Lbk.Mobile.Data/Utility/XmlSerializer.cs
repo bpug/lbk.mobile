@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Data.Utility
     using Cirrious.CrossCore.Exceptions;
     using Cirrious.MvvmCross.Plugins.File;
 
-    using Lbk.Mobile.Infrastructure;
+    using Lbk.Mobile.Common;
 
     public static class XmlSerializer<T>
         where T : class

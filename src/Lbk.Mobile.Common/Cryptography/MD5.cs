@@ -1,4 +1,4 @@
-﻿namespace Lbk.Mobile.Infrastructure.Cryptography
+﻿namespace Lbk.Mobile.Common.Cryptography
 {
     using System;
     using System.Text;

@@ -1,18 +1,15 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="DoubleExtensions.cs" company="ip-connect GmbH">
+//  <copyright file="IObservableCollection.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure.Extensions
+namespace Lbk.Mobile.Common.Interfaces
 {
-    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
 
-    public static class DoubleExtensions
+    public interface IObservableCollection<T> : IList<T>, INotifyCollectionChanged
     {
-        public static double Truncate(this double value)
-        {
-            return value >= 0 ? Math.Floor(value) : Math.Ceiling(value);
-        }
     }
 }

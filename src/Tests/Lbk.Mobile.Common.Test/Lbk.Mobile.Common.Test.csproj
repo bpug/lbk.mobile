@@ -6,8 +6,8 @@
     <ProjectGuid>{3E1DF4C3-9551-4847-94AD-1D07B525124F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lbk.Mobile.Infrastructure.Test</RootNamespace>
-    <AssemblyName>Lbk.Mobile.Infrastructure.Test</AssemblyName>
+    <RootNamespace>Lbk.Mobile.Common.Test</RootNamespace>
+    <AssemblyName>Lbk.Mobile.Common.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lbk.Mobile.Infrastructure\Lbk.Mobile.Infrastructure.csproj">
+    <ProjectReference Include="..\..\Lbk.Mobile.Common\Lbk.Mobile.Common.csproj">
       <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
-      <Name>Lbk.Mobile.Infrastructure</Name>
+      <Name>Lbk.Mobile.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

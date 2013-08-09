@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Infrastructure
+namespace Lbk.Mobile.Common
 {
     using Cirrious.CrossCore.Platform;
 
