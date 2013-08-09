@@ -1,48 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="MockMvxViewDispatcher.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.Test.Mocks
 {
+    using System;
+
+    using Cirrious.CrossCore.Core;
     using Cirrious.MvvmCross.ViewModels;
     using Cirrious.MvvmCross.Views;
 
-    public class MockMvxViewDispatcher : IMvxViewDispatcher
+    public class MockMvxViewDispatcher : MvxMainThreadDispatcher, IMvxViewDispatcher
     {
-        public List<IMvxViewModel> CloseRequests = new List<IMvxViewModel>();
-        public List<MvxShowViewModelRequest> NavigateRequests = new List<MvxShowViewModelRequest>();
+        private readonly IMvxViewDispatcher _decorated;
 
-        #region IMvxViewDispatcher implementation
-
-        public bool RequestNavigate(MvxShowViewModelRequest request)
+        public MockMvxViewDispatcher(IMvxViewDispatcher decorated)
         {
-            NavigateRequests.Add(request);
-            return true;
+            this._decorated = decorated;
         }
 
-        public bool RequestClose(IMvxViewModel whichViewModel)
+        public bool ChangePresentation(MvxPresentationHint hint)
         {
-            CloseRequests.Add(whichViewModel);
-            return true;
+            return this._decorated.ChangePresentation(hint);
         }
-
-        public bool RequestRemoveBackStep()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #region IMvxMainThreadDispatcher implementation
 
         public bool RequestMainThreadAction(Action action)
         {
-            action();
-            return true;
+            return this._decorated.RequestMainThreadAction(action);
         }
 
-        #endregion
+        public bool ShowViewModel(MvxViewModelRequest request)
+        {
+            return this._decorated.ShowViewModel(request);
+        }
     }
 }

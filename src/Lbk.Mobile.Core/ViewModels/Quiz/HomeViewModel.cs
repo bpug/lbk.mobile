@@ -72,7 +72,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 list =>
                 {
                     this.Quiz = list;
-                    this.ShowViewModel<QuizViewModel>(new { quiz = list });
+                    //this.ShowViewModel<QuizViewModel>(new { quiz = list });
                 });
         }
 

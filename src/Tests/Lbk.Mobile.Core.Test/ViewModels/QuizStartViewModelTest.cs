@@ -10,11 +10,14 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using System.Windows.Forms;
 
     using Cirrious.CrossCore;
+    using Cirrious.CrossCore.Core;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
+    using Cirrious.MvvmCross.Views;
 
     using Lbk.Mobile.Core.Messages;
     using Lbk.Mobile.Core.Test.Implementation;
+    using Lbk.Mobile.Core.Test.Mocks;
     using Lbk.Mobile.Core.Test.Services;
     using Lbk.Mobile.Core.ViewModels;
     using Lbk.Mobile.Core.ViewModels.Event;
@@ -33,6 +36,8 @@ namespace Lbk.Mobile.Core.Test.ViewModels
         [Test]
         public async void LoadQuiz()
         {
+            var mockNavigation = CreateMockNavigation();
+
             Settings.YouthProtection = false;
 
             Action<string> onDeviceUidSuccess = null;
