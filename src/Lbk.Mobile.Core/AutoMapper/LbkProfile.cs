@@ -8,8 +8,6 @@ namespace Lbk.Mobile.Core.AutoMapper
 {
     using global::AutoMapper;
 
-    using Lbk.Mobile.Data.Service.LbkMobileService;
-
     public class LbkProfile : Profile
     {
         public override string ProfileName

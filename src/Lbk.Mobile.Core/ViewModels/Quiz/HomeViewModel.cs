@@ -12,8 +12,8 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Core.Messages;
-    using Lbk.Mobile.Data.Service.Interfaces;
-    using Lbk.Mobile.Data.Service.LbkMobileService;
+    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Model.Enums;
 
     public class HomeViewModel : BaseViewModel

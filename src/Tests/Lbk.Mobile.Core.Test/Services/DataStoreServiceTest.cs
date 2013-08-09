@@ -12,8 +12,8 @@ namespace Lbk.Mobile.Core.Test.Services
     using Cirrious.MvvmCross.Plugins.File;
 
     using Lbk.Mobile.Core.Test.Implementation;
-    using Lbk.Mobile.Data.Service.Service;
-    using Lbk.Mobile.Data.Service.Utility;
+    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Utility;
     using Lbk.Mobile.Infrastructure.Interfaces;
     using Lbk.Mobile.Model;
 

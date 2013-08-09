@@ -11,9 +11,9 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
 
     using Lbk.Mobile.Core.Test.Implementation;
-    using Lbk.Mobile.Core.Test.Services;
+    using Lbk.Mobile.Core.Test;
     using Lbk.Mobile.Core.ViewModels.Event;
-    using Lbk.Mobile.Data.Service.Service;
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     using Moq;

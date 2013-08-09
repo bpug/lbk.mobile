@@ -6,8 +6,6 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Quiz
 {
-    using Lbk.Mobile.Data.Service.LbkMobileService;
-
     public class QuizViewModel : BaseViewModel
     {
         private int quiz;

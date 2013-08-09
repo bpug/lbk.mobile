@@ -14,8 +14,8 @@ namespace Lbk.Mobile.Core.ViewModels.MenuOfTheDay
 
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Data.Service.Interfaces;
-    using Lbk.Mobile.Data.Service.LbkMobileService;
+    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Data.Service;
 
     public class TodaysMenuViewModel : BaseViewModel
     {

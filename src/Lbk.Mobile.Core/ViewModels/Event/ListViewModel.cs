@@ -11,10 +11,11 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using System.Threading.Tasks;
     using System.Windows.Input;
     using Cirrious.MvvmCross.ViewModels;
-    using Lbk.Mobile.Data.Service.Interfaces;
-    using Lbk.Mobile.Data.Service.LbkMobileService;
+
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Infrastructure;
     using Lbk.Mobile.Infrastructure.Exceptions;
+    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Infrastructure.Extensions;
 
     public class ListViewModel : BaseViewModel

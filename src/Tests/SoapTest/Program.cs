@@ -12,8 +12,6 @@ namespace SoapTest
     using System.Diagnostics;
     using System.Net.Http;
 
-    using Lbk.Mobile.Data.Service.Service;
-
     using ServiceClient;
     using ServiceClient.Pcl;
 

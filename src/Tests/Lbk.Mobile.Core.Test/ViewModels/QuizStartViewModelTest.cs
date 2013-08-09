@@ -22,7 +22,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Lbk.Mobile.Core.ViewModels;
     using Lbk.Mobile.Core.ViewModels.Event;
     using Lbk.Mobile.Core.ViewModels.Quiz;
-    using Lbk.Mobile.Data.Service.Service;
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
     using Lbk.Mobile.Plugin.Settings;
 

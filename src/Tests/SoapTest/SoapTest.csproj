@@ -99,10 +99,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lbk.Mobile.Data.Service\Lbk.Mobile.Data.Service.csproj">
-      <Project>{10700230-8c64-41f7-8dd2-9a693e7dd0f0}</Project>
-      <Name>Lbk.Mobile.Data.Service</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ServiceClient.Pcl\ServiceClient.Pcl.csproj">
       <Project>{71367444-7871-43e5-94de-b6b9ef5fc97d}</Project>
       <Name>ServiceClient.Pcl</Name>
