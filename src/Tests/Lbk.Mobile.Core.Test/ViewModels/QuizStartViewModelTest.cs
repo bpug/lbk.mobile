@@ -34,6 +34,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
         [Test]
         public void GetQuiz()
         {
+            // Need for viewModel.PropertyChanged
             this.CreateMockDispatcher();
             var mockService = this.CreateMockLbkMobileService();
 
@@ -64,16 +65,16 @@ namespace Lbk.Mobile.Core.Test.ViewModels
                 {
                     case "Quiz":
                         Assert.IsNotNull(vm.Quiz);
-                        Assert.AreEqual(2, vm.Quiz.Questions.Length);
+                        Assert.AreEqual(2, vm.Questions.Count);
                         break;
                 }
             };
 
-            viewModel.LoadCommand.Execute(null);
+            viewModel.Init();
 
             mockService.Verify(quiz => quiz.GetQuizAsync(It.IsAny<int>()), Times.Once());
             Assert.IsNotNull(viewModel.Quiz);
-            Assert.AreEqual(2, viewModel.Quiz.Questions.Length);
+            Assert.AreEqual(2, viewModel.Questions.Count);
         }
 
         //[Test]

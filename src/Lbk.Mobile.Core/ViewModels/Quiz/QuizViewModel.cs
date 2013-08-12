@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Quiz
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
 
@@ -20,17 +22,13 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
         private readonly ILbkMobileService service;
 
+        private List<Question> questions;
+
         private Quiz quiz;
 
         public QuizViewModel(ILbkMobileService service)
         {
             this.service = service;
-           
-        }
-
-        public void Init()
-        {
-            LoadCommand.Execute(null);
         }
 
         public ICommand AbortCommand
@@ -49,6 +47,19 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
+        public List<Question> Questions
+        {
+            get
+            {
+                return this.questions;
+            }
+            set
+            {
+                this.questions = value;
+                this.RaisePropertyChanged(() => this.Questions);
+            }
+        }
+
         public Quiz Quiz
         {
             get
@@ -58,8 +69,17 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             set
             {
                 this.quiz = value;
+                if (this.quiz != null && this.quiz.Questions != null)
+                {
+                    this.Questions = this.quiz.Questions.ToList();
+                }
                 this.RaisePropertyChanged(() => this.Quiz);
             }
+        }
+
+        public void Init()
+        {
+            this.LoadCommand.Execute(null);
         }
 
         private async Task LoadExecute()

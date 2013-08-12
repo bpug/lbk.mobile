@@ -51,11 +51,10 @@ namespace Lbk.Mobile.Core.Test
             return serviceMock;
         }
 
-        protected MockMvxViewDispatcher CreateMocMvxNavigation()
+        protected MockMvxViewDispatcher CreateMocNavigation()
         {
             var viewDispatcherMock = new Mock<IMvxViewDispatcher>();
             var dispatcher = new MockMvxViewDispatcher(viewDispatcherMock.Object);
-            //var dispatcher = new MockMvxViewDispatcher();
             this.Ioc.RegisterSingleton<IMvxMainThreadDispatcher>(dispatcher);
             this.Ioc.RegisterSingleton<IMvxViewDispatcher>(dispatcher);
             return dispatcher;
