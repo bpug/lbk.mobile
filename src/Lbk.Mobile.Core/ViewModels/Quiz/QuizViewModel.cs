@@ -25,6 +25,20 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         public QuizViewModel(ILbkMobileService service)
         {
             this.service = service;
+           
+        }
+
+        public void Init()
+        {
+            LoadCommand.Execute(null);
+        }
+
+        public ICommand AbortCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.ShowViewModel<QuizStartViewModel>());
+            }
         }
 
         public ICommand LoadCommand

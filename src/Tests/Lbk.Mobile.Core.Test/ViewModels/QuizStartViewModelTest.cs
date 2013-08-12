@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.Core.Test.ViewModels
 {
+    using System.Linq;
+    using System.Threading.Tasks;
     using System.Windows.Forms;
 
     using Cirrious.MvvmCross.Localization;
@@ -18,7 +20,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Lbk.Mobile.Core.Test.Implementation;
     using Lbk.Mobile.Core.ViewModels;
     using Lbk.Mobile.Core.ViewModels.Quiz;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Localization;
     using Lbk.Mobile.Plugin.Settings;
 
@@ -30,47 +32,111 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     public class QuizStartViewModelTest : TestBase
     {
         [Test]
-        public async void GetQuiz()
+        public void GetQuiz()
         {
-            //this.InitLbkMobileService();
-            //var service = this.Ioc.Resolve<ILbkMobileService>();
+            this.CreateMockDispatcher();
+            var mockService = this.CreateMockLbkMobileService();
 
-            var service = this.CreateMockMobileService();
+            var result = new Quiz
+            {
+                Questions = new Question[2]
+                {
+                    new Question
+                    {
+                        Description = "Q1"
+                    },
+                    new Question
+                    {
+                        Description = "Q2"
+                    }
+                }
+            };
 
-            var viewModel = new QuizViewModel(service.Object);
-            this.OnDeviceUidSuccess(Constants.DeviceUidTest);
+            var tcs = new TaskCompletionSource<Quiz>();
+            tcs.SetResult(result);
+            mockService.Setup(s => s.GetQuizAsync(It.IsAny<int>())).Returns(tcs.Task);
+
+            var viewModel = new QuizViewModel(mockService.Object);
+            viewModel.PropertyChanged += (sender, args) =>
+            {
+                var vm = (QuizViewModel)sender;
+                switch (args.PropertyName)
+                {
+                    case "Quiz":
+                        Assert.IsNotNull(vm.Quiz);
+                        Assert.AreEqual(2, vm.Quiz.Questions.Length);
+                        break;
+                }
+            };
 
             viewModel.LoadCommand.Execute(null);
-            
-            //service.Verify(quiz => quiz.GetQuizAsync(10), Times.Once());
+
+            mockService.Verify(quiz => quiz.GetQuizAsync(It.IsAny<int>()), Times.Once());
+            Assert.IsNotNull(viewModel.Quiz);
+            Assert.AreEqual(2, viewModel.Quiz.Questions.Length);
         }
 
+        //[Test]
+        //public async void YouthProtectionMesenger()
+        //{
+        //    var mockNavigation = this.CreateMockNavigation();
+        //    var mvxMessenger = this.Ioc.Resolve<IMvxMessenger>();
+        //    Settings.YouthProtection = false;
+
+        //    mvxMessenger.Subscribe<YouthProtectionMessage>(this.ShowAlert, MvxReference.Strong);
+
+        //    var viewModel = new QuizStartViewModel();
+
+        //    viewModel.StartMessengerCommand.Execute(null);
+        //}
+
         [Test]
-        public async void YouthProtectionEvent()
+        public void YouthProtectionNo()
         {
-            var mockNavigation = this.CreateMockNavigation();
+            var mockNavigation = this.CreateMockDispatcher();
 
             Settings.YouthProtection = false;
 
             var viewModel = new QuizStartViewModel();
 
-            viewModel.YouthProtectionQuestion += this.ViewModelOnYouthProtectionHandler;
+            viewModel.YouthProtectionQuestion += (sender, args) => args.Completed(false);
 
             viewModel.StartCommand.Execute(null);
+
+            Assert.IsFalse(Settings.YouthProtection);
+
+            Assert.AreEqual(0, mockNavigation.Requests.Count);
         }
 
         [Test]
-        public async void YouthProtectionMesenger()
+        public void YouthProtectionYes()
         {
-            var mockNavigation = this.CreateMockNavigation();
-            var mvxMessenger = this.Ioc.Resolve<IMvxMessenger>();
+            var mockNavigation = this.CreateMockDispatcher();
+
             Settings.YouthProtection = false;
 
-            mvxMessenger.Subscribe<YouthProtectionMessage>(this.ShowAlert, MvxReference.Strong);
-
             var viewModel = new QuizStartViewModel();
+            viewModel.YouthProtectionQuestion += (sender, args) => args.Completed(true);
+            viewModel.StartCommand.Execute(null);
 
-            viewModel.StartMessengerCommand.Execute(null);
+            Assert.IsTrue(Settings.YouthProtection);
+            Assert.AreEqual(1, mockNavigation.Requests.Count);
+
+            var request = mockNavigation.Requests.First();
+            Assert.AreEqual(typeof(QuizViewModel), request.ViewModelType);
+        }
+
+        [Test]
+        public void Instructions()
+        {
+            var mockNavigation = this.CreateMockDispatcher();
+            var viewModel = new QuizStartViewModel();
+          
+            // Test InstructionsCommand
+            viewModel.InstructionsCommand.Execute(null);
+            Assert.AreEqual(1, mockNavigation.Requests.Count);
+            var request = mockNavigation.Requests[0];
+            Assert.AreEqual(typeof(InstructionsViewModel), request.ViewModelType);
         }
 
         protected override void AdditionalSetup()

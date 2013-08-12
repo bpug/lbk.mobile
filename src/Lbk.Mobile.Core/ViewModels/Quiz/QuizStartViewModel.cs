@@ -19,7 +19,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     {
         public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
 
-        public ICommand HelpCommand
+        public ICommand InstructionsCommand
         {
             get
             {

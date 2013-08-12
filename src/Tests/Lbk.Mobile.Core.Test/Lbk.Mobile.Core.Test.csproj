@@ -108,6 +108,7 @@
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ResourceLoaderPluginBootstrap.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Mocks\MockDispatcher.cs" />
     <Compile Include="Mocks\MockMvxViewDispatcher.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -20,6 +20,8 @@ namespace Lbk.Mobile.Data.Service
 
         Task<List<Event>> GetEventsAsync();
 
+        List<Event> GetEvents();
+
         Task<DateTime?> GetMenuLastUpdateAsync();
 
         Task<List<Picture>> GetPicturesAsync();

@@ -32,13 +32,40 @@ namespace Lbk.Mobile.Core.Test
             this.Setup();
         }
 
-        protected MockMvxViewDispatcher CreateMockNavigation()
+        protected Mock<ILbkMobileService> CreateMockLbkMobileService()
+        {
+            var mock = new Mock<IDeviceUidService>();
+            //mock.Setup(s => s.GetDeviceUid()).Returns(DeviceUidTest);
+            mock.Setup(s => s.GetDeviceUid(It.IsAny<Action<string>>(), It.IsAny<Action<Exception>>()))
+                .Callback(
+                    (Action<string> onSuccess, Action<Exception> onError) =>
+                    {
+                        //this.OnDeviceUidSuccess = onSuccess;
+                        onSuccess(Constants.DeviceUidTest);
+                        this.OnDeviceUidError = onError;
+                    });
+            this.Ioc.RegisterSingleton<IDeviceUidService>(mock.Object);
+
+            var serviceMock = new Mock<ILbkMobileService>();
+            this.Ioc.RegisterSingleton(serviceMock.Object);
+            return serviceMock;
+        }
+
+        protected MockMvxViewDispatcher CreateMocMvxNavigation()
         {
             var viewDispatcherMock = new Mock<IMvxViewDispatcher>();
             var dispatcher = new MockMvxViewDispatcher(viewDispatcherMock.Object);
             //var dispatcher = new MockMvxViewDispatcher();
             this.Ioc.RegisterSingleton<IMvxMainThreadDispatcher>(dispatcher);
             this.Ioc.RegisterSingleton<IMvxViewDispatcher>(dispatcher);
+            return dispatcher;
+        }
+
+        protected MockDispatcher CreateMockDispatcher()
+        {
+            var dispatcher = new MockDispatcher();
+            Ioc.RegisterSingleton<IMvxMainThreadDispatcher>(dispatcher);
+            Ioc.RegisterSingleton<IMvxViewDispatcher>(dispatcher);
             return dispatcher;
         }
 
@@ -49,34 +76,13 @@ namespace Lbk.Mobile.Core.Test
                 .Callback(
                     (Action<string> onSuccess, Action<Exception> onError) =>
                     {
-                        this.OnDeviceUidSuccess = onSuccess;
+                        //this.OnDeviceUidSuccess = onSuccess;
+                        onSuccess(Constants.DeviceUidTest);
                         this.OnDeviceUidError = onError;
                     });
 
             var service = new LbkMobileService(mock.Object);
             this.Ioc.RegisterSingleton<ILbkMobileService>(service);
-            
-        }
-
-        protected Mock<LbkMobileService> CreateMockMobileService()
-        {
-            var mock = new Mock<IDeviceUidService>();
-            mock.Setup(s => s.GetDeviceUid(It.IsAny<Action<string>>(), It.IsAny<Action<Exception>>()))
-                .Callback(
-                    (Action<string> onSuccess, Action<Exception> onError) =>
-                    {
-                        this.OnDeviceUidSuccess = onSuccess;
-                        this.OnDeviceUidError = onError;
-                    });
-            Ioc.RegisterSingleton<IDeviceUidService>(mock.Object);
-
-            //var service = new LbkMobileService(mock.Object);
-            //this.Ioc.RegisterSingleton<ILbkMobileService>(service);
-
-            var service = new Mock<LbkMobileService>(mock.Object);
-            Ioc.RegisterSingleton(service.Object);
-
-            return service;
         }
     }
 }

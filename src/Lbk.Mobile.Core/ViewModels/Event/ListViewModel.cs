@@ -10,6 +10,8 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Windows.Input;
+
+    using Cirrious.CrossCore;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
@@ -27,8 +29,18 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         public ListViewModel(ILbkMobileService service)
         {
             this.service = service;
+        }
+
+        public ListViewModel()
+        {
+            this.service = Mvx.Resolve<ILbkMobileService>();
+        }
+
+        public void Init()
+        {
             LoadCommand.Execute(null);
         }
+       
 
         public List<Event> Events
         {
@@ -119,7 +131,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 
         private async Task OnLoadExecute()
         {
-            await this.AsyncExecute(() => this.service.GetEventsAsync(), list => this.Events = list, OnLoadError);
+            await this.AsyncExecute(() => this.service.GetEventsAsync(), OnSuccess, OnLoadError);
             
             //if (IsBusy)
             //    return;
@@ -142,6 +154,12 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             //        this.IsBusy = false;
             //    });
         }
+
+        private void OnSuccess(List<Event> list)
+        {
+           this.Events = list;
+        }
+
 
         private void OnLoadError(Exception exception)
         {

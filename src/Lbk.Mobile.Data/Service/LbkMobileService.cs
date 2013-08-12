@@ -10,6 +10,8 @@ namespace Lbk.Mobile.Data.Service
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using Cirrious.CrossCore;
+
     using Lbk.Mobile.Data.Extensions;
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
@@ -29,6 +31,14 @@ namespace Lbk.Mobile.Data.Service
             this.GetDeviceUid();
         }
 
+        public LbkMobileService()
+        {
+            //this.deviceUidService = Mvx.Resolve<IDeviceUidService>();
+
+            //this.GetDeviceUid();
+            this.deviceUid = "Test";
+        }
+
         public async Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
         {
             var result = await this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
@@ -40,9 +50,20 @@ namespace Lbk.Mobile.Data.Service
             return await this.Service.GetEventsAsyncTask(this.deviceUid);
         }
 
+        public List<Event> GetEvents()
+        {
+            var test = new List<Event>
+            {
+                new Event(),
+                new Event()
+            };
+            return test;
+        }
+
         public async Task<DateTime?> GetMenuLastUpdateAsync()
         {
-            return await this.Service.GetMenuLastUpdateAsyncTask(this.deviceUid);
+            var result = await this.Service.GetMenuLastUpdateAsyncTask(this.deviceUid);
+             return result;
         }
 
         public async Task<List<Picture>> GetPicturesAsync()

@@ -73,8 +73,6 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-
-
         public void ReportError(string error)
         {
             Mvx.Resolve<IErrorService>().ReportError(error);
@@ -200,6 +198,11 @@ namespace Lbk.Mobile.Core.ViewModels
             Action<TResult> onSuccess,
             Action<Exception> onError = null)
         {
+            if (task == null)
+            {
+                return;
+            }
+
             await task.ContinueWith(
                 t =>
                 {
