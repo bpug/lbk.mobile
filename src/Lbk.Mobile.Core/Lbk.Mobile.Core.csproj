@@ -45,7 +45,6 @@
     <Compile Include="LbkApp.cs" />
     <Compile Include="Messages\ErrorMessage.cs" />
     <Compile Include="Messages\Message .cs" />
-    <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApplicationObjects\AppStart.cs" />
     <Compile Include="Services\Error\IErrorService.cs" />
@@ -59,6 +58,7 @@
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\QuestionViewModel.cs" />
     <Compile Include="ViewModels\Quiz\VoucherViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
     <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
@@ -147,6 +147,9 @@
       <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
       <Name>Lbk.Mobile.Plugin.Settings</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />

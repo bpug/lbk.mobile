@@ -37,12 +37,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answer.cs" />
     <Compile Include="BaseDbEntity.cs" />
     <Compile Include="Enums\DialogResult.cs" />
+    <Compile Include="Enums\QuestionCategory.cs" />
     <Compile Include="IDbEntity.cs" />
     <Compile Include="Dish.cs" />
     <Compile Include="History.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="Quiz.cs" />
     <Compile Include="QuizVoucher.cs" />
     <Compile Include="Room.cs" />
   </ItemGroup>

@@ -1,23 +1,19 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="BaseEntity.cs" company="ip-connect GmbH">
+//  <copyright file="Quiz.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Model
 {
-    using System;
-    using Cirrious.MvvmCross.Plugins.Sqlite;
+    using System.Collections.Generic;
 
-    public interface IDbEntity
+    public partial class Quiz
     {
-        DateTime CreateAt { get; set; }
-        
-        bool Deleted { get; set; }
+        public int Id { get; set; }
 
-        [PrimaryKey, AutoIncrement]
-        int Id { get; set; }
-       
-        DateTime ModifyAt { get; set; }
+        public int PointsProAnswer { get; set; }
+
+        public List<Question> Questions { get; set; }
     }
 }

@@ -132,6 +132,9 @@
   <data name="Lbk.QuizStartViewModel.YouthProtectionQuestion" xml:space="preserve">
     <value>I confirm that I am at least 18 years old.</value>
   </data>
+  <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
+    <value>Do you want to leave quiz?</value>
+  </data>
   <data name="Lbk.Test.Text" xml:space="preserve">
     <value>English</value>
   </data>

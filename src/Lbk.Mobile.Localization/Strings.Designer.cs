@@ -106,6 +106,15 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to leave quiz?.
+        /// </summary>
+        public static string Lbk_QuizViewModel_AbortQuizQuestion {
+            get {
+                return ResourceManager.GetString("Lbk.QuizViewModel.AbortQuizQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string Lbk_Test_Text {

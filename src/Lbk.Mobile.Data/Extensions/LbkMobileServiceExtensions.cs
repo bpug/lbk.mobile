@@ -11,11 +11,7 @@ namespace Lbk.Mobile.Data.Extensions
     using System.ComponentModel;
     using System.Linq;
     using System.Threading.Tasks;
-
     using Lbk.Mobile.Data.LbkMobileService;
-    using Lbk.Mobile.Model;
-
-    using Reservation = Lbk.Mobile.Data.LbkMobileService.Reservation;
 
     public static class LbkMobileServiceExtensions
     {
@@ -44,7 +40,7 @@ namespace Lbk.Mobile.Data.Extensions
         //}
 
 
-        public static Task<bool> ActivateVoucherAsyncTask(this Service1SoapClient client, QuizVoucher voucher, string fingerprint)
+        public static Task<bool> ActivateVoucherAsyncTask(this Service1SoapClient client, Model.QuizVoucher voucher, string fingerprint)
         {
             var tcs = CreateSource<bool>(null);
             client.ActivateVoucherCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);

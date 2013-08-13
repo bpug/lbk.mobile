@@ -9,13 +9,11 @@ namespace Lbk.Mobile.Data.Service
     using System;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-
     using Lbk.Mobile.Data.LbkMobileService;
-    using Lbk.Mobile.Model;
 
     public interface ILbkMobileService
     {
-        Task<bool> ActivateVoucherAsync(QuizVoucher voucher);
+        Task<bool> ActivateVoucherAsync(Model.QuizVoucher voucher);
 
         Task<Guid> CreateReservationAsync(Reservation reservation);
 
