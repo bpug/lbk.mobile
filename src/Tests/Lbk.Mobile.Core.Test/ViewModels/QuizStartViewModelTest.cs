@@ -38,20 +38,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             this.CreateMockDispatcher();
             var mockService = this.CreateMockLbkMobileService();
 
-            var result = new Quiz
-            {
-                Questions = new Question[2]
-                {
-                    new Question
-                    {
-                        Description = "Q1"
-                    },
-                    new Question
-                    {
-                        Description = "Q2"
-                    }
-                }
-            };
+            var result = this.GetQuizData();
 
             var tcs = new TaskCompletionSource<Quiz>();
             tcs.SetResult(result);
@@ -75,6 +62,19 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             mockService.Verify(quiz => quiz.GetQuizAsync(It.IsAny<int>()), Times.Once());
             Assert.IsNotNull(viewModel.Quiz);
             Assert.AreEqual(2, viewModel.Questions.Count);
+        }
+
+        [Test]
+        public void Instructions()
+        {
+            var mockNavigation = this.CreateMockDispatcher();
+            var viewModel = new QuizStartViewModel();
+
+            // Test InstructionsCommand
+            viewModel.InstructionsCommand.Execute(null);
+            Assert.AreEqual(1, mockNavigation.Requests.Count);
+            var request = mockNavigation.Requests[0];
+            Assert.AreEqual(typeof(InstructionsViewModel), request.ViewModelType);
         }
 
         //[Test]
@@ -127,19 +127,6 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             Assert.AreEqual(typeof(QuizViewModel), request.ViewModelType);
         }
 
-        [Test]
-        public void Instructions()
-        {
-            var mockNavigation = this.CreateMockDispatcher();
-            var viewModel = new QuizStartViewModel();
-          
-            // Test InstructionsCommand
-            viewModel.InstructionsCommand.Execute(null);
-            Assert.AreEqual(1, mockNavigation.Requests.Count);
-            var request = mockNavigation.Requests[0];
-            Assert.AreEqual(typeof(InstructionsViewModel), request.ViewModelType);
-        }
-
         protected override void AdditionalSetup()
         {
             this.Ioc.RegisterType<IMvxReachability, MvxTestReachability>();
@@ -149,6 +136,25 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             this.Ioc.RegisterSingleton<ISettings>(userSettings);
 
             this.Ioc.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
+        }
+
+        private Quiz GetQuizData()
+        {
+            var result = new Quiz
+            {
+                Questions = new Question[2]
+                {
+                    new Question
+                    {
+                        Description = "Q1"
+                    },
+                    new Question
+                    {
+                        Description = "Q2"
+                    }
+                }
+            };
+            return result;
         }
 
         private void ShowAlert(YouthProtectionMessage message)

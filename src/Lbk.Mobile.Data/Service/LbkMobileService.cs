@@ -14,6 +14,7 @@ namespace Lbk.Mobile.Data.Service
 
     using Lbk.Mobile.Data.Extensions;
     using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     using Reservation = Lbk.Mobile.Data.LbkMobileService.Reservation;
@@ -33,10 +34,13 @@ namespace Lbk.Mobile.Data.Service
 
         public LbkMobileService()
         {
-            //this.deviceUidService = Mvx.Resolve<IDeviceUidService>();
+            this.deviceUidService = Mvx.Resolve<IDeviceUidService>();
+            this.GetDeviceUid();
+        }
 
-            //this.GetDeviceUid();
-            this.deviceUid = "Test";
+        public async Task<bool> ActivateVoucherAsync(QuizVoucher voucher)
+        {
+            return await this.Service.ActivateVoucherAsyncTask(voucher, this.deviceUid);
         }
 
         public async Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)

@@ -1,25 +1,19 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="EvetnViewModelTest.cs" company="ip-connect GmbH">
+//  <copyright file="EventViewModelTest.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.Test.ViewModels
 {
-    using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.Threading.Tasks;
 
-    using Cirrious.CrossCore.Core;
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
-    using Cirrious.MvvmCross.Views;
 
     using Lbk.Mobile.Core.Test.Implementation;
-    using Lbk.Mobile.Core.Test.Mocks;
     using Lbk.Mobile.Core.ViewModels.Event;
     using Lbk.Mobile.Data.LbkMobileService;
-    using Lbk.Mobile.Data.Service;
 
     using Moq;
 
@@ -34,11 +28,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             this.CreateMockDispatcher();
             var mockService = this.CreateMockLbkMobileService();
 
-            var result = new List<Event>
-            {
-                new Event(),
-                new Event()
-            };
+            var result = this.GetEventsData();
 
             var tcs = new TaskCompletionSource<List<Event>>();
             tcs.SetResult(result);
@@ -52,7 +42,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
                 switch (args.PropertyName)
                 {
                     case "Events":
-                       Assert.AreEqual(2 , vm.Events.Count);
+                        Assert.AreEqual(2, vm.Events.Count);
                         break;
                 }
             };
@@ -64,6 +54,16 @@ namespace Lbk.Mobile.Core.Test.ViewModels
         protected override void AdditionalSetup()
         {
             this.Ioc.RegisterType<IMvxReachability, MvxTestReachability>();
+        }
+
+        private List<Event> GetEventsData()
+        {
+            var result = new List<Event>
+            {
+                new Event(),
+                new Event()
+            };
+            return result;
         }
     }
 }

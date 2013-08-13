@@ -59,6 +59,7 @@
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\VoucherViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
     <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
     <Compile Include="ViewModels\Settings.cs" />

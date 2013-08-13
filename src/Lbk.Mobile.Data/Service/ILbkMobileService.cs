@@ -11,16 +11,17 @@ namespace Lbk.Mobile.Data.Service
     using System.Threading.Tasks;
 
     using Lbk.Mobile.Data.LbkMobileService;
-
-    using Reservation = Lbk.Mobile.Data.LbkMobileService.Reservation;
+    using Lbk.Mobile.Model;
 
     public interface ILbkMobileService
     {
-        Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date);
+        Task<bool> ActivateVoucherAsync(QuizVoucher voucher);
 
-        Task<List<Event>> GetEventsAsync();
+        Task<Guid> CreateReservationAsync(Reservation reservation);
 
         List<Event> GetEvents();
+
+        Task<List<Event>> GetEventsAsync();
 
         Task<DateTime?> GetMenuLastUpdateAsync();
 
@@ -28,7 +29,7 @@ namespace Lbk.Mobile.Data.Service
 
         Task<Quiz> GetQuizAsync(int questionCount);
 
-        Task<Guid> CreateReservationAsync(Reservation reservation);
+        Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date);
 
         Task<List<Video>> GetVideosAsyn();
     }

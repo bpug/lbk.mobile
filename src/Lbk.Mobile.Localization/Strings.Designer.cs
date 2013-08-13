@@ -113,5 +113,41 @@ namespace Lbk.Mobile.Localization {
                 return ResourceManager.GetString("Lbk.Test.Text", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to activate the coupon {0} now?.
+        /// </summary>
+        public static string Lbk_VoucherViewModel_ActivateVoucherQuestion {
+            get {
+                return ResourceManager.GetString("Lbk.VoucherViewModel.ActivateVoucherQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You now have redeemed the voucher. Did you get their drink?.
+        /// </summary>
+        public static string Lbk_VoucherViewModel_UseVoucherQuestion {
+            get {
+                return ResourceManager.GetString("Lbk.VoucherViewModel.UseVoucherQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The voucher {0} has been successfully activated..
+        /// </summary>
+        public static string Lbk_VoucherViewModel_VoucherActvated {
+            get {
+                return ResourceManager.GetString("Lbk.VoucherViewModel.VoucherActvated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have already gotten your coupon code {0}..
+        /// </summary>
+        public static string Lbk_VoucherViewModel_VoucherAlreadyActvated {
+            get {
+                return ResourceManager.GetString("Lbk.VoucherViewModel.VoucherAlreadyActvated", resourceCulture);
+            }
+        }
     }
 }

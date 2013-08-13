@@ -7,17 +7,26 @@
 namespace Lbk.Mobile.Core.ViewModels.Quiz
 {
     using System;
+    using System.Linq;
     using System.Windows.Input;
 
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Messages;
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Model.Enums;
 
     public class QuizStartViewModel : BaseViewModel
     {
         public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
+
+        private readonly IQuizVoucherDataService voucherDataService;
+
+        public QuizStartViewModel(IQuizVoucherDataService voucherDataService)
+        {
+            this.voucherDataService = voucherDataService;
+        }
 
         public ICommand InstructionsCommand
         {
@@ -27,6 +36,15 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
+        public ICommand ShowVouchersCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.ShowViewModel<InstructionsViewModel>(), () => this.voucherDataService.GetNotUsed().Any());
+            }
+        }
+
+
         public ICommand StartCommand
         {
             get
@@ -35,7 +53,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public ICommand StartMessengerCommand
+        public ICommand StartCommandWithMessenger
         {
             get
             {

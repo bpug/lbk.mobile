@@ -135,4 +135,16 @@
   <data name="Lbk.Test.Text" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="Lbk.VoucherViewModel.ActivateVoucherQuestion" xml:space="preserve">
+    <value>Do you want to activate the coupon {0} now?</value>
+  </data>
+  <data name="Lbk.VoucherViewModel.UseVoucherQuestion" xml:space="preserve">
+    <value>You now have redeemed the voucher. Did you get their drink?</value>
+  </data>
+  <data name="Lbk.VoucherViewModel.VoucherActvated" xml:space="preserve">
+    <value>The voucher {0} has been successfully activated.</value>
+  </data>
+  <data name="Lbk.VoucherViewModel.VoucherAlreadyActvated" xml:space="preserve">
+    <value>You have already gotten your coupon code {0}.</value>
+  </data>
 </root>
