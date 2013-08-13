@@ -35,6 +35,8 @@
   <ItemGroup>
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="AutoMapper\LbkProfile.cs" />
+    <Compile Include="Extensions\QuestionExtensions.cs" />
+    <Compile Include="Extensions\QuizExtensions.cs" />
     <Compile Include="LbkAppBase.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\Converters.cs" />
@@ -148,9 +150,7 @@
       <Name>Lbk.Mobile.Plugin.Settings</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,7 +16,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Extensions;
-    using Lbk.Mobile.Data.Extensions;
     using Lbk.Mobile.Data.Mappings;
     using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Model;
@@ -80,6 +79,9 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             set
             {
                 this.currentQuestion = value;
+                this.CurrentPoints = this.Quiz.GetRightPoints();
+                this.RightAnswerCount = this.Quiz.GetRightAnswerCount();
+
                 this.RaisePropertyChanged(() => this.CurrentQuestion);
             }
         }
@@ -210,7 +212,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                     this.CurrentQuestion = this.Quiz.GetNextQuestion();
                     this.TotalQuestionCount = this.Quiz.GetTotalQuestionsCount();
                     this.TotalPoints = this.Quiz.GetTotalPoints();
-                   
                 });
         }
     }

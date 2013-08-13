@@ -68,8 +68,6 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Extensions\LbkMobileServiceExtensions.cs" />
-    <Compile Include="Extensions\QuestionExtensions.cs" />
-    <Compile Include="Extensions\QuizExtensions.cs" />
     <Compile Include="Mappings\AnswerMapping.cs" />
     <Compile Include="Mappings\QuestionMapping.cs" />
     <Compile Include="Mappings\QuizMapping.cs" />
