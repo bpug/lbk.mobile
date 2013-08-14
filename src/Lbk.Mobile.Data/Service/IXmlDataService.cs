@@ -14,5 +14,7 @@ namespace Lbk.Mobile.Data.Service
         IObservableCollection<History> GetHistories();
 
         IObservableCollection<Room> GetRooms();
+
+        Room GetRoom(int id);
     }
 }

@@ -7,6 +7,7 @@
 namespace Lbk.Mobile.Data.Service
 {
     using System.Collections.Generic;
+    using System.Linq;
 
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Platform;
@@ -38,6 +39,13 @@ namespace Lbk.Mobile.Data.Service
         {
             var rooms = XmlSerializer<List<Room>>.Load(Constants.RoomResourceFileName);
             return new SimpleObservableCollection<Room>(rooms);
+        }
+
+
+        public Room GetRoom(int id)
+        {
+            var room = GetRooms().FirstOrDefault( p=> p.Id == id);
+            return room;
         }
     }
 }

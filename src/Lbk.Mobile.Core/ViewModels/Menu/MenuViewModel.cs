@@ -6,9 +6,6 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Menu
 {
-    /// <summary>
-    ///     TODO: Update summary.
-    /// </summary>
     public class MenuViewModel : BaseViewModel
     {
     }

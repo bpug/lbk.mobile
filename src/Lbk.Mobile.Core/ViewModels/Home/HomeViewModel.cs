@@ -16,10 +16,10 @@ namespace Lbk.Mobile.Core.ViewModels.Home
     using Lbk.Mobile.Core.ViewModels.Gallery;
     using Lbk.Mobile.Core.ViewModels.History;
     using Lbk.Mobile.Core.ViewModels.Menu;
-    using Lbk.Mobile.Core.ViewModels.MenuOfTheDay;
     using Lbk.Mobile.Core.ViewModels.Quiz;
     using Lbk.Mobile.Core.ViewModels.Reservation;
     using Lbk.Mobile.Core.ViewModels.Room;
+    using Lbk.Mobile.Core.ViewModels.TodaysMenu;
     using Lbk.Mobile.Core.ViewModels.Video;
 
     public class HomeViewModel : BaseViewModel
@@ -37,7 +37,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<ListViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<EventListViewModel>());
             }
         }
 
@@ -104,7 +104,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<RoomViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<RoomListViewModel>());
             }
         }
 

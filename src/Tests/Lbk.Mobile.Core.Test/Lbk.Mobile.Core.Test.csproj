@@ -125,6 +125,7 @@
     <Compile Include="TestBase.cs" />
     <Compile Include="Services\DataStoreServiceTest.cs" />
     <Compile Include="Services\LocalizationTest.cs" />
+    <Compile Include="ViewModels\RoomViewModelTest.cs" />
     <Compile Include="ViewModels\QuizStartViewModelTest.cs" />
     <Compile Include="ViewModels\EventViewModelTest.cs" />
   </ItemGroup>

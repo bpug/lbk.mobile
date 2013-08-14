@@ -25,5 +25,10 @@ namespace Lbk.Mobile.Core.Test.Implementation
         public void Show(string message, string title, string buttonConfirmText, string buttonCancelText)
         {
         }
+
+        public void Show(string message, string title, string buttonText, Action onBoxClose)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

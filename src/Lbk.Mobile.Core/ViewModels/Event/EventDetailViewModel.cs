@@ -6,7 +6,7 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Event
 {
-    public class DetailViewModel : BaseViewModel
+    public class EventDetailViewModel : BaseViewModel
     {
 
         public class Nav

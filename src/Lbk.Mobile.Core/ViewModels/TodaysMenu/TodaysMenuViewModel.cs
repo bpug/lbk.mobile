@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.ViewModels.MenuOfTheDay
+namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
 {
     using System;
     using System.Collections.Generic;
@@ -28,6 +28,10 @@ namespace Lbk.Mobile.Core.ViewModels.MenuOfTheDay
         public TodaysMenuViewModel(ILbkMobileService service)
         {
             this.service = service;
+        }
+
+        public void Init()
+        {
             this.LoadCommand.Execute(null);
         }
 

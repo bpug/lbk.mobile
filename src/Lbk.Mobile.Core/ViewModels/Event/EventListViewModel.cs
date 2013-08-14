@@ -20,18 +20,18 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Data.LbkMobileService;
 
-    public class ListViewModel : BaseViewModel
+    public class EventListViewModel : BaseViewModel
     {
         private readonly ILbkMobileService service;
 
         private List<Event> events;
 
-        public ListViewModel(ILbkMobileService service)
+        public EventListViewModel(ILbkMobileService service)
         {
             this.service = service;
         }
 
-        public ListViewModel()
+        public EventListViewModel()
         {
             this.service = Mvx.Resolve<ILbkMobileService>();
         }
@@ -84,8 +84,8 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             get
             {
                 return new MvxCommand<Event>(
-                    item => this.ShowViewModel<DetailViewModel>(
-                        new DetailViewModel.Nav()
+                    item => this.ShowViewModel<EventDetailViewModel>(
+                        new EventDetailViewModel.Nav()
                         {
                             ReservationLink = item.ReservationLink
                         }),

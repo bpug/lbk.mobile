@@ -55,8 +55,8 @@
     <Compile Include="Utils\MvxAsyncCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
-    <Compile Include="ViewModels\Event\ListViewModel.cs" />
-    <Compile Include="ViewModels\Event\DetailViewModel.cs" />
+    <Compile Include="ViewModels\Event\EventListViewModel.cs" />
+    <Compile Include="ViewModels\Event\EventDetailViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
@@ -65,12 +65,13 @@
     <Compile Include="ViewModels\Quiz\VoucherViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
     <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
+    <Compile Include="ViewModels\Room\RoomDetailViewModel.cs" />
     <Compile Include="ViewModels\Settings.cs" />
     <Compile Include="ViewModels\TodaysMenu\TodaysMenuViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizStartViewModel.cs" />
     <Compile Include="ViewModels\Reservation\ReservationViewModel.cs" />
-    <Compile Include="ViewModels\Room\RoomViewModel.cs" />
+    <Compile Include="ViewModels\Room\RoomListViewModel.cs" />
     <Compile Include="ViewModels\Video\VideoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

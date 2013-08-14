@@ -8,6 +8,7 @@ namespace Lbk.Mobile.Core.ViewModels
 {
     using System;
     using System.Threading.Tasks;
+    using System.Windows.Input;
 
     using Cirrious.CrossCore;
     using Cirrious.MvvmCross.Localization;
@@ -22,11 +23,21 @@ namespace Lbk.Mobile.Core.ViewModels
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
 
-    public class BaseViewModel : MvxViewModel
+    public abstract class BaseViewModel : MvxViewModel
     {
         private bool isBusy;
 
+        private IMessageBoxService messageBoxService;
+
         private IMvxMessenger mvxMessenger;
+
+        public ICommand BackCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.Close(this));
+            }
+        }
 
         public IMvxLanguageBinder ErrorTextSource
         {
@@ -50,35 +61,25 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        private IMessageBoxService messageBoxService;
-
         public IMessageBoxService MessageBoxService
         {
             get
             {
-                if (messageBoxService == null)
+                if (this.messageBoxService == null)
                 {
                     this.messageBoxService = Mvx.Resolve<IMessageBoxService>();
                 }
-                return messageBoxService;
+                return this.messageBoxService;
             }
         }
-      
 
-        protected void ShowMessage(string message, string title, Action<bool> onDialogClose)
+        protected IMvxMessenger MvxMessenger
         {
-            string buttonConfirmText = SharedTextSource.GetText("ButtonConfirmText");
-            string buttonCancelText = SharedTextSource.GetText("ButtonCancelText");
-            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
+            get
+            {
+                return this.mvxMessenger ?? (this.mvxMessenger = Mvx.Resolve<IMvxMessenger>());
+            }
         }
-
-        protected void ShowMessage(string message, string title)
-        {
-            string buttonConfirmText = SharedTextSource.GetText("ButtonConfirmText");
-            string buttonCancelText = SharedTextSource.GetText("ButtonCancelText");
-            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText);
-        }
-
 
         protected IMvxLanguageBinder SharedTextSource
         {
@@ -93,14 +94,6 @@ namespace Lbk.Mobile.Core.ViewModels
             get
             {
                 return new MvxLanguageBinder(Constants.GeneralNamespace, this.GetType().Name);
-            }
-        }
-
-        protected IMvxMessenger MvxMessenger
-        {
-            get
-            {
-                return this.mvxMessenger ?? (this.mvxMessenger = Mvx.Resolve<IMvxMessenger>());
             }
         }
 
@@ -200,6 +193,20 @@ namespace Lbk.Mobile.Core.ViewModels
         {
             var task = Mvx.Resolve<IMvxComposeEmailTask>();
             task.ComposeEmail(to, null, subject, body, false);
+        }
+
+        protected void ShowMessage(string message, string title, Action<bool> onDialogClose)
+        {
+            string buttonConfirmText = this.SharedTextSource.GetText("ButtonConfirmText");
+            string buttonCancelText = this.SharedTextSource.GetText("ButtonCancelText");
+            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
+        }
+
+        protected void ShowMessage(string message, string title)
+        {
+            string buttonConfirmText = this.SharedTextSource.GetText("ButtonConfirmText");
+            string buttonCancelText = this.SharedTextSource.GetText("ButtonCancelText");
+            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText);
         }
 
         protected void ShowWebPage(string webPage)

@@ -34,11 +34,11 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             tcs.SetResult(result);
             mockService.Setup(s => s.GetEventsAsync()).Returns(tcs.Task);
 
-            var eventViewModel = new ListViewModel(mockService.Object);
+            var eventViewModel = new EventListViewModel(mockService.Object);
 
             eventViewModel.PropertyChanged += (sender, args) =>
             {
-                var vm = (ListViewModel)sender;
+                var vm = (EventListViewModel)sender;
                 switch (args.PropertyName)
                 {
                     case "Events":
