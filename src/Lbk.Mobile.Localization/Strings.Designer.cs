@@ -97,6 +97,33 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string Lbk_QuestionViewModel_Next {
+            get {
+                return ResourceManager.GetString("Lbk.QuestionViewModel.Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right!.
+        /// </summary>
+        public static string Lbk_QuestionViewModel_Right {
+            get {
+                return ResourceManager.GetString("Lbk.QuestionViewModel.Right", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong!.
+        /// </summary>
+        public static string Lbk_QuestionViewModel_Wrong {
+            get {
+                return ResourceManager.GetString("Lbk.QuestionViewModel.Wrong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I confirm that I am at least 18 years old..
         /// </summary>
         public static string Lbk_QuizStartViewModel_YouthProtectionQuestion {
@@ -111,6 +138,24 @@ namespace Lbk.Mobile.Localization {
         public static string Lbk_QuizViewModel_AbortQuizQuestion {
             get {
                 return ResourceManager.GetString("Lbk.QuizViewModel.AbortQuizQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string Lbk_Shared_ButtonCancelText {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.ButtonCancelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Lbk_Shared_ButtonConfirmText {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.ButtonConfirmText", resourceCulture);
             }
         }
         

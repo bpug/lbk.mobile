@@ -13,6 +13,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
+    using Lbk.Mobile.Common.Extensions;
     using Lbk.Mobile.Core.Messages;
     using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Model.Enums;
@@ -74,11 +75,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             if (!Settings.YouthProtection)
             {
                 // Notify view 
-                if (this.YouthProtectionQuestion != null)
-                {
-                    this.YouthProtectionQuestion(
-                        this,
-                        new NotificationEventArgs<string, bool>(
+                this.YouthProtectionQuestion.RaiseEvent(this, new NotificationEventArgs<string, bool>(
                             this.TextSource.GetText("YouthProtectionQuestion"),
                             string.Empty,
                             result =>
@@ -89,7 +86,17 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                     this.StartQuizCommand.Execute(null);
                                 }
                             }));
-                }
+
+                ////With MessageBoxService
+                //this.ShowMessage(this.TextSource.GetText("YouthProtectionQuestion"), null,
+                //    result =>
+                //    {
+                //        if (result)
+                //        {
+                //            Settings.YouthProtection = true;
+                //            this.StartQuizCommand.Execute(null);
+                //        }
+                //    });
             }
             else
             {

@@ -19,6 +19,7 @@ namespace Lbk.Mobile.Core.ViewModels
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
+    using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
 
     public class BaseViewModel : MvxViewModel
@@ -49,7 +50,37 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        public IMvxLanguageBinder SharedTextSource
+        private IMessageBoxService messageBoxService;
+
+        public IMessageBoxService MessageBoxService
+        {
+            get
+            {
+                if (messageBoxService == null)
+                {
+                    this.messageBoxService = Mvx.Resolve<IMessageBoxService>();
+                }
+                return messageBoxService;
+            }
+        }
+      
+
+        protected void ShowMessage(string message, string title, Action<bool> onDialogClose)
+        {
+            string buttonConfirmText = SharedTextSource.GetText("ButtonConfirmText");
+            string buttonCancelText = SharedTextSource.GetText("ButtonCancelText");
+            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
+        }
+
+        protected void ShowMessage(string message, string title)
+        {
+            string buttonConfirmText = SharedTextSource.GetText("ButtonConfirmText");
+            string buttonCancelText = SharedTextSource.GetText("ButtonCancelText");
+            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText);
+        }
+
+
+        protected IMvxLanguageBinder SharedTextSource
         {
             get
             {
@@ -57,7 +88,7 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        public IMvxLanguageBinder TextSource
+        protected IMvxLanguageBinder TextSource
         {
             get
             {

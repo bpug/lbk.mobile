@@ -15,6 +15,7 @@ namespace Lbk.Mobile.Core
     using Lbk.Mobile.Core.AutoMapper;
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Localization;
 
     public abstract class LbkAppBase : MvxApplication
@@ -47,6 +48,7 @@ namespace Lbk.Mobile.Core
 
             //Mvx.RegisterType<IXmlDataService, XmlDataService>();
             //Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
+            
         }
 
         private void InitialisePlugins()

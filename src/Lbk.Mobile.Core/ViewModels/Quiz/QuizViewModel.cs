@@ -57,6 +57,15 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
+
+        private QuestionViewModel questionViewModel;
+
+        public QuestionViewModel QuestionViewModel
+        {
+            get { return questionViewModel; }
+            set { questionViewModel = value; this.RaisePropertyChanged(() => this.QuestionViewModel); }
+        }
+
         public int CurrentPoints
         {
             get
@@ -212,7 +221,24 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                     this.CurrentQuestion = this.Quiz.GetNextQuestion();
                     this.TotalQuestionCount = this.Quiz.GetTotalQuestionsCount();
                     this.TotalPoints = this.Quiz.GetTotalPoints();
+
+                    this.QuestionViewModel = new QuestionViewModel(this.CurrentQuestion);
+                    this.QuestionViewModel.QuestionAnswered += OnQuestionAnswered;
                 });
+        }
+
+        private void OnQuestionAnswered(object sender, EventArgs eventArgs)
+        {
+            QuestionViewModel qv = sender as QuestionViewModel;
+            if (qv == null)
+                return;
+
+            this.CurrentQuestionNumber++;
+            var nextQuestion = this.Quiz.GetNextQuestion();
+            if (nextQuestion != null)
+            {
+                //TODO: In View Change Question-Fagment
+            }
         }
     }
 }

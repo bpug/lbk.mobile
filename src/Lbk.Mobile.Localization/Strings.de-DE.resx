@@ -129,11 +129,26 @@
   <data name="Lbk.HomeViewModel.Recommend.MailSubject" xml:space="preserve">
     <value>Löwenbräukeller-App Empfelung</value>
   </data>
+  <data name="Lbk.QuestionViewModel.Next" xml:space="preserve">
+    <value>Weiter</value>
+  </data>
+  <data name="Lbk.QuestionViewModel.Right" xml:space="preserve">
+    <value>Richtig!</value>
+  </data>
+  <data name="Lbk.QuestionViewModel.Wrong" xml:space="preserve">
+    <value>Falsch!</value>
+  </data>
   <data name="Lbk.QuizStartViewModel.YouthProtectionQuestion" xml:space="preserve">
     <value>Hiermit bestätige ich, dass ich mindestens 18 Jahre alt bin.</value>
   </data>
   <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
     <value>Wollen Sie Quiz verlassen ?</value>
+  </data>
+  <data name="Lbk.Shared.ButtonCancel" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="Lbk.Shared.ButtonConfirm" xml:space="preserve">
+    <value>Ja</value>
   </data>
   <data name="Lbk.Test.Text" xml:space="preserve">
     <value>Deutsch</value>

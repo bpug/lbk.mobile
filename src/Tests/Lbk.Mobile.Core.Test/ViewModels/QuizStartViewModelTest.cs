@@ -21,6 +21,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Lbk.Mobile.Core.ViewModels;
     using Lbk.Mobile.Core.ViewModels.Quiz;
     using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Localization;
     using Lbk.Mobile.Plugin.Settings;
 
@@ -68,7 +69,10 @@ namespace Lbk.Mobile.Core.Test.ViewModels
         public void Instructions()
         {
             var mockNavigation = this.CreateMockDispatcher();
-            var viewModel = new QuizStartViewModel();
+
+            var mockDataService = new Mock<IQuizVoucherDataService>();
+
+            var viewModel = new QuizStartViewModel(mockDataService.Object);
 
             // Test InstructionsCommand
             viewModel.InstructionsCommand.Execute(null);
@@ -98,7 +102,9 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
             Settings.YouthProtection = false;
 
-            var viewModel = new QuizStartViewModel();
+            var mockDataService = new Mock<IQuizVoucherDataService>();
+
+            var viewModel = new QuizStartViewModel(mockDataService.Object);
 
             viewModel.YouthProtectionQuestion += (sender, args) => args.Completed(false);
 
@@ -116,7 +122,9 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
             Settings.YouthProtection = false;
 
-            var viewModel = new QuizStartViewModel();
+            var mockDataService = new Mock<IQuizVoucherDataService>();
+
+            var viewModel = new QuizStartViewModel(mockDataService.Object);
             viewModel.YouthProtectionQuestion += (sender, args) => args.Completed(true);
             viewModel.StartCommand.Execute(null);
 
@@ -136,6 +144,8 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             this.Ioc.RegisterSingleton<ISettings>(userSettings);
 
             this.Ioc.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
+
+            this.Ioc.RegisterSingleton<IMessageBoxService>(new MessageBoxService());
         }
 
         private Quiz GetQuizData()

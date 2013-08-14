@@ -6,6 +6,7 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Quiz
 {
+    using System;
     using System.Collections.Generic;
     using System.Windows.Input;
 
@@ -16,27 +17,24 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     public class QuestionViewModel : BaseViewModel
     {
+        private List<Answer> answers;
+
         private Question question;
 
-        public Question Question
+        public event EventHandler QuestionAnswered;
+
+        public QuestionViewModel(Question question)
+        {
+            this.Question = question;
+        }
+
+        public ICommand AnsweredCommand
         {
             get
             {
-                return this.question;
-            }
-            set
-            {
-                this.question = value;
-                if (question!= null)
-                {
-                    this.Answers = question.Answers;
-                }
-                this.RaisePropertyChanged(() => this.Question);
+                return new MvxCommand<Answer>(this.AnsweredCommandExecute);
             }
         }
-
-
-        private List<Answer> answers;
 
         public List<Answer> Answers
         {
@@ -51,18 +49,33 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public ICommand CheckAnswerCommand
+        public Question Question
         {
             get
             {
-                return new MvxCommand<Answer>(CheckAnswerCommandExecute);
+                return this.question;
+            }
+            set
+            {
+                this.question = value;
+                if (this.question != null)
+                {
+                    this.Answers = this.question.Answers;
+                }
+                this.RaisePropertyChanged(() => this.Question);
             }
         }
 
-        private void CheckAnswerCommandExecute(Answer answer)
+        private void AnsweredCommandExecute(Answer answer)
         {
-              
+            this.Question.IsRight = answer.Correct;
+            string title = answer.Correct ? this.TextSource.GetText("Right") : this.TextSource.GetText("Wrong");
 
+            this.MessageBoxService.Show(
+                title,
+                answer.Explanation,
+                this.TextSource.GetText("Next"),
+                () => { this.QuestionAnswered.RaiseEvent(this, EventArgs.Empty); });
         }
     }
 }

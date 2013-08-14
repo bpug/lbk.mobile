@@ -50,6 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApplicationObjects\AppStart.cs" />
     <Compile Include="Services\Error\IErrorService.cs" />
+    <Compile Include="Services\IMessageBoxService.cs" />
     <Compile Include="Services\ResxTextProvider.cs" />
     <Compile Include="Utils\MvxAsyncCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
