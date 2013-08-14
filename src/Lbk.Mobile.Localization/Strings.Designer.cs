@@ -160,6 +160,15 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To destination approx: {0}.
+        /// </summary>
+        public static string Lbk_Shared_LocationDistance {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.LocationDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
         public static string Lbk_Test_Text {

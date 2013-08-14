@@ -11,6 +11,7 @@ namespace Lbk.Mobile.Common.Test
     using System.Text;
 
     using Lbk.Mobile.Common.Extensions;
+    using Lbk.Mobile.Common.Utils;
 
     using NUnit.Framework;
 
@@ -20,6 +21,9 @@ namespace Lbk.Mobile.Common.Test
     [TestFixture]
     public class InfrastructureTest
     {
+        public const double LatitudeLbk = 48.147849;
+        public const double LongitudeLbk = 11.558634;
+
         [Test]
         public void GetMd5()
         {
@@ -32,6 +36,18 @@ namespace Lbk.Mobile.Common.Test
 
             Assert.AreEqual(hashString, hashString);
         }
+
+
+        [Test]
+        public void Distance()
+        {
+            double latIpc = 48.18514;
+            double lngIpc = 11.60497;
+            var result = DistanceCalcs.DistanceInMetres(latIpc, lngIpc, LatitudeLbk, LongitudeLbk);
+            var format = result.DistanceToString();
+        }
+
+        
 
         [Test]
         public void TestTruncate()

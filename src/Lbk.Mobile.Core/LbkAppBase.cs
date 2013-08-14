@@ -63,6 +63,7 @@ namespace Lbk.Mobile.Core
             Plugin.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Network.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader.Instance.EnsureLoaded();
+            Cirrious.MvvmCross.Plugins.PhoneCall.PluginLoader.Instance.EnsureLoaded();
         }
     }
 }

@@ -150,6 +150,9 @@
   <data name="Lbk.Shared.ButtonConfirmText" xml:space="preserve">
     <value>Yes</value>
   </data>
+  <data name="Lbk.Shared.LocationDistance" xml:space="preserve">
+    <value>To destination approx: {0}</value>
+  </data>
   <data name="Lbk.Test.Text" xml:space="preserve">
     <value>English</value>
   </data>
