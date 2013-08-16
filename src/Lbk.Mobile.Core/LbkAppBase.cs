@@ -9,10 +9,9 @@ namespace Lbk.Mobile.Core
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.IoC;
     using Cirrious.MvvmCross.Localization;
-    using Cirrious.MvvmCross.Plugins.File;
+    using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Core.AutoMapper;
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Localization;
@@ -23,7 +22,7 @@ namespace Lbk.Mobile.Core
         {
             this.InitaliseServices();
             this.InitaliseErrorReporting();
-            this.InitialisePlugins();
+            //this.InitialisePlugins();
             //AutoMapperConfiguration.Configure();
         }
 
@@ -43,20 +42,19 @@ namespace Lbk.Mobile.Core
         {
             Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
 
+            this.CreatableTypes().EndingWith("Repository").AsInterfaces().RegisterAsLazySingleton();
+
             this.CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
 
             //Mvx.RegisterType<IXmlDataService, XmlDataService>();
             //Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
-            
         }
 
         private void InitialisePlugins()
         {
-            // initialise any plugins where are required at app startup
-            // e.g. Cirrious.MvvmCross.Plugins.Visibility.PluginLoader.Instance.EnsureLoaded();
             //PluginLoader.Instance.EnsureLoaded();
-            
-            Cirrious.MvvmCross.Plugins.Messenger.PluginLoader.Instance.EnsureLoaded();
+
+            PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Sqlite.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Email.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Network.PluginLoader.Instance.EnsureLoaded();
