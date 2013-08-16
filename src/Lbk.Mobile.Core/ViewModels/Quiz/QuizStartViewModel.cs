@@ -15,18 +15,18 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Extensions;
     using Lbk.Mobile.Core.Messages;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model.Enums;
 
     public class QuizStartViewModel : BaseViewModel
     {
         public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
 
-        private readonly IQuizVoucherDataService voucherDataService;
+        private readonly IQuizVoucherRepository voucherRepository;
 
-        public QuizStartViewModel(IQuizVoucherDataService voucherDataService)
+        public QuizStartViewModel(IQuizVoucherRepository voucherRepository)
         {
-            this.voucherDataService = voucherDataService;
+            this.voucherRepository = voucherRepository;
         }
 
         public ICommand InstructionsCommand
@@ -41,7 +41,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<InstructionsViewModel>(), () => this.voucherDataService.GetNotUsed().Any());
+                return new MvxCommand(() => this.ShowViewModel<InstructionsViewModel>(), () => this.voucherRepository.GetNotUsed().Any());
             }
         }
 

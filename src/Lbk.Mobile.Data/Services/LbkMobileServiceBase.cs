@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Services
 {
     using System;
     using System.ServiceModel;

@@ -17,8 +17,8 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Common.Extensions;
-    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Data.Services;
 
     public class EventListViewModel : BaseViewModel
     {
@@ -67,7 +67,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         {
             get
             {
-                return new MvxCommand(async () => await this.OnLoadExecute());
+                return new MvxCommand(async () => await this.LoadExecute());
             }
         }
 
@@ -129,9 +129,9 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         //    //this.IsBusy = false;
         //}
 
-        private async Task OnLoadExecute()
+        private async Task LoadExecute()
         {
-            await this.AsyncExecute(() => this.service.GetEventsAsync(), OnSuccess, OnLoadError);
+            await this.AsyncExecute(() => this.service.GetEventsAsync(), result => this.Events = result, OnLoadError);
             
             //if (IsBusy)
             //    return;
@@ -154,12 +154,6 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             //        this.IsBusy = false;
             //    });
         }
-
-        private void OnSuccess(List<Event> list)
-        {
-           this.Events = list;
-        }
-
 
         private void OnLoadError(Exception exception)
         {

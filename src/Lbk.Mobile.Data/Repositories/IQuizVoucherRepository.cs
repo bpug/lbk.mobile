@@ -4,13 +4,13 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Repositories
 {
     using System.Collections.Generic;
 
     using Lbk.Mobile.Model;
 
-    public interface IQuizVoucherDataService
+    public interface IQuizVoucherRepository
     {
         int Count();
 

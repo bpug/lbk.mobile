@@ -6,24 +6,23 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Room
 {
-    using System.Collections.Generic;
     using System.Windows.Input;
 
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common.Interfaces;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
     public class RoomListViewModel : BaseViewModel
     {
-        private readonly IXmlDataService xmlDataService;
+        private readonly IRoomRepository roomRepository;
 
         private IObservableCollection<Room> rooms;
 
-        public RoomListViewModel(IXmlDataService xmlDataService)
+        public RoomListViewModel(IRoomRepository roomRepository)
         {
-            this.xmlDataService = xmlDataService;
+            this.roomRepository = roomRepository;
         }
 
         public ICommand LoadCommand
@@ -73,7 +72,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
 
         private void OnLoadExecute()
         {
-            this.Rooms = this.xmlDataService.GetRooms();
+            this.Rooms = this.roomRepository.GetRooms();
         }
     }
 }

@@ -144,6 +144,15 @@
   <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
     <value>Do you want to leave quiz?</value>
   </data>
+  <data name="Lbk.ReservationConfirmationViewModel.AbortReservationNotConfirmed" xml:space="preserve">
+    <value>The cancellation request could not be confirmed.</value>
+  </data>
+  <data name="Lbk.ReservationConfirmationViewModel.AbortReservationQuestion" xml:space="preserve">
+    <value>Do you want to abort the reservation?</value>
+  </data>
+  <data name="Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed" xml:space="preserve">
+    <value>The reservation is not confirmed.</value>
+  </data>
   <data name="Lbk.Shared.ButtonCancelText" xml:space="preserve">
     <value>No</value>
   </data>

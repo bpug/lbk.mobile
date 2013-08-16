@@ -71,26 +71,29 @@
     <Compile Include="Mappings\AnswerMapping.cs" />
     <Compile Include="Mappings\QuestionMapping.cs" />
     <Compile Include="Mappings\QuizMapping.cs" />
-    <Compile Include="Service\IReservationDataService.cs" />
-    <Compile Include="Service\IQuizVoucherDataService.cs" />
+    <Compile Include="Repositories\XmlRepositoryBase.cs" />
+    <Compile Include="Repositories\HistoryRepository.cs" />
+    <Compile Include="Repositories\IHistoryRepository.cs" />
+    <Compile Include="Repositories\IReservationRepository.cs" />
+    <Compile Include="Repositories\IQuizVoucherRepository.cs" />
     <Compile Include="Partials\Reservation.Partial.cs" />
-    <Compile Include="Service\DataServiceBase.cs" />
-    <Compile Include="Service\QuizVoucherDataService.cs" />
-    <Compile Include="Service\ReservationDataService.cs">
+    <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\QuizVoucherRepository.cs" />
+    <Compile Include="Repositories\ReservationRepository.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utility\XmlSerializer.cs" />
-    <Compile Include="Service\IXmlDataService.cs" />
+    <Compile Include="Repositories\IRoomRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\LbkMobileService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service\LbkMobileServiceBase.cs" />
-    <Compile Include="Service\ILbkMobileService.cs" />
-    <Compile Include="Service\LbkMobileService.cs" />
-    <Compile Include="Service\XmlDataService.cs" />
+    <Compile Include="Services\LbkMobileServiceBase.cs" />
+    <Compile Include="Services\ILbkMobileService.cs" />
+    <Compile Include="Services\LbkMobileService.cs" />
+    <Compile Include="Repositories\RoomRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

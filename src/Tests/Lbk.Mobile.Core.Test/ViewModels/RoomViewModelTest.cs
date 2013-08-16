@@ -14,7 +14,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Core.ViewModels.Room;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
     using Moq;
@@ -28,7 +28,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
         public void LoadAndNavigate()
         {
             var mockNavigation = this.CreateMockDispatcher();
-            var mockService = new Mock<IXmlDataService>();
+            var mockService = new Mock<IRoomRepository>();
 
             var result = this.GetRoomsData();
             mockService.Setup(s => s.GetRooms()).Returns(result);

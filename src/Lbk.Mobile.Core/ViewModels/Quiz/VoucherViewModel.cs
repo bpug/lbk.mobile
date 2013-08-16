@@ -15,7 +15,8 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
+    using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
 
     public class VoucherViewModel : BaseViewModel
@@ -24,13 +25,13 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
         public event EventHandler<NotificationEventArgs<string, bool>> ActivateVoucherQuestion;
 
-        private readonly IQuizVoucherDataService voucherDataService;
+        private readonly IQuizVoucherRepository voucherRepository;
         private readonly ILbkMobileService lbkMobileservice;
 
-        public VoucherViewModel(ILbkMobileService lbkMobileservice, IQuizVoucherDataService voucherDataService)
+        public VoucherViewModel(ILbkMobileService lbkMobileservice, IQuizVoucherRepository voucherRepository)
         {
             this.lbkMobileservice = lbkMobileservice;
-            this.voucherDataService = voucherDataService;
+            this.voucherRepository = voucherRepository;
         }
 
         public void Init()
@@ -88,7 +89,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                         if (serviceResult)
                                         {
                                             voucher.IsActivated = true;
-                                            this.voucherDataService.Update(voucher);
+                                            this.voucherRepository.Update(voucher);
                                             this.Load();
                                             // TODO: DialogService-Alert: string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code) 
                                             this.ShowMessage(string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code), null);
@@ -97,7 +98,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                         {
                                             voucher.IsUsed = true;
                                             voucher.Deleted = true;
-                                            this.voucherDataService.Update(voucher);
+                                            this.voucherRepository.Update(voucher);
                                             // TODO: DialogService-Alert: string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code) 
                                             this.ShowMessage(string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code), null);
                                         }
@@ -121,7 +122,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                             if (result)
                             {
                                 voucher.IsUsed = true;
-                                this.voucherDataService.Update(voucher);
+                                this.voucherRepository.Update(voucher);
                                 //Navigate to QuizStartViewModel ?
                                 this.ShowViewModel<QuizStartViewModel>();
                             }
@@ -131,7 +132,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
         private void Load()
         {
-            this.Vouchers =  this.voucherDataService.GetNotUsed().ToList();
+            this.Vouchers =  this.voucherRepository.GetNotUsed().ToList();
         }
     }
 }

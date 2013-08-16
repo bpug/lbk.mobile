@@ -4,14 +4,14 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
 
     using Lbk.Mobile.Data.LbkMobileService;
 
-    public interface IReservationDataService
+    public interface IReservationRepository
     {
         void Delete(Reservation reservation);
 

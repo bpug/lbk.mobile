@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Services
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,10 @@ namespace Lbk.Mobile.Data.Service
 
     using Lbk.Mobile.Data.Extensions;
     using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
+
+    using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
 
     public class LbkMobileService : LbkMobileServiceBase<Service1SoapClient>, ILbkMobileService
     {
@@ -35,20 +38,24 @@ namespace Lbk.Mobile.Data.Service
             this.GetDeviceUid();
         }
 
-        public async Task<bool> ActivateVoucherAsync(Model.QuizVoucher voucher)
+        public async Task<bool> AbortedReservationByCustomerAsync(Guid reservationId)
+        {
+            return await this.Service.AbortedReservationByCustomerAsyncTask(reservationId);
+        }
+
+        public async Task<bool> ActivateVoucherAsync(QuizVoucher voucher)
         {
             return await this.Service.ActivateVoucherAsyncTask(voucher, this.deviceUid);
         }
 
-        public async Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
+        public async Task<bool> ConfirmedReservationByCustomerAsync(Guid reservationId)
         {
-            var result = await this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
-            return result;
+            return await this.Service.ConfirmReservationByCustomerAsyncTask(reservationId);
         }
 
-        public async Task<List<Event>> GetEventsAsync()
+        public async Task<Guid> CreateReservationAsync(Reservation reservation)
         {
-            return await this.Service.GetEventsAsyncTask(this.deviceUid);
+            return await this.Service.CreateReservationAsyncTask(reservation);
         }
 
         public List<Event> GetEvents()
@@ -61,10 +68,15 @@ namespace Lbk.Mobile.Data.Service
             return test;
         }
 
+        public async Task<List<Event>> GetEventsAsync()
+        {
+            return await this.Service.GetEventsAsyncTask(this.deviceUid);
+        }
+
         public async Task<DateTime?> GetMenuLastUpdateAsync()
         {
             var result = await this.Service.GetMenuLastUpdateAsyncTask(this.deviceUid);
-             return result;
+            return result;
         }
 
         public async Task<List<Picture>> GetPicturesAsync()
@@ -77,14 +89,20 @@ namespace Lbk.Mobile.Data.Service
             return await this.Service.GetQuizAsyncTask(this.deviceUid, questionCount);
         }
 
-        public async Task<Guid> CreateReservationAsync(Reservation reservation)
+        public async Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
         {
-            return await this.Service.CreateReservationAsyncTask(reservation);
+            var result = await this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
+            return result;
         }
 
         public async Task<List<Video>> GetVideosAsyn()
         {
             return await this.Service.GetVideosAsyncTask(this.deviceUid);
+        }
+
+        public async Task<bool> IsDeclinedReservationByRestaurantAsyn(Guid reservationId)
+        {
+            return await this.Service.IsDeclinedByRestaurantAsyncTask(reservationId);
         }
 
         private void GetDeviceUid()

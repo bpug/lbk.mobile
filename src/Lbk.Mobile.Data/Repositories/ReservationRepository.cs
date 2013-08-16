@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -14,9 +14,9 @@ namespace Lbk.Mobile.Data.Service
 
     using Lbk.Mobile.Data.LbkMobileService;
 
-    public class ReservationDataService : DataServiceBase, IReservationDataService
+    public class ReservationRepository : RepositoryBase, IReservationRepository
     {
-        public ReservationDataService(ISQLiteConnectionFactory factory)
+        public ReservationRepository(ISQLiteConnectionFactory factory)
             : base(factory)
         {
             this.Connection.CreateTable<Reservation>();

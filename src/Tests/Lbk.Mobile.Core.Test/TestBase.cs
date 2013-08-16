@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Core.Test
     using Cirrious.MvvmCross.Views;
 
     using Lbk.Mobile.Core.Test.Mocks;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
 
     using Moq;

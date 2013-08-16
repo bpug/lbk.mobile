@@ -11,19 +11,19 @@ namespace Lbk.Mobile.Core.ViewModels.History
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common.Interfaces;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
     
     public class HistoryViewModel : BaseViewModel
     {
-        private readonly IXmlDataService xmlDataService;
+        private readonly IHistoryRepository historyRepository;
 
         private IObservableCollection<History> histories;
 
-        public HistoryViewModel(IXmlDataService xmlDataService)
+        public HistoryViewModel(IHistoryRepository historyRepository)
         {
-            this.xmlDataService = xmlDataService;
+            this.historyRepository = historyRepository;
         }
 
         public IObservableCollection<History> Histories
@@ -54,7 +54,7 @@ namespace Lbk.Mobile.Core.ViewModels.History
 
         private void OnLoadExecute()
         {
-            this.Histories = this.xmlDataService.GetHistories();
+            this.Histories = this.historyRepository.GetHistories();
         }
     }
 }

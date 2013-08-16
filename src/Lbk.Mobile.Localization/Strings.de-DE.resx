@@ -144,6 +144,15 @@
   <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
     <value>Wollen Sie Quiz verlassen ?</value>
   </data>
+  <data name="Lbk.ReservationConfirmationViewModel.AbortReservationNotConfirmed" xml:space="preserve">
+    <value>Der Abbruchwunsch konnte nicht bestätigt werden.</value>
+  </data>
+  <data name="Lbk.ReservationConfirmationViewModel.AbortReservationQuestion" xml:space="preserve">
+    <value>Wollen Sie die Reservierung abrechen?</value>
+  </data>
+  <data name="Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed" xml:space="preserve">
+    <value>Die Reservierung wurde nicht bestätigt.</value>
+  </data>
   <data name="Lbk.Shared.ButtonCancel" xml:space="preserve">
     <value>Nein</value>
   </data>

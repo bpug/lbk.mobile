@@ -56,6 +56,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
     <Compile Include="ViewModels\Contact\AppInfoViewModel.cs" />
+    <Compile Include="ViewModels\Contact\MapViewModel.cs" />
     <Compile Include="ViewModels\Event\EventListViewModel.cs" />
     <Compile Include="ViewModels\Event\EventDetailViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
@@ -66,12 +67,15 @@
     <Compile Include="ViewModels\Quiz\VoucherViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
     <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationController.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationResultViewModel.cs" />
     <Compile Include="ViewModels\Room\RoomDetailViewModel.cs" />
     <Compile Include="ViewModels\Settings.cs" />
     <Compile Include="ViewModels\TodaysMenu\TodaysMenuViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizStartViewModel.cs" />
-    <Compile Include="ViewModels\Reservation\ReservationViewModel.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationFormViewModel.cs" />
     <Compile Include="ViewModels\Room\RoomListViewModel.cs" />
     <Compile Include="ViewModels\Video\VideoViewModel.cs" />
   </ItemGroup>
@@ -102,6 +106,9 @@
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Network">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Network.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.PhoneCall">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.PhoneCall.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.PhoneCall.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Sqlite.dll</HintPath>

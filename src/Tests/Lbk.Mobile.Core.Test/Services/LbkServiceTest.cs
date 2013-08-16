@@ -9,7 +9,7 @@ namespace Lbk.Mobile.Core.Test.Services
     using System;
     using System.Linq;
 
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Services;
 
     using NUnit.Framework;
 

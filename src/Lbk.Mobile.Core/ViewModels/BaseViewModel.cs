@@ -15,6 +15,7 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.Plugins.Email;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.Plugins.Network.Reachability;
+    using Cirrious.MvvmCross.Plugins.PhoneCall;
     using Cirrious.MvvmCross.Plugins.WebBrowser;
     using Cirrious.MvvmCross.ViewModels;
 
@@ -187,6 +188,12 @@ namespace Lbk.Mobile.Core.ViewModels
             var task = execute(parameter1, parameter2, parameter3);
 
             await AsyncExecute(task, onSuccess, onError);
+        }
+
+        protected void MakePhoneCall(string name, string number)
+        {
+            var task = Mvx.Resolve<IMvxPhoneCallTask>();
+            task.MakePhoneCall(name, number);
         }
 
         protected void ComposeEmail(string to, string subject, string body)

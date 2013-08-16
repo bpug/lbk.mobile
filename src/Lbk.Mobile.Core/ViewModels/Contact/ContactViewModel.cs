@@ -6,8 +6,10 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Contact
 {
-    using Cirrious.CrossCore;
+    using System.Windows.Input;
+
     using Cirrious.MvvmCross.Plugins.Location;
+    using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Utils;
@@ -16,23 +18,19 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
     {
         private readonly IMvxGeoLocationWatcher watcher;
 
+        private double distance;
+
         public ContactViewModel(IMvxGeoLocationWatcher watcher)
         {
             this.watcher = watcher;
-            watcher.Start(new MvxGeoLocationOptions{EnableHighAccuracy = true }, OnLocation, OnError);
+            watcher.Start(
+                new MvxGeoLocationOptions
+                {
+                    EnableHighAccuracy = true
+                },
+                this.OnLocation,
+                this.OnLocationError);
         }
-
-        private void OnLocation(MvxGeoLocation location)
-        {
-            var lat = location.Coordinates.Latitude;
-            var lng = location.Coordinates.Longitude;
-
-            this.Distance = DistanceCalcs.DistanceInMetres(lat, lng, Constants.LatitudeLbk, Constants.LongitudeLbk);
-
-            this.watcher.Stop();
-        }
-
-        private double distance;
 
         public double Distance
         {
@@ -43,14 +41,54 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
             set
             {
                 this.distance = value;
-                RaisePropertyChanged(() => this.Distance);
+                this.RaisePropertyChanged(() => this.Distance);
             }
-
         }
 
-        private void OnError(MvxLocationError error)
+        public ICommand EmailCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.ComposeEmail(Constants.LbkEmail, "Löwenbräu", string.Empty));
+            }
+        }
+
+        public ICommand PhoneCallCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.MakePhoneCall(string.Empty, Constants.LbkPhone));
+            }
+        }
+
+        public ICommand ShowAppInfoCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.ShowViewModel<AppInfoViewModel>());
+            }
+        }
+
+        public ICommand ShowMapCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.ShowViewModel<MapViewModel>());
+            }
+        }
+
+        private void OnLocationError(MvxLocationError error)
         {
             Trace.Error("Seen location error {0}", error.Code);
+        }
+
+        private void OnLocation(MvxGeoLocation location)
+        {
+            double lat = location.Coordinates.Latitude;
+            double lng = location.Coordinates.Longitude;
+            this.Distance = DistanceCalcs.DistanceInMetres(lat, lng, Constants.LbkLatitude, Constants.LbkLongitude);
+
+            this.watcher.Stop();
         }
     }
 }

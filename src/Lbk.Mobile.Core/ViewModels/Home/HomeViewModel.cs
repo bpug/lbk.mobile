@@ -96,7 +96,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<ReservationViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<ReservationFormViewModel>());
             }
         }
 

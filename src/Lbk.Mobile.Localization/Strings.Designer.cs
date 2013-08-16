@@ -142,6 +142,33 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The cancellation request could not be confirmed..
+        /// </summary>
+        public static string Lbk_ReservationConfirmationViewModel_AbortReservationNotConfirmed {
+            get {
+                return ResourceManager.GetString("Lbk.ReservationConfirmationViewModel.AbortReservationNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to abort the reservation?.
+        /// </summary>
+        public static string Lbk_ReservationConfirmationViewModel_AbortReservationQuestion {
+            get {
+                return ResourceManager.GetString("Lbk.ReservationConfirmationViewModel.AbortReservationQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The reservation is not confirmed..
+        /// </summary>
+        public static string Lbk_ReservationConfirmationViewModel_ReservationNotConfirmed {
+            get {
+                return ResourceManager.GetString("Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string Lbk_Shared_ButtonCancelText {

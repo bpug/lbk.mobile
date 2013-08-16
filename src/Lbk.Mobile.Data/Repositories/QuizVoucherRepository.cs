@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -14,9 +14,9 @@ namespace Lbk.Mobile.Data.Service
 
     using Lbk.Mobile.Model;
 
-    public class QuizVoucherDataService : DataServiceBase, IQuizVoucherDataService
+    public class QuizVoucherRepository : RepositoryBase, IQuizVoucherRepository
     {
-        public QuizVoucherDataService(ISQLiteConnectionFactory factory)
+        public QuizVoucherRepository(ISQLiteConnectionFactory factory)
             : base(factory)
         {
             this.Connection.CreateTable<QuizVoucher>();

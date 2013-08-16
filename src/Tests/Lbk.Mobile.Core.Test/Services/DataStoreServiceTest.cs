@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Core.Test.Services
 
     using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Core.Test.Implementation;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Utility;
     using Lbk.Mobile.Model;
 
@@ -53,7 +53,7 @@ namespace Lbk.Mobile.Core.Test.Services
          {
              this.Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
 
-             var service = new XmlDataService();
+             var service = new HistoryRepository();
              var histories = service.GetHistories();
 
              Assert.NotNull(histories);
@@ -66,7 +66,7 @@ namespace Lbk.Mobile.Core.Test.Services
          {
              this.Ioc.RegisterType<IMvxFileStore, MvxTestFileStore>();
 
-             var service = new XmlDataService();
+             var service = new RoomRepository();
              var rooms = service.GetRooms();
 
              Assert.NotNull(rooms);

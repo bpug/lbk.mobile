@@ -15,17 +15,16 @@ namespace Lbk.Mobile.Core
     using Lbk.Mobile.Core.AutoMapper;
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
-    using Lbk.Mobile.Data.Service;
     using Lbk.Mobile.Localization;
 
     public abstract class LbkAppBase : MvxApplication
     {
         protected LbkAppBase()
         {
-            this.InitialisePlugins();
             this.InitaliseServices();
             this.InitaliseErrorReporting();
-            AutoMapperConfiguration.Configure();
+            this.InitialisePlugins();
+            //AutoMapperConfiguration.Configure();
         }
 
         protected abstract void InitialiseStartNavigation();
@@ -56,14 +55,15 @@ namespace Lbk.Mobile.Core
             // initialise any plugins where are required at app startup
             // e.g. Cirrious.MvvmCross.Plugins.Visibility.PluginLoader.Instance.EnsureLoaded();
             //PluginLoader.Instance.EnsureLoaded();
-            PluginLoader.Instance.EnsureLoaded();
+            
             Cirrious.MvvmCross.Plugins.Messenger.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Sqlite.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Email.PluginLoader.Instance.EnsureLoaded();
-            Plugin.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Network.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.PhoneCall.PluginLoader.Instance.EnsureLoaded();
+            Plugin.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();
+            Plugin.Settings.PluginLoader.Instance.EnsureLoaded();
         }
     }
 }

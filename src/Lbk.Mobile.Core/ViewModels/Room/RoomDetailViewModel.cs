@@ -6,18 +6,18 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Room
 {
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
     public class RoomDetailViewModel : BaseViewModel
     {
-        private readonly IXmlDataService xmlDataService;
+        private readonly IRoomRepository roomRepository;
 
         private Room room;
 
-        public RoomDetailViewModel(IXmlDataService xmlDataService)
+        public RoomDetailViewModel(IRoomRepository roomRepository)
         {
-            this.xmlDataService = xmlDataService;
+            this.roomRepository = roomRepository;
         }
 
         public Room Room
@@ -35,7 +35,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
 
         public void Init(int id)
         {
-            this.Room = this.xmlDataService.GetRoom(id);
+            this.Room = this.roomRepository.GetRoom(id);
         }
     }
 }

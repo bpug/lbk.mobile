@@ -17,7 +17,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Extensions;
     using Lbk.Mobile.Data.Mappings;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
 
     public class QuizViewModel : BaseViewModel

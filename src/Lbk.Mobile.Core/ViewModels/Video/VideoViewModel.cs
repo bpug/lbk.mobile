@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Core.ViewModels.Video
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Data.LbkMobileService;
-    using Lbk.Mobile.Data.Service;
+    using Lbk.Mobile.Data.Services;
 
     public class VideoViewModel : BaseViewModel
     {

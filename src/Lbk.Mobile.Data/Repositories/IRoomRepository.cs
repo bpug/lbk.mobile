@@ -1,15 +1,18 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="ReservationViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="IRoomRepository.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.ViewModels.Reservation
+namespace Lbk.Mobile.Data.Repositories
 {
-    /// <summary>
-    ///     TODO: Update summary.
-    /// </summary>
-    public class ReservationViewModel : BaseViewModel
+    using Lbk.Mobile.Common.Interfaces;
+    using Lbk.Mobile.Model;
+
+    public interface IRoomRepository
     {
+        Room GetRoom(int id);
+
+        IObservableCollection<Room> GetRooms();
     }
 }

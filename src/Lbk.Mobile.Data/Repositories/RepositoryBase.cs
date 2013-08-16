@@ -4,15 +4,15 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Service
+namespace Lbk.Mobile.Data.Repositories
 {
     using Cirrious.MvvmCross.Plugins.Sqlite;
 
-    public abstract class DataServiceBase
+    public abstract class RepositoryBase
     {
         protected readonly ISQLiteConnection Connection;
 
-        protected DataServiceBase(ISQLiteConnectionFactory factory)
+        protected RepositoryBase(ISQLiteConnectionFactory factory)
         {
             this.Connection = factory.Create(Constants.DbName);
         }

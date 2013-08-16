@@ -39,6 +39,29 @@ namespace Lbk.Mobile.Data.Extensions
         //    return tcs.Task;
         //}
 
+        public static Task<bool> AbortedReservationByCustomerAsyncTask(this Service1SoapClient client, Guid reservationId)
+        {
+            var tcs = CreateSource<bool>(null);
+            client.SetDecliningCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+            client.SetDecliningAsync(reservationId);
+            return tcs.Task;
+        }
+
+        public static Task<bool> ConfirmReservationByCustomerAsyncTask(this Service1SoapClient client, Guid reservationId)
+        {
+            var tcs = CreateSource<bool>(null);
+            client.SetReservationConfirmCustomerCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+            client.SetReservationConfirmCustomerAsync(reservationId);
+            return tcs.Task;
+        }
+
+        public static Task<bool> IsDeclinedByRestaurantAsyncTask(this Service1SoapClient client, Guid reservationId)
+        {
+            var tcs = CreateSource<bool>(null);
+            client.IsDeclinedByRestaurantCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+            client.IsDeclinedByRestaurantAsync(reservationId);
+            return tcs.Task;
+        }
 
         public static Task<bool> ActivateVoucherAsyncTask(this Service1SoapClient client, Model.QuizVoucher voucher, string fingerprint)
         {
