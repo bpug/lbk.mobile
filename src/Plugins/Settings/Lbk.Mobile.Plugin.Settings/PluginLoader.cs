@@ -19,7 +19,8 @@ namespace Lbk.Mobile.Plugin.Settings
 
         public void EnsureLoaded()
         {
-            Mvx.Resolve<IMvxPluginManager>().EnsurePlatformAdaptionLoaded<PluginLoader>();
+            var manager = Mvx.Resolve<IMvxPluginManager>();
+            manager.EnsurePlatformAdaptionLoaded<PluginLoader>();
         }
     }
 }

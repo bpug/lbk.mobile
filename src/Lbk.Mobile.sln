@@ -44,6 +44,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Common", "Lbk.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Common.Test", "Tests\Lbk.Mobile.Common.Test\Lbk.Mobile.Common.Test.csproj", "{3E1DF4C3-9551-4847-94AD-1D07B525124F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.Settings.Droid", "Plugins\Settings\Lbk.Mobile.Plugin.Settings.Droid\Lbk.Mobile.Plugin.Settings.Droid.csproj", "{8F41FC68-5A72-4DCB-950A-F52CDCA41D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.DeviceIdentifier.Droid", "Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.Droid\Lbk.Mobile.Plugin.DeviceIdentifier.Droid.csproj", "{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +118,14 @@ Global
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1DF4C3-9551-4847-94AD-1D07B525124F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F41FC68-5A72-4DCB-950A-F52CDCA41D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F41FC68-5A72-4DCB-950A-F52CDCA41D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F41FC68-5A72-4DCB-950A-F52CDCA41D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F41FC68-5A72-4DCB-950A-F52CDCA41D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +141,8 @@ Global
 		{A853016C-6BCC-4946-BD0C-FDDF894A9A32} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
 		{2A654FF5-A82D-4311-8826-ECA94C5FEF0E} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B} = {A853016C-6BCC-4946-BD0C-FDDF894A9A32}
+		{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98} = {A853016C-6BCC-4946-BD0C-FDDF894A9A32}
 		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D} = {2A654FF5-A82D-4311-8826-ECA94C5FEF0E}
+		{8F41FC68-5A72-4DCB-950A-F52CDCA41D80} = {2A654FF5-A82D-4311-8826-ECA94C5FEF0E}
 	EndGlobalSection
 EndGlobal
