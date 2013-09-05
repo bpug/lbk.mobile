@@ -12,8 +12,6 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Messenger;
-    using Cirrious.MvvmCross.Plugins.Network.Reachability;
-
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Messages;
     using Lbk.Mobile.Core.Services;
@@ -23,6 +21,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Localization;
+    using Lbk.Mobile.Plugin.Reachability;
     using Lbk.Mobile.Plugin.Settings;
 
     using Moq;
@@ -137,7 +136,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
         protected override void AdditionalSetup()
         {
-            this.Ioc.RegisterType<IMvxReachability, MvxTestReachability>();
+            this.Ioc.RegisterType<IReachability, MvxTestReachability>();
             this.Ioc.RegisterSingleton<IMvxMessenger>(new MvxMessengerHub());
 
             var userSettings = this.Ioc.IoCConstruct<UserSettings>();

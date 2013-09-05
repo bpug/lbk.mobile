@@ -1,49 +1,40 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Lbk.Mobile.Plugin.DeviceIdentifier;
-using Android.Provider;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid;
-
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="MvxAndroidDeviceIdentifier.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Plugin.DeviceIdentifier.Droid
 {
+    using System;
+
+    using Android.Provider;
+
+    using Cirrious.CrossCore;
+    using Cirrious.CrossCore.Droid;
+
     public class MvxAndroidDeviceIdentifier : IDeviceUidService
     {
-    #region IDeviceUidService Members
-
-    public void GetDeviceUid(Action<string> onSuccess, Action<Exception> onError)
-    {
-        string uid;
-        try
+        public void GetDeviceUid(Action<string> onSuccess, Action<Exception> onError)
         {
-            uid = GetDeviceUid();
-            onSuccess(uid);
-
+            try
+            {
+                var uid = this.GetDeviceUid();
+                onSuccess(uid);
+            }
+            catch (Exception ex)
+            {
+                onError(ex);
+            }
         }
-        catch (Exception ex)
+
+        public string GetDeviceUid()
         {
-            onError(ex);
+            var globals = Mvx.Resolve<IMvxAndroidGlobals>();
+            var uid = Settings.Secure.GetString(
+                globals.ApplicationContext.ContentResolver,
+                Settings.Secure.AndroidId);
+            return uid;
         }
-        
-    }
-
-    public string GetDeviceUid()
-    {
-        var globals = Mvx.Resolve<IMvxAndroidGlobals>();
-        var uid = Settings.Secure.GetString(globals.ApplicationContext.ContentResolver, Settings.Secure.AndroidId);
-        return uid;
-    }
-
-    #endregion
     }
 }

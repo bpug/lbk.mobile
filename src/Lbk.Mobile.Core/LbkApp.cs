@@ -20,7 +20,7 @@ namespace Lbk.Mobile.Core
 
         protected override sealed void InitialiseStartNavigation()
         {
-            var startApplicationObject = new AppStart(true);
+            var startApplicationObject = new AppStart(false);
             Mvx.RegisterSingleton<IMvxAppStart>(startApplicationObject);
         }
     }

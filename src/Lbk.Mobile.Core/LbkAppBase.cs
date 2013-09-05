@@ -14,6 +14,7 @@ namespace Lbk.Mobile.Core
 
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
+    using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Localization;
 
     public abstract class LbkAppBase : MvxApplication
@@ -25,6 +26,19 @@ namespace Lbk.Mobile.Core
             //this.InitialisePlugins();
             //AutoMapperConfiguration.Configure();
         }
+
+        //public override void Initialize()
+        //{
+        //    CreatableTypes()
+        //        .EndingWith("Repository")
+        //        .AsInterfaces()
+        //        .RegisterAsLazySingleton();
+
+        //    CreatableTypes()
+        //        .EndingWith("Service")
+        //        .AsInterfaces()
+        //        .RegisterAsLazySingleton();
+        //}
 
         protected abstract void InitialiseStartNavigation();
 
@@ -42,22 +56,19 @@ namespace Lbk.Mobile.Core
         {
             Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
 
-            this.CreatableTypes().EndingWith("Repository").AsInterfaces().RegisterAsLazySingleton();
-
-            this.CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
-
-            //Mvx.RegisterType<IXmlDataService, XmlDataService>();
+            // use dynamic:
             //Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
+
+            // use lazy:
+            Mvx.RegisterSingleton<ILbkMobileService>(() => new LbkMobileService());
         }
 
         private void InitialisePlugins()
         {
-            //PluginLoader.Instance.EnsureLoaded();
-
             PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Sqlite.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.Email.PluginLoader.Instance.EnsureLoaded();
-            Cirrious.MvvmCross.Plugins.Network.PluginLoader.Instance.EnsureLoaded();
+            //Cirrious.MvvmCross.Plugins.Network.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.WebBrowser.PluginLoader.Instance.EnsureLoaded();
             Cirrious.MvvmCross.Plugins.PhoneCall.PluginLoader.Instance.EnsureLoaded();
             Plugin.DeviceIdentifier.PluginLoader.Instance.EnsureLoaded();

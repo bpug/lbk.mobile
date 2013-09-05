@@ -32,11 +32,11 @@ namespace Lbk.Mobile.Data.Services
             this.GetDeviceUid();
         }
 
-        public LbkMobileService()
-        {
-            this.deviceUidService = Mvx.Resolve<IDeviceUidService>();
-            this.GetDeviceUid();
-        }
+        //public LbkMobileService()
+        //{
+        //    this.deviceUidService = Mvx.Resolve<IDeviceUidService>();
+        //    this.GetDeviceUid();
+        //}
 
         public async Task<bool> AbortedReservationByCustomerAsync(Guid reservationId)
         {
@@ -107,6 +107,7 @@ namespace Lbk.Mobile.Data.Services
 
         private void GetDeviceUid()
         {
+            //this.deviceUid = "Droid Test";
             //this.deviceUid = deviceUidService.GetDeviceUid();
             this.deviceUidService.GetDeviceUid(onSuccess: this.OnDeviceUidSuccess, onError: this.OnDeviceUidError);
         }

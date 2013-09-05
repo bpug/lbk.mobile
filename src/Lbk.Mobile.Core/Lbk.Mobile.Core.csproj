@@ -104,9 +104,6 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Network">
-      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Network.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Network.dll</HintPath>
-    </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.PhoneCall">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.PhoneCall.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.PhoneCall.dll</HintPath>
     </Reference>
@@ -150,6 +147,10 @@
     <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
       <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
       <Name>Lbk.Mobile.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj">
+      <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
+      <Name>Lbk.Mobile.Plugin.Reachability</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
       <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>

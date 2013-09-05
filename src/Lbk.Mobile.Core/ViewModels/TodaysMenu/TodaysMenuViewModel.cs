@@ -30,7 +30,7 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
             this.service = service;
         }
 
-        public void Init()
+        public override void Start()
         {
             this.LoadCommand.Execute(null);
         }

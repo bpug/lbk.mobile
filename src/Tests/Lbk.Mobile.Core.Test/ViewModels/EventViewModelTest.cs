@@ -9,11 +9,10 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Cirrious.MvvmCross.Plugins.Network.Reachability;
-
     using Lbk.Mobile.Core.Test.Implementation;
     using Lbk.Mobile.Core.ViewModels.Event;
     using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Plugin.Reachability;
 
     using Moq;
 
@@ -53,7 +52,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
         protected override void AdditionalSetup()
         {
-            this.Ioc.RegisterType<IMvxReachability, MvxTestReachability>();
+            this.Ioc.RegisterType<IReachability, MvxTestReachability>();
         }
 
         private List<Event> GetEventsData()

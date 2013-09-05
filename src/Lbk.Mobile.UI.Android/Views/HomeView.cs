@@ -1,19 +1,23 @@
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="HomeView.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
-using Android.App;
-using Cirrious.MvvmCross.Binding.Droid.Views;
-
-
-namespace Lbk.Mobile.UI.Droid.Views
+namespace Lbk.Mobile.UI.Android.Views
 {
-    using Lbk.Mobile.Portable.Core.ViewModels;
+    using Cirrious.MvvmCross.Droid.Views;
+
+    using global::Android.App;
+    using global::Android.OS;
 
     [Activity(Label = "Löwenbräukeller", Icon = "@drawable/icon")]
-    public class HomeView
-        : MvxBindingActivityView<HomeViewModel>
+    public class HomeView : MvxActivity
     {
-        protected override void OnViewModelSet()
+        protected override void OnCreate(Bundle bundle)
         {
-            SetContentView(Resource.Layout.Page_Home);
+            base.OnCreate(bundle);
+            this.SetContentView(Resource.Layout.Home);
         }
     }
 }

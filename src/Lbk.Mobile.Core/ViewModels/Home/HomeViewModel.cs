@@ -65,7 +65,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
             }
         }
 
-        public ICommand ShowMenuOfTheDayCommand
+        public ICommand ShowTodaysMenuCommand
         {
             get
             {

@@ -1,30 +1,34 @@
-using System;
-using System.Collections.Generic;
-using Android.Content;
-using Cirrious.MvvmCross.Application;
-using Cirrious.MvvmCross.Binding.Droid;
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="Setup.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid
+namespace Lbk.Mobile.UI.Android
 {
-    using Lbk.Mobile.Portable.Core;
-    using Lbk.Mobile.Portable.Core.Converters;
+    using Cirrious.CrossCore.Platform;
+    using Cirrious.MvvmCross.Droid.Platform;
+    using Cirrious.MvvmCross.ViewModels;
 
-    public class Setup
-        : MvxBaseAndroidBindingSetup
+    using global::Android.Content;
+
+    using Lbk.Mobile.Core;
+
+    public class Setup : MvxAndroidSetup
     {
         public Setup(Context applicationContext)
             : base(applicationContext)
         {
         }
 
-        protected override MvxApplication CreateApp()
+        protected override IMvxApplication CreateApp()
         {
-            return new App();
+            return new LbkApp();
         }
 
-        protected override IEnumerable<Type> ValueConverterHolders
+        protected override IMvxTrace CreateDebugTrace()
         {
-            get { return new[] { typeof(Converters) }; }
+            return new DebugTrace();
         }
 
         protected override void InitializeLastChance()

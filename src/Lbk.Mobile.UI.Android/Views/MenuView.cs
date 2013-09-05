@@ -1,23 +1,23 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MenuView.cs" company="ip-connect GmbH">
-//   Copyright (c) ip-connect GmbH. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="MenuView.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Views
+namespace Lbk.Mobile.UI.Android.Views
 {
-    using Android.App;
+    using Cirrious.MvvmCross.Droid.Views;
 
-    using Cirrious.MvvmCross.Binding.Droid.Views;
-
-    using Lbk.Mobile.Portable.Core.ViewModels.Menu;
+    using global::Android.App;
+    using global::Android.OS;
 
     [Activity(Label = "Speisekarte")]
-    public class MenuView : MvxBindingActivityView<MenuViewModel>
+    public class MenuView : MvxActivity
     {
-        protected override void OnViewModelSet()
+        protected override void OnCreate(Bundle bundle)
         {
-            this.SetContentView(Resource.Layout.Page_Menu);
+            base.OnCreate(bundle);
+            this.SetContentView(Resource.Layout.Menu);
         }
     }
 }
