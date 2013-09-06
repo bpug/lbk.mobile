@@ -11,15 +11,15 @@ namespace Lbk.Mobile.UI.Android.Views
     using global::Android.App;
     using global::Android.OS;
 
-    using Lbk.Mobile.Core.ViewModels.Menu;
+    using Lbk.Mobile.Core.ViewModels.Room;
 
-    [Activity(Label = "Speisekarte")]
-    public class MenuView : BaseView<MenuViewModel>
+    [Activity(Label = "Räume")]
+    public class RoomListView : BaseView<RoomListViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.SetContentView(Resource.Layout.Menu);
+            this.SetContentView(Resource.Layout.RoomList);
         }
     }
 }

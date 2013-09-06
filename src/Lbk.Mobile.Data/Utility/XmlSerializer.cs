@@ -11,6 +11,7 @@ namespace Lbk.Mobile.Data.Utility
 
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Exceptions;
+    using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Plugins.File;
 
     using Lbk.Mobile.Common;
@@ -24,6 +25,12 @@ namespace Lbk.Mobile.Data.Utility
             return serializableObject;
         }
 
+         public static T LoadFromResource(string path)
+        {
+            var serializableObject = LoadFromResourceDocumentFormat(null, path);
+            return serializableObject;
+        }
+        
         public static T Load(string path, Type[] extraTypes)
         {
             var serializableObject = LoadFromDocumentFormat(extraTypes, path);
@@ -47,6 +54,30 @@ namespace Lbk.Mobile.Data.Utility
             var xmlSerializer = extraTypes != null ? new XmlSerializer(objectType, extraTypes) : new XmlSerializer(objectType);
 
             return xmlSerializer;
+        }
+
+
+        private static T LoadFromResourceDocumentFormat(Type[] extraTypes, string path)
+        {
+            T serializableObject = null;
+
+            var resourceLoader = Mvx.Resolve<IMvxResourceLoader>();
+            
+            resourceLoader.GetResourceStream(path,
+                stream =>
+                {
+                    var xmlSerializer = CreateXmlSerializer(extraTypes);
+                    try
+                    {
+                        serializableObject = xmlSerializer.Deserialize(stream) as T;
+                    }
+                    catch (Exception exception)
+                    {
+                        Trace.Error("Problem with deserialize to {0}. Error: {1}", typeof(T).FullName, exception.ToLongString());
+                    }
+                } );
+
+            return serializableObject;
         }
 
         private static T LoadFromDocumentFormat(Type[] extraTypes, string path)

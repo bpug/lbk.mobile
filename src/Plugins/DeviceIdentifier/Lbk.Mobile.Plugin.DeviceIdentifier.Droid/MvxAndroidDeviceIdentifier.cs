@@ -34,7 +34,7 @@ namespace Lbk.Mobile.Plugin.DeviceIdentifier.Droid
             var uid = Settings.Secure.GetString(
                 globals.ApplicationContext.ContentResolver,
                 Settings.Secure.AndroidId);
-            return uid;
+            return string.Format("A-{0}", uid);
         }
     }
 }

@@ -26,6 +26,48 @@ namespace Lbk.Mobile.UI.Android
 		
 		public static void UpdateIdValues()
 		{
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Drawable.dialog_disclosure = Lbk.Mobile.UI.Android.Resource.Drawable.dialog_disclosure;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Drawable.dialog_expander_ic_minimized = Lbk.Mobile.UI.Android.Resource.Drawable.dialog_expander_ic_minimized;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Drawable.dialog_icon = Lbk.Mobile.UI.Android.Resource.Drawable.dialog_icon;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Drawable.dialog_spinner_default_holo_dark = Lbk.Mobile.UI.Android.Resource.Drawable.dialog_spinner_default_holo_dark;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Drawable.dialog_spinner_default_holo_light = Lbk.Mobile.UI.Android.Resource.Drawable.dialog_spinner_default_holo_light;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_BoolField = Lbk.Mobile.UI.Android.Resource.Id.dialog_BoolField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_Button = Lbk.Mobile.UI.Android.Resource.Id.dialog_Button;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_DisclosureField = Lbk.Mobile.UI.Android.Resource.Id.dialog_DisclosureField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_HtmlField = Lbk.Mobile.UI.Android.Resource.Id.dialog_HtmlField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_ImageLeft = Lbk.Mobile.UI.Android.Resource.Id.dialog_ImageLeft;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_ImageRight = Lbk.Mobile.UI.Android.Resource.Id.dialog_ImageRight;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_LabelField = Lbk.Mobile.UI.Android.Resource.Id.dialog_LabelField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_LabelPercentageField = Lbk.Mobile.UI.Android.Resource.Id.dialog_LabelPercentageField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_LabelSubtextField = Lbk.Mobile.UI.Android.Resource.Id.dialog_LabelSubtextField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_Panel = Lbk.Mobile.UI.Android.Resource.Id.dialog_Panel;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_RadioButtonList = Lbk.Mobile.UI.Android.Resource.Id.dialog_RadioButtonList;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_SliderField = Lbk.Mobile.UI.Android.Resource.Id.dialog_SliderField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_Spinner = Lbk.Mobile.UI.Android.Resource.Id.dialog_Spinner;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.dialog_ValueField = Lbk.Mobile.UI.Android.Resource.Id.dialog_ValueField;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Id.iFormFieldValue = Lbk.Mobile.UI.Android.Resource.Id.iFormFieldValue;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_achievements = Lbk.Mobile.UI.Android.Resource.Layout.dialog_achievements;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_boolfieldleft = Lbk.Mobile.UI.Android.Resource.Layout.dialog_boolfieldleft;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_boolfieldright = Lbk.Mobile.UI.Android.Resource.Layout.dialog_boolfieldright;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_boolfieldsubleft = Lbk.Mobile.UI.Android.Resource.Layout.dialog_boolfieldsubleft;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_boolfieldsubright = Lbk.Mobile.UI.Android.Resource.Layout.dialog_boolfieldsubright;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_button = Lbk.Mobile.UI.Android.Resource.Layout.dialog_button;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_datefield = Lbk.Mobile.UI.Android.Resource.Layout.dialog_datefield;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_fieldsetlabel = Lbk.Mobile.UI.Android.Resource.Layout.dialog_fieldsetlabel;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_floatimage = Lbk.Mobile.UI.Android.Resource.Layout.dialog_floatimage;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_html = Lbk.Mobile.UI.Android.Resource.Layout.dialog_html;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_labeldisclosure = Lbk.Mobile.UI.Android.Resource.Layout.dialog_labeldisclosure;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_labelfieldbelow = Lbk.Mobile.UI.Android.Resource.Layout.dialog_labelfieldbelow;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_labelfieldright = Lbk.Mobile.UI.Android.Resource.Layout.dialog_labelfieldright;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_multiline_labelfieldbelow = Lbk.Mobile.UI.Android.Resource.Layout.dialog_multiline_labelfieldbelow;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_onofffieldright = Lbk.Mobile.UI.Android.Resource.Layout.dialog_onofffieldright;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_panel = Lbk.Mobile.UI.Android.Resource.Layout.dialog_panel;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_root = Lbk.Mobile.UI.Android.Resource.Layout.dialog_root;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_selectlist = Lbk.Mobile.UI.Android.Resource.Layout.dialog_selectlist;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_selectlistfield = Lbk.Mobile.UI.Android.Resource.Layout.dialog_selectlistfield;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_textarea = Lbk.Mobile.UI.Android.Resource.Layout.dialog_textarea;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_textfieldbelow = Lbk.Mobile.UI.Android.Resource.Layout.dialog_textfieldbelow;
+			Cirrious.MvvmCross.Dialog.Droid.Resource.Layout.dialog_textfieldright = Lbk.Mobile.UI.Android.Resource.Layout.dialog_textfieldright;
 			Lbk.Mobile.Plugin.DeviceIdentifier.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Android.Resource.String.ApplicationName;
 			Lbk.Mobile.Plugin.DeviceIdentifier.Droid.Resource.String.Hello = Lbk.Mobile.UI.Android.Resource.String.Hello;
 			Lbk.Mobile.Plugin.Reachability.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Android.Resource.String.ApplicationName;
@@ -69,52 +111,70 @@ namespace Lbk.Mobile.UI.Android
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int button_advise = 2130837504;
+			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int button_contact = 2130837505;
+			public const int button_advise = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int button_events = 2130837506;
+			public const int button_contact = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int button_facebook = 2130837507;
+			public const int button_events = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int button_galery = 2130837508;
+			public const int button_facebook = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int button_history = 2130837509;
+			public const int button_galery = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int button_menu = 2130837510;
+			public const int button_history = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int button_menuOfTheDay = 2130837511;
+			public const int button_menu = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int button_quiz = 2130837512;
+			public const int button_menuOfTheDay = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int button_reservation = 2130837513;
+			public const int button_quiz = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int button_rooms = 2130837514;
+			public const int button_reservation = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int button_videos = 2130837515;
+			public const int button_rooms = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int Icon = 2130837516;
+			public const int button_videos = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int Icon_origin = 2130837517;
+			public const int dialog_disclosure = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int Splash = 2130837518;
+			public const int dialog_expander_ic_minimized = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int splash_origin = 2130837519;
+			public const int dialog_icon = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int dialog_spinner_default_holo_dark = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int dialog_spinner_default_holo_light = 2130837521;
+			
+			// aapt resource value: 0x7f020012
+			public const int Icon = 2130837522;
+			
+			// aapt resource value: 0x7f020013
+			public const int Icon_origin = 2130837523;
+			
+			// aapt resource value: 0x7f020014
+			public const int Splash = 2130837524;
+			
+			// aapt resource value: 0x7f020015
+			public const int splash_origin = 2130837525;
 			
 			static Drawable()
 			{
@@ -129,38 +189,104 @@ namespace Lbk.Mobile.UI.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050008
-			public const int ErrorImage = 2131034120;
+			// aapt resource value: 0x7f05001e
+			public const int ErrorImage = 2131034142;
 			
-			// aapt resource value: 0x7f050009
-			public const int ErrorText1 = 2131034121;
+			// aapt resource value: 0x7f05001f
+			public const int ErrorText1 = 2131034143;
 			
-			// aapt resource value: 0x7f05000a
-			public const int ErrorText2 = 2131034122;
+			// aapt resource value: 0x7f050020
+			public const int ErrorText2 = 2131034144;
 			
 			// aapt resource value: 0x7f050000
 			public const int MvxBindingTagUnique = 2131034112;
 			
-			// aapt resource value: 0x7f050002
-			public const int btnMenu = 2131034114;
+			// aapt resource value: 0x7f050018
+			public const int btnEvents = 2131034136;
 			
-			// aapt resource value: 0x7f050001
-			public const int btnMenuOfTheDay = 2131034113;
+			// aapt resource value: 0x7f050011
+			public const int btnMenu = 2131034129;
 			
-			// aapt resource value: 0x7f050003
-			public const int btnReservation = 2131034115;
+			// aapt resource value: 0x7f050010
+			public const int btnMenuOfTheDay = 2131034128;
 			
-			// aapt resource value: 0x7f050004
-			public const int textView1 = 2131034116;
+			// aapt resource value: 0x7f050017
+			public const int btnQuiz = 2131034135;
+			
+			// aapt resource value: 0x7f050012
+			public const int btnReservation = 2131034130;
+			
+			// aapt resource value: 0x7f050016
+			public const int btnRoom = 2131034134;
+			
+			// aapt resource value: 0x7f05001c
+			public const int button1 = 2131034140;
 			
 			// aapt resource value: 0x7f050005
-			public const int textView2 = 2131034117;
+			public const int dialog_BoolField = 2131034117;
 			
 			// aapt resource value: 0x7f050006
-			public const int textView3 = 2131034118;
+			public const int dialog_Button = 2131034118;
+			
+			// aapt resource value: 0x7f05000b
+			public const int dialog_DisclosureField = 2131034123;
+			
+			// aapt resource value: 0x7f05000a
+			public const int dialog_HtmlField = 2131034122;
+			
+			// aapt resource value: 0x7f050008
+			public const int dialog_ImageLeft = 2131034120;
+			
+			// aapt resource value: 0x7f050003
+			public const int dialog_ImageRight = 2131034115;
+			
+			// aapt resource value: 0x7f050001
+			public const int dialog_LabelField = 2131034113;
+			
+			// aapt resource value: 0x7f050004
+			public const int dialog_LabelPercentageField = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int dialog_LabelSubtextField = 2131034114;
+			
+			// aapt resource value: 0x7f05000c
+			public const int dialog_Panel = 2131034124;
+			
+			// aapt resource value: 0x7f05000d
+			public const int dialog_RadioButtonList = 2131034125;
+			
+			// aapt resource value: 0x7f050009
+			public const int dialog_SliderField = 2131034121;
+			
+			// aapt resource value: 0x7f05000e
+			public const int dialog_Spinner = 2131034126;
 			
 			// aapt resource value: 0x7f050007
-			public const int toast_layout_error_root = 2131034119;
+			public const int dialog_ValueField = 2131034119;
+			
+			// aapt resource value: 0x7f05000f
+			public const int iFormFieldValue = 2131034127;
+			
+			// aapt resource value: 0x7f050013
+			public const int textView1 = 2131034131;
+			
+			// aapt resource value: 0x7f050014
+			public const int textView2 = 2131034132;
+			
+			// aapt resource value: 0x7f050015
+			public const int textView3 = 2131034133;
+			
+			// aapt resource value: 0x7f05001d
+			public const int toast_layout_error_root = 2131034141;
+			
+			// aapt resource value: 0x7f05001b
+			public const int txtEvents = 2131034139;
+			
+			// aapt resource value: 0x7f05001a
+			public const int txtQuiz = 2131034138;
+			
+			// aapt resource value: 0x7f050019
+			public const int txtRooms = 2131034137;
 			
 			static Id()
 			{
@@ -176,25 +302,91 @@ namespace Lbk.Mobile.UI.Android
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int FirstView = 2130903040;
+			public const int dialog_achievements = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Home = 2130903041;
+			public const int dialog_boolfieldleft = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Menu = 2130903042;
+			public const int dialog_boolfieldright = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Reservation = 2130903043;
+			public const int dialog_boolfieldsubleft = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int SplashScreen = 2130903044;
+			public const int dialog_boolfieldsubright = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int ToastLayout_Error = 2130903045;
+			public const int dialog_button = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int TodaysMenu = 2130903046;
+			public const int dialog_datefield = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int dialog_fieldsetlabel = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int dialog_floatimage = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int dialog_html = 2130903049;
+			
+			// aapt resource value: 0x7f03000a
+			public const int dialog_labeldisclosure = 2130903050;
+			
+			// aapt resource value: 0x7f03000b
+			public const int dialog_labelfieldbelow = 2130903051;
+			
+			// aapt resource value: 0x7f03000c
+			public const int dialog_labelfieldright = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int dialog_multiline_labelfieldbelow = 2130903053;
+			
+			// aapt resource value: 0x7f03000e
+			public const int dialog_onofffieldright = 2130903054;
+			
+			// aapt resource value: 0x7f03000f
+			public const int dialog_panel = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int dialog_root = 2130903056;
+			
+			// aapt resource value: 0x7f030011
+			public const int dialog_selectlist = 2130903057;
+			
+			// aapt resource value: 0x7f030012
+			public const int dialog_selectlistfield = 2130903058;
+			
+			// aapt resource value: 0x7f030013
+			public const int dialog_textarea = 2130903059;
+			
+			// aapt resource value: 0x7f030014
+			public const int dialog_textfieldbelow = 2130903060;
+			
+			// aapt resource value: 0x7f030015
+			public const int dialog_textfieldright = 2130903061;
+			
+			// aapt resource value: 0x7f030016
+			public const int Home = 2130903062;
+			
+			// aapt resource value: 0x7f030017
+			public const int Menu = 2130903063;
+			
+			// aapt resource value: 0x7f030018
+			public const int Reservation = 2130903064;
+			
+			// aapt resource value: 0x7f030019
+			public const int RoomList = 2130903065;
+			
+			// aapt resource value: 0x7f03001a
+			public const int SplashScreen = 2130903066;
+			
+			// aapt resource value: 0x7f03001b
+			public const int ToastLayout_Error = 2130903067;
+			
+			// aapt resource value: 0x7f03001c
+			public const int TodaysMenu = 2130903068;
 			
 			static Layout()
 			{

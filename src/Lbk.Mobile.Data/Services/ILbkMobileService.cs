@@ -23,8 +23,6 @@ namespace Lbk.Mobile.Data.Services
 
         Task<Guid> CreateReservationAsync(Reservation reservation);
 
-        List<Event> GetEvents();
-
         Task<List<Event>> GetEventsAsync();
 
         Task<DateTime?> GetMenuLastUpdateAsync();

@@ -45,7 +45,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
                         break;
                 }
             };
-            roomListViewModel.Init();
+            roomListViewModel.Start();
             mockService.Verify(s => s.GetRooms(), Times.Once());
             Assert.AreEqual(2, roomListViewModel.Rooms.Count);
 

@@ -53,4 +53,53 @@
         android:id="@+id/textView3"
         android:layout_alignParentRight="true"
         android:textSize="12dp" />
+    <Button
+        android:layout_width="57.0dp"
+        android:layout_height="57.0dp"
+        android:layout_marginTop="80.0dp"
+        android:id="@+id/btnRoom"
+        android:background="@drawable/button_rooms"
+        local:MvxBind="Click ShowRoomCommand" />
+    <Button
+        android:layout_width="57.0dp"
+        android:layout_height="57.0dp"
+        android:layout_marginTop="80.0dp"
+        android:id="@+id/btnQuiz"
+        android:background="@drawable/button_quiz"
+        android:layout_centerHorizontal="true"
+        local:MvxBind="Click ShowQuizCommand" />
+    <Button
+        android:layout_width="57.0dp"
+        android:layout_height="57.0dp"
+        android:layout_marginTop="80.0dp"
+        android:id="@+id/btnEvents"
+        android:background="@drawable/button_events"
+        android:layout_alignParentRight="true"
+        local:MvxBind="Click ShowEventCommand" />
+    <TextView
+        android:text="Räume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnRoom"
+        android:id="@+id/txtRooms"
+        android:layout_marginLeft="10.0dp"
+        android:textSize="12dp" />
+    <TextView
+        android:text="Quiz"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnQuiz"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txtQuiz"
+        android:textSize="12dp" />
+    <TextView
+        android:text="Events"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnEvents"
+        android:id="@+id/txtEvents"
+        android:layout_marginRight="10.0dp"
+        android:layout_alignParentRight="true"
+        android:textSize="12dp" />
 </RelativeLayout>

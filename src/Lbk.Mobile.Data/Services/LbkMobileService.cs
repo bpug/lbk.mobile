@@ -58,16 +58,7 @@ namespace Lbk.Mobile.Data.Services
             return await this.Service.CreateReservationAsyncTask(reservation);
         }
 
-        public List<Event> GetEvents()
-        {
-            var test = new List<Event>
-            {
-                new Event(),
-                new Event()
-            };
-            return test;
-        }
-
+       
         public async Task<List<Event>> GetEventsAsync()
         {
             return await this.Service.GetEventsAsyncTask(this.deviceUid);
@@ -89,9 +80,9 @@ namespace Lbk.Mobile.Data.Services
             return await this.Service.GetQuizAsyncTask(this.deviceUid, questionCount);
         }
 
-        public async Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
+        public  Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
         {
-            var result = await this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
+            var result = this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
             return result;
         }
 

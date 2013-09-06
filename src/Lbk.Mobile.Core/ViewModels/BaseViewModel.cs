@@ -82,7 +82,7 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        protected IMvxLanguageBinder SharedTextSource
+        public IMvxLanguageBinder SharedTextSource
         {
             get
             {
@@ -90,7 +90,7 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        protected IMvxLanguageBinder TextSource
+        public IMvxLanguageBinder TextSource
         {
             get
             {

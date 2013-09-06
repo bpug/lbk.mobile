@@ -14,6 +14,7 @@ namespace Lbk.Mobile.Core
 
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Localization;
 
@@ -27,19 +28,7 @@ namespace Lbk.Mobile.Core
             //AutoMapperConfiguration.Configure();
         }
 
-        //public override void Initialize()
-        //{
-        //    CreatableTypes()
-        //        .EndingWith("Repository")
-        //        .AsInterfaces()
-        //        .RegisterAsLazySingleton();
-
-        //    CreatableTypes()
-        //        .EndingWith("Service")
-        //        .AsInterfaces()
-        //        .RegisterAsLazySingleton();
-        //}
-
+        
         protected abstract void InitialiseStartNavigation();
 
         private void InitaliseErrorReporting()
@@ -57,10 +46,24 @@ namespace Lbk.Mobile.Core
             Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
 
             // use dynamic:
-            //Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
+            Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
+            Mvx.RegisterType<IRoomRepository, RoomRepository>();
+            Mvx.RegisterType<IHistoryRepository, HistoryRepository>();
+            Mvx.RegisterType<IReservationRepository, ReservationRepository>();
+            Mvx.RegisterType<IQuizVoucherRepository, QuizVoucherRepository>();
 
             // use lazy:
-            Mvx.RegisterSingleton<ILbkMobileService>(() => new LbkMobileService());
+            //Mvx.RegisterSingleton<ILbkMobileService>(() => new LbkMobileService());
+
+            //CreatableTypes()
+            //    .EndingWith("Repository")
+            //    .AsInterfaces()
+            //    .RegisterAsLazySingleton();
+
+            //CreatableTypes()
+            //    .EndingWith("Service")
+            //    .AsInterfaces()
+            //    .RegisterAsLazySingleton();
         }
 
         private void InitialisePlugins()

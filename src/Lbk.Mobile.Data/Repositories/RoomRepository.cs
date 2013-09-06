@@ -7,6 +7,7 @@
 namespace Lbk.Mobile.Data.Repositories
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Linq;
 
     using Lbk.Mobile.Common;
@@ -24,8 +25,12 @@ namespace Lbk.Mobile.Data.Repositories
 
         public IObservableCollection<Room> GetRooms()
         {
-            var rooms = XmlSerializer<List<Room>>.Load(Constants.RoomResourceFileName);
-            return new SimpleObservableCollection<Room>(rooms);
+            var rooms = XmlSerializer<List<Room>>.LoadFromResource(Constants.RoomResourceFileName);
+            if (rooms != null)
+            {
+                return new SimpleObservableCollection<Room>(rooms);
+            }
+            return null;
         }
     }
 }
