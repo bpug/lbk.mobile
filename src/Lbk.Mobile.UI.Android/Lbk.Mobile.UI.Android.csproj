@@ -110,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\ReachabilityPluginBootstrap.cs">
       <SubType>Code</SubType>
@@ -118,6 +119,22 @@
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceIdentifierPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Controls\BindingPullToRefreshListView.cs" />
+    <Compile Include="Controls\SectionFooter.cs" />
+    <Compile Include="Controls\TodaysMenuListView.cs" />
+    <Compile Include="Controls\PullToRefresh\ActionBasedRefreshListener.cs" />
+    <Compile Include="Controls\PullToRefresh\IOnPullingAction.cs" />
+    <Compile Include="Controls\PullToRefresh\IOnReleaseReady.cs" />
+    <Compile Include="Controls\PullToRefresh\IRefreshListener.cs" />
+    <Compile Include="Controls\PullToRefresh\IScrollingState.cs" />
+    <Compile Include="Controls\PullToRefresh\NoRefreshListener.cs" />
+    <Compile Include="Controls\PullToRefresh\Pixel.cs" />
+    <Compile Include="Controls\PullToRefresh\PullingDownState.cs" />
+    <Compile Include="Controls\PullToRefresh\PullingUpState.cs" />
+    <Compile Include="Controls\PullToRefresh\PullToRefreshComponent.cs" />
+    <Compile Include="Controls\PullToRefresh\PullToRefreshListView.cs" />
+    <Compile Include="Controls\PullToRefresh\PullToRefreshState.cs" />
+    <Compile Include="Controls\PullToRefresh\RefreshingState.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="ErrorDisplayer.cs" />
     <Compile Include="Extensions\ActivityExtensions.cs" />
@@ -130,9 +147,11 @@
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\BindableProgress.cs" />
     <Compile Include="Views\BaseDialogView.cs" />
+    <Compile Include="Views\EventListView.cs" />
     <Compile Include="Views\RoomListView.cs" />
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\IBaseView.cs" />
+    <Compile Include="Views\TodaysMenuListAdapter.cs" />
     <Compile Include="Views\TodaysMenuView.cs" />
     <Compile Include="Views\MenuView.cs" />
     <Compile Include="Views\ReservationView.cs" />
@@ -147,7 +166,14 @@
     <AndroidResource Include="Resources\Layout\Home.axml" />
     <AndroidResource Include="Resources\Layout\Menu.axml" />
     <AndroidResource Include="Resources\Layout\ToastLayout_Error.axml" />
-    <AndroidResource Include="Resources\Layout\RoomList.axml" />
+    <AndroidResource Include="Resources\Layout\Room_List.axml" />
+    <AndroidResource Include="Resources\Layout\pull_down_pull_to_refresh_list.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_List.axml" />
+    <AndroidResource Include="Resources\Layout\pull_up_pull_to_refresh_list.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Header.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Footer.axml" />
+    <AndroidResource Include="Resources\Layout\Room_ListItem.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -158,13 +184,14 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Xml\History.xml" />
     <AndroidAsset Include="Assets\Xml\Room.xml" />
+    <Content Include="Controls\PullToRefresh\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Values\SplashStyle.xml" />
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\Drawable\splash_origin.png" />
     <AndroidResource Include="Resources\Drawable\button_videos.png" />
-    <AndroidResource Include="Resources\Drawable\Icon.png" />
-    <AndroidResource Include="Resources\Drawable\Splash.png" />
+    <AndroidResource Include="Resources\Drawable\icon.png" />
+    <AndroidResource Include="Resources\Drawable\splash.png" />
     <AndroidResource Include="Resources\Drawable\button_advise.png" />
     <AndroidResource Include="Resources\Drawable\button_contact.png" />
     <AndroidResource Include="Resources\Drawable\button_events.png" />
@@ -177,12 +204,31 @@
     <AndroidResource Include="Resources\Drawable\button_reservation.png" />
     <AndroidResource Include="Resources\Drawable\button_rooms.png" />
     <AndroidResource Include="Resources\Drawable\background.png" />
+    <AndroidResource Include="Resources\Drawable\ic_pulltorefresh_arrow.png" />
+    <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />
+    <AndroidResource Include="Resources\Values\Colors.xml" />
+    <AndroidResource Include="Resources\Drawable\thn_bennosaal.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_braeustueberl.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_dachauerstube.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_festsaal.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_filserstube.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_galeriesaal.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_loewenterasse.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_terrasse.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_turmstueberl.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_turmzimmer.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_gartenanbau.jpg" />
+    <AndroidResource Include="Resources\Drawable\thn_loewenempore.jpg" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lbk.Mobile.Core\Lbk.Mobile.Core.csproj">
       <Project>{64e36d12-5247-4d85-b9c4-be09937b9185}</Project>
       <Name>Lbk.Mobile.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.Mobile.Data\Lbk.Mobile.Data.csproj">
+      <Project>{10700230-8C64-41F7-8DD2-9A693E7DD0F0}</Project>
+      <Name>Lbk.Mobile.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj">
       <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
@@ -210,7 +256,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bindings\" />
     <Folder Include="Resources\Drawable-hdpi\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

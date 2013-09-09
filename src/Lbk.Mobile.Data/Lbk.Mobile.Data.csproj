@@ -114,20 +114,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lbk.Mobile.Common\Lbk.Mobile.Common.csproj">
-      <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
-      <Name>Lbk.Mobile.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
-      <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
-      <Name>Lbk.Mobile.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
-      <Project>{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}</Project>
-      <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.CrossCore.dll</HintPath>
     </Reference>
@@ -153,8 +139,26 @@
       <HintPath>..\packages\Microsoft.Bcl.1.0.19\lib\portable-net40+sl4+win8+wp71\System.Threading.Tasks.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbk.Mobile.Common\Lbk.Mobile.Common.csproj">
+      <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
+      <Name>Lbk.Mobile.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
+      <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
+      <Name>Lbk.Mobile.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
+      <Project>{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}</Project>
+      <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

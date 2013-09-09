@@ -36,7 +36,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             this.service = Mvx.Resolve<ILbkMobileService>();
         }
 
-        public void Init()
+        public override void Start()
         {
             LoadCommand.Execute(null);
         }

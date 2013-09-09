@@ -12,90 +12,50 @@ using CrossUI.Droid.Dialog.Elements;
 
 namespace Lbk.Mobile.UI.Android.Views
 {
-   
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+    using Cirrious.MvvmCross.Binding.Droid.Views;
+
+    using Lbk.Mobile.Core.ViewModels.TodaysMenu;
+    using Lbk.Mobile.Data.LbkMobileService;
+
     [Activity(Label = "Tageskarte")]
-    public class TodaysMenuView : MvxDialogActivity //BaseDialogView<TodaysMenuViewModel>
+    public class TodaysMenuView : BaseView<TodaysMenuViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {
+            this.Title = DateTime.Now.ToShortDateString();
             base.OnCreate(bundle);
-            var root = new RootElement(DateTime.Now.ToShortDateString())
-            {
-                new Section("Section1")
-                {
-                    new StringElement("Row1"),
-                    new StringElement("Row2"),
-                    new StringElement("Row3"),
-                    new StringElement("Row4"),
-                    new StringElement("Row5"),
-                }
-            };
+            this.SetContentView(Resource.Layout.TodaysMenu);
 
-            this.Root = root;
-            //Root = new RootElement("The Dialog")
+            //Find our list and set its adapter
+            var sessionListView = FindViewById<MvxListView>(global::Android.Resource.Id.List);
+            sessionListView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)BindingContext);
+
+            //ViewModel.PropertyChanged += (sender, args) =>
+            //{
+            //    var vm = (TodaysMenuViewModel)sender;
+            //    switch (args.PropertyName)
             //    {
-            //        new Section("Strings")
-            //            {
-            //                new EntryElement("Hello").Bind(this, "Value Hello"),
-            //                new EntryElement("Hello2").Bind(this, "Value Hello2"),
-            //                new StringElement("Test").Bind(this, "Value Combined"),
-            //                new BooleanElement("T or F", false).Bind(this, "Value Option1"),
-            //                new BooleanElement("T or F:", true).Bind(this, "Value Option1"),
-            //            },
-            //        new Section("Dates")
-            //            {
-            //                new DateElement("The Date", DateTime.Today).Bind(this, "Value TheDate"),
-            //                new TimeElement("The Time", DateTime.Today).Bind(this, "Value TheDate"),
-            //                new StringElement("Actual").Bind(this, "Value TheDate")
-            //            }
-            //    };
+            //        case "MenuCategories":
+            //            BindDishes(vm.MenuCategories);
+            //            break;
+            //    }
+            //};
+            
         }
 
-        //protected override void OnCreate(Bundle bundle)
+        //private void BindDishes(IEnumerable<category> categories)
         //{
-        //    //his.Title = DateTime.Now.ToShortDateString();
-        //    base.OnCreate(bundle);
-        //    //this.SetContentView(Resource.Layout.TodaysMenu);
-
         //    //var bindings = this.CreateInlineBindingTarget<TodaysMenuViewModel>();
-
-        //    var viewModel = ViewModel as TodaysMenuViewModel;
-        //    if (viewModel != null)
-        //    {
-        //        viewModel.PropertyChanged += (sender, args) =>
-        //        {
-        //            var vm = (TodaysMenuViewModel)sender;
-        //            switch (args.PropertyName)
-        //            {
-        //                case "MenuCategories":
-        //                    BindDishes(vm.MenuCategories);
-        //                    break;
+        //    var root = new RootElement(Title){
+        //        from cat in categories
+        //            select new Section (cat.Title, cat.Subtitle){
+        //                from  dish in cat.Dishes select (Element)new StringElement(dish.Description)
         //            }
-        //        };
-        //    }
-        //}
-
-        //private void BindDishes(List<category> categories)
-        //{
-        //    //var categories = this.ViewModel.MenuCategories;
-        //    //var root = new RootElement(Title){
-        //    //    from cat in categories
-        //    //        select new Section (cat.Title, cat.Subtitle){
-        //    //            from  dish in cat.Dishes select (Element)new StringElement(dish.Description)
-        //    //        }
-        //    //};
-
-        //    var root = new RootElement(DateTime.Now.ToShortDateString()){
-        //        new Section("Section1")
-        //        {
-        //            new StringElement("Row1"),
-        //            new StringElement("Row2"),
-        //            new StringElement("Row3"),
-        //            new StringElement("Row4"),
-        //            new StringElement("Row5"),
-        //        }
         //    };
-
         //    Root = root;
         //}
     }

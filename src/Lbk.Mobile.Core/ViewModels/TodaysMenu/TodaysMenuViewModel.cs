@@ -17,7 +17,7 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Services;
 
-    public class TodaysMenuViewModel : MvxViewModel //BaseViewModel
+    public class TodaysMenuViewModel : BaseViewModel
     {
         private readonly ILbkMobileService service;
 
@@ -30,18 +30,13 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
             this.service = service;
         }
 
-        public override void Start()
+        public ICommand LoadCommand
         {
-            //this.LoadCommand.Execute(null);
+            get
+            {
+                return new MvxCommand(async () => await this.OnLoadExecute());
+            }
         }
-
-        //public ICommand LoadCommand
-        //{
-        //    get
-        //    {
-        //        return new MvxCommand(async () => await this.OnLoadExecute());
-        //    }
-        //}
 
         public List<category> MenuCategories
         {
@@ -73,9 +68,14 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
             }
         }
 
-        //private async Task OnLoadExecute()
-        //{
-        //    await this.AsyncExecute(() => this.service.GetTodaysMenuAsync(DateTime.Now), list => this.TodaysMenu = list);
-        //}
+        public override void Start()
+        {
+            this.LoadCommand.Execute(null);
+        }
+
+        private async Task OnLoadExecute()
+        {
+            await this.AsyncExecute(() => this.service.GetTodaysMenuAsync(DateTime.Now), list => this.TodaysMenu = list);
+        }
     }
 }

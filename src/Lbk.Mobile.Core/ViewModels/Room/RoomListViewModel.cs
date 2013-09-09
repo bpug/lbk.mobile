@@ -67,7 +67,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
 
         public override void Start()
         {
-            //this.LoadCommand.Execute(null);
+            this.LoadCommand.Execute(null);
         }
 
         private void OnLoadExecute()

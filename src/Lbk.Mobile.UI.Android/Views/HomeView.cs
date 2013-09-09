@@ -11,8 +11,10 @@ namespace Lbk.Mobile.UI.Android.Views
     using global::Android.App;
     using global::Android.OS;
 
+    using Lbk.Mobile.Core.ViewModels.Home;
+
     [Activity(Label = "Löwenbräukeller", Icon = "@drawable/icon")]
-    public class HomeView : MvxActivity
+    public class HomeView : BaseView<HomeViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {

@@ -9,7 +9,7 @@
       <string>image/raueme/Braueustueberl1.jpg</string>
       <string>image/raueme/Braueustueberl2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Braeustueberl.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_braeustueberl</ThumbnailUrl>
     <Seats>145</Seats>
     <Area>190</Area>
   </Room>
@@ -23,7 +23,7 @@
       <string>image/raueme/Gartenanbau1.jpg</string>
       <string>image/raueme/Gartenanbau2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Gartenanbau.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_gartenanbau</ThumbnailUrl>
     <Seats>20 bis 25</Seats>
     <Area>20</Area>
   </Room>
@@ -37,7 +37,7 @@
       <string>image/raueme/Filserstube1.jpg</string>
       <string>image/raueme/Filserstube2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Filserstube.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_filserstube</ThumbnailUrl>
     <Seats>40</Seats>
     <Area>47</Area>
   </Room>
@@ -51,7 +51,7 @@
       <string>image/raueme/DachauerStube1.jpg</string>
       <string>image/raueme/DachauerStube2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/DachauerStube.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_dachauerstube</ThumbnailUrl>
     <Seats>50 bis 110</Seats>
     <Area>109</Area>
   </Room>
@@ -65,7 +65,7 @@
       <string>image/raueme/LoewenEmpore1.jpg</string>
       <string>image/raueme/LoewenEmpore2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/LoewenEmpore1.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_loewenempore</ThumbnailUrl>
     <Seats>25 bis 60</Seats>
     <Area>67</Area>
   </Room>
@@ -82,7 +82,7 @@
       <string>image/raueme/Festsaal_Buehnenbar.jpg</string>
       <string>image/raueme/Festsaal_Business.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Festsaal.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_festsaal</ThumbnailUrl>
     <Seats>650 bis 1.650</Seats>
     <Area>1665</Area>
   </Room>
@@ -96,7 +96,7 @@
       <string>image/raueme/Hochterrasse1.jpg</string>
       <string>image/raueme/Hochterrasse2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Terrasse.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_terrasse</ThumbnailUrl>
     <Seats>250</Seats>
     <Area>130</Area>
   </Room>
@@ -110,7 +110,7 @@
       <string>image/raueme/Galeriesaal1.jpg</string>
       <string>image/raueme/Galeriesaal2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Galeriesaal.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_galeriesaal</ThumbnailUrl>
     <Seats>200 bis 300</Seats>
     <Area>259</Area>
   </Room>
@@ -124,7 +124,7 @@
       <string>image/raueme/Bennosaal1.jpg</string>
       <string>image/raueme/Bennosaal2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Bennosaal.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_bennosaal</ThumbnailUrl>
     <Seats>120 bis 280</Seats>
     <Area>196</Area>
   </Room>
@@ -139,7 +139,7 @@
       <string>image/raueme/TurmzimmerErsterStock2.jpg</string>
       <string>image/raueme/TurmzimmerZweiterStock.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Turmzimmer.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_turmzimmer</ThumbnailUrl>
     <Seats>20 bis 40</Seats>
     <Area>47</Area>
   </Room>
@@ -153,7 +153,7 @@
       <string>image/raueme/LoewenTerrasse1.jpg</string>
       <string>image/raueme/LoewenTerrasse2.jpg</string>
     </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Loewenterasse.jpg</ThumbnailUrl>
+    <ThumbnailUrl>thn_loewenterasse</ThumbnailUrl>
     <Seats>80</Seats>
   </Room>
 

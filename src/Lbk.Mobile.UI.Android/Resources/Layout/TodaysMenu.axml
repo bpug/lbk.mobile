@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<lbk.mobile.ui.android.controls.TodaysMenuListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <TextView
-        android:text="MenuOfTheDay"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-</LinearLayout>
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:cacheColorHint="@color/transparent"
+    android:fastScrollEnabled="true"
+    local:MvxBind="PullDownRefreshRequested LoadCommand;IsRefreshingHead IsBusy" />

@@ -17,6 +17,7 @@ namespace Lbk.Mobile.Model
         public string Seats { get; set; }
         public string Subtitle { get; set; }
         public string ThumbnailUrl { get; set; }
+        public int ThumbnailId { get; set; }
         public string Title { get; set; }
     }
 }

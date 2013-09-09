@@ -45,7 +45,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
                         break;
                 }
             };
-            eventViewModel.Init();
+            eventViewModel.Start();
             mockService.Verify(s => s.GetEventsAsync(), Times.Once());
             Assert.AreEqual(2, eventViewModel.Events.Count);
         }

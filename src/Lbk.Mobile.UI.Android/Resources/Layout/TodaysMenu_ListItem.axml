@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:clickable="false"
+    android:background="@color/transparent">
+    <TextView
+        android:text="Headline"
+        android:id="@+id/txtHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textColor="@color/white"
+        local:MvxBind="Text Headline" />
+    <TextView
+        android:text="Description"
+        android:id="@+id/txtHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textColor="@color/white"
+        local:MvxBind="Text Description" />
+    <TextView
+        android:text="Price"
+        android:id="@+id/txtHeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10dip"
+        android:textColor="@color/white"
+        local:MvxBind="Text Price,Converter=Currency" />
+</LinearLayout>
