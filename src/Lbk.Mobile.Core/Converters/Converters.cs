@@ -9,5 +9,7 @@ namespace Lbk.Mobile.Core.Converters
     public class Converters
     {
         public readonly CurrencyValueConverter Currency = new CurrencyValueConverter();
+        public readonly AreaValueConverter Area = new AreaValueConverter();
+        
     }
 }

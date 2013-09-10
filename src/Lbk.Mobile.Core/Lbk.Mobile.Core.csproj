@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="AutoMapper\LbkProfile.cs" />
+    <Compile Include="Converters\AreaValueConverter.cs" />
     <Compile Include="Extensions\QuestionExtensions.cs" />
     <Compile Include="Extensions\QuizExtensions.cs" />
     <Compile Include="LbkAppBase.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="ViewModels\Event\EventListViewModel.cs" />
     <Compile Include="ViewModels\Event\EventDetailViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
+    <Compile Include="ViewModels\Helpers\ModelWithCommand.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />

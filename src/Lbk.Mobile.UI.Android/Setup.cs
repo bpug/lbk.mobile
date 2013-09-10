@@ -8,14 +8,12 @@ namespace Lbk.Mobile.UI.Android
 {
     using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
-    using Cirrious.MvvmCross.Dialog.Droid;
     using Cirrious.MvvmCross.Droid.Platform;
     using Cirrious.MvvmCross.ViewModels;
 
     using global::Android.Content;
     using global::Android.Widget;
-
-    using Lbk.Mobile.Core;
+    
     using Lbk.Mobile.UI.Android.Bindings;
 
     public class Setup : MvxAndroidSetup
@@ -27,7 +25,7 @@ namespace Lbk.Mobile.UI.Android
 
         protected override IMvxApplication CreateApp()
         {
-            return new LbkApp();
+            return new Core.LbkApp();
         }
 
         protected override IMvxTrace CreateDebugTrace()

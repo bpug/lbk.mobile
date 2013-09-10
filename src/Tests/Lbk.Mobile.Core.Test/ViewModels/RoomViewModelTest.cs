@@ -31,7 +31,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             var mockService = new Mock<IRoomRepository>();
 
             var result = this.GetRoomsData();
-            mockService.Setup(s => s.GetRooms()).Returns(result);
+            //mockService.Setup(s => s.GetRooms()).Returns(result);
 
             var roomListViewModel = new RoomListViewModel(mockService.Object);
 

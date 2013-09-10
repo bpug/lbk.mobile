@@ -59,14 +59,17 @@
     <Reference Include="Cirrious.MvvmCross.Binding.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Dialog.Droid">
-      <HintPath>..\packages\MvvmCross.HotTuna.Droid.Dialog.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Dialog.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="Cirrious.MvvmCross.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.DownloadCache.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.DownloadCache.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.DownloadCache.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.File, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -84,13 +87,9 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="CrossUI.Core">
-      <HintPath>..\packages\MvvmCross.HotTuna.Droid.Dialog.3.0.10\lib\MonoAndroid16\CrossUI.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CrossUI.Droid">
-      <HintPath>..\packages\MvvmCross.HotTuna.Droid.Dialog.3.0.10\lib\MonoAndroid16\CrossUI.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Mono.Android.Support.v4" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -111,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\ReachabilityPluginBootstrap.cs">
       <SubType>Code</SubType>
@@ -146,8 +146,8 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\BindableProgress.cs" />
-    <Compile Include="Views\BaseDialogView.cs" />
     <Compile Include="Views\EventListView.cs" />
+    <Compile Include="Views\RoomDetailView.cs" />
     <Compile Include="Views\RoomListView.cs" />
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\IBaseView.cs" />
@@ -174,6 +174,7 @@
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Header.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Footer.axml" />
     <AndroidResource Include="Resources\Layout\Room_ListItem.axml" />
+    <AndroidResource Include="Resources\Layout\Room_Details.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -219,6 +220,7 @@
     <AndroidResource Include="Resources\Drawable\thn_turmzimmer.jpg" />
     <AndroidResource Include="Resources\Drawable\thn_gartenanbau.jpg" />
     <AndroidResource Include="Resources\Drawable\thn_loewenempore.jpg" />
+    <AndroidResource Include="Resources\Drawable-hdpi\Icon.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +231,10 @@
     <ProjectReference Include="..\Lbk.Mobile.Data\Lbk.Mobile.Data.csproj">
       <Project>{10700230-8C64-41F7-8DD2-9A693E7DD0F0}</Project>
       <Name>Lbk.Mobile.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
+      <Project>{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}</Project>
+      <Name>Lbk.Mobile.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj">
       <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
@@ -254,9 +260,18 @@
       <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
       <Name>Lbk.Mobile.Plugin.Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\BindableViewPager.Droid\BindableViewPager.Droid.csproj">
+      <Project>{b7748adc-59ae-4800-9dea-91ce95c64d43}</Project>
+      <Name>BindableViewPager.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\ViewPagerIndicator.Droid\ViewPagerIndicator.Droid.csproj">
+      <Project>{fa322a14-2b8e-4496-b950-4d8263ca0a2d}</Project>
+      <Name>ViewPagerIndicator.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Drawable-hdpi\" />
+    <Folder Include="Views\Room\" />
+    <Folder Include="Views\TodaysMenu\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Room
 {
+    using Cirrious.MvvmCross.ViewModels;
+
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
@@ -18,6 +20,11 @@ namespace Lbk.Mobile.Core.ViewModels.Room
         public RoomDetailViewModel(IRoomRepository roomRepository)
         {
             this.roomRepository = roomRepository;
+        }
+
+        public class Nav
+        {
+            public int Id { get; set; }
         }
 
         public Room Room
@@ -33,9 +40,9 @@ namespace Lbk.Mobile.Core.ViewModels.Room
             }
         }
 
-        public void Init(int id)
+        public void Init(Nav navigation)
         {
-            this.Room = this.roomRepository.GetRoom(id);
+            this.Room = this.roomRepository.GetRoom(navigation.Id);
         }
     }
 }

@@ -7,7 +7,6 @@
 namespace Lbk.Mobile.Core
 {
     using Cirrious.CrossCore;
-    using Cirrious.CrossCore.IoC;
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
@@ -23,7 +22,6 @@ namespace Lbk.Mobile.Core
         protected LbkAppBase()
         {
             this.InitaliseServices();
-            this.InitaliseErrorReporting();
             //this.InitialisePlugins();
             //AutoMapperConfiguration.Configure();
         }
@@ -31,7 +29,7 @@ namespace Lbk.Mobile.Core
         
         protected abstract void InitialiseStartNavigation();
 
-        private void InitaliseErrorReporting()
+        private void InitaliseServices()
         {
             var errorService = Mvx.IocConstruct<ErrorService>();
             Mvx.RegisterSingleton<IErrorService>(errorService);
@@ -39,10 +37,7 @@ namespace Lbk.Mobile.Core
             //var errorService = new ErrorApplicationObject();
             //Mvx.RegisterSingleton<IErrorReporter>(errorService);
             //Mvx.RegisterSingleton<IErrorSource>(errorService);
-        }
-
-        private void InitaliseServices()
-        {
+            
             Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
 
             // use dynamic:

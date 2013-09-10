@@ -6,6 +6,7 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Room
 {
+    using System.Collections.Generic;
     using System.Windows.Input;
 
     using Cirrious.MvvmCross.ViewModels;
@@ -50,9 +51,8 @@ namespace Lbk.Mobile.Core.ViewModels.Room
         {
             get
             {
-                //return new MvxCommand<Room>(
-                //    item => this.ShowViewModel<RoomDetailViewModel>(new {id = item.Id}));
-                return new MvxCommand<Room>(this.ShowDetailExecute);
+                return new MvxCommand<Room>(item => this.ShowViewModel<RoomDetailViewModel>(new RoomDetailViewModel.Nav() { Id = item.Id }));
+                //return new MvxCommand<Room>(this.ShowDetailExecute);
             }
         }
 
@@ -74,5 +74,11 @@ namespace Lbk.Mobile.Core.ViewModels.Room
         {
             this.Rooms = this.roomRepository.GetRooms();
         }
+
+        //private void OnLoadExecute()
+        //{
+        //    var mRooms = this.roomRepository.GetRooms();
+        //    this.Rooms = mRooms.Select(x => new ModelWithCommand<Room>(x, new MvxCommand(() => ShowDetailExecute(x)))).ToList(); ;
+        //}
     }
 }

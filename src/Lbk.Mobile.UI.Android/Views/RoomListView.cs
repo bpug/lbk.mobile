@@ -6,6 +6,11 @@
 
 namespace Lbk.Mobile.UI.Android.Views
 {
+    using Cirrious.MvvmCross.Binding.BindingContext;
+    using Cirrious.MvvmCross.Binding.Droid.Views;
+    using Cirrious.MvvmCross.Droid.Views;
+    using Cirrious.MvvmCross.ViewModels;
+
     using global::Android.App;
     using global::Android.OS;
 

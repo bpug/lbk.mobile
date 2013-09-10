@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/transparent">
+    <HorizontalScrollView
+        android:minWidth="50px"
+        android:minHeight="50px"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView1" />
+    <TextView
+        android:text="Subtitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        local:MvxBind="Text Room.Subtitle"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Description"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        local:MvxBind="Text Room.Description"
+        android:paddingTop="12dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+        <TextView
+            android:text="Plätze:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp" />
+        <TextView
+            android:text="40"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:paddingLeft="40dp"
+            local:MvxBind="Text Room.Seats" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+        <TextView
+            android:text="Nutzfläche:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp" />
+        <TextView
+            android:text="40"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:paddingLeft="10dp"
+            local:MvxBind="Text Room.Area, Converter=Area" />
+    </LinearLayout>
+</LinearLayout>

@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.Data.Repositories
 {
+    using System.Collections.Generic;
+
     using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Model;
 
