@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Answer.cs" />
     <Compile Include="BaseDbEntity.cs" />
+    <Compile Include="MenuCategory.cs" />
     <Compile Include="Enums\DialogResult.cs" />
     <Compile Include="Enums\QuestionCategory.cs" />
     <Compile Include="IDbEntity.cs" />

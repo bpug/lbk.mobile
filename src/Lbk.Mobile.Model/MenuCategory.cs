@@ -8,7 +8,7 @@ namespace Lbk.Mobile.Model
 {
     using System.Collections.Generic;
 
-    public class DishOfTheDay
+    public class MenuCategory
     {
         public List<Dish> Dishes { get; set; }
 

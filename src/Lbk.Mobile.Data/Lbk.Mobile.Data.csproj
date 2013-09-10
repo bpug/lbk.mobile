@@ -69,6 +69,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Extensions\LbkMobileServiceExtensions.cs" />
     <Compile Include="Mappings\AnswerMapping.cs" />
+    <Compile Include="Mappings\DishMapping.cs" />
+    <Compile Include="Mappings\MenuCategoryMapping.cs" />
     <Compile Include="Mappings\QuestionMapping.cs" />
     <Compile Include="Mappings\QuizMapping.cs" />
     <Compile Include="Repositories\XmlRepositoryBase.cs" />

@@ -8,22 +8,19 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
 
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model;
 
     public class TodaysMenuViewModel : BaseViewModel
     {
         private readonly ILbkMobileService service;
 
-        private List<category> menuCategories;
-
-        private DishesOfTheDay todaysMenu;
+        private List<MenuCategory> menuCategories;
 
         public TodaysMenuViewModel(ILbkMobileService service)
         {
@@ -38,7 +35,7 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
             }
         }
 
-        public List<category> MenuCategories
+        public List<MenuCategory> MenuCategories
         {
             get
             {
@@ -51,23 +48,6 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
             }
         }
 
-        public DishesOfTheDay TodaysMenu
-        {
-            get
-            {
-                return this.todaysMenu;
-            }
-            set
-            {
-                this.todaysMenu = value;
-                if (value != null && this.todaysMenu.DishOfTheDay != null)
-                {
-                    this.MenuCategories = this.todaysMenu.DishOfTheDay.ToList();
-                }
-                this.RaisePropertyChanged(() => this.TodaysMenu);
-            }
-        }
-
         public override void Start()
         {
             this.LoadCommand.Execute(null);
@@ -75,7 +55,10 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
 
         private async Task OnLoadExecute()
         {
-            await this.AsyncExecute(() => this.service.GetTodaysMenuAsync(DateTime.Now), list => this.TodaysMenu = list);
+            await
+                this.AsyncExecute(
+                    () => this.service.GetTodaysMenuAsync(DateTime.Now),
+                    list => this.MenuCategories = list);
         }
     }
 }

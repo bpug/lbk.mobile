@@ -12,6 +12,11 @@ namespace Lbk.Mobile.Data.Extensions
     using System.Linq;
     using System.Threading.Tasks;
     using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Data.Mappings;
+    using Lbk.Mobile.Model;
+
+    using Question = Lbk.Mobile.Data.LbkMobileService.Question;
+    using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
 
     public static class LbkMobileServiceExtensions
     {
@@ -79,13 +84,13 @@ namespace Lbk.Mobile.Data.Extensions
             return tcs.Task;
         }
 
-        public static Task<DishesOfTheDay> TodaysMenuAsyncTask(
+        public static Task<List<MenuCategory>> TodaysMenuAsyncTask(
             this Service1SoapClient client,
             DateTime date,
             string fingerprint)
         {
-            var tcs = CreateSource<DishesOfTheDay>(null);
-            client.TodaysMenuCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+            var tcs = CreateSource<List<MenuCategory>>(null);
+            client.TodaysMenuCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result.DishOfTheDay.ToModel(), null);
             client.TodaysMenuAsync(date.ToString("yyyy-MM-dd"), fingerprint);
             return tcs.Task;
         }

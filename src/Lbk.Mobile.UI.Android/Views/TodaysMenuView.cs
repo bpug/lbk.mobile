@@ -3,21 +3,19 @@
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
-using System;
-using Android.App;
-using Android.OS;
-
 
 namespace Lbk.Mobile.UI.Android.Views
 {
-    using System.Collections.Generic;
-    using System.Linq;
+    using System;
 
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Binding.Droid.Views;
 
+    using global::Android;
+    using global::Android.App;
+    using global::Android.OS;
+
     using Lbk.Mobile.Core.ViewModels.TodaysMenu;
-    using Lbk.Mobile.Data.LbkMobileService;
 
     [Activity(Label = "Tageskarte")]
     public class TodaysMenuView : BaseView<TodaysMenuViewModel>
@@ -26,23 +24,11 @@ namespace Lbk.Mobile.UI.Android.Views
         {
             this.Title = DateTime.Now.ToShortDateString();
             base.OnCreate(bundle);
-            this.SetContentView(Resource.Layout.TodaysMenu);
+            this.SetContentView(Android.Resource.Layout.TodaysMenu);
 
             //Find our list and set its adapter
-            var sessionListView = FindViewById<MvxListView>(global::Android.Resource.Id.List);
-            sessionListView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)BindingContext);
-
-            //ViewModel.PropertyChanged += (sender, args) =>
-            //{
-            //    var vm = (TodaysMenuViewModel)sender;
-            //    switch (args.PropertyName)
-            //    {
-            //        case "MenuCategories":
-            //            BindDishes(vm.MenuCategories);
-            //            break;
-            //    }
-            //};
-            
+            var sessionListView = this.FindViewById<MvxListView>(Resource.Id.List);
+            sessionListView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
         }
 
         //private void BindDishes(IEnumerable<category> categories)

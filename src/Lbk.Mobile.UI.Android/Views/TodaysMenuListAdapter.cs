@@ -19,7 +19,7 @@ namespace Lbk.Mobile.UI.Android.Views
 
     using Java.Lang;
 
-    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
     using Lbk.Mobile.UI.Android.Controls;
 
     public class TodaysMenuListAdapter : MvxAdapter, ISectionIndexer
@@ -62,7 +62,7 @@ namespace Lbk.Mobile.UI.Android.Views
 
         protected override View GetBindableView(View convertView, object dataContext, int templateId)
         {
-            if (dataContext is dish)
+            if (dataContext is Dish)
             {
                 return base.GetBindableView(convertView, dataContext, Resource.Layout.TodaysMenu_ListItem);
             }
@@ -78,7 +78,7 @@ namespace Lbk.Mobile.UI.Android.Views
 
         protected override void SetItemsSource(IEnumerable list)
         {
-            var groupedList = list as List<category>;
+            var groupedList = list as List<Model.MenuCategory>;
 
             if (groupedList == null)
             {
@@ -103,7 +103,7 @@ namespace Lbk.Mobile.UI.Android.Views
 
                 var groupFooter = this.GetGroupFooter(group);
 
-                for (int i = 0; i <= group.Dishes.Length; i++)
+                for (int i = 0; i <= group.Dishes.Count; i++)
                 {
                     this.reverseSectionLookup.Add(groupsSoFar);
                 }
@@ -137,7 +137,7 @@ namespace Lbk.Mobile.UI.Android.Views
             return toReturn;
         }
 
-        private SectionFooter GetGroupFooter(category category)
+        private SectionFooter GetGroupFooter(Model.MenuCategory category)
         {
             return new SectionFooter
             {
@@ -145,7 +145,7 @@ namespace Lbk.Mobile.UI.Android.Views
             };
         }
 
-        private string GetGroupHeader(category category)
+        private string GetGroupHeader(Model.MenuCategory category)
         {
             return category.Title;
         }

@@ -10,8 +10,6 @@ namespace Lbk.Mobile.Data.Services
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Cirrious.CrossCore;
-
     using Lbk.Mobile.Data.Extensions;
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Model;
@@ -38,62 +36,61 @@ namespace Lbk.Mobile.Data.Services
         //    this.GetDeviceUid();
         //}
 
-        public async Task<bool> AbortedReservationByCustomerAsync(Guid reservationId)
+        public Task<bool> AbortedReservationByCustomerAsync(Guid reservationId)
         {
-            return await this.Service.AbortedReservationByCustomerAsyncTask(reservationId);
+            return this.Service.AbortedReservationByCustomerAsyncTask(reservationId);
         }
 
-        public async Task<bool> ActivateVoucherAsync(QuizVoucher voucher)
+        public Task<bool> ActivateVoucherAsync(QuizVoucher voucher)
         {
-            return await this.Service.ActivateVoucherAsyncTask(voucher, this.deviceUid);
+            return this.Service.ActivateVoucherAsyncTask(voucher, this.deviceUid);
         }
 
-        public async Task<bool> ConfirmedReservationByCustomerAsync(Guid reservationId)
+        public Task<bool> ConfirmedReservationByCustomerAsync(Guid reservationId)
         {
-            return await this.Service.ConfirmReservationByCustomerAsyncTask(reservationId);
+            return this.Service.ConfirmReservationByCustomerAsyncTask(reservationId);
         }
 
-        public async Task<Guid> CreateReservationAsync(Reservation reservation)
+        public Task<Guid> CreateReservationAsync(Reservation reservation)
         {
-            return await this.Service.CreateReservationAsyncTask(reservation);
+            return this.Service.CreateReservationAsyncTask(reservation);
         }
 
-       
-        public async Task<List<Event>> GetEventsAsync()
+        public Task<List<Event>> GetEventsAsync()
         {
-            return await this.Service.GetEventsAsyncTask(this.deviceUid);
+            return this.Service.GetEventsAsyncTask(this.deviceUid);
         }
 
-        public async Task<DateTime?> GetMenuLastUpdateAsync()
+        public Task<DateTime?> GetMenuLastUpdateAsync()
         {
-            var result = await this.Service.GetMenuLastUpdateAsyncTask(this.deviceUid);
+            var result = this.Service.GetMenuLastUpdateAsyncTask(this.deviceUid);
             return result;
         }
 
-        public async Task<List<Picture>> GetPicturesAsync()
+        public Task<List<Picture>> GetPicturesAsync()
         {
-            return await this.Service.GetPicturesAsyncTask(this.deviceUid);
+            return this.Service.GetPicturesAsyncTask(this.deviceUid);
         }
 
-        public async Task<Quiz> GetQuizAsync(int questionCount)
+        public Task<Quiz> GetQuizAsync(int questionCount)
         {
-            return await this.Service.GetQuizAsyncTask(this.deviceUid, questionCount);
+            return this.Service.GetQuizAsyncTask(this.deviceUid, questionCount);
         }
 
-        public  Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date)
+        public Task<List<MenuCategory>> GetTodaysMenuAsync(DateTime date)
         {
             var result = this.Service.TodaysMenuAsyncTask(date, this.deviceUid);
             return result;
         }
 
-        public async Task<List<Video>> GetVideosAsyn()
+        public Task<List<Video>> GetVideosAsyn()
         {
-            return await this.Service.GetVideosAsyncTask(this.deviceUid);
+            return this.Service.GetVideosAsyncTask(this.deviceUid);
         }
 
-        public async Task<bool> IsDeclinedReservationByRestaurantAsyn(Guid reservationId)
+        public Task<bool> IsDeclinedReservationByRestaurantAsyn(Guid reservationId)
         {
-            return await this.Service.IsDeclinedByRestaurantAsyncTask(reservationId);
+            return this.Service.IsDeclinedByRestaurantAsyncTask(reservationId);
         }
 
         private void GetDeviceUid()

@@ -228,10 +228,6 @@
       <Project>{64e36d12-5247-4d85-b9c4-be09937b9185}</Project>
       <Name>Lbk.Mobile.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lbk.Mobile.Data\Lbk.Mobile.Data.csproj">
-      <Project>{10700230-8C64-41F7-8DD2-9A693E7DD0F0}</Project>
-      <Name>Lbk.Mobile.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
       <Project>{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}</Project>
       <Name>Lbk.Mobile.Model</Name>

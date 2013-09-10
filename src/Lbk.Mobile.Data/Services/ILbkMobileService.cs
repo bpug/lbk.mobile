@@ -31,7 +31,7 @@ namespace Lbk.Mobile.Data.Services
 
         Task<Quiz> GetQuizAsync(int questionCount);
 
-        Task<DishesOfTheDay> GetTodaysMenuAsync(DateTime date);
+        Task<List<MenuCategory>> GetTodaysMenuAsync(DateTime date);
 
         Task<List<Video>> GetVideosAsyn();
 

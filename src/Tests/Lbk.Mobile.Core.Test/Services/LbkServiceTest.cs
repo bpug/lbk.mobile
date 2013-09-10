@@ -25,7 +25,7 @@ namespace Lbk.Mobile.Core.Test.Services
             var dishOfTheDay = await service.GetTodaysMenuAsync(DateTime.Now);
 
             Assert.NotNull(dishOfTheDay);
-            Assert.Greater(dishOfTheDay.DishOfTheDay.Count(), 0);
+            Assert.Greater(dishOfTheDay.Count(), 0);
         }
 
         [Test]
