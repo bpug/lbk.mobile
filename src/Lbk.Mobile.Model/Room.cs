@@ -13,11 +13,15 @@ namespace Lbk.Mobile.Model
         public int Id { get; set; }
         public int? Area { get; set; }
         public string Description { get; set; }
-        public List<string> ImageUrl { get; set; }
+        public List<Image> Images { get; set; }
         public string Seats { get; set; }
         public string Subtitle { get; set; }
         public string ThumbnailUrl { get; set; }
-        public int ThumbnailId { get; set; }
         public string Title { get; set; }
+    }
+
+    public class Image
+    {
+        public string Url { get; set; }
     }
 }

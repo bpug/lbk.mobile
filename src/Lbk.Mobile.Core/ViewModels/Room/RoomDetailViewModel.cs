@@ -21,12 +21,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
         {
             this.roomRepository = roomRepository;
         }
-
-        public class Nav
-        {
-            public int Id { get; set; }
-        }
-
+        
         public Room Room
         {
             get
@@ -40,9 +35,9 @@ namespace Lbk.Mobile.Core.ViewModels.Room
             }
         }
 
-        public void Init(Nav navigation)
+        public void Init(int id)
         {
-            this.Room = this.roomRepository.GetRoom(navigation.Id);
+            this.Room = this.roomRepository.GetRoom(id);
         }
     }
 }

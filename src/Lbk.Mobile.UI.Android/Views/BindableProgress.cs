@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.UI.Android.Views
 {
+    using System;
+
     using global::Android.App;
     using global::Android.Content;
 
@@ -18,6 +20,23 @@ namespace Lbk.Mobile.UI.Android.Views
         public BindableProgress(Context context)
         {
             this.context = context;
+        }
+
+        
+        public void Dispose()
+        {
+            this.Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (this.dialog != null)
+                {
+                    this.dialog.Dismiss();
+                }
+            }
         }
 
         public bool Visible
@@ -36,12 +55,14 @@ namespace Lbk.Mobile.UI.Android.Views
                 if (value)
                 {
                     this.dialog = new ProgressDialog(this.context);
-                    this.dialog.SetTitle("Working...");
+                    this.dialog.SetProgressStyle(ProgressDialogStyle.Spinner);
+                    //this.dialog.SetTitle("Working...");
                     this.dialog.Show();
                 }
                 else
                 {
                     this.dialog.Hide();
+                    this.dialog.Dismiss();
                     this.dialog = null;
                 }
             }

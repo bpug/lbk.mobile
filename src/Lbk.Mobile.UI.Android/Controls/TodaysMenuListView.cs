@@ -19,7 +19,7 @@ namespace Lbk.Mobile.UI.Android.Controls
 
         protected override void Initialize()
         {
-            this.Init(Resource.Layout.TodaysMenu_List);
+            this.Init(Resource.Layout.TodaysMenu_ListView);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Lbk.Mobile.Data.Mappings
 
             if (!source.Answers.IsNullOrEmpty())
             {
-                question.Answers = source.Answers.ToLbkAnswer();
+                question.Answers = source.Answers.ToModel();
             }
 
             return question;

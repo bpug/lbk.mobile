@@ -78,6 +78,9 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.File.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.File.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Json">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
@@ -87,10 +90,19 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="Mono.Android.Support.v4" />
     <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.10\lib\MonoAndroid16\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net">
@@ -112,6 +124,7 @@
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ReachabilityPluginBootstrap.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -119,7 +132,9 @@
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceIdentifierPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Controls\BindingPullToRefreshListView.cs" />
+    <Compile Include="Controls\EventListView.cs" />
     <Compile Include="Controls\SectionFooter.cs" />
     <Compile Include="Controls\TodaysMenuListView.cs" />
     <Compile Include="Controls\PullToRefresh\ActionBasedRefreshListener.cs" />
@@ -146,13 +161,13 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\BindableProgress.cs" />
-    <Compile Include="Views\EventListView.cs" />
-    <Compile Include="Views\RoomDetailView.cs" />
-    <Compile Include="Views\RoomListView.cs" />
+    <Compile Include="Views\Event\EventListView.cs" />
+    <Compile Include="Views\Room\RoomDetailView.cs" />
+    <Compile Include="Views\Room\RoomListView.cs" />
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Views\IBaseView.cs" />
-    <Compile Include="Views\TodaysMenuListAdapter.cs" />
-    <Compile Include="Views\TodaysMenuView.cs" />
+    <Compile Include="Views\TodaysMenu\TodaysMenuListAdapter.cs" />
+    <Compile Include="Views\TodaysMenu\TodaysMenuView.cs" />
     <Compile Include="Views\MenuView.cs" />
     <Compile Include="Views\ReservationView.cs" />
   </ItemGroup>
@@ -161,20 +176,24 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
-    <AndroidResource Include="Resources\Layout\TodaysMenu.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_List.axml" />
     <AndroidResource Include="Resources\Layout\Reservation.axml" />
     <AndroidResource Include="Resources\Layout\Home.axml" />
     <AndroidResource Include="Resources\Layout\Menu.axml" />
     <AndroidResource Include="Resources\Layout\ToastLayout_Error.axml" />
     <AndroidResource Include="Resources\Layout\Room_List.axml" />
     <AndroidResource Include="Resources\Layout\pull_down_pull_to_refresh_list.axml" />
-    <AndroidResource Include="Resources\Layout\TodaysMenu_List.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListView.axml" />
     <AndroidResource Include="Resources\Layout\pull_up_pull_to_refresh_list.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Header.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Footer.axml" />
     <AndroidResource Include="Resources\Layout\Room_ListItem.axml" />
     <AndroidResource Include="Resources\Layout\Room_Details.axml" />
+    <AndroidResource Include="Resources\Layout\Room_ImagePagerItem.axml" />
+    <AndroidResource Include="Resources\Layout\Event_ListView.axml" />
+    <AndroidResource Include="Resources\Layout\Event_ListItem.axml" />
+    <AndroidResource Include="Resources\Layout\Event_List.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -221,6 +240,9 @@
     <AndroidResource Include="Resources\Drawable\thn_gartenanbau.jpg" />
     <AndroidResource Include="Resources\Drawable\thn_loewenempore.jpg" />
     <AndroidResource Include="Resources\Drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\Drawable\Braueustueberl1.jpg" />
+    <AndroidResource Include="Resources\Drawable\Braueustueberl2.jpg" />
+    <AndroidResource Include="Resources\Drawable\starkbierfest.jpg" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -265,10 +287,7 @@
       <Name>ViewPagerIndicator.Droid</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Room\" />
-    <Folder Include="Views\TodaysMenu\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

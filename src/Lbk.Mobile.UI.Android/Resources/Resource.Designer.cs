@@ -476,115 +476,124 @@ namespace Lbk.Mobile.UI.Android
 			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int button_advise = 2130837505;
+			public const int Braueustueberl1 = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int button_contact = 2130837506;
+			public const int Braueustueberl2 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int button_events = 2130837507;
+			public const int button_advise = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int button_facebook = 2130837508;
+			public const int button_contact = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int button_galery = 2130837509;
+			public const int button_events = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int button_history = 2130837510;
+			public const int button_facebook = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int button_menu = 2130837511;
+			public const int button_galery = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int button_menuOfTheDay = 2130837512;
+			public const int button_history = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int button_quiz = 2130837513;
+			public const int button_menu = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int button_reservation = 2130837514;
+			public const int button_menuOfTheDay = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int button_rooms = 2130837515;
+			public const int button_quiz = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int button_videos = 2130837516;
+			public const int button_reservation = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int ic_pulltorefresh_arrow = 2130837517;
+			public const int button_rooms = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int icon = 2130837518;
+			public const int button_videos = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int Icon_origin = 2130837519;
+			public const int ic_pulltorefresh_arrow = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int pull_to_refresh_header_background = 2130837520;
+			public const int icon = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int splash = 2130837521;
+			public const int Icon_origin = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int splash_origin = 2130837522;
+			public const int pull_to_refresh_header_background = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int thn_bennosaal = 2130837523;
+			public const int splash = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int thn_braeustueberl = 2130837524;
+			public const int splash_origin = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int thn_dachauerstube = 2130837525;
+			public const int starkbierfest = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int thn_festsaal = 2130837526;
+			public const int thn_bennosaal = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int thn_filserstube = 2130837527;
+			public const int thn_braeustueberl = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int thn_galeriesaal = 2130837528;
+			public const int thn_dachauerstube = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int thn_gartenanbau = 2130837529;
+			public const int thn_festsaal = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int thn_loewenempore = 2130837530;
+			public const int thn_filserstube = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int thn_loewenterasse = 2130837531;
+			public const int thn_galeriesaal = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int thn_terrasse = 2130837532;
+			public const int thn_gartenanbau = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int thn_turmstueberl = 2130837533;
+			public const int thn_loewenempore = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int thn_turmzimmer = 2130837534;
+			public const int thn_loewenterasse = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int vpi__tab_indicator = 2130837535;
+			public const int thn_terrasse = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int vpi__tab_selected_focused_holo = 2130837536;
+			public const int thn_turmstueberl = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int vpi__tab_selected_holo = 2130837537;
+			public const int thn_turmzimmer = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int vpi__tab_selected_pressed_holo = 2130837538;
+			public const int vpi__tab_indicator = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int vpi__tab_unselected_focused_holo = 2130837539;
+			public const int vpi__tab_selected_focused_holo = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int vpi__tab_unselected_holo = 2130837540;
+			public const int vpi__tab_selected_holo = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int vpi__tab_unselected_pressed_holo = 2130837541;
+			public const int vpi__tab_selected_pressed_holo = 2130837541;
+			
+			// aapt resource value: 0x7f020026
+			public const int vpi__tab_unselected_focused_holo = 2130837542;
+			
+			// aapt resource value: 0x7f020027
+			public const int vpi__tab_unselected_holo = 2130837543;
+			
+			// aapt resource value: 0x7f020028
+			public const int vpi__tab_unselected_pressed_holo = 2130837544;
 			
 			static Drawable()
 			{
@@ -599,14 +608,14 @@ namespace Lbk.Mobile.UI.Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f04001a
-			public const int ErrorImage = 2130968602;
+			// aapt resource value: 0x7f04001d
+			public const int ErrorImage = 2130968605;
 			
-			// aapt resource value: 0x7f04001b
-			public const int ErrorText1 = 2130968603;
+			// aapt resource value: 0x7f04001e
+			public const int ErrorText1 = 2130968606;
 			
-			// aapt resource value: 0x7f04001c
-			public const int ErrorText2 = 2130968604;
+			// aapt resource value: 0x7f04001f
+			public const int ErrorText2 = 2130968607;
 			
 			// aapt resource value: 0x7f040005
 			public const int MvxBindingTagUnique = 2130968581;
@@ -614,62 +623,68 @@ namespace Lbk.Mobile.UI.Android
 			// aapt resource value: 0x7f040003
 			public const int bottom = 2130968579;
 			
-			// aapt resource value: 0x7f04000e
-			public const int btnEvents = 2130968590;
+			// aapt resource value: 0x7f040012
+			public const int btnEvents = 2130968594;
 			
-			// aapt resource value: 0x7f040007
-			public const int btnMenu = 2130968583;
+			// aapt resource value: 0x7f04000b
+			public const int btnMenu = 2130968587;
 			
-			// aapt resource value: 0x7f040006
-			public const int btnMenuOfTheDay = 2130968582;
+			// aapt resource value: 0x7f04000a
+			public const int btnMenuOfTheDay = 2130968586;
 			
-			// aapt resource value: 0x7f04000d
-			public const int btnQuiz = 2130968589;
-			
-			// aapt resource value: 0x7f040008
-			public const int btnReservation = 2130968584;
+			// aapt resource value: 0x7f040011
+			public const int btnQuiz = 2130968593;
 			
 			// aapt resource value: 0x7f04000c
-			public const int btnRoom = 2130968588;
+			public const int btnReservation = 2130968588;
 			
-			// aapt resource value: 0x7f040018
-			public const int horizontalScrollView1 = 2130968600;
+			// aapt resource value: 0x7f040010
+			public const int btnRoom = 2130968592;
+			
+			// aapt resource value: 0x7f040006
+			public const int btn_event_book = 2130968582;
+			
+			// aapt resource value: 0x7f04001a
+			public const int image_pager = 2130968602;
+			
+			// aapt resource value: 0x7f04001b
+			public const int image_pager_indicator = 2130968603;
 			
 			// aapt resource value: 0x7f040000
 			public const int none = 2130968576;
 			
-			// aapt resource value: 0x7f040014
-			public const int pull_to_refresh_image = 2130968596;
+			// aapt resource value: 0x7f040017
+			public const int pull_to_refresh_image = 2130968599;
 			
-			// aapt resource value: 0x7f04001d
-			public const int pull_to_refresh_layout = 2130968605;
-			
-			// aapt resource value: 0x7f040013
-			public const int pull_to_refresh_progress = 2130968595;
-			
-			// aapt resource value: 0x7f040015
-			public const int pull_to_refresh_text = 2130968597;
+			// aapt resource value: 0x7f040007
+			public const int pull_to_refresh_layout = 2130968583;
 			
 			// aapt resource value: 0x7f040016
-			public const int pull_to_refresh_updated_at = 2130968598;
+			public const int pull_to_refresh_progress = 2130968598;
 			
-			// aapt resource value: 0x7f040017
-			public const int refresh_lower_button = 2130968599;
-			
-			// aapt resource value: 0x7f040012
-			public const int refresh_upper_button = 2130968594;
-			
-			// aapt resource value: 0x7f040009
-			public const int textView1 = 2130968585;
-			
-			// aapt resource value: 0x7f04000a
-			public const int textView2 = 2130968586;
-			
-			// aapt resource value: 0x7f04000b
-			public const int textView3 = 2130968587;
+			// aapt resource value: 0x7f040018
+			public const int pull_to_refresh_text = 2130968600;
 			
 			// aapt resource value: 0x7f040019
-			public const int toast_layout_error_root = 2130968601;
+			public const int pull_to_refresh_updated_at = 2130968601;
+			
+			// aapt resource value: 0x7f040008
+			public const int refresh_lower_button = 2130968584;
+			
+			// aapt resource value: 0x7f040009
+			public const int refresh_upper_button = 2130968585;
+			
+			// aapt resource value: 0x7f04000d
+			public const int textView1 = 2130968589;
+			
+			// aapt resource value: 0x7f04000e
+			public const int textView2 = 2130968590;
+			
+			// aapt resource value: 0x7f04000f
+			public const int textView3 = 2130968591;
+			
+			// aapt resource value: 0x7f04001c
+			public const int toast_layout_error_root = 2130968604;
 			
 			// aapt resource value: 0x7f040004
 			public const int top = 2130968580;
@@ -677,20 +692,20 @@ namespace Lbk.Mobile.UI.Android
 			// aapt resource value: 0x7f040001
 			public const int triangle = 2130968577;
 			
-			// aapt resource value: 0x7f040011
-			public const int txtEvents = 2130968593;
+			// aapt resource value: 0x7f040015
+			public const int txtEvents = 2130968597;
 			
-			// aapt resource value: 0x7f04001f
-			public const int txtHeader = 2130968607;
+			// aapt resource value: 0x7f040021
+			public const int txtHeader = 2130968609;
 			
-			// aapt resource value: 0x7f04001e
-			public const int txtHeadline = 2130968606;
+			// aapt resource value: 0x7f040020
+			public const int txtHeadline = 2130968608;
 			
-			// aapt resource value: 0x7f040010
-			public const int txtQuiz = 2130968592;
+			// aapt resource value: 0x7f040014
+			public const int txtQuiz = 2130968596;
 			
-			// aapt resource value: 0x7f04000f
-			public const int txtRooms = 2130968591;
+			// aapt resource value: 0x7f040013
+			public const int txtRooms = 2130968595;
 			
 			// aapt resource value: 0x7f040002
 			public const int underline = 2130968578;
@@ -737,49 +752,61 @@ namespace Lbk.Mobile.UI.Android
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Home = 2130903040;
+			public const int Event_List = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Menu = 2130903041;
+			public const int Event_ListItem = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int pull_down_pull_to_refresh_list = 2130903042;
+			public const int Event_ListView = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int pull_up_pull_to_refresh_list = 2130903043;
+			public const int Home = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Reservation = 2130903044;
+			public const int Menu = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Room_Details = 2130903045;
+			public const int pull_down_pull_to_refresh_list = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Room_List = 2130903046;
+			public const int pull_up_pull_to_refresh_list = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Room_ListItem = 2130903047;
+			public const int Reservation = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int SplashScreen = 2130903048;
+			public const int Room_Details = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int ToastLayout_Error = 2130903049;
+			public const int Room_ImagePagerItem = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int TodaysMenu = 2130903050;
+			public const int Room_List = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int TodaysMenu_List = 2130903051;
+			public const int Room_ListItem = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int TodaysMenu_ListItem = 2130903052;
+			public const int SplashScreen = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int TodaysMenu_ListItem_Footer = 2130903053;
+			public const int ToastLayout_Error = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int TodaysMenu_ListItem_Header = 2130903054;
+			public const int TodaysMenu_List = 2130903054;
+			
+			// aapt resource value: 0x7f03000f
+			public const int TodaysMenu_ListItem = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int TodaysMenu_ListItem_Footer = 2130903056;
+			
+			// aapt resource value: 0x7f030011
+			public const int TodaysMenu_ListItem_Header = 2130903057;
+			
+			// aapt resource value: 0x7f030012
+			public const int TodaysMenu_ListView = 2130903058;
 			
 			static Layout()
 			{

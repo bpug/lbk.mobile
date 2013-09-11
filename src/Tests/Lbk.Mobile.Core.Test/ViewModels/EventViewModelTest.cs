@@ -29,7 +29,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
             var result = this.GetEventsData();
 
-            var tcs = new TaskCompletionSource<List<Event>>();
+            var tcs = new TaskCompletionSource<List<Model.Event>>();
             tcs.SetResult(result);
             mockService.Setup(s => s.GetEventsAsync()).Returns(tcs.Task);
 
@@ -55,12 +55,12 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             this.Ioc.RegisterType<IReachability, MvxTestReachability>();
         }
 
-        private List<Event> GetEventsData()
+        private List<Model.Event> GetEventsData()
         {
-            var result = new List<Event>
+            var result = new List<Model.Event>
             {
-                new Event(),
-                new Event()
+                new Model.Event(),
+                new Model.Event()
             };
             return result;
         }

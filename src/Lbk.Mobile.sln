@@ -6,7 +6,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BF459CE8-0F92-4823-B1A3-2091E4183FA6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lbk.Mobile.Tests", "Lbk.Mobile.Tests", "{BF459CE8-0F92-4823-B1A3-2091E4183FA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Core", "Lbk.Mobile.Core\Lbk.Mobile.Core.csproj", "{64E36D12-5247-4D85-B9C4-BE09937B9185}"
 EndProject

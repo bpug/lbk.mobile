@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views
+namespace Lbk.Mobile.UI.Android.Views.TodaysMenu
 {
     using System;
 
@@ -24,9 +24,8 @@ namespace Lbk.Mobile.UI.Android.Views
         {
             this.Title = DateTime.Now.ToShortDateString();
             base.OnCreate(bundle);
-            this.SetContentView(Android.Resource.Layout.TodaysMenu);
-
-            //Find our list and set its adapter
+            this.SetContentView(Android.Resource.Layout.TodaysMenu_List);
+            
             var sessionListView = this.FindViewById<MvxListView>(Resource.Id.List);
             sessionListView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
         }

@@ -6,6 +6,9 @@
 
 namespace Lbk.Mobile.UI.Android
 {
+    using System.Collections.Generic;
+    using System.Reflection;
+
     using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
     using Cirrious.MvvmCross.Droid.Platform;
@@ -45,6 +48,16 @@ namespace Lbk.Mobile.UI.Android
         {
             var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
             base.InitializeLastChance();
+        }
+
+        protected override IList<Assembly> AndroidViewAssemblies
+        {
+            get
+            {
+                var assemblies = base.AndroidViewAssemblies;
+                assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
+                return assemblies;
+            }
         }
     }
 }

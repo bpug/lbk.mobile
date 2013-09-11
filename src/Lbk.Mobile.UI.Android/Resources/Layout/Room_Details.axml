@@ -5,12 +5,24 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/transparent">
-    <HorizontalScrollView
-        android:minWidth="50px"
-        android:minHeight="50px"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView1" />
+        android:layout_height="230dp"
+        android:background="@color/transparent">
+        <BindableViewPager
+            android:id="@+id/image_pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            local:MvxItemTemplate="@layout/room_imagepageritem"
+            local:MvxBind="ItemsSource Room.Images" />
+        <dk.ostebaronen.droid.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/image_pager_indicator"
+            android:padding="10dip"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent" />
+    </LinearLayout>
     <TextView
         android:text="Subtitle"
         android:layout_width="fill_parent"

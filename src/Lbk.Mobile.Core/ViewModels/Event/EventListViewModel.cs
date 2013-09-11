@@ -1,5 +1,5 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="ListViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="EventListViewModel.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
@@ -8,17 +8,17 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
 
-    using Cirrious.CrossCore;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Common.Extensions;
-    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model;
 
     public class EventListViewModel : BaseViewModel
     {
@@ -30,17 +30,6 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         {
             this.service = service;
         }
-
-        public EventListViewModel()
-        {
-            this.service = Mvx.Resolve<ILbkMobileService>();
-        }
-
-        public override void Start()
-        {
-            LoadCommand.Execute(null);
-        }
-       
 
         public List<Event> Events
         {
@@ -55,14 +44,6 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             }
         }
 
-        //public MvxAsyncCommand LoadAsyncCommand
-        //{
-        //    get
-        //    {
-        //        return new MvxAsyncCommand(this.OnLoadEventsExecute);
-        //    }
-        //}
-
         public ICommand LoadCommand
         {
             get
@@ -71,25 +52,18 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             }
         }
 
-        //public ICommand LoadEventsCommand
-        //{
-        //    get
-        //    {
-        //        return new MvxCommand(async () => await this.OnLoadEventsExecute());
-        //    }
-        //}
-
         public ICommand ShowDetailCommand
         {
             get
             {
-                return new MvxCommand<Event>(
-                    item => this.ShowViewModel<EventDetailViewModel>(
-                        new EventDetailViewModel.Nav()
-                        {
-                            ReservationLink = item.ReservationLink
-                        }),
-                    item => !item.ReservationLink.IsEmpty());
+                return
+                    new MvxCommand<Event>(
+                        item => this.ShowViewModel<EventDetailViewModel>(
+                            new EventDetailViewModel.Nav()
+                            {
+                                ReservationLink = item.ReservationLink
+                            }),
+                        item => !item.ReservationLink.IsEmpty());
             }
         }
 
@@ -100,6 +74,65 @@ namespace Lbk.Mobile.Core.ViewModels.Event
                 return new MvxCommand<Event>(item => this.ShowWebPage(item.ReservationLink));
             }
         }
+
+        public override void Start()
+        {
+            this.LoadCommand.Execute(null);
+        }
+
+        private async Task LoadExecute()
+        {
+            await
+                this.AsyncExecute(() => this.service.GetEventsAsync(), result => this.Events = result, this.OnLoadError);
+        }
+
+        private void OnLoadError(Exception exception)
+        {
+            if (exception is ReachabilityException)
+            {
+                Trace.Warn("Not Reachability");
+            }
+        }
+
+        //private async Task LoadExecute()
+        //{
+        //    if (IsBusy)
+        //        return;
+
+        //    this.IsBusy = true;
+
+        //    var task = this.service.GetEventsAsync();
+        //    await task.ContinueWith(
+        //        t =>
+        //        {
+        //            if (t.IsFaulted)
+        //            {
+        //                var ex = (Exception)t.Exception;
+        //                Trace.Error("OnLoadExecute Error: " + ex.Message);
+        //            }
+        //            else
+        //            {
+        //                this.Events = t.Result;
+        //            }
+        //            this.IsBusy = false;
+        //        });
+        //}
+
+        //public MvxAsyncCommand LoadAsyncCommand
+        //{
+        //    get
+        //    {
+        //        return new MvxAsyncCommand(this.OnLoadEventsExecute);
+        //    }
+        //}
+
+        //public ICommand LoadEventsCommand
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(async () => await this.OnLoadEventsExecute());
+        //    }
+        //}
 
         //public async Task OnLoadEventsExecute()
         //{
@@ -128,40 +161,6 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 
         //    //this.IsBusy = false;
         //}
-
-        private async Task LoadExecute()
-        {
-            await this.AsyncExecute(() => this.service.GetEventsAsync(), result => this.Events = result, OnLoadError);
-            
-            //if (IsBusy)
-            //    return;
-
-            //this.IsBusy = true;
-
-            //var task = this.service.GetEventsAsync();
-            //await task.ContinueWith(
-            //    t =>
-            //    {
-            //        if (t.IsFaulted)
-            //        {
-            //            var ex = (Exception)t.Exception;
-            //            Trace.Error("OnLoadExecute Error: " + ex.Message);
-            //        }
-            //        else
-            //        {
-            //            this.Events = t.Result;
-            //        }
-            //        this.IsBusy = false;
-            //    });
-        }
-
-        private void OnLoadError(Exception exception)
-        {
-            if (exception is ReachabilityException)
-            {
-                Trace.Warn("Not Reachability");
-            }
-        }
 
         //private async void OnLoadExecute2()
         //{

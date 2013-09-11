@@ -30,6 +30,12 @@ namespace Lbk.Mobile.Data.Utility
             var serializableObject = LoadFromResourceDocumentFormat(null, path);
             return serializableObject;
         }
+
+         public static T LoadFromResource(string path, Type[] extraTypes)
+         {
+             var serializableObject = LoadFromResourceDocumentFormat(null, path);
+             return serializableObject;
+         }
         
         public static T Load(string path, Type[] extraTypes)
         {

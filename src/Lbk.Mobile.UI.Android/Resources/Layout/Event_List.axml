@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lbk.mobile.ui.android.controls.EventListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:cacheColorHint="@color/transparent"
+    android:fastScrollEnabled="true"
+    local:MvxBind="PullDownRefreshRequested LoadCommand;IsRefreshingHead IsBusy" />

@@ -13,6 +13,7 @@ namespace Lbk.Mobile.Data.Services
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Model;
 
+    using Event = Lbk.Mobile.Model.Event;
     using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
 
     public interface ILbkMobileService

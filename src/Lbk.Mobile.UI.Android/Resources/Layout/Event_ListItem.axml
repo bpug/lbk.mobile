@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Mvx.MvxImageView
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_margin="10dp"
+        local:MvxBind="ImageUrl ThumbnailLink" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            local:MvxBind="Text Title"
+            android:textStyle="bold" />
+        <TextView
+            android:text="Date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            local:MvxBind="Text Date"
+            android:layout_marginTop="5dp" />
+        <TextView
+            android:text="Description"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            local:MvxBind="Text Description"
+            android:layout_marginTop="5dp" />
+        <Button
+            android:text="Event buchen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:id="@+id/btn_event_book"
+            android:layout_marginTop="5dp"
+            local:MvxBind="Visibility Visibility(ReservationLink)" />
+    <!--local:MvxBind="Click BookCommand"-->
+    </LinearLayout>
+</LinearLayout>

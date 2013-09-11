@@ -10,17 +10,11 @@ namespace Lbk.Mobile.Model
 
     public class Event
     {
-        public DateTime ActivatedAt { get; set; }
-
         public string Date { get; set; }
 
         public DateTime DateOrder { get; set; }
 
         public string Description { get; set; }
-
-        public DateTime ExpiresAt { get; set; }
-
-        public bool IsActivated { get; set; }
 
         public string ReservationLink { get; set; }
 

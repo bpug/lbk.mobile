@@ -21,5 +21,10 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             ReservationLink = navigation.ReservationLink;
         }
 
+        public void Init(string reservationLink)
+        {
+            ReservationLink = reservationLink;
+        }
+
     }
 }

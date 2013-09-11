@@ -15,6 +15,7 @@ namespace Lbk.Mobile.Data.Extensions
     using Lbk.Mobile.Data.Mappings;
     using Lbk.Mobile.Model;
 
+    using Event = Lbk.Mobile.Model.Event;
     using Question = Lbk.Mobile.Data.LbkMobileService.Question;
     using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
 
@@ -98,7 +99,7 @@ namespace Lbk.Mobile.Data.Extensions
         public static Task<List<Event>> GetEventsAsyncTask(this Service1SoapClient client, string fingerprint)
         {
             var tcs = CreateSource<List<Event>>(null);
-            client.GetEventsCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result.ToList(), null);
+            client.GetEventsCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result.ToModel(), null);
             client.GetEventsAsync(fingerprint);
             return tcs.Task;
         }

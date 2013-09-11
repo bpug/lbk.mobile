@@ -15,6 +15,7 @@ namespace Lbk.Mobile.Data.Services
     using Lbk.Mobile.Model;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
 
+    using Event = Lbk.Mobile.Model.Event;
     using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
 
     public class LbkMobileService : LbkMobileServiceBase<Service1SoapClient>, ILbkMobileService

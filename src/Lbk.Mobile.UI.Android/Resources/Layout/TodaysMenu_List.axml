@@ -1,28 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<lbk.mobile.ui.android.controls.TodaysMenuListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/pull_to_refresh_layout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_above="@+id/refresh_lower_button">
-        <include
-            android:id="@+id/refresh_upper_button"
-            layout="@layout/pull_down_pull_to_refresh_list" />
-        <Mvx.MvxListView
-            android:id="@android:id/list"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:background="@color/transparent"
-            android:cacheColorHint="@color/transparent"
-            local:MvxBind="ItemsSource MenuCategories"
-            local:MvxItemTemplate="@layout/todaysmenu_listitem" />
-    </LinearLayout>
-    <include
-        android:id="@id/refresh_lower_button"
-        layout="@layout/pull_up_pull_to_refresh_list" />
-</RelativeLayout>
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:cacheColorHint="@color/transparent"
+    android:fastScrollEnabled="true"
+    local:MvxBind="PullDownRefreshRequested LoadCommand;IsRefreshingHead IsBusy" />

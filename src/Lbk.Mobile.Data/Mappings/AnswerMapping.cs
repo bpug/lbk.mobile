@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Data.Mappings
 
     public static class AnswerMapping
     {
-        public static List<Answer> ToLbkAnswer(this IEnumerable<LbkMobileService.Answer> sourceList)
+        public static List<Answer> ToModel(this IEnumerable<LbkMobileService.Answer> sourceList)
         {
             return sourceList.Select(p => p.ToModel()).ToList();
         }

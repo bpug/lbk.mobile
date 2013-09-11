@@ -51,18 +51,9 @@ namespace Lbk.Mobile.Core.ViewModels.Room
         {
             get
             {
-                return new MvxCommand<Room>(item => this.ShowViewModel<RoomDetailViewModel>(new RoomDetailViewModel.Nav() { Id = item.Id }));
-                //return new MvxCommand<Room>(this.ShowDetailExecute);
+                return new MvxCommand<Room>(item => this.ShowViewModel<RoomDetailViewModel>(new { id = item.Id }));
+                
             }
-        }
-
-        private void ShowDetailExecute(Room room)
-        {
-            this.ShowViewModel<RoomDetailViewModel>(
-                new
-                {
-                    id = room.Id
-                });
         }
 
         public override void Start()
