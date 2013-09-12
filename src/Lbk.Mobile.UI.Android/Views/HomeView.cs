@@ -13,7 +13,7 @@ namespace Lbk.Mobile.UI.Android.Views
 
     using Lbk.Mobile.Core.ViewModels.Home;
 
-    [Activity(Label = "Löwenbräukeller", Icon = "@drawable/icon")]
+    [Activity(Label = "Löwenbräukeller", Icon = "@drawable/ic_launcher")]
     public class HomeView : BaseView<HomeViewModel>
     {
         protected override void OnCreate(Bundle bundle)

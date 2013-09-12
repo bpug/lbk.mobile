@@ -112,7 +112,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<VideoViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<VideoListViewModel>());
             }
         }
 

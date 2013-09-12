@@ -17,7 +17,7 @@ namespace Lbk.Mobile.UI.Android.Views.TodaysMenu
 
     using Lbk.Mobile.Core.ViewModels.TodaysMenu;
 
-    [Activity(Label = "Tageskarte")]
+    [Activity(Label = "Tageskarte", Icon = "@drawable/ic_launcher")]
     public class TodaysMenuView : BaseView<TodaysMenuViewModel>
     {
         protected override void OnCreate(Bundle bundle)

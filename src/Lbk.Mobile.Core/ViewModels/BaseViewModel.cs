@@ -218,8 +218,23 @@ namespace Lbk.Mobile.Core.ViewModels
 
         protected void ShowWebPage(string webPage)
         {
+            if (string.IsNullOrEmpty(webPage))
+            {
+                return;
+            }
             var task = Mvx.Resolve<IMvxWebBrowserTask>();
             task.ShowWebPage(webPage);
+        }
+
+        protected void ShowVideoPage(string videoUrl)
+        {
+            if (string.IsNullOrEmpty(videoUrl))
+            {
+                return;
+            }
+            // TO DO: IMvxWebVideoTask
+            var task = Mvx.Resolve<IMvxWebBrowserTask>();
+            task.ShowWebPage(videoUrl);
         }
 
         protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage

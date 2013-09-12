@@ -15,6 +15,7 @@ namespace Lbk.Mobile.UI.Android
     using Cirrious.MvvmCross.ViewModels;
 
     using global::Android.Content;
+    using global::Android.Webkit;
     using global::Android.Widget;
     
     using Lbk.Mobile.UI.Android.Bindings;
@@ -42,6 +43,13 @@ namespace Lbk.Mobile.UI.Android
 
             registry.RegisterCustomBindingFactory<ImageView>("DrawableResource",
                                                             imageView => new MvxImageViewDrawableTargetBinding(imageView));
+            registry.RegisterCustomBindingFactory<WebView>("Url",
+                                                            webView => new WebViewLoadUrlTargetBinding(webView));
+
+            //registry.RegisterCustomBindingFactory<WebView>("YoutubeUrl",
+            //                                                webView => new WebViewLoadYoutubeThnTargetBinding(webView));
+
+            
         }
 
         protected override void InitializeLastChance()

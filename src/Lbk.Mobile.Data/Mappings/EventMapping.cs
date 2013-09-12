@@ -15,6 +15,10 @@ namespace Lbk.Mobile.Data.Mappings
     {
         public static List<Event> ToModel(this IEnumerable<LbkMobileService.Event> sourceList)
         {
+            if (sourceList == null)
+            {
+                return null;
+            }
             return sourceList.Select(p => p.ToModel()).ToList();
         }
 

@@ -51,6 +51,7 @@
     <Compile Include="Quiz.cs" />
     <Compile Include="QuizVoucher.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="Video.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite">

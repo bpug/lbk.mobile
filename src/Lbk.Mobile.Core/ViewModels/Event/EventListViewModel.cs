@@ -17,6 +17,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Common.Extensions;
+    using Lbk.Mobile.Core.ViewModels.Helpers;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
 
@@ -24,14 +25,14 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     {
         private readonly ILbkMobileService service;
 
-        private List<Event> events;
+        private List<ModelWithCommand<Event>> events;
 
         public EventListViewModel(ILbkMobileService service)
         {
             this.service = service;
         }
 
-        public List<Event> Events
+        public List<ModelWithCommand<Event>> Events
         {
             get
             {
@@ -52,27 +53,25 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             }
         }
 
-        public ICommand ShowDetailCommand
+        public ICommand ShowBookingCommand
         {
             get
             {
                 return
-                    new MvxCommand<Event>(
-                        item => this.ShowViewModel<EventDetailViewModel>(
-                            new EventDetailViewModel.Nav()
-                            {
-                                ReservationLink = item.ReservationLink
-                            }),
-                        item => !item.ReservationLink.IsEmpty());
+                    new MvxCommand<Event>(this.ShowBookingExecute,item => !item.ReservationLink.IsEmpty());
             }
         }
 
-        public ICommand ShowOrderCommand
+        public void ShowBookingExecute(Event @event)
         {
-            get
-            {
-                return new MvxCommand<Event>(item => this.ShowWebPage(item.ReservationLink));
-            }
+            //this.ShowWebPage(@eEvent.ReservationLink);
+
+            this.ShowViewModel<EventBookingViewModel>(
+                new EventBookingViewModel.Nav()
+                {
+                    ReservationLink = @event.ReservationLink,
+                    Title = @event.Title
+                });
         }
 
         public override void Start()
@@ -83,7 +82,11 @@ namespace Lbk.Mobile.Core.ViewModels.Event
         private async Task LoadExecute()
         {
             await
-                this.AsyncExecute(() => this.service.GetEventsAsync(), result => this.Events = result, this.OnLoadError);
+                this.AsyncExecute(() => this.service.GetEventsAsync(),
+                    result =>
+                    {
+                        this.Events = result.Select(x => new ModelWithCommand<Event>(x, new MvxCommand(() => ShowBookingExecute(x)))).ToList(); ;
+                    }, this.OnLoadError);
         }
 
         private void OnLoadError(Exception exception)

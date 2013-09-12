@@ -11,7 +11,7 @@ namespace Lbk.Mobile.UI.Android
     using global::Android.App;
     using global::Android.Content.PM;
 
-    [Activity(Label = "Löwenbräukeller", MainLauncher = true, Icon = "@drawable/icon",
+    [Activity(Label = "Löwenbräukeller", MainLauncher = true, Icon = "@drawable/ic_launcher",
         Theme = "@style/Theme.Splash", NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashScreen : MvxSplashScreenActivity
     {

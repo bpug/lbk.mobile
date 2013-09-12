@@ -9,19 +9,17 @@ namespace Lbk.Mobile.Core.ViewModels.Video
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Windows.Input;
-
     using Cirrious.MvvmCross.ViewModels;
-
-    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model;
 
-    public class VideoViewModel : BaseViewModel
+    public class VideoListViewModel : BaseViewModel
     {
         private readonly ILbkMobileService service;
 
         private List<Video> videos;
 
-        public VideoViewModel(ILbkMobileService service)
+        public VideoListViewModel(ILbkMobileService service)
         {
             this.service = service;
         }
@@ -47,7 +45,17 @@ namespace Lbk.Mobile.Core.ViewModels.Video
             }
         }
 
-        public void Init()
+
+        public ICommand ShowVideoCommand
+        {
+            get
+            {
+                return new MvxCommand<Video>(video => this.ShowWebPage(video.Url));
+            }
+        }
+        
+
+        public override void Start()
         {
             this.LoadCommand.Execute(null);
         }

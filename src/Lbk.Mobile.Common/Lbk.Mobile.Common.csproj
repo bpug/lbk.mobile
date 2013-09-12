@@ -47,6 +47,7 @@
     <Compile Include="SimpleObservableCollection.cs" />
     <Compile Include="Trace.cs" />
     <Compile Include="Utils\DistanceCalcs.cs" />
+    <Compile Include="Utils\Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -17,7 +17,7 @@ namespace Lbk.Mobile.UI.Android.Views.Room
 
     using Resource = Lbk.Mobile.UI.Android.Resource;
 
-    [Activity(Label = "Raum")]
+    [Activity(Label = "Raum", Icon = "@drawable/ic_launcher")]
     public class RoomDetailView : BaseView<RoomDetailViewModel>
     {
         protected override void OnCreate(Bundle bundle)

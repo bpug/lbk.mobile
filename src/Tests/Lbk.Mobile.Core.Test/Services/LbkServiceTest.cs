@@ -17,7 +17,7 @@ namespace Lbk.Mobile.Core.Test.Services
     public class LbkServiceTest : TestBase
     {
        [Test]
-        public async void GetDishesOfTheDayTest()
+        public async void GetDishesOfTheDay()
         {
             this.InitLbkMobileService();
             var service = this.Ioc.Resolve<ILbkMobileService>();
@@ -29,7 +29,7 @@ namespace Lbk.Mobile.Core.Test.Services
         }
 
         [Test]
-        public async void GetEventsTest()
+        public async void GetEvents()
         {
             this.InitLbkMobileService();
             var service = this.Ioc.Resolve<ILbkMobileService>();
@@ -41,7 +41,7 @@ namespace Lbk.Mobile.Core.Test.Services
         }
 
         [Test]
-        public async void GetQuizTest()
+        public async void GetQuiz()
         {
             const int QuestionsCount = 12;
             this.InitLbkMobileService();
@@ -51,6 +51,19 @@ namespace Lbk.Mobile.Core.Test.Services
 
             Assert.NotNull(result);
             Assert.AreEqual(result.Questions.Count(), QuestionsCount);
+        }
+
+        [Test]
+        public async void GetVideos()
+        {
+            const int QuestionsCount = 12;
+            this.InitLbkMobileService();
+            var service = this.Ioc.Resolve<ILbkMobileService>();
+
+            var result = await service.GetVideosAsyn();
+
+            Assert.NotNull(result);
+            Assert.Greater(result.Count(), 0);
         }
     }
 }

@@ -10,6 +10,8 @@ namespace Lbk.Mobile.Core.Converters
     {
         public readonly CurrencyValueConverter Currency = new CurrencyValueConverter();
         public readonly AreaValueConverter Area = new AreaValueConverter();
+        public readonly YoutubeImageValueConverter YoutubeImage = new YoutubeImageValueConverter();
+        
         
     }
 }

@@ -11,7 +11,7 @@ namespace Lbk.Mobile.UI.Android.Views.Room
 
     using Lbk.Mobile.Core.ViewModels.Room;
 
-    [Activity(Label = "Räume")]
+    [Activity(Label = "Räume", Icon = "@drawable/ic_launcher")]
     public class RoomListView : BaseView<RoomListViewModel>
     {
         protected override void OnCreate(Bundle bundle)
@@ -20,4 +20,5 @@ namespace Lbk.Mobile.UI.Android.Views.Room
             this.SetContentView(Resource.Layout.Room_List);
         }
     }
+    
 }

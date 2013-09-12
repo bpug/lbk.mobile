@@ -11,7 +11,7 @@ namespace Lbk.Mobile.UI.Android.Views.Event
 
     using Lbk.Mobile.Core.ViewModels.Event;
 
-    [Activity(Label = "Events")]
+    [Activity(Label = "Events", Icon = "@drawable/ic_launcher")]
     public class EventListView : BaseView<EventListViewModel>
     {
         protected override void OnCreate(Bundle bundle)

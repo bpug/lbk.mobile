@@ -21,6 +21,7 @@
     <MandroidI18n />
     <JavaMaximumHeapSize />
     <JavaOptions />
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -96,6 +97,13 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="Mono.Android.Support.v4" />
@@ -121,6 +129,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bindings\BaseWebViewTargetBinding.cs" />
+    <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
@@ -133,10 +143,12 @@
     <Compile Include="Bootstrap\DeviceIdentifierPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
     <Compile Include="Controls\BindingPullToRefreshListView.cs" />
-    <Compile Include="Controls\EventListView.cs" />
+    <Compile Include="Controls\VideoBindingListView.cs" />
+    <Compile Include="Controls\EventBindingListView.cs" />
     <Compile Include="Controls\SectionFooter.cs" />
-    <Compile Include="Controls\TodaysMenuListView.cs" />
+    <Compile Include="Controls\TodaysMenuBindingListView.cs" />
     <Compile Include="Controls\PullToRefresh\ActionBasedRefreshListener.cs" />
     <Compile Include="Controls\PullToRefresh\IOnPullingAction.cs" />
     <Compile Include="Controls\PullToRefresh\IOnReleaseReady.cs" />
@@ -161,6 +173,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\BindableProgress.cs" />
+    <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
     <Compile Include="Views\Room\RoomDetailView.cs" />
     <Compile Include="Views\Room\RoomListView.cs" />
@@ -170,6 +183,7 @@
     <Compile Include="Views\TodaysMenu\TodaysMenuView.cs" />
     <Compile Include="Views\MenuView.cs" />
     <Compile Include="Views\ReservationView.cs" />
+    <Compile Include="Views\Video\VideoListView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -194,35 +208,25 @@
     <AndroidResource Include="Resources\Layout\Event_ListView.axml" />
     <AndroidResource Include="Resources\Layout\Event_ListItem.axml" />
     <AndroidResource Include="Resources\Layout\Event_List.axml" />
+    <AndroidResource Include="Resources\Layout\Event_Booking.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Video_ListView.axml" />
+    <AndroidResource Include="Resources\Layout\Video_ListItem.axml" />
+    <AndroidResource Include="Resources\Layout\Video_List.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\Icon_origin.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\Xml\History.xml" />
-    <AndroidAsset Include="Assets\Xml\Room.xml" />
+    <AndroidAsset Include="Assets\Xml\Room.xml">
+      <SubType>Designer</SubType>
+    </AndroidAsset>
     <Content Include="Controls\PullToRefresh\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Values\SplashStyle.xml" />
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
-    <AndroidResource Include="Resources\Drawable\splash_origin.png" />
-    <AndroidResource Include="Resources\Drawable\button_videos.png" />
-    <AndroidResource Include="Resources\Drawable\icon.png" />
-    <AndroidResource Include="Resources\Drawable\splash.png" />
-    <AndroidResource Include="Resources\Drawable\button_advise.png" />
-    <AndroidResource Include="Resources\Drawable\button_contact.png" />
-    <AndroidResource Include="Resources\Drawable\button_events.png" />
-    <AndroidResource Include="Resources\Drawable\button_facebook.png" />
-    <AndroidResource Include="Resources\Drawable\button_galery.png" />
-    <AndroidResource Include="Resources\Drawable\button_history.png" />
-    <AndroidResource Include="Resources\Drawable\button_menu.png" />
-    <AndroidResource Include="Resources\Drawable\button_menuOfTheDay.png" />
-    <AndroidResource Include="Resources\Drawable\button_quiz.png" />
-    <AndroidResource Include="Resources\Drawable\button_reservation.png" />
-    <AndroidResource Include="Resources\Drawable\button_rooms.png" />
     <AndroidResource Include="Resources\Drawable\background.png" />
     <AndroidResource Include="Resources\Drawable\ic_pulltorefresh_arrow.png" />
     <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />
@@ -239,10 +243,62 @@
     <AndroidResource Include="Resources\Drawable\thn_turmzimmer.jpg" />
     <AndroidResource Include="Resources\Drawable\thn_gartenanbau.jpg" />
     <AndroidResource Include="Resources\Drawable\thn_loewenempore.jpg" />
-    <AndroidResource Include="Resources\Drawable-hdpi\Icon.png" />
     <AndroidResource Include="Resources\Drawable\Braueustueberl1.jpg" />
     <AndroidResource Include="Resources\Drawable\Braueustueberl2.jpg" />
     <AndroidResource Include="Resources\Drawable\starkbierfest.jpg" />
+    <AndroidResource Include="Resources\Drawable\ic_speisekarte.png" />
+    <AndroidResource Include="Resources\Drawable\ic_tageskarte.png" />
+    <AndroidResource Include="Resources\Drawable\ic_videos.png" />
+    <AndroidResource Include="Resources\Drawable\ic_galery.png" />
+    <AndroidResource Include="Resources\Drawable\ic_advise.png" />
+    <AndroidResource Include="Resources\Drawable\ic_events.png" />
+    <AndroidResource Include="Resources\Drawable\ic_facebook.png" />
+    <AndroidResource Include="Resources\Drawable\ic_historie.png" />
+    <AndroidResource Include="Resources\Drawable\ic_kontakt.png" />
+    <AndroidResource Include="Resources\Drawable\ic_quiz.png" />
+    <AndroidResource Include="Resources\Drawable\ic_rooms.png" />
+    <AndroidResource Include="Resources\Drawable\ic_reservierung.png" />
+    <AndroidResource Include="Resources\Drawable\ic_launcher.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_quiz.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_rooms.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_reservierung.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_speisekarte.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_tageskarte.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_videos.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\splashscreen.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_galery.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_advise.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_events.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_facebook.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_historie.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_kontakt.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_mail.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_map.png" />
+    <AndroidResource Include="Resources\Drawable\ic_map.png" />
+    <AndroidResource Include="Resources\Drawable\ic_phone.png" />
+    <AndroidResource Include="Resources\Drawable\ic_mail.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_speisekarte.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_tageskarte.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_videos.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\splashscreen.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_galery.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_advise.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_events.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_facebook.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_historie.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_kontakt.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_mail.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_map.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_phone.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_quiz.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_rooms.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_reservierung.png" />
+    <AndroidResource Include="Resources\Drawable\splashscreen.png" />
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -17,6 +17,7 @@ namespace Lbk.Mobile.Data.Services
 
     using Event = Lbk.Mobile.Model.Event;
     using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
+    using Video = Lbk.Mobile.Model.Video;
 
     public class LbkMobileService : LbkMobileServiceBase<Service1SoapClient>, ILbkMobileService
     {

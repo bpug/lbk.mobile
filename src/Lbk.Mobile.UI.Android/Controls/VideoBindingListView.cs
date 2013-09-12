@@ -9,9 +9,9 @@ namespace Lbk.Mobile.UI.Android.Controls
     using global::Android.Content;
     using global::Android.Util;
 
-    public class TodaysMenuListView : BindingPullToRefreshListView
+    public class VideoBindingListView : BindingPullToRefreshListView
     {
-        public TodaysMenuListView(Context context, IAttributeSet attrs)
+        public VideoBindingListView(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
             
@@ -19,7 +19,7 @@ namespace Lbk.Mobile.UI.Android.Controls
 
         protected override void Initialize()
         {
-            this.Init(Resource.Layout.TodaysMenu_ListView);
+            this.Init(Resource.Layout.Video_ListView);
         }
     }
 }

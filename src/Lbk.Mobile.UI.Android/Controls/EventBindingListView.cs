@@ -9,9 +9,9 @@ namespace Lbk.Mobile.UI.Android.Controls
     using global::Android.Content;
     using global::Android.Util;
 
-    public class EventListView : BindingPullToRefreshListView
+    public class EventBindingListView : BindingPullToRefreshListView
     {
-        public EventListView(Context context, IAttributeSet attrs)
+        public EventBindingListView(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
             
