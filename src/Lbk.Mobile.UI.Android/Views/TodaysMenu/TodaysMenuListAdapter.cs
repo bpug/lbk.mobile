@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views.TodaysMenu
+namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
 {
     using System.Collections;
     using System.Collections.Generic;
@@ -13,14 +13,14 @@ namespace Lbk.Mobile.UI.Android.Views.TodaysMenu
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Binding.Droid.Views;
 
-    using global::Android.Content;
-    using global::Android.Views;
-    using global::Android.Widget;
+    using Android.Content;
+    using Android.Views;
+    using Android.Widget;
 
     using Java.Lang;
 
     using Lbk.Mobile.Model;
-    using Lbk.Mobile.UI.Android.Controls;
+    using Lbk.Mobile.UI.Droid.Controls;
 
     public class TodaysMenuListAdapter : MvxAdapter, ISectionIndexer
     {

@@ -4,14 +4,14 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Bindings
+namespace Lbk.Mobile.UI.Droid.Bindings
 {
     using System;
 
     using Cirrious.MvvmCross.Binding;
     using Cirrious.MvvmCross.Binding.Droid.Target;
 
-    using global::Android.Webkit;
+    using Android.Webkit;
 
     public abstract class BaseWebViewTargetBinding : MvxAndroidTargetBinding
     {

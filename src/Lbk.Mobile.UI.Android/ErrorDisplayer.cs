@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android
+namespace Lbk.Mobile.UI.Droid
 {
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Droid.Platform;
@@ -12,10 +12,10 @@ namespace Lbk.Mobile.UI.Android
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Plugins.Messenger;
 
-    using global::Android.App;
-    using global::Android.Content;
-    using global::Android.Views;
-    using global::Android.Widget;
+    using Android.App;
+    using Android.Content;
+    using Android.Views;
+    using Android.Widget;
 
     using Lbk.Mobile.Core.Messages;
 

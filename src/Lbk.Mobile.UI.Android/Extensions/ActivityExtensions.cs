@@ -4,9 +4,9 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Extensions
+namespace Lbk.Mobile.UI.Droid.Extensions
 {
-    using global::Android.App;
+    using Android.App;
 
     public static class ActivityExtensions
     {

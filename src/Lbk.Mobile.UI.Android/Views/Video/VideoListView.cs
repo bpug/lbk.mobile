@@ -4,10 +4,10 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views.Video
+namespace Lbk.Mobile.UI.Droid.Views.Video
 {
-    using global::Android.App;
-    using global::Android.OS;
+    using Android.App;
+    using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels.Video;
 

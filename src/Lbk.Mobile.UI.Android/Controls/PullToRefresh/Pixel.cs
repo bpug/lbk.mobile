@@ -1,6 +1,6 @@
-namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
-    using global::Android.Content.Res;
+    using Android.Content.Res;
 
     public class Pixel
     {

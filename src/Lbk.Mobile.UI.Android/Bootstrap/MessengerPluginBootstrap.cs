@@ -1,7 +1,7 @@
-using Cirrious.CrossCore.Plugins;
-
-namespace Lbk.Mobile.UI.Android.Bootstrap
+namespace Lbk.Mobile.UI.Droid.Bootstrap
 {
+    using Cirrious.CrossCore.Plugins;
+
     public class MessengerPluginBootstrap
         : MvxPluginBootstrapAction<Cirrious.MvvmCross.Plugins.Messenger.PluginLoader>
     {

@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Bindings
+namespace Lbk.Mobile.UI.Droid.Bindings
 {
     using System;
     using System.IO;
@@ -13,7 +13,7 @@ namespace Lbk.Mobile.UI.Android.Bindings
     using Cirrious.MvvmCross.Binding;
     using Cirrious.MvvmCross.Binding.Droid.Target;
 
-    using global::Android.Widget;
+    using Android.Widget;
 
     public class MvxImageViewDrawableTargetBinding : MvxBaseStreamImageViewTargetBinding
     {

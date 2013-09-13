@@ -4,10 +4,10 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Controls
+namespace Lbk.Mobile.UI.Droid.Controls
 {
-    using global::Android.Content;
-    using global::Android.Util;
+    using Android.Content;
+    using Android.Util;
 
     public class TodaysMenuBindingListView : BindingPullToRefreshListView
     {

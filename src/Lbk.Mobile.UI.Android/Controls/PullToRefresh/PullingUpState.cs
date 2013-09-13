@@ -1,6 +1,6 @@
-namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
-    using global::Android.Views;
+    using Android.Views;
 
     public class PullingUpState : IScrollingState
     {

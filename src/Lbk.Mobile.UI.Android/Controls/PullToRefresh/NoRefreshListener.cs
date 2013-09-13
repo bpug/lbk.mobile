@@ -1,4 +1,4 @@
-namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
     public class NoRefreshListener : IRefreshListener
     {

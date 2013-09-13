@@ -4,12 +4,10 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views
+namespace Lbk.Mobile.UI.Droid.Views
 {
-    using System;
-
-    using global::Android.App;
-    using global::Android.Content;
+    using Android.App;
+    using Android.Content;
 
     public class BindableProgress
     {

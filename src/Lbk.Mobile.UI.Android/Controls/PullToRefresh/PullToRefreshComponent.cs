@@ -1,11 +1,11 @@
-namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
     using System;
     using System.Threading;
 
-    using global::Android.OS;
-    using global::Android.Views;
-    using global::Android.Widget;
+    using Android.OS;
+    using Android.Views;
+    using Android.Widget;
 
     using Java.Lang;
 

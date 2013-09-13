@@ -4,14 +4,14 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Extensions
+namespace Lbk.Mobile.UI.Droid.Extensions
 {
     using System.Globalization;
 
     using Cirrious.MvvmCross.Localization;
 
     using Lbk.Mobile.Core.ViewModels;
-    using Lbk.Mobile.UI.Android.Views;
+    using Lbk.Mobile.UI.Droid.Views;
 
     public static class BaseViewExtensionMethods
     {

@@ -4,10 +4,10 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views.Event
+namespace Lbk.Mobile.UI.Droid.Views.Event
 {
-    using global::Android.App;
-    using global::Android.OS;
+    using Android.App;
+    using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels.Event;
 
@@ -17,7 +17,7 @@ namespace Lbk.Mobile.UI.Android.Views.Event
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            Title = ViewModel.Title;
+            this.Title = this.ViewModel.Title;
             this.SetContentView(Resource.Layout.Event_Booking);
         }
     }

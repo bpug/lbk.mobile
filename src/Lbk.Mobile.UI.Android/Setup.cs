@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android
+namespace Lbk.Mobile.UI.Droid
 {
     using System.Collections.Generic;
     using System.Reflection;
@@ -14,11 +14,11 @@ namespace Lbk.Mobile.UI.Android
     using Cirrious.MvvmCross.Droid.Platform;
     using Cirrious.MvvmCross.ViewModels;
 
-    using global::Android.Content;
-    using global::Android.Webkit;
-    using global::Android.Widget;
-    
-    using Lbk.Mobile.UI.Android.Bindings;
+    using Android.Content;
+    using Android.Webkit;
+    using Android.Widget;
+
+    using Lbk.Mobile.UI.Droid.Bindings;
 
     public class Setup : MvxAndroidSetup
     {

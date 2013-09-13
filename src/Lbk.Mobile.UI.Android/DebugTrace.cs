@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android
+namespace Lbk.Mobile.UI.Droid
 {
     using System;
     using System.Diagnostics;

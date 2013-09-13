@@ -4,15 +4,15 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views
+namespace Lbk.Mobile.UI.Droid.Views
 {
     using Cirrious.MvvmCross.Binding.BindingContext;
     using Cirrious.MvvmCross.Droid.Views;
 
-    using global::Android.OS;
+    using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels;
-    using Lbk.Mobile.UI.Android.Extensions;
+    using Lbk.Mobile.UI.Droid.Extensions;
 
     public abstract class BaseView<TViewModel> : MvxActivity, IBaseView<TViewModel>
         where TViewModel : BaseViewModel

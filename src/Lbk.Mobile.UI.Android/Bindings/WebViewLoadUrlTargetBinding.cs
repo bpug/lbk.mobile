@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Bindings
+namespace Lbk.Mobile.UI.Droid.Bindings
 {
     public class WebViewLoadUrlTargetBinding : BaseWebViewTargetBinding
     {

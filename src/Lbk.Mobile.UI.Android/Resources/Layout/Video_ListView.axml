@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:background="@color/transparent"
             android:cacheColorHint="@color/transparent"
-            local:MvxBind="ItemsSource Videos, ItemClick ShowVideoCommand"
+            local:MvxBind="ItemsSource Videos; ItemClick ShowVideoCommand"
             local:MvxItemTemplate="@layout/video_listitem" />
     </LinearLayout>
     <include

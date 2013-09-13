@@ -4,18 +4,19 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views.TodaysMenu
+namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
 {
     using System;
 
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Binding.Droid.Views;
 
-    using global::Android;
-    using global::Android.App;
-    using global::Android.OS;
+    using Android.App;
+    using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels.TodaysMenu;
+
+    using Resource = Lbk.Mobile.UI.Droid.Resource;
 
     [Activity(Label = "Tageskarte", Icon = "@drawable/ic_launcher")]
     public class TodaysMenuView : BaseView<TodaysMenuViewModel>
@@ -24,9 +25,9 @@ namespace Lbk.Mobile.UI.Android.Views.TodaysMenu
         {
             this.Title = DateTime.Now.ToShortDateString();
             base.OnCreate(bundle);
-            this.SetContentView(Android.Resource.Layout.TodaysMenu_List);
+            this.SetContentView(Resource.Layout.TodaysMenu_List);
             
-            var sessionListView = this.FindViewById<MvxListView>(Resource.Id.List);
+            var sessionListView = this.FindViewById<MvxListView>(Android.Resource.Id.List);
             sessionListView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
         }
 

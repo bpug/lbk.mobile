@@ -4,18 +4,18 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views.Room
+namespace Lbk.Mobile.UI.Droid.Views.Room
 {
+    using Android.App;
+    using Android.OS;
+
     using Cheesebaron.MvvmCross.Bindings.Droid;
 
     using DK.Ostebaronen.Droid.ViewPagerIndicator;
 
-    using global::Android.App;
-    using global::Android.OS;
-
     using Lbk.Mobile.Core.ViewModels.Room;
 
-    using Resource = Lbk.Mobile.UI.Android.Resource;
+    using Resource = Lbk.Mobile.UI.Droid.Resource;
 
     [Activity(Label = "Raum", Icon = "@drawable/ic_launcher")]
     public class RoomDetailView : BaseView<RoomDetailViewModel>

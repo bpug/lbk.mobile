@@ -4,12 +4,10 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views
+namespace Lbk.Mobile.UI.Droid.Views
 {
-    using Cirrious.MvvmCross.Droid.Views;
-
-    using global::Android.App;
-    using global::Android.OS;
+    using Android.App;
+    using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels.Menu;
 

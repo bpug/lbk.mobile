@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android.Views
+namespace Lbk.Mobile.UI.Droid.Views
 {
     using Cirrious.MvvmCross.Views;
 

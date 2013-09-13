@@ -4,12 +4,12 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Android
+namespace Lbk.Mobile.UI.Droid
 {
     using Cirrious.MvvmCross.Droid.Views;
 
-    using global::Android.App;
-    using global::Android.Content.PM;
+    using Android.App;
+    using Android.Content.PM;
 
     [Activity(Label = "Löwenbräukeller", MainLauncher = true, Icon = "@drawable/ic_launcher",
         Theme = "@style/Theme.Splash", NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]

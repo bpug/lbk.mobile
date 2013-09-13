@@ -1,9 +1,10 @@
-using System.Collections.Specialized;
-using System.Windows.Input;
-using Android.Widget;
-
-namespace Lbk.Mobile.UI.Android
+namespace Lbk.Mobile.UI.Droid
 {
+    using System.Collections.Specialized;
+    using System.Windows.Input;
+
+    using Android.Widget;
+
     // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
     // are preserved in the deployed app
     public class LinkerPleaseInclude

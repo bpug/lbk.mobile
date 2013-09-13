@@ -1,15 +1,15 @@
-namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
     using System;
 
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 
-    using global::Android.Content;
-    using global::Android.OS;
-    using global::Android.Runtime;
-    using global::Android.Util;
-    using global::Android.Views;
-    using global::Android.Widget;
+    using Android.Content;
+    using Android.OS;
+    using Android.Runtime;
+    using Android.Util;
+    using Android.Views;
+    using Android.Widget;
 
     public class PullToRefreshListView
         : RelativeLayout
@@ -31,7 +31,7 @@ namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
         {
             var bindingContext = MvxAndroidBindingContextHelpers.Current();
             bindingContext.BindingInflate(whichResourceId, this);
-            this._listView = this.FindViewById<ListView>(global::Android.Resource.Id.List);
+            this._listView = this.FindViewById<ListView>(Android.Resource.Id.List);
             this._uiThreadHandler = new Handler();
             this.InitializePullToRefreshList();
         }
@@ -46,7 +46,7 @@ namespace Lbk.Mobile.UI.Android.Controls.PullToRefresh
         {
             var bindingContext = MvxAndroidBindingContextHelpers.Current();
             bindingContext.BindingInflate(whichResourceId, this);
-            this._listView = this.FindViewById<ListView>(global::Android.Resource.Id.List);
+            this._listView = this.FindViewById<ListView>(Android.Resource.Id.List);
             this._uiThreadHandler = new Handler();
             this.InitializePullToRefreshList();
         }
