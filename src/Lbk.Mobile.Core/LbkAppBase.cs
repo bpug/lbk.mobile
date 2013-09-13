@@ -22,7 +22,6 @@ namespace Lbk.Mobile.Core
         protected LbkAppBase()
         {
             this.InitaliseServices();
-            //this.InitialisePlugins();
             //AutoMapperConfiguration.Configure();
         }
 

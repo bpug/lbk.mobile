@@ -1,18 +1,13 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="IHistoryRepository.cs" company="ip-connect GmbH">
+//  <copyright file="IWebVideoTask.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Repositories
+namespace Lbk.Mobile.Plugin.WebVideo
 {
-    using Lbk.Mobile.Common.Interfaces;
-    using Lbk.Mobile.Model;
-
-    public interface IHistoryRepository
+    public interface IWebVideoTask
     {
-        IObservableCollection<History> GetHistories();
-
-        History GetHistory(int id);
+        void PlayYoutubeVideo(string videoId);
     }
 }

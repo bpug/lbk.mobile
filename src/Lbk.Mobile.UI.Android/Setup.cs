@@ -64,6 +64,7 @@ namespace Lbk.Mobile.UI.Droid
             {
                 var assemblies = base.AndroidViewAssemblies;
                 assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
+                assemblies.Add(typeof(DK.Ostebaronen.Droid.ViewPagerIndicator.CirclePageIndicator).Assembly);
                 return assemblies;
             }
         }

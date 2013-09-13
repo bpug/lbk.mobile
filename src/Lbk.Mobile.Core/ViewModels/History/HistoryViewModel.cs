@@ -47,7 +47,7 @@ namespace Lbk.Mobile.Core.ViewModels.History
             }
         }
 
-        public void Init()
+        public override void Start()
         {
             this.LoadCommand.Execute(null);
         }

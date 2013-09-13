@@ -132,6 +132,7 @@
     <Compile Include="Bindings\BaseWebViewTargetBinding.cs" />
     <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
+    <Compile Include="Bootstrap\WebVideoPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
     <Compile Include="Controls\BindingPullToRefreshListView.cs" />
+    <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
     <Compile Include="Controls\VideoBindingListView.cs" />
     <Compile Include="Controls\EventBindingListView.cs" />
     <Compile Include="Controls\SectionFooter.cs" />
@@ -172,9 +174,11 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\BaseView.cs" />
-    <Compile Include="Views\BindableProgress.cs" />
+    <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
+    <Compile Include="Views\History\HisroryView.cs" />
+    <Compile Include="Views\History\HistoryDetailView.cs" />
     <Compile Include="Views\Room\RoomDetailView.cs" />
     <Compile Include="Views\Room\RoomListView.cs" />
     <Compile Include="Views\HomeView.cs" />
@@ -214,6 +218,8 @@
     <AndroidResource Include="Resources\Layout\Video_ListView.axml" />
     <AndroidResource Include="Resources\Layout\Video_ListItem.axml" />
     <AndroidResource Include="Resources\Layout\Video_List.axml" />
+    <AndroidResource Include="Resources\Layout\History.axml" />
+    <AndroidResource Include="Resources\Layout\History_Details.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -299,6 +305,7 @@
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_reservierung.png" />
     <AndroidResource Include="Resources\Drawable\splashscreen.png" />
     <AndroidResource Include="Resources\Drawable\Icon.png" />
+    <AndroidResource Include="Resources\Values\ProgressBarStyle.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +340,14 @@
     <ProjectReference Include="..\Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj">
       <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
       <Name>Lbk.Mobile.Plugin.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\WebVideo\Lbk.Mobile.Plugin.WebVideo.Droid\Lbk.Mobile.Plugin.WebVideo.Droid.csproj">
+      <Project>{8979480e-7b11-403f-bee2-6346a42f7943}</Project>
+      <Name>Lbk.Mobile.Plugin.WebVideo.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\WebVideo\Lbk.Mobile.Plugin.WebVideo\Lbk.Mobile.Plugin.WebVideo.csproj">
+      <Project>{d96449d7-1002-4496-a415-658263f25c26}</Project>
+      <Name>Lbk.Mobile.Plugin.WebVideo</Name>
     </ProjectReference>
     <ProjectReference Include="..\ThirdParty\BindableViewPager.Droid\BindableViewPager.Droid.csproj">
       <Project>{b7748adc-59ae-4800-9dea-91ce95c64d43}</Project>

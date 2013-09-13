@@ -20,9 +20,11 @@ namespace Lbk.Mobile.Core.ViewModels
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
+    using Lbk.Mobile.Common.Utils;
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Plugin.Reachability;
+    using Lbk.Mobile.Plugin.WebVideo;
 
     public abstract class BaseViewModel : MvxViewModel
     {
@@ -226,15 +228,20 @@ namespace Lbk.Mobile.Core.ViewModels
             task.ShowWebPage(webPage);
         }
 
-        protected void ShowVideoPage(string videoUrl)
+        protected void PlayYoutubeVideo(string videoUrl)
         {
             if (string.IsNullOrEmpty(videoUrl))
             {
                 return;
             }
-            // TO DO: IMvxWebVideoTask
-            var task = Mvx.Resolve<IMvxWebBrowserTask>();
-            task.ShowWebPage(videoUrl);
+
+            var id = Utility.GetYuotubeVideoId(videoUrl);
+            if (string.IsNullOrEmpty(videoUrl))
+            {
+                return;
+            }
+            var task = Mvx.Resolve<IWebVideoTask>();
+            task.PlayYoutubeVideo(id);
         }
 
         protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage

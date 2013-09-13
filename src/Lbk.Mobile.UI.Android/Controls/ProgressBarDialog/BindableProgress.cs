@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Views
+namespace Lbk.Mobile.UI.Droid.Controls.ProgressBarDialog
 {
     using Android.App;
     using Android.Content;
@@ -13,7 +13,7 @@ namespace Lbk.Mobile.UI.Droid.Views
     {
         private readonly Context context;
 
-        private ProgressDialog dialog;
+        private ProgressBarDialog dialog;
 
         public BindableProgress(Context context)
         {
@@ -52,10 +52,11 @@ namespace Lbk.Mobile.UI.Droid.Views
 
                 if (value)
                 {
-                    this.dialog = new ProgressDialog(this.context);
-                    this.dialog.SetProgressStyle(ProgressDialogStyle.Spinner);
-                    //this.dialog.SetTitle("Working...");
-                    this.dialog.Show();
+                    //this.dialog = new ProgressDialog(this.context);
+                    //this.dialog.SetProgressStyle(ProgressDialogStyle.Spinner);
+                    ////this.dialog.SetTitle("Working...");
+                    //this.dialog.Show();
+                    this.dialog = ProgressBarDialog.Show(this.context, string.Empty, string.Empty, true);
                 }
                 else
                 {

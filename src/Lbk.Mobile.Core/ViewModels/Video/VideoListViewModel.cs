@@ -50,7 +50,7 @@ namespace Lbk.Mobile.Core.ViewModels.Video
         {
             get
             {
-                return new MvxCommand<Video>(video => this.ShowVideoPage(video.Url));
+                return new MvxCommand<Video>(video => this.PlayYoutubeVideo(video.Url));
             }
         }
         

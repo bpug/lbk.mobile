@@ -32,6 +32,8 @@ namespace Lbk.Mobile.UI.Droid
 			Lbk.Mobile.Plugin.Reachability.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			Lbk.Mobile.Plugin.Settings.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
 			Lbk.Mobile.Plugin.Settings.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
+			Lbk.Mobile.Plugin.WebVideo.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
+			Lbk.Mobile.Plugin.WebVideo.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			DK.Ostebaronen.Droid.ViewPagerIndicator.Resource.Attribute.centered = Lbk.Mobile.UI.Droid.Resource.Attribute.centered;
 			DK.Ostebaronen.Droid.ViewPagerIndicator.Resource.Attribute.clipPadding = Lbk.Mobile.UI.Droid.Resource.Attribute.clipPadding;
 			DK.Ostebaronen.Droid.ViewPagerIndicator.Resource.Attribute.fadeDelay = Lbk.Mobile.UI.Droid.Resource.Attribute.fadeDelay;
@@ -617,14 +619,14 @@ namespace Lbk.Mobile.UI.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040013
-			public const int ErrorImage = 2130968595;
-			
-			// aapt resource value: 0x7f040014
-			public const int ErrorText1 = 2130968596;
-			
 			// aapt resource value: 0x7f040015
-			public const int ErrorText2 = 2130968597;
+			public const int ErrorImage = 2130968597;
+			
+			// aapt resource value: 0x7f040016
+			public const int ErrorText1 = 2130968598;
+			
+			// aapt resource value: 0x7f040017
+			public const int ErrorText2 = 2130968599;
 			
 			// aapt resource value: 0x7f040005
 			public const int MvxBindingTagUnique = 2130968581;
@@ -635,29 +637,35 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f040007
 			public const int btn_event_book = 2130968583;
 			
-			// aapt resource value: 0x7f040010
-			public const int image_pager = 2130968592;
+			// aapt resource value: 0x7f04000b
+			public const int history_pager = 2130968587;
 			
-			// aapt resource value: 0x7f040011
-			public const int image_pager_indicator = 2130968593;
+			// aapt resource value: 0x7f04000c
+			public const int history_pager_indicator = 2130968588;
+			
+			// aapt resource value: 0x7f040012
+			public const int image_pager = 2130968594;
+			
+			// aapt resource value: 0x7f040013
+			public const int image_pager_indicator = 2130968595;
 			
 			// aapt resource value: 0x7f040000
 			public const int none = 2130968576;
 			
-			// aapt resource value: 0x7f04000d
-			public const int pull_to_refresh_image = 2130968589;
+			// aapt resource value: 0x7f04000f
+			public const int pull_to_refresh_image = 2130968591;
 			
 			// aapt resource value: 0x7f040008
 			public const int pull_to_refresh_layout = 2130968584;
 			
-			// aapt resource value: 0x7f04000c
-			public const int pull_to_refresh_progress = 2130968588;
-			
 			// aapt resource value: 0x7f04000e
-			public const int pull_to_refresh_text = 2130968590;
+			public const int pull_to_refresh_progress = 2130968590;
 			
-			// aapt resource value: 0x7f04000f
-			public const int pull_to_refresh_updated_at = 2130968591;
+			// aapt resource value: 0x7f040010
+			public const int pull_to_refresh_text = 2130968592;
+			
+			// aapt resource value: 0x7f040011
+			public const int pull_to_refresh_updated_at = 2130968593;
 			
 			// aapt resource value: 0x7f040009
 			public const int refresh_lower_button = 2130968585;
@@ -665,11 +673,11 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f04000a
 			public const int refresh_upper_button = 2130968586;
 			
-			// aapt resource value: 0x7f04000b
-			public const int textView1 = 2130968587;
+			// aapt resource value: 0x7f04000d
+			public const int textView1 = 2130968589;
 			
-			// aapt resource value: 0x7f040012
-			public const int toast_layout_error_root = 2130968594;
+			// aapt resource value: 0x7f040014
+			public const int toast_layout_error_root = 2130968596;
 			
 			// aapt resource value: 0x7f040004
 			public const int top = 2130968580;
@@ -677,11 +685,11 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f040001
 			public const int triangle = 2130968577;
 			
-			// aapt resource value: 0x7f040017
-			public const int txtHeader = 2130968599;
+			// aapt resource value: 0x7f040019
+			public const int txtHeader = 2130968601;
 			
-			// aapt resource value: 0x7f040016
-			public const int txtHeadline = 2130968598;
+			// aapt resource value: 0x7f040018
+			public const int txtHeadline = 2130968600;
 			
 			// aapt resource value: 0x7f040002
 			public const int underline = 2130968578;
@@ -743,61 +751,67 @@ namespace Lbk.Mobile.UI.Droid
 			public const int Event_ListView = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Home = 2130903044;
+			public const int History = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Menu = 2130903045;
+			public const int History_Details = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int pull_down_pull_to_refresh_list = 2130903046;
+			public const int Home = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int pull_up_pull_to_refresh_list = 2130903047;
+			public const int Menu = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int Reservation = 2130903048;
+			public const int pull_down_pull_to_refresh_list = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Room_Details = 2130903049;
+			public const int pull_up_pull_to_refresh_list = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Room_ImagePagerItem = 2130903050;
+			public const int Reservation = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int Room_List = 2130903051;
+			public const int Room_Details = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int Room_ListItem = 2130903052;
+			public const int Room_ImagePagerItem = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int SplashScreen = 2130903053;
+			public const int Room_List = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int ToastLayout_Error = 2130903054;
+			public const int Room_ListItem = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int TodaysMenu_List = 2130903055;
+			public const int SplashScreen = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int TodaysMenu_ListItem = 2130903056;
+			public const int ToastLayout_Error = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int TodaysMenu_ListItem_Footer = 2130903057;
+			public const int TodaysMenu_List = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int TodaysMenu_ListItem_Header = 2130903058;
+			public const int TodaysMenu_ListItem = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int TodaysMenu_ListView = 2130903059;
+			public const int TodaysMenu_ListItem_Footer = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int Video_List = 2130903060;
+			public const int TodaysMenu_ListItem_Header = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int Video_ListItem = 2130903061;
+			public const int TodaysMenu_ListView = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int Video_ListView = 2130903062;
+			public const int Video_List = 2130903062;
+			
+			// aapt resource value: 0x7f030017
+			public const int Video_ListItem = 2130903063;
+			
+			// aapt resource value: 0x7f030018
+			public const int Video_ListView = 2130903064;
 			
 			static Layout()
 			{
@@ -831,14 +845,17 @@ namespace Lbk.Mobile.UI.Droid
 		public partial class Style
 		{
 			
+			// aapt resource value: 0x7f090005
+			public const int ProgressBarDialog = 2131296261;
+			
 			// aapt resource value: 0x7f090003
 			public const int TextAppearance_TabPageIndicator = 2131296259;
 			
 			// aapt resource value: 0x7f090000
 			public const int Theme_PageIndicatorDefaults = 2131296256;
 			
-			// aapt resource value: 0x7f090005
-			public const int Theme_Splash = 2131296261;
+			// aapt resource value: 0x7f090006
+			public const int Theme_Splash = 2131296262;
 			
 			// aapt resource value: 0x7f090001
 			public const int Widget = 2131296257;

@@ -12,6 +12,7 @@ namespace Lbk.Mobile.UI.Droid.Views
     using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels;
+    using Lbk.Mobile.UI.Droid.Controls.ProgressBarDialog;
     using Lbk.Mobile.UI.Droid.Extensions;
 
     public abstract class BaseView<TViewModel> : MvxActivity, IBaseView<TViewModel>

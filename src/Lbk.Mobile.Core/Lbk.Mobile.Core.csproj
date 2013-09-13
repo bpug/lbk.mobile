@@ -64,6 +64,7 @@
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
     <Compile Include="ViewModels\Helpers\ModelWithCommand.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\History\HistoryDetailViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuestionViewModel.cs" />
@@ -165,6 +166,10 @@
     <ProjectReference Include="..\Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj">
       <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
       <Name>Lbk.Mobile.Plugin.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\WebVideo\Lbk.Mobile.Plugin.WebVideo\Lbk.Mobile.Plugin.WebVideo.csproj">
+      <Project>{d96449d7-1002-4496-a415-658263f25c26}</Project>
+      <Name>Lbk.Mobile.Plugin.WebVideo</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
