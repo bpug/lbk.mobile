@@ -10,26 +10,27 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
     using System.Threading.Tasks;
     using System.Windows.Input;
 
+    using Cirrious.CrossCore;
+    using Cirrious.MvvmCross.Plugins.DownloadCache;
+    using Cirrious.MvvmCross.Plugins.File;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Plugin.DocumentViewer;
     using Lbk.Mobile.Plugin.Settings;
 
     public class MenuViewModel : BaseViewModel
     {
-         private readonly ILbkMobileService service;
+        private readonly ILbkMobileService service;
 
-         private readonly ISettings settings;
+        private readonly ISettings settings;
+
+        private DateTime? lastUpdate;
 
         public MenuViewModel(ILbkMobileService service, ISettings settings)
         {
             this.service = service;
             this.settings = settings;
-        }
-
-        public override void Start()
-        {
-            this.GetLastUpdateCommand.Execute(null);
         }
 
         public ICommand GetLastUpdateCommand
@@ -40,13 +41,11 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             }
         }
 
-        private DateTime? lastUpdate;
-
         public DateTime? LastUpdate
         {
             get
             {
-                return lastUpdate;
+                return this.lastUpdate;
             }
             set
             {
@@ -55,28 +54,33 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             }
         }
 
-        private async Task OnGetLastUpdateExecute()
+        public override void Start()
         {
-            await
-                this.AsyncExecute(
-                    () => this.service.GetMenuLastUpdateAsync(),this.DisplayPdf);
+            this.GetLastUpdateCommand.Execute(null);
         }
 
-        private void DisplayPdf(DateTime? updateDate)
+        private void CheckMenu(DateTime? updateDate)
         {
+
+            
+            
             this.LastUpdate = updateDate;
 
-            var userLastUpdate = settings.GetValueOrDefault<DateTime?>(Constants.UserSettings.PdfLastUpdate, default(DateTime?));
-            if (!userLastUpdate.HasValue)
+            var userLastUpdate = this.settings.GetValueOrDefault<DateTime?>(
+                Constants.UserSettings.PdfLastUpdate,
+                default(DateTime?));
+
+            var fileStore = Mvx.Resolve<IMvxFileStore>();
+
+            if (!userLastUpdate.HasValue || !fileStore.Exists(Constants.LocalMenuFilePath))
             {
-                PdfDownload();
+                this.DownloadMenu(updateDate);
             }
 
-            if (updateDate.HasValue && userLastUpdate.HasValue
-                && !(Math.Abs((updateDate.Value - userLastUpdate.Value).TotalSeconds) < 1))
+            else if (updateDate.HasValue && !(Math.Abs((updateDate.Value - userLastUpdate.Value).TotalSeconds) < 1))
             {
                 this.MessageBoxService.Show(
-                   this.TextSource.GetText("PdfDownloadQuestion"),
+                    this.TextSource.GetText("PdfDownloadQuestion"),
                     string.Empty,
                     this.SharedTextSource.GetText("Yes"),
                     this.SharedTextSource.GetText("No"),
@@ -84,16 +88,54 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
                     {
                         if (b)
                         {
-                            PdfDownload();
+                            this.DownloadMenu(updateDate);
                         }
                     });
             }
+            else
+            {
+                this.ShowMenu();
+            }
         }
 
-        private void PdfDownload()
+        private void DownloadMenu(DateTime? updateDate)
         {
-            
+            this.IsBusy = true;
+            var downloader = Mvx.Resolve<IMvxHttpFileDownloader>();
+            downloader.RequestDownload(
+                Constants.MenuUrl,
+                Constants.LocalMenuFilePath,
+                () => this.OnDownloadSuccess(updateDate),
+                this.OnDownloadError);
         }
 
+        private void OnDownloadError(Exception exception)
+        {
+            this.IsBusy = false;
+            this.MessageBoxService.Show(
+                this.SharedTextSource.GetText("DownloadError"),
+                this.SharedTextSource.GetText("PleaseTryNow"),
+                this.SharedTextSource.GetText("OK"),
+                () => { });
+        }
+
+        private void OnDownloadSuccess(DateTime? updateDate)
+        {
+            this.IsBusy = false;
+            this.settings.AddOrUpdateValue(Constants.UserSettings.PdfLastUpdate, updateDate);
+            this.settings.Save();
+            this.ShowMenu();
+        }
+
+        private async Task OnGetLastUpdateExecute()
+        {
+            await this.AsyncExecute(() => this.service.GetMenuLastUpdateAsync(), this.CheckMenu);
+        }
+
+        private void ShowMenu()
+        {
+            var viewer = Mvx.Resolve<IDocumentViewerTask>();
+            viewer.ShowPdf(Constants.LocalMenuFilePath, Constants.MenuUrl, true);
+        }
     }
 }

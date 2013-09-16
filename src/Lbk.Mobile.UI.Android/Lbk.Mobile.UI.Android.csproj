@@ -132,6 +132,7 @@
     <Compile Include="Bindings\BaseWebViewTargetBinding.cs" />
     <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
+    <Compile Include="Bootstrap\DocumentViewerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebVideoPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
@@ -329,6 +330,14 @@
     <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
       <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
       <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer.Droid\Lbk.Mobile.Plugin.DocumentViewer.Droid.csproj">
+      <Project>{3d13d930-55f0-4505-8938-490128e16779}</Project>
+      <Name>Lbk.Mobile.Plugin.DocumentViewer.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer.csproj">
+      <Project>{36a79756-82ba-4c27-ba04-6b38f8c3d0e8}</Project>
+      <Name>Lbk.Mobile.Plugin.DocumentViewer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\Reachability\Lbk.Mobile.Plugin.Reachability.Droid\Lbk.Mobile.Plugin.Reachability.Droid.csproj">
       <Project>{9cabab9c-b303-4891-a75c-3e8afb1b4915}</Project>

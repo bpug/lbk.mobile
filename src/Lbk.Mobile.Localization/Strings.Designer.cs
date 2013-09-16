@@ -196,11 +196,38 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string Lbk_Shared_ButtonOk {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.ButtonOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an error during the download..
+        /// </summary>
+        public static string Lbk_Shared_DownloadError {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.DownloadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To destination approx: {0}.
         /// </summary>
         public static string Lbk_Shared_LocationDistance {
             get {
                 return ResourceManager.GetString("Lbk.Shared.LocationDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please try again later..
+        /// </summary>
+        public static string Lbk_Shared_PleaseTryNow {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.PleaseTryNow", resourceCulture);
             }
         }
         

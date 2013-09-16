@@ -162,8 +162,17 @@
   <data name="Lbk.Shared.ButtonConfirm" xml:space="preserve">
     <value>Ja</value>
   </data>
+  <data name="Lbk.Shared.ButtonOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Lbk.Shared.DownloadError" xml:space="preserve">
+    <value>Es ist ein Fehler beim Download aufgetreten.</value>
+  </data>
   <data name="Lbk.Shared.LocationDistance" xml:space="preserve">
     <value>Bis zum Ziel ca: {0}</value>
+  </data>
+  <data name="Lbk.Shared.PleaseTryNow" xml:space="preserve">
+    <value>Bitte versuchen Sie es später noch einmal.</value>
   </data>
   <data name="Lbk.Test.Text" xml:space="preserve">
     <value>Deutsch</value>

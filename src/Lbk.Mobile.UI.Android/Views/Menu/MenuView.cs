@@ -11,7 +11,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Menu
 
     using Lbk.Mobile.Core.ViewModels.Menu;
 
-    [Activity(Label = "Speisekarte")]
+    [Activity(Label = "@string/menu_name", Icon = "@drawable/ic_launcher")]
     public class MenuView : BaseView<MenuViewModel>
     {
         protected override void OnCreate(Bundle bundle)

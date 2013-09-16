@@ -28,6 +28,8 @@ namespace Lbk.Mobile.UI.Droid
 		{
 			Lbk.Mobile.Plugin.DeviceIdentifier.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
 			Lbk.Mobile.Plugin.DeviceIdentifier.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
+			Lbk.Mobile.Plugin.DocumentViewer.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
+			Lbk.Mobile.Plugin.DocumentViewer.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			Lbk.Mobile.Plugin.Reachability.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
 			Lbk.Mobile.Plugin.Reachability.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			Lbk.Mobile.Plugin.Settings.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
@@ -652,20 +654,20 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f040000
 			public const int none = 2130968576;
 			
-			// aapt resource value: 0x7f04000f
-			public const int pull_to_refresh_image = 2130968591;
+			// aapt resource value: 0x7f04000e
+			public const int pull_to_refresh_image = 2130968590;
 			
 			// aapt resource value: 0x7f040008
 			public const int pull_to_refresh_layout = 2130968584;
 			
-			// aapt resource value: 0x7f04000e
-			public const int pull_to_refresh_progress = 2130968590;
+			// aapt resource value: 0x7f04000d
+			public const int pull_to_refresh_progress = 2130968589;
+			
+			// aapt resource value: 0x7f04000f
+			public const int pull_to_refresh_text = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int pull_to_refresh_text = 2130968592;
-			
-			// aapt resource value: 0x7f040011
-			public const int pull_to_refresh_updated_at = 2130968593;
+			public const int pull_to_refresh_updated_at = 2130968592;
 			
 			// aapt resource value: 0x7f040009
 			public const int refresh_lower_button = 2130968585;
@@ -673,8 +675,8 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f04000a
 			public const int refresh_upper_button = 2130968586;
 			
-			// aapt resource value: 0x7f04000d
-			public const int textView1 = 2130968589;
+			// aapt resource value: 0x7f040011
+			public const int textView1 = 2130968593;
 			
 			// aapt resource value: 0x7f040014
 			public const int toast_layout_error_root = 2130968596;
@@ -831,6 +833,12 @@ namespace Lbk.Mobile.UI.Droid
 			
 			// aapt resource value: 0x7f0a0000
 			public const int Hello = 2131361792;
+			
+			// aapt resource value: 0x7f0a0002
+			public const int app_name = 2131361794;
+			
+			// aapt resource value: 0x7f0a0003
+			public const int menu_name = 2131361795;
 			
 			static String()
 			{

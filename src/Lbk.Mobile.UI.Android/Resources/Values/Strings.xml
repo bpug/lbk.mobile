@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ApplicationName">Lbk.Mobile.UI.Android</string>
+    <string name="app_name">Löwenbräukeller</string>
+    <string name="menu_name">Triumphator</string>
 </resources>

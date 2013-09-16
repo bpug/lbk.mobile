@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.UI.Droid.Views
 {
+    using Android.App;
+
     using Cirrious.MvvmCross.Binding.BindingContext;
     using Cirrious.MvvmCross.Droid.Views;
 
@@ -15,6 +17,7 @@ namespace Lbk.Mobile.UI.Droid.Views
     using Lbk.Mobile.UI.Droid.Controls.ProgressBarDialog;
     using Lbk.Mobile.UI.Droid.Extensions;
 
+    [Activity(Icon = "@drawable/ic_launcher")]
     public abstract class BaseView<TViewModel> : MvxActivity, IBaseView<TViewModel>
         where TViewModel : BaseViewModel
     {
