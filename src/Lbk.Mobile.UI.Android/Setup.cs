@@ -9,6 +9,7 @@ namespace Lbk.Mobile.UI.Droid
     using System.Collections.Generic;
     using System.Reflection;
 
+    using Cirrious.CrossCore;
     using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
     using Cirrious.MvvmCross.Droid.Platform;
@@ -18,7 +19,9 @@ namespace Lbk.Mobile.UI.Droid
     using Android.Webkit;
     using Android.Widget;
 
+    using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.UI.Droid.Bindings;
+    using Lbk.Mobile.UI.Droid.Controls;
 
     public class Setup : MvxAndroidSetup
     {
@@ -55,6 +58,9 @@ namespace Lbk.Mobile.UI.Droid
         protected override void InitializeLastChance()
         {
             var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
+
+            Mvx.RegisterSingleton<IMessageBoxService>(new MessageBoxDisplayer());
+
             base.InitializeLastChance();
         }
 

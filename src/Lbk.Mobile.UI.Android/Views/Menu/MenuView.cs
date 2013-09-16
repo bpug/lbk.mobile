@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Views
+namespace Lbk.Mobile.UI.Droid.Views.Menu
 {
     using Android.App;
     using Android.OS;

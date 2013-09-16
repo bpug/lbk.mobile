@@ -17,5 +17,13 @@ namespace Lbk.Mobile.Core
         public const double LbkLongitude = 11.558634;
         public const string LbkPhone = "+498954726690";
         public const string LbkEmail = "info@loewenbraeukeller.com";
+
+        public const string LocalMenuFilePath = "menu.pdf";
+        public const string MenuUrl = "http://lbkmobile.loewenbraeukeller.com/media/speisekarte/speisekarte.pdf";
+
+        public class UserSettings
+        {
+            public const string PdfLastUpdate = "PdfLastUpdate";
+        }
     }
 }

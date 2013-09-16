@@ -146,6 +146,7 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
     <Compile Include="Controls\BindingPullToRefreshListView.cs" />
+    <Compile Include="Controls\MessageBoxDisplayer.cs" />
     <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
     <Compile Include="Controls\VideoBindingListView.cs" />
     <Compile Include="Controls\EventBindingListView.cs" />
@@ -185,7 +186,7 @@
     <Compile Include="Views\IBaseView.cs" />
     <Compile Include="Views\TodaysMenu\TodaysMenuListAdapter.cs" />
     <Compile Include="Views\TodaysMenu\TodaysMenuView.cs" />
-    <Compile Include="Views\MenuView.cs" />
+    <Compile Include="Views\Menu\MenuView.cs" />
     <Compile Include="Views\ReservationView.cs" />
     <Compile Include="Views\Video\VideoListView.cs" />
   </ItemGroup>

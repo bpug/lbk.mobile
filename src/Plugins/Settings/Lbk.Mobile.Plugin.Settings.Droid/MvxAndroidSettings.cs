@@ -59,6 +59,10 @@ namespace Lbk.Mobile.Plugin.Settings.Droid
                     case TypeCode.Single:
                         SharedPreferencesEditor.PutFloat(key, Convert.ToSingle(value));
                         break;
+                    case TypeCode.DateTime:
+                        var intDateTime = ((DateTime)value).Ticks;
+                        SharedPreferencesEditor.PutLong(key, Convert.ToInt64(intDateTime));
+                        break;
                 }
             }
 
@@ -72,7 +76,7 @@ namespace Lbk.Mobile.Plugin.Settings.Droid
         /// <param name="key">Key for settings</param>
         /// <param name="defaultValue">default value if not set</param>
         /// <returns>Value or default</returns>
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) where T : IComparable
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) //where T : IComparable
         {
             lock (this.m_Locker)
             {
@@ -99,6 +103,13 @@ namespace Lbk.Mobile.Plugin.Settings.Droid
                         break;
                     case TypeCode.Single:
                         value = SharedPreferences.GetFloat(key, Convert.ToSingle(defaultValue));
+                        break;
+                    case TypeCode.DateTime:
+                        var ticks = SharedPreferences.GetLong(key, Convert.ToInt64(defaultValue));
+                        if (ticks > 0)
+                        {
+                            value = new DateTime(ticks);
+                        }
                         break;
                 }
 

@@ -97,6 +97,15 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to It is valid for a new menu, which can be downloaded now..
+        /// </summary>
+        public static string Lbk_MenuViewModel_PdfDownloadQuestion {
+            get {
+                return ResourceManager.GetString("Lbk.MenuViewModel.PdfDownloadQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string Lbk_QuestionViewModel_Next {

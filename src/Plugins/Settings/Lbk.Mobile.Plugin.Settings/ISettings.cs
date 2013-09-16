@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Plugin.Settings
     {
         bool AddOrUpdateValue(string key, Object value);
 
-        T GetValueOrDefault<T>(string key, T defaultValue) where T : IComparable;
+        T GetValueOrDefault<T>(string key, T defaultValue); //where T : IComparable;
 
         void Save();
 

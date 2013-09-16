@@ -29,7 +29,7 @@ namespace Lbk.Mobile.Core.Test.Implementation
             return true;
         }
 
-        public T GetValueOrDefault<T>(string key, T defaultValue) where T : IComparable
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T)) //where T : IComparable
         {
             T value;
 

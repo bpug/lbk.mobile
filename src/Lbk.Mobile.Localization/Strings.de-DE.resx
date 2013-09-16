@@ -129,6 +129,9 @@
   <data name="Lbk.HomeViewModel.Recommend.MailSubject" xml:space="preserve">
     <value>Löwenbräukeller-App Empfelung</value>
   </data>
+  <data name="Lbk.MenuViewModel.PdfDownloadQuestion" xml:space="preserve">
+    <value>Es ist eine eine neue Speisekarte gültig, die nun geladen werden kann.</value>
+  </data>
   <data name="Lbk.QuestionViewModel.Next" xml:space="preserve">
     <value>Weiter</value>
   </data>
