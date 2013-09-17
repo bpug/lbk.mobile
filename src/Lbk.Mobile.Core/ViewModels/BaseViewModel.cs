@@ -228,7 +228,7 @@ namespace Lbk.Mobile.Core.ViewModels
             task.ShowWebPage(webPage);
         }
 
-        protected void PlayYoutubeVideo(string videoUrl)
+        protected void PlayYoutubeVideo(string videoUrl, string title)
         {
             if (string.IsNullOrEmpty(videoUrl))
             {
@@ -241,7 +241,7 @@ namespace Lbk.Mobile.Core.ViewModels
                 return;
             }
             var task = Mvx.Resolve<IWebVideoTask>();
-            task.PlayYoutubeVideo(id);
+            task.PlayYoutubeVideo(id, title);
         }
 
         protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage

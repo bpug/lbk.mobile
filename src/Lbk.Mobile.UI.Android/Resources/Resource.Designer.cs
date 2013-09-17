@@ -330,9 +330,6 @@ namespace Lbk.Mobile.UI.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050012
-			public const int black = 2131034130;
-			
 			// aapt resource value: 0x7f050008
 			public const int default_circle_indicator_fill_color = 2131034120;
 			
@@ -360,20 +357,14 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f050010
 			public const int default_underline_indicator_selected_color = 2131034128;
 			
-			// aapt resource value: 0x7f050015
-			public const int grey = 2131034133;
-			
-			// aapt resource value: 0x7f050017
-			public const int icongrey = 2131034135;
-			
-			// aapt resource value: 0x7f050014
-			public const int lightgrey = 2131034132;
-			
-			// aapt resource value: 0x7f050018
-			public const int listseparator = 2131034136;
-			
 			// aapt resource value: 0x7f050013
-			public const int mainText = 2131034131;
+			public const int header_outside = 2131034131;
+			
+			// aapt resource value: 0x7f050015
+			public const int listseparator = 2131034133;
+			
+			// aapt resource value: 0x7f050012
+			public const int text = 2131034130;
 			
 			// aapt resource value: 0x7f050011
 			public const int transparent = 2131034129;
@@ -402,14 +393,14 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f050007
 			public const int vpi__bright_foreground_inverse_holo_light = 2131034119;
 			
-			// aapt resource value: 0x7f050019
-			public const int vpi__dark_theme = 2131034137;
-			
-			// aapt resource value: 0x7f05001a
-			public const int vpi__light_theme = 2131034138;
-			
 			// aapt resource value: 0x7f050016
-			public const int white = 2131034134;
+			public const int vpi__dark_theme = 2131034134;
+			
+			// aapt resource value: 0x7f050017
+			public const int vpi__light_theme = 2131034135;
+			
+			// aapt resource value: 0x7f050014
+			public const int white = 2131034132;
 			
 			static Color()
 			{
@@ -543,70 +534,79 @@ namespace Lbk.Mobile.UI.Droid
 			public const int Icon = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int pull_to_refresh_header_background = 2130837526;
+			public const int list_item_arrow = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int splashscreen = 2130837527;
+			public const int pull_to_refresh_header_background = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int starkbierfest = 2130837528;
+			public const int raum_hg = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int thn_bennosaal = 2130837529;
+			public const int runde_ecken = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int thn_braeustueberl = 2130837530;
+			public const int splashscreen = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int thn_dachauerstube = 2130837531;
+			public const int starkbierfest = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int thn_festsaal = 2130837532;
+			public const int thumb_bennosaal = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int thn_filserstube = 2130837533;
+			public const int thumb_braeustueberl = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int thn_galeriesaal = 2130837534;
+			public const int thumb_dachauerstube = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int thn_gartenanbau = 2130837535;
+			public const int thumb_festsaal = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int thn_loewenempore = 2130837536;
+			public const int thumb_filserstube = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int thn_loewenterasse = 2130837537;
+			public const int thumb_galeriesaal = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int thn_terrasse = 2130837538;
+			public const int thumb_gartenanbau = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int thn_turmstueberl = 2130837539;
+			public const int thumb_loewenempore = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int thn_turmzimmer = 2130837540;
+			public const int thumb_loewenterasse = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int vpi__tab_indicator = 2130837541;
+			public const int thumb_terrasse = 2130837541;
 			
 			// aapt resource value: 0x7f020026
-			public const int vpi__tab_selected_focused_holo = 2130837542;
+			public const int thumb_turmstueberl = 2130837542;
 			
 			// aapt resource value: 0x7f020027
-			public const int vpi__tab_selected_holo = 2130837543;
+			public const int thumb_turmzimmer = 2130837543;
 			
 			// aapt resource value: 0x7f020028
-			public const int vpi__tab_selected_pressed_holo = 2130837544;
+			public const int vpi__tab_indicator = 2130837544;
 			
 			// aapt resource value: 0x7f020029
-			public const int vpi__tab_unselected_focused_holo = 2130837545;
+			public const int vpi__tab_selected_focused_holo = 2130837545;
 			
 			// aapt resource value: 0x7f02002a
-			public const int vpi__tab_unselected_holo = 2130837546;
+			public const int vpi__tab_selected_holo = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int vpi__tab_unselected_pressed_holo = 2130837547;
+			public const int vpi__tab_selected_pressed_holo = 2130837547;
+			
+			// aapt resource value: 0x7f02002c
+			public const int vpi__tab_unselected_focused_holo = 2130837548;
+			
+			// aapt resource value: 0x7f02002d
+			public const int vpi__tab_unselected_holo = 2130837549;
+			
+			// aapt resource value: 0x7f02002e
+			public const int vpi__tab_unselected_pressed_holo = 2130837550;
 			
 			static Drawable()
 			{
@@ -873,6 +873,18 @@ namespace Lbk.Mobile.UI.Droid
 			
 			// aapt resource value: 0x7f090002
 			public const int Widget_TabPageIndicator = 2131296258;
+			
+			// aapt resource value: 0x7f090009
+			public const int gericht = 2131296265;
+			
+			// aapt resource value: 0x7f090007
+			public const int header_outside = 2131296263;
+			
+			// aapt resource value: 0x7f09000a
+			public const int preis = 2131296266;
+			
+			// aapt resource value: 0x7f090008
+			public const int text_outside = 2131296264;
 			
 			static Style()
 			{

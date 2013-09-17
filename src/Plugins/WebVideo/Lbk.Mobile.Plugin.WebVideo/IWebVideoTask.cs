@@ -8,6 +8,6 @@ namespace Lbk.Mobile.Plugin.WebVideo
 {
     public interface IWebVideoTask
     {
-        void PlayYoutubeVideo(string videoId);
+        void PlayYoutubeVideo(string videoId, string title);
     }
 }

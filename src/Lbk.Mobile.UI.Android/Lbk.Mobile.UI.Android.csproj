@@ -42,7 +42,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
@@ -192,6 +195,8 @@
     <Compile Include="Views\Video\VideoListView.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\runde_ecken.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -239,18 +244,6 @@
     <AndroidResource Include="Resources\Drawable\ic_pulltorefresh_arrow.png" />
     <AndroidResource Include="Resources\Drawable\pull_to_refresh_header_background.xml" />
     <AndroidResource Include="Resources\Values\Colors.xml" />
-    <AndroidResource Include="Resources\Drawable\thn_bennosaal.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_braeustueberl.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_dachauerstube.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_festsaal.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_filserstube.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_galeriesaal.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_loewenterasse.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_terrasse.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_turmstueberl.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_turmzimmer.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_gartenanbau.jpg" />
-    <AndroidResource Include="Resources\Drawable\thn_loewenempore.jpg" />
     <AndroidResource Include="Resources\Drawable\Braueustueberl1.jpg" />
     <AndroidResource Include="Resources\Drawable\Braueustueberl2.jpg" />
     <AndroidResource Include="Resources\Drawable\starkbierfest.jpg" />
@@ -308,6 +301,20 @@
     <AndroidResource Include="Resources\Drawable\splashscreen.png" />
     <AndroidResource Include="Resources\Drawable\Icon.png" />
     <AndroidResource Include="Resources\Values\ProgressBarStyle.xml" />
+    <AndroidResource Include="Resources\Drawable\list_item_arrow.png" />
+    <AndroidResource Include="Resources\Drawable\raum_hg.png" />
+    <AndroidResource Include="Resources\Drawable\thumb_festsaal.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_filserstube.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_galeriesaal.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_gartenanbau.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_loewenempore.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_loewenterasse.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_terrasse.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_turmstueberl.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_turmzimmer.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_bennosaal.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_braeustueberl.jpg" />
+    <AndroidResource Include="Resources\Drawable\thumb_dachauerstube.jpg" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
