@@ -18,7 +18,7 @@ namespace Lbk.Mobile.Core.Converters
             if (!(value is double || value is string))
                 return value;
 
-            var format = parameter ?? "{0} €";
+            var format = parameter ?? "{0:N2} €";
             double doubleValue;
             if (value is double)
             {

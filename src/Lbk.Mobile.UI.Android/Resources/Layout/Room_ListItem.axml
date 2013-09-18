@@ -7,7 +7,8 @@
     android:layout_gravity="center_horizontal|top"
     android:background="@drawable/runde_ecken"
     android:padding="5dp"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="10dp"
+    android:cacheColorHint="@color/transparent">
     <Mvx.MvxImageView
         android:layout_width="60dp"
         android:layout_height="60dp"

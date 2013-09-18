@@ -22,6 +22,12 @@ using Cirrious.MvvmCross.Binding.Droid.Views;
 
 namespace Cheesebaron.MvvmCross.Bindings.Droid
 {
+   
+
+    using Android.Views;
+
+    using Java.Lang;
+
     public class BindableViewPager
         : Android.Support.V4.View.ViewPager
     {
@@ -127,6 +133,55 @@ namespace Cheesebaron.MvvmCross.Bindings.Droid
                 return;
 
             command.Execute(toPage);
+        }
+
+        protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec)
+        {
+            base.OnMeasure(widthMeasureSpec, heightMeasureSpec);
+
+            // find the first child view
+            View view = GetChildAt(0);
+
+            if (view != null)
+            {
+                // measure the first child view with the specified measure spec
+                view.Measure(widthMeasureSpec, heightMeasureSpec);
+            }
+
+            SetMeasuredDimension(MeasuredWidth, MeasureHeight(heightMeasureSpec, view));
+        }
+
+        /**
+     * Determines the height of this view
+     *
+     * @param measureSpec A measureSpec packed into an int
+     * @param view the base view with already measured height
+     *
+     * @return The height of the view, honoring constraints from measureSpec
+     */
+        private int MeasureHeight(int measureSpec, View view)
+        {
+            int result = 0;
+            var specMode = MeasureSpec.GetMode(measureSpec);
+            int specSize = MeasureSpec.GetSize(measureSpec);
+
+            if (specMode == MeasureSpecMode.Exactly)
+            {
+                result = specSize;
+            }
+            else
+            {
+                // set the height from the base view if available
+                if (view != null)
+                {
+                    result = view.MeasuredHeight;
+                }
+                if (specMode == MeasureSpecMode.AtMost)
+                {
+                    result = Math.Min(result, specSize);
+                }
+            }
+            return result;
         }
     } 
 }

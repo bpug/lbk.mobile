@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="header_outside">
-        <item name="android:paddingBottom">10dp</item>
+  <style name="main_content">
+    <item name="android:paddingLeft">10dp</item>
+    <item name="android:paddingRight">10dp</item>
+  </style>
+  
+  <style name="section_header">
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">10dp</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">20dp</item>
-        <item name="android:textColor">@color/header_outside</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">1</item>
         <item name="android:shadowRadius">1</item>
     </style>
 
-    <style name="text_outside">
+    <style name="section_footer">
         <item name="android:paddingBottom">10dp</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">14dp</item>
-        <item name="android:textColor">@color/header_outside</item>
-    </style>
-
-    <style name="gericht">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/text</item>
-    </style>
-
-    <style name="preis">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">right</item>
-        <item name="android:textColor">@color/text</item>
-        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_horizontal</item>
     </style>
 
 </resources>

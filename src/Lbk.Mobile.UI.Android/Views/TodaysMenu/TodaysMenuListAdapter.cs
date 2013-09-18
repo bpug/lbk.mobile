@@ -6,8 +6,10 @@
 
 namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
 {
+    using System;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Dynamic;
     using System.Linq;
 
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
@@ -17,13 +19,17 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
     using Android.Views;
     using Android.Widget;
 
-    using Java.Lang;
-
     using Lbk.Mobile.Model;
     using Lbk.Mobile.UI.Droid.Controls;
 
+    using Object = Java.Lang.Object;
+    using String = Java.Lang.String;
+
     public class TodaysMenuListAdapter : MvxAdapter, ISectionIndexer
     {
+
+        private List<Model.MenuCategory> categories;
+        
         private List<int> reverseSectionLookup;
 
         private Object[] objSectionHeaders;
@@ -60,11 +66,36 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
             return this.objSectionHeaders;
         }
 
+
+        private void SetRoundedCorners(Dish dish, ref View view)
+        {
+            var info = this.GetDishInfo(dish);
+
+            if (info.Index == 0 && info.Count == 1)
+            {
+                view.SetBackgroundResource(Resource.Drawable.runde_ecken);
+            }
+            else if (info.Index == 0)
+            {
+                view.SetBackgroundResource(Resource.Drawable.list_rounded_item_top);
+            }
+            else if (info.Index == info.Count - 1)
+            {
+                view.SetBackgroundResource(Resource.Drawable.runde_ecken_bottom);
+            }
+            else
+            {
+                view.SetBackgroundResource(Resource.Drawable.list_item_middle);
+            }
+        }
+
         protected override View GetBindableView(View convertView, object dataContext, int templateId)
         {
             if (dataContext is Dish)
             {
-                return base.GetBindableView(convertView, dataContext, Resource.Layout.TodaysMenu_ListItem);
+                var view =  base.GetBindableView(convertView, dataContext, Resource.Layout.TodaysMenu_ListItem);
+                SetRoundedCorners(dataContext as Dish, ref view);
+                return view;
             }
             if (dataContext is SectionFooter)
             {
@@ -76,11 +107,36 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
             }
         }
 
+
+        private DishInfo GetDishInfo(Dish dish)
+        {
+            foreach (var category in categories)
+            {
+                var index = category.Dishes.FindIndex(d => d.Equals(dish));
+                if (index > -1)
+                {
+                    return new DishInfo
+                    {
+                        Index = index,
+                        Count = category.Dishes.Count
+                    };
+                }
+            }
+            return null;
+        }
+
+        private class DishInfo
+        {
+            public int Index { get; set; }
+            public int Count { get; set; }
+        }
+
         protected override void SetItemsSource(IEnumerable list)
         {
-            var groupedList = list as List<Model.MenuCategory>;
+            categories = list as List<Model.MenuCategory>;
 
-            if (groupedList == null)
+            
+            if (categories == null)
             {
                 this.objSectionHeaders = null;
                 this.sectionLookup = null;
@@ -94,29 +150,29 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
             this.reverseSectionLookup = new List<int>();
             var sectionHeaders = new List<string>();
 
-            int groupsSoFar = 0;
-            foreach (var group in groupedList)
+            int categoryCounter = 0;
+            foreach (var category in categories)
             {
                 this.sectionLookup.Add(flattened.Count);
-                string groupHeader = this.GetGroupHeader(group);
+                string groupHeader = this.GetGroupHeader(category);
                 sectionHeaders.Add(groupHeader);
 
-                var groupFooter = this.GetGroupFooter(group);
+                var groupFooter = this.GetGroupFooter(category);
 
-                for (int i = 0; i <= group.Dishes.Count; i++)
+                for (var i = 0; i <= category.Dishes.Count; i++)
                 {
-                    this.reverseSectionLookup.Add(groupsSoFar);
+                    this.reverseSectionLookup.Add(categoryCounter);
                 }
 
                 flattened.Add(groupHeader);
-                flattened.AddRange(group.Dishes.Select(x => (object)x));
+                flattened.AddRange(category.Dishes.Select(x => (object)x));
                 flattened.Add(groupFooter);
 
-                groupsSoFar++;
+                categoryCounter++;
             }
 
             this.objSectionHeaders =
-                CreateJavaStringArray(sectionHeaders.Select(x => x.Length > 10 ? x.Substring(0, 10) : x).ToList());
+                CreateJavaStringArray(sectionHeaders.Select(x => x).ToList());
 
             base.SetItemsSource(flattened);
         }

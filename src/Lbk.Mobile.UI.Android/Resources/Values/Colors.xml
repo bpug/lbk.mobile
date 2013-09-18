@@ -2,7 +2,6 @@
 <resources>
   <color name="transparent">#00000000</color>
   <color name="text">#292562</color>
-  <color name="header_outside">#ffffff</color>
   <color name="white">#ffffff</color>
   <color name="listseparator">#BDC0C5</color>
 </resources>

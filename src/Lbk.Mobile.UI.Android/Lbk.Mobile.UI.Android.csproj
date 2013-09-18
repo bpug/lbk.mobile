@@ -315,6 +315,12 @@
     <AndroidResource Include="Resources\Drawable\thumb_bennosaal.jpg" />
     <AndroidResource Include="Resources\Drawable\thumb_braeustueberl.jpg" />
     <AndroidResource Include="Resources\Drawable\thumb_dachauerstube.jpg" />
+    <AndroidResource Include="Resources\Drawable\runde_ecken_top.xml" />
+    <AndroidResource Include="Resources\Drawable\divider.xml" />
+    <AndroidResource Include="Resources\Drawable\list_item_bg.xml" />
+    <AndroidResource Include="Resources\Drawable\list_item_middle.xml" />
+    <AndroidResource Include="Resources\Drawable\list_rounded_item_top.xml" />
+    <AndroidResource Include="Resources\Drawable\runde_ecken_bottom.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
