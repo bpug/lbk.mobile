@@ -4,19 +4,17 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal|top"
     android:background="@drawable/runde_ecken"
     android:padding="5dp"
-    android:layout_marginTop="10dp"
-    android:cacheColorHint="@color/transparent">
+    android:layout_marginTop="10dp">
     <Mvx.MvxImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         local:MvxBind="DrawableResource ThumbnailUrl" />
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:padding="5dp">
         <TextView

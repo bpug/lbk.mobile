@@ -134,8 +134,11 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
         private void ShowMenu()
         {
+            var fileStore = Mvx.Resolve<IMvxFileStore>();
             var viewer = Mvx.Resolve<IDocumentViewerTask>();
-            viewer.ShowPdf(Constants.LocalMenuFilePath, Constants.MenuUrl, true);
+
+            var path = fileStore.NativePath(Constants.LocalMenuFilePath);
+            viewer.ShowPdf(path, Constants.MenuUrl, true);
         }
     }
 }

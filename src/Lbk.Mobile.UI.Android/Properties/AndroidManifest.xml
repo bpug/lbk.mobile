@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="de.ip_connect.lbk" android:versionCode="1" android:versionName="1.0.0">
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
-	<application android:label="@string/app_name">
+	<application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
 		<activity android:name="lbk.mobile.plugin.documentviewer.droid.PdfView" android:label="@string/menu_name" android:icon="@drawable/ic_launcher">
 			<!--<intent-filter>
             <action android:name="android.intent.action.VIEW"></action>

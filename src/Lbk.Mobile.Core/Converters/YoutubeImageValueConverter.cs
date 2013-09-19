@@ -33,9 +33,6 @@ namespace Lbk.Mobile.Core.Converters
                 case  "mq":
                      formatter = "http://img.youtube.com/vi/{0}/mqdefault.jpg";
                     break;
-                 case "sd":
-                     formatter = "http://img.youtube.com/vi/{0}/sddefault.jpg";
-                    break;
                 default:
                     formatter = "http://img.youtube.com/vi/{0}/default.jpg";
                     break;

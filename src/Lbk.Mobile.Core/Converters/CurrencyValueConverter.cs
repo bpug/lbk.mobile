@@ -26,7 +26,7 @@ namespace Lbk.Mobile.Core.Converters
             }
             else
             {
-                double.TryParse((string)value, out doubleValue);
+                double.TryParse((string)value, NumberStyles.AllowDecimalPoint, new CultureInfo("de-DE"), out doubleValue);
             }
 
             return string.Format((string)format, doubleValue);

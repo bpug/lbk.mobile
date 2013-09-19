@@ -3,23 +3,32 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|top"
+    android:background="@drawable/runde_ecken"
+    android:padding="5dp">
     <Mvx.MvxImageView
         android:src="@drawable/ic_launcher"
-        android:layout_width="95dp"
-        android:layout_height="95dp"
-        android:layout_margin="10dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
         local:MvxBind="ImageUrl Url, Converter=YoutubeImage, ConverterParameter='mq'" />
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:padding="5dp">
         <TextView
-            android:text="Title"
+            android:id="@+id/title"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:layout_height="fill_parent"
+            android:textSize="16dp"
             android:textStyle="bold"
+            android:text="Title"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/text"
             local:MvxBind="Text Title" />
     </LinearLayout>
 </LinearLayout>

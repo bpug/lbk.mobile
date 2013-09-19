@@ -16,7 +16,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi%3bx86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
     <JavaMaximumHeapSize />
@@ -42,7 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AndroidLinkSkip />
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
     <BundleAssemblies>False</BundleAssemblies>
@@ -182,6 +182,7 @@
     <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
+    <Compile Include="Views\Gallery\GalleryView.cs" />
     <Compile Include="Views\History\HisroryView.cs" />
     <Compile Include="Views\History\HistoryDetailView.cs" />
     <Compile Include="Views\Room\RoomDetailView.cs" />
@@ -227,6 +228,12 @@
     <AndroidResource Include="Resources\Layout\Video_List.axml" />
     <AndroidResource Include="Resources\Layout\History.axml" />
     <AndroidResource Include="Resources\Layout\History_Details.axml" />
+    <AndroidResource Include="Resources\Layout\Gallery.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Gallery_Item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -321,6 +328,8 @@
     <AndroidResource Include="Resources\Drawable\list_item_middle.xml" />
     <AndroidResource Include="Resources\Drawable\list_rounded_item_top.xml" />
     <AndroidResource Include="Resources\Drawable\runde_ecken_bottom.xml" />
+    <AndroidResource Include="Resources\Drawable\list_rounded_item.xml" />
+    <AndroidResource Include="Resources\Drawable\divider_transparent.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

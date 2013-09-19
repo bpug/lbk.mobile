@@ -14,6 +14,7 @@ namespace Lbk.Mobile.Data.Services
     using Lbk.Mobile.Model;
 
     using Event = Lbk.Mobile.Model.Event;
+    using Picture = Lbk.Mobile.Model.Picture;
     using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
     using Video = Lbk.Mobile.Model.Video;
 

@@ -16,6 +16,7 @@ namespace Lbk.Mobile.Data.Extensions
     using Lbk.Mobile.Model;
 
     using Event = Lbk.Mobile.Model.Event;
+    using Picture = Lbk.Mobile.Model.Picture;
     using Question = Lbk.Mobile.Data.LbkMobileService.Question;
     using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
     using Video = Lbk.Mobile.Model.Video;
@@ -116,7 +117,7 @@ namespace Lbk.Mobile.Data.Extensions
         public static Task<List<Picture>> GetPicturesAsyncTask(this Service1SoapClient client, string fingerprint)
         {
             var tcs = CreateSource<List<Picture>>(null);
-            client.GetPicturesCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result.ToList(), null);
+            client.GetPicturesCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result.ToModel(), null);
             client.GetPicturesAsync(fingerprint);
             return tcs.Task;
         }

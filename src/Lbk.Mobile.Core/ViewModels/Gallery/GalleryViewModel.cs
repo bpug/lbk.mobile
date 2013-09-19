@@ -11,9 +11,8 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
     using System.Windows.Input;
 
     using Cirrious.MvvmCross.ViewModels;
-
-    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model;
 
     public class GalleryViewModel : BaseViewModel
     {
@@ -47,7 +46,7 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
             }
         }
 
-        public void Init()
+        public override void Start()
         {
             this.LoadCommand.Execute(null);
         }
