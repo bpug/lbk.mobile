@@ -8,6 +8,7 @@ namespace Lbk.Mobile.Core.ViewModels.History
 {
     using System.Windows.Input;
 
+    using Cirrious.CrossCore.Core;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common.Interfaces;
@@ -54,7 +55,14 @@ namespace Lbk.Mobile.Core.ViewModels.History
 
         private void OnLoadExecute()
         {
-            this.Histories = this.historyRepository.GetHistories();
+            IsBusy = true;
+            MvxAsyncDispatcher.BeginAsync(
+                () =>
+                {
+                    this.Histories = this.historyRepository.GetHistories();
+                    IsBusy = false;
+                });
         }
+
     }
 }

@@ -1,8 +1,6 @@
-namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh.Library
 {
     using System;
-
-    using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 
     using Android.Content;
     using Android.OS;
@@ -10,6 +8,8 @@ namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
     using Android.Util;
     using Android.Views;
     using Android.Widget;
+
+    using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 
     public class PullToRefreshListView
         : RelativeLayout

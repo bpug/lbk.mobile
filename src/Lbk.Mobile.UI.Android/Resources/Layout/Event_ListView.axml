@@ -13,12 +13,16 @@
             android:id="@+id/refresh_upper_button"
             layout="@layout/pull_down_pull_to_refresh_list" />
         <Mvx.MvxListView
+            style="@style/main_content"
             android:id="@android:id/list"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:orientation="vertical"
             android:background="@color/transparent"
             android:cacheColorHint="@color/transparent"
+            android:listSelector="@color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10dp"
             local:MvxBind="ItemsSource Events"
             local:MvxItemTemplate="@layout/event_listitem" />
     </LinearLayout>

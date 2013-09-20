@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/yellow1"
         android:textStyle="bold"
-        android:textSize="26sp"
+        android:textSize="15sp"
         android:gravity="center_horizontal"
         local:MvxBind="Text Title" />
     <TextView
@@ -22,12 +22,12 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:gravity="center_horizontal"
-        android:textSize="26sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         local:MvxBind="Text Date" />
     <Mvx.MvxImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="145dp"
         android:adjustViewBounds="true"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"

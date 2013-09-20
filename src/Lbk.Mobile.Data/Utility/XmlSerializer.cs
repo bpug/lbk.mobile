@@ -91,6 +91,7 @@ namespace Lbk.Mobile.Data.Utility
             T serializableObject = null;
 
             var fileService = Mvx.Resolve<IMvxFileStore>();
+
             fileService.TryReadBinaryFile(
                 path,
                 stream =>

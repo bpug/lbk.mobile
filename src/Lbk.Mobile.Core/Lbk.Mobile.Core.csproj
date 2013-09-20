@@ -62,6 +62,7 @@
     <Compile Include="ViewModels\Event\EventListViewModel.cs" />
     <Compile Include="ViewModels\Event\EventBookingViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />
+    <Compile Include="ViewModels\Gallery\PictureViewModel.cs" />
     <Compile Include="ViewModels\Helpers\ModelWithCommand.cs" />
     <Compile Include="ViewModels\History\HistoryViewModel.cs" />
     <Compile Include="ViewModels\History\HistoryDetailViewModel.cs" />

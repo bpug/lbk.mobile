@@ -19,6 +19,7 @@ namespace Lbk.Mobile.Core
         public const string LbkEmail = "info@loewenbraeukeller.com";
 
         public const string LocalMenuFilePath = "menu.pdf";// "/sdcard/menu.pdf";
+
         public const string MenuUrl = "http://lbkmobile.loewenbraeukeller.com/media/speisekarte/speisekarte.pdf";
 
         public class UserSettings

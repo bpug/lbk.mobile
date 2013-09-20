@@ -9,6 +9,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
     using System.Collections.Generic;
     using System.Windows.Input;
 
+    using Cirrious.CrossCore.Core;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common.Interfaces;
@@ -63,7 +64,13 @@ namespace Lbk.Mobile.Core.ViewModels.Room
 
         private void OnLoadExecute()
         {
-            this.Rooms = this.roomRepository.GetRooms();
+            IsBusy = true;
+            MvxAsyncDispatcher.BeginAsync(
+                () =>
+                {
+                    this.Rooms = this.roomRepository.GetRooms();
+                    IsBusy = false;
+                });
         }
 
         //private void OnLoadExecute()

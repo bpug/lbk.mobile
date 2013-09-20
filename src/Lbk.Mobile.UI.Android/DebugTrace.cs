@@ -13,7 +13,7 @@ namespace Lbk.Mobile.UI.Droid
 
     public class DebugTrace : IMvxTrace
     {
-        public void Trace(MvxTraceLevel level, string tag, Func<string> message)
+        public  void Trace(MvxTraceLevel level, string tag, Func<string> message)
         {
             Debug.WriteLine(tag + ":" + level + ":" + message());
         }

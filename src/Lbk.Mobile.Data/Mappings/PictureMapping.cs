@@ -19,7 +19,14 @@ namespace Lbk.Mobile.Data.Mappings
             {
                 return null;
             }
-            return sourceList.Select(p => p.ToModel()).ToList();
+            var pictures=  sourceList.Select(p => p.ToModel()).ToList();
+
+            for (var i = 0; i < pictures.Count; i++)
+            {
+                pictures[i].PageIndex = i;
+            }
+
+            return pictures;
         }
 
         public static Picture ToModel(this LbkMobileService.Picture source)

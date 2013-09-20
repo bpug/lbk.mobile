@@ -149,26 +149,27 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
-    <Compile Include="Controls\BindingPullToRefreshListView.cs" />
+    <Compile Include="Controls\MvxThumbnail.cs" />
+    <Compile Include="Controls\PullToRefresh\BindingPullToRefreshListView.cs" />
     <Compile Include="Controls\MessageBoxDisplayer.cs" />
     <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
-    <Compile Include="Controls\VideoBindingListView.cs" />
-    <Compile Include="Controls\EventBindingListView.cs" />
+    <Compile Include="Controls\PullToRefresh\VideoBindingListView.cs" />
+    <Compile Include="Controls\PullToRefresh\EventBindingListView.cs" />
     <Compile Include="Controls\SectionFooter.cs" />
-    <Compile Include="Controls\TodaysMenuBindingListView.cs" />
-    <Compile Include="Controls\PullToRefresh\ActionBasedRefreshListener.cs" />
-    <Compile Include="Controls\PullToRefresh\IOnPullingAction.cs" />
-    <Compile Include="Controls\PullToRefresh\IOnReleaseReady.cs" />
-    <Compile Include="Controls\PullToRefresh\IRefreshListener.cs" />
-    <Compile Include="Controls\PullToRefresh\IScrollingState.cs" />
-    <Compile Include="Controls\PullToRefresh\NoRefreshListener.cs" />
-    <Compile Include="Controls\PullToRefresh\Pixel.cs" />
-    <Compile Include="Controls\PullToRefresh\PullingDownState.cs" />
-    <Compile Include="Controls\PullToRefresh\PullingUpState.cs" />
-    <Compile Include="Controls\PullToRefresh\PullToRefreshComponent.cs" />
-    <Compile Include="Controls\PullToRefresh\PullToRefreshListView.cs" />
-    <Compile Include="Controls\PullToRefresh\PullToRefreshState.cs" />
-    <Compile Include="Controls\PullToRefresh\RefreshingState.cs" />
+    <Compile Include="Controls\PullToRefresh\TodaysMenuBindingListView.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\ActionBasedRefreshListener.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\IOnPullingAction.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\IOnReleaseReady.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\IRefreshListener.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\IScrollingState.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\NoRefreshListener.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\Pixel.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\PullingDownState.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\PullingUpState.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\PullToRefreshComponent.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\PullToRefreshListView.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\PullToRefreshState.cs" />
+    <Compile Include="Controls\PullToRefresh\Library\RefreshingState.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="ErrorDisplayer.cs" />
     <Compile Include="Extensions\ActivityExtensions.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
     <Compile Include="Views\Gallery\GalleryView.cs" />
+    <Compile Include="Views\Gallery\PictureView.cs" />
     <Compile Include="Views\History\HisroryView.cs" />
     <Compile Include="Views\History\HistoryDetailView.cs" />
     <Compile Include="Views\Room\RoomDetailView.cs" />
@@ -231,9 +233,12 @@
     <AndroidResource Include="Resources\Layout\Gallery.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Layout\Gallery_Item.axml">
+    <AndroidResource Include="Resources\Layout\Gallery_PictureItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Gallery_Picture.axml" />
+    <AndroidResource Include="Resources\Layout\Gallery_Item.axml" />
+    <AndroidResource Include="Resources\Layout-small\History_Details.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -243,7 +248,7 @@
     <AndroidAsset Include="Assets\Xml\Room.xml">
       <SubType>Designer</SubType>
     </AndroidAsset>
-    <Content Include="Controls\PullToRefresh\License.txt" />
+    <Content Include="Controls\PullToRefresh\Library\License.txt" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Values\SplashStyle.xml" />
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
@@ -330,6 +335,19 @@
     <AndroidResource Include="Resources\Drawable\runde_ecken_bottom.xml" />
     <AndroidResource Include="Resources\Drawable\list_rounded_item.xml" />
     <AndroidResource Include="Resources\Drawable\divider_transparent.xml" />
+    <AndroidResource Include="Resources\Values\thn_atts.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_lbk.xml" />
+    <AndroidResource Include="Resources\Drawable\historie_1.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_2.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_0.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_4.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_5.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_6.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_8.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_11.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_15.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_16.jpg" />
+    <AndroidResource Include="Resources\Drawable\historie_17.jpg" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

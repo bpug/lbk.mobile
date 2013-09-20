@@ -1,0 +1,72 @@
+﻿//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="PictureViewModel.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
+
+namespace Lbk.Mobile.Core.ViewModels.Gallery
+{
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using Cirrious.CrossCore.Core;
+
+    using Lbk.Mobile.Data.Repositories;
+    using Lbk.Mobile.Model;
+
+    public class PictureViewModel : BaseViewModel
+    {
+        private readonly IGalleryRepository galleryRepository;
+
+        private Picture current;
+
+        private List<Picture> pictures;
+
+        public PictureViewModel(IGalleryRepository galleryRepository)
+        {
+            this.galleryRepository = galleryRepository;
+        }
+
+        public Picture Current
+        {
+            get
+            {
+                return this.current;
+            }
+            set
+            {
+                this.current = value;
+                this.RaisePropertyChanged(() => this.Current);
+            }
+        }
+
+        public List<Picture> Pictures
+        {
+            get
+            {
+                return this.pictures;
+            }
+            set
+            {
+                this.pictures = value;
+                this.RaisePropertyChanged(() => this.Pictures);
+            }
+        }
+
+        public void Init(int index)
+        {
+            this.IsBusy = true;
+
+            MvxAsyncDispatcher.BeginAsync(
+                () =>
+                {
+                    this.Pictures = this.galleryRepository.GetPictures();
+                    if (this.Pictures != null)
+                    {
+                        this.Current = this.Pictures.FirstOrDefault(p => p.PageIndex == index);
+                    }
+                    this.IsBusy = false;
+                });
+        }
+    }
+}

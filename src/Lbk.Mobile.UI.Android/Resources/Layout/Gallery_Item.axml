@@ -4,9 +4,10 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
-    <Mvx.MvxImageView
+    <lbk.mobile.ui.droid.controls.MvxThumbnailView
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:scaleType="centerCrop"
+        local:defaultImage="@drawable/ic_launcher"
         local:MvxBind="ImageUrl Url" />
 </LinearLayout>

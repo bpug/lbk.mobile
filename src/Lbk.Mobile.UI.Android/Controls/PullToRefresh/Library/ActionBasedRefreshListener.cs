@@ -1,4 +1,4 @@
-namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh.Library
 {
     using System;
 

@@ -8,6 +8,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Gallery
 {
     using Android.App;
     using Android.OS;
+    using Android.Views;
 
     using Lbk.Mobile.Core.ViewModels.Gallery;
 
@@ -17,6 +18,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Gallery
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
             this.SetContentView(Resource.Layout.Gallery);
         }
     }

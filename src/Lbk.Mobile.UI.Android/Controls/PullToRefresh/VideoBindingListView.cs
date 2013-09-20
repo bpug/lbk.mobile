@@ -4,14 +4,14 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Controls
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
     using Android.Content;
     using Android.Util;
 
-    public class EventBindingListView : BindingPullToRefreshListView
+    public class VideoBindingListView : BindingPullToRefreshListView
     {
-        public EventBindingListView(Context context, IAttributeSet attrs)
+        public VideoBindingListView(Context context, IAttributeSet attrs)
             : base(context, attrs)
         {
             
@@ -19,7 +19,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
         protected override void Initialize()
         {
-            this.Init(Resource.Layout.Event_ListView);
+            this.Init(Resource.Layout.Video_ListView);
         }
     }
 }

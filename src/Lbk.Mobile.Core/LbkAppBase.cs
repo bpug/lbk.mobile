@@ -45,6 +45,8 @@ namespace Lbk.Mobile.Core
             Mvx.RegisterType<IHistoryRepository, HistoryRepository>();
             Mvx.RegisterType<IReservationRepository, ReservationRepository>();
             Mvx.RegisterType<IQuizVoucherRepository, QuizVoucherRepository>();
+            Mvx.RegisterType<IGalleryRepository, GalleryRepository>();
+            
 
             // use lazy:
             //Mvx.RegisterSingleton<ILbkMobileService>(() => new LbkMobileService());

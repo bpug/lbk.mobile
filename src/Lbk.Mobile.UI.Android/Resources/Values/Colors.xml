@@ -4,4 +4,10 @@
   <color name="text">#292562</color>
   <color name="white">#ffffff</color>
   <color name="listseparator">#BDC0C5</color>
+  
+  <color name="yellow1">#f0d448</color>
+  <color name="yellow2">#d9b500</color>
+  <color name="yellow3">#e3c844</color>
+  <color name="yellow4">#ccaa00</color>
+  <color name="yellow5">#a48800</color>
 </resources>

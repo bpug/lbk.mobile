@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<lbk.mobile.ui.droid.controls.VideoBindingListView xmlns:android="http://schemas.android.com/apk/res/android"
+<lbk.mobile.ui.droid.controls.pulltorefresh.VideoBindingListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -7,5 +7,4 @@
     android:background="@color/transparent"
     android:cacheColorHint="@color/transparent"
     android:fastScrollEnabled="true"
-    android:padding="10dp"
-    local:MvxBind="PullDownRefreshRequested LoadCommand, IsRefreshingHead IsBusy" />
+    local:MvxBind="PullDownRefreshRequested LoadCommand; IsRefreshingHead IsBusy" />

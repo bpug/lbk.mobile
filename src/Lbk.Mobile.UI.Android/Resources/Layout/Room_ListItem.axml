@@ -5,8 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/runde_ecken"
-    android:padding="5dp"
-    android:layout_marginTop="10dp">
+    android:padding="5dp">
     <Mvx.MvxImageView
         android:layout_width="60dp"
         android:layout_height="60dp"

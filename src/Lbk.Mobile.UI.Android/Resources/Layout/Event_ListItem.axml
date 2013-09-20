@@ -3,45 +3,51 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/runde_ecken"
+    android:padding="5dp">
     <Mvx.MvxImageView
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_margin="10dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         local:MvxBind="ImageUrl Item.ThumbnailLink" />
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="5dp">
         <TextView
             android:text="Title"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
-            local:MvxBind="Text Item.Title"
-            android:textStyle="bold" />
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textColor="@color/text"
+            local:MvxBind="Text Item.Title" />
         <TextView
             android:text="Date"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
-            local:MvxBind="Text Item.Date"
-            android:layout_marginTop="5dp" />
+            android:textColor="@color/text"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            local:MvxBind="Text Item.Date" />
         <TextView
             android:text="Description"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
-            local:MvxBind="Text Item.Description"
-            android:layout_marginTop="5dp" />
+            android:textColor="@color/text"
+            local:MvxBind="Text Item.Description" />
         <Button
             android:text="Event buchen"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="10dp"
-            android:id="@+id/btn_event_book"
-            android:layout_marginTop="5dp"
-            local:MvxBind="Visibility Visibility(Item.ReservationLink); Click Command" />
-    <!--local:MvxBind="Click BookCommand"-->
+            android:layout_height="30dp"
+            android:background="@drawable/btn_lbk"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="right"
+            local:MvxBind="Visibility Visibility(Item.ReservationLink); Click Command"
+            android:layout_marginTop="7dp" />
     </LinearLayout>
 </LinearLayout>

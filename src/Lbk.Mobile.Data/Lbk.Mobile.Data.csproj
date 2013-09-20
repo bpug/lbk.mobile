@@ -76,6 +76,8 @@
     <Compile Include="Mappings\MenuCategoryMapping.cs" />
     <Compile Include="Mappings\QuestionMapping.cs" />
     <Compile Include="Mappings\QuizMapping.cs" />
+    <Compile Include="Repositories\GalleryRepository.cs" />
+    <Compile Include="Repositories\IGalleryRepository.cs" />
     <Compile Include="Repositories\XmlRepositoryBase.cs" />
     <Compile Include="Repositories\HistoryRepository.cs" />
     <Compile Include="Repositories\IHistoryRepository.cs" />

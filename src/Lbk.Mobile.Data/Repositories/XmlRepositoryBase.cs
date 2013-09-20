@@ -7,9 +7,10 @@
 namespace Lbk.Mobile.Data.Repositories
 {
     using Cirrious.CrossCore;
+    using Cirrious.CrossCore.Core;
     using Cirrious.CrossCore.Platform;
 
-    public abstract class XmlRepositoryBase
+    public abstract class XmlRepositoryBase : MvxLockableObject
     {
         private IMvxResourceLoader resourceLoader;
 

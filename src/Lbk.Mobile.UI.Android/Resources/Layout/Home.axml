@@ -1,292 +1,298 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:baselineAligned="false">
+    android:fillViewport="true"
+    android:id="@+id/scrollView">
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:baselineAligned="false"
-        android:layout_weight="1">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_tageskarte"
-                local:MvxBind="Click ShowTodaysMenuCommand" />
-            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_tageskarte"
+                    local:MvxBind="Click ShowTodaysMenuCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tageskarte"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tageskarte"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_rooms"
+                    local:MvxBind="Click ShowRoomCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Räume"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_facebook" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Facebook"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_historie"
+                    local:MvxBind="Click ShowHistoryCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Historie"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_rooms"
-                local:MvxBind="Click ShowRoomCommand" />
-            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_speisekarte"
+                    local:MvxBind="Click ShowMenuCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Speisekarte"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Räume"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_quiz"
+                    local:MvxBind="Click ShowQuizCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quiz"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_galery"
+                    local:MvxBind="Click ShowGalleryCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bilder"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_kontakt"
+                    local:MvxBind="Click ShowContactCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kontakt"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_facebook" />
-            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_reservierung"
+                    local:MvxBind="Click ShowReservationCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reservierung"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Facebook"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_events"
+                    local:MvxBind="Click ShowEventCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Events"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_historie"
-                local:MvxBind="Click ShowHistoryCommand" />
-            <TextView
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_videos"
+                    local:MvxBind="Click ShowVideoCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Videos"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Historie"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_advise"
+                    local:MvxBind="Click ShowRecommendCommand" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="App empfehlen"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:baselineAligned="false"
-        android:layout_weight="1">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_speisekarte"
-                local:MvxBind="Click ShowMenuCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Speisekarte"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_quiz"
-                local:MvxBind="Click ShowQuizCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quiz"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_galery"
-                local:MvxBind="Click ShowGalleryCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bilder"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_kontakt"
-                local:MvxBind="Click ShowContactCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kontakt"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:baselineAligned="false"
-        android:layout_weight="1">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_reservierung"
-                local:MvxBind="Click ShowReservationCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reservierung"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_events"
-                local:MvxBind="Click ShowEventCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Events"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_videos"
-                local:MvxBind="Click ShowVideoCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Videos"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_advise"
-                local:MvxBind="Click ShowRecommendCommand" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="App empfehlen"
-                android:layout_gravity="center"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:paddingTop="5dp" />
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>

@@ -1,4 +1,4 @@
-namespace Lbk.Mobile.UI.Droid.Controls
+namespace Lbk.Mobile.UI.Droid.Controls.PullToRefresh
 {
     using System;
     using System.Threading;
@@ -8,7 +8,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
     using Android.Content;
     using Android.Util;
 
-    using Lbk.Mobile.UI.Droid.Controls.PullToRefresh;
+    using Lbk.Mobile.UI.Droid.Controls.PullToRefresh.Library;
 
     public abstract class BindingPullToRefreshListView
         : PullToRefreshListView

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="Title"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        local:MvxBind="Text Title" />
+    <Mvx.MvxImageView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        local:defaultImage="@drawable/ic_launcher"
+        local:MvxBind="ImageUrl Url" />
+    <TextView
+        android:text="Description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:textSize="12sp"
+        local:MvxBind="Text Description"
+        android:layout_marginBottom="0.0dp" />
+</LinearLayout>
