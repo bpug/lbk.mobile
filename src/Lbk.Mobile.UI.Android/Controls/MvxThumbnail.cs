@@ -7,9 +7,6 @@
 namespace Lbk.Mobile.UI.Droid.Controls
 {
     using System;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Threading.Tasks;
 
     using Android.Content;
     using Android.Graphics;
@@ -19,16 +16,20 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Core;
-    using Cirrious.CrossCore.Exceptions;
     using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Binding.Droid.ResourceHelpers;
     using Cirrious.MvvmCross.Plugins.File;
+
+    using Lbk.Mobile.UI.Droid.Extensions;
+    using Lbk.Mobile.UI.Droid.Tools;
 
     using Path = System.IO.Path;
 
     public class MvxThumbnailView : ImageView
     {
         protected readonly IMvxImageHelper<Bitmap> ImageHelper;
+
+        private readonly int defaultImageResource;
 
         public MvxThumbnailView(Context context, IAttributeSet attrs)
             : base(context, attrs)
@@ -59,8 +60,8 @@ namespace Lbk.Mobile.UI.Droid.Controls
             typedArray.Recycle();
 
             var defaultSrc = context.ObtainStyledAttributes(attrs, Resource.Styleable.MvxThumbnail);
-            int defaultImgResourceId = defaultSrc.GetResourceId(Resource.Styleable.MvxThumbnail_defaultImage, 0);
-            this.DefaultImageSrc = this.GetDefaultImagePath(defaultImgResourceId);
+            this.defaultImageResource = defaultSrc.GetResourceId(Resource.Styleable.MvxThumbnail_defaultImage, 0);
+            //this.DefaultImageSrc = this.GetDefaultImagePath(defaultImageResource);
         }
 
         public MvxThumbnailView(Context context)
@@ -73,37 +74,29 @@ namespace Lbk.Mobile.UI.Droid.Controls
         {
         }
 
-        //public string DefaultImagePath
+        //public string DefaultImageSrc
         //{
-        //    get { return ImageHelper.DefaultImagePath; }
-        //    set { ImageHelper.DefaultImagePath = value; }
+        //    get
+        //    {
+        //        return this.ImageHelper.DefaultImagePath;
+        //    }
+        //    set
+        //    {
+        //        this.ImageHelper.DefaultImagePath = value;
+        //    }
         //}
 
-        //private string defaultImageSrc;
-
-        public string DefaultImageSrc
-        {
-            get
-            {
-                return this.ImageHelper.DefaultImagePath;
-            }
-            set
-            {
-                this.ImageHelper.DefaultImagePath = value;
-            }
-        }
-
-        public string ErrorImagePath
-        {
-            get
-            {
-                return this.ImageHelper.ErrorImagePath;
-            }
-            set
-            {
-                this.ImageHelper.ErrorImagePath = value;
-            }
-        }
+        //public string ErrorImagePath
+        //{
+        //    get
+        //    {
+        //        return this.ImageHelper.ErrorImagePath;
+        //    }
+        //    set
+        //    {
+        //        this.ImageHelper.ErrorImagePath = value;
+        //    }
+        //}
 
         [Obsolete("Use ImageUrl instead")]
         public string HttpImageUrl
@@ -151,79 +144,19 @@ namespace Lbk.Mobile.UI.Droid.Controls
             base.Dispose(disposing);
         }
 
-        private static int CalculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight)
-        {
-            // Raw height and width of image
-            float height = (float)options.OutHeight;
-            float width = (float)options.OutWidth;
-            double inSampleSize = 1D;
-
-            if (height > reqHeight || width > reqWidth)
-            {
-                inSampleSize = width > height ? height / reqHeight : width / reqWidth;
-            }
-
-            return (int)inSampleSize;
-        }
-
-        private static byte[] ConvertBitmapToByteArray(Bitmap bitmap)
-        {
-            if (bitmap == null)
-            {
-                return null;
-            }
-
-            byte[] bitmapData = null;
-            try
-            {
-                using (var stream = new MemoryStream())
-                {
-                    bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                    bitmapData = stream.ToArray();
-                }
-            }
-            catch (Exception e)
-            {
-                Trace.Fail("Failed to convert  bitmap tp array: {0}", e.ToLongString());
-            }
-            return bitmapData;
-        }
-
-        private static Task<Bitmap> DecodeSampledBitmap(Bitmap bitmap, int reqWidth, int reqHeight)
-        {
-            //return Bitmap.CreateScaledBitmap(bitmap, reqWidth, reqHeight, true);
-
-            // First decode with inJustDecodeBounds=true to check dimensions
-            var options = new BitmapFactory.Options
-            {
-                InJustDecodeBounds = true
-            };
-
-            var bitmapData = ConvertBitmapToByteArray(bitmap);
-
-            BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
-
-            // Calculate inSampleSize
-            options.InSampleSize = CalculateInSampleSize(options, reqWidth, reqHeight);
-
-            // Decode bitmap with inSampleSize set
-            options.InJustDecodeBounds = false;
-            return BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
-        }
 
         private string GetDefaultImagePath(int resourceId)
         {
             var fileStore = Mvx.Resolve<IMvxFileStore>();
-            var res = this.Context.Resources;
 
-            var resourcePath = this.Resources.GetString(resourceId);
+            string resourcePath = this.Resources.GetString(resourceId);
 
-            var filename = Path.GetFileName(resourcePath);
+            string filename = Path.GetFileName(resourcePath);
 
             if (!fileStore.Exists(filename))
             {
                 var bitmap = BitmapFactory.DecodeResource(this.Resources, resourceId);
-                var array = ConvertBitmapToByteArray(bitmap);
+                var array = Utility.ConvertBitmapToByteArray(bitmap);
                 fileStore.WriteFile(filename, array);
             }
 
@@ -232,31 +165,20 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
         private void ImageHelperOnImageChanged(object sender, MvxValueEventArgs<Bitmap> mvxValueEventArgs)
         {
-            //using (var bitmap = await DecodeSampledBitmap(mvxValueEventArgs.Value, 80, 80))
-            //{
-            //    this.SetImageBitmap(bitmap);
-            //}
-
-            using (var bmp = this.ResizedBitmap(mvxValueEventArgs.Value, 80, 80))
+            if (mvxValueEventArgs.Value != null)
             {
-                this.SetImageBitmap(bmp);
+                using (var bmp = mvxValueEventArgs.Value.ScaleCenterCrop(this.MeasuredWidth, this.MeasuredHeight))
+                {
+                    this.SetImageBitmap(bmp);
+                }
             }
-        }
-
-        private Bitmap ResizedBitmap(Bitmap bmp, int newHeight, int newWidth)
-        {
-            int width = bmp.Width;
-            int height = bmp.Height;
-            float scaleWidth = ((float)newWidth) / width;
-            float scaleHeight = ((float)newHeight) / height;
-            // CREATE A MATRIX FOR THE MANIPULATION
-            var matrix = new Matrix();
-            // RESIZE THE BIT MAP
-            matrix.PostScale(scaleWidth, scaleHeight);
-
-            // "RECREATE" THE NEW BITMAP
-            var newBitmap = Bitmap.CreateBitmap(bmp, 0, 0, width, height, matrix, false);
-            return newBitmap;
+            else
+            {
+                if (this.defaultImageResource != 0)
+                {
+                    this.SetImageDrawable(this.Context.Resources.GetDrawable(this.defaultImageResource));
+                }
+            }
         }
     }
 }

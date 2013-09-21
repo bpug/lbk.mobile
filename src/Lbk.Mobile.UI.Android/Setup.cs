@@ -9,10 +9,13 @@ namespace Lbk.Mobile.UI.Droid
     using System.Collections.Generic;
     using System.Reflection;
 
+    using Android.Graphics;
+
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
     using Cirrious.MvvmCross.Droid.Platform;
+    using Cirrious.MvvmCross.Plugins.DownloadCache;
     using Cirrious.MvvmCross.ViewModels;
 
     using Android.Content;
