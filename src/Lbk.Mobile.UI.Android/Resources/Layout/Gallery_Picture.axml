@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/transparent">
+    android:background="@color/transparent"
+    android:id="@+id/picture_layout">
     <BindableViewPager
         android:id="@+id/picture_pager"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="fill_parent"
         local:MvxItemTemplate="@layout/gallery_pictureitem"
         local:MvxBind="ItemsSource Pictures" />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        style="@style/picture_title"
+        android:id="@+id/PictureTitle"
+        local:MvxBind="Text Current.Title" />
+    <TextView
+        android:text="Description"
+        style="@style/picture_description"
+        android:id="@+id/PictureDescription"
+        local:MvxBind="Text Current.Description" />
     <UnderlinePageIndicator
         android:id="@+id/picture_pager_indicator"
+        android:layout_alignBottom="@+id/PictureDescription"
         android:layout_height="2dp"
+        android:background="@color/black"
+        local:selectedColor="@color/white"
         android:layout_width="fill_parent" />
-</LinearLayout>
+</RelativeLayout>

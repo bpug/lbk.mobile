@@ -9,8 +9,6 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
     using System.Collections.Generic;
     using System.Linq;
 
-    using Cirrious.CrossCore.Core;
-
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
@@ -19,6 +17,7 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
         private readonly IGalleryRepository galleryRepository;
 
         private Picture current;
+       
 
         private List<Picture> pictures;
 
@@ -40,6 +39,8 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
             }
         }
 
+       
+
         public List<Picture> Pictures
         {
             get
@@ -55,18 +56,26 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
 
         public void Init(int index)
         {
-            this.IsBusy = true;
-
-            MvxAsyncDispatcher.BeginAsync(
-                () =>
+            this.IsBusy = true;            
+            this.galleryRepository.GetPictures(
+                list =>
                 {
-                    this.Pictures = this.galleryRepository.GetPictures();
-                    if (this.Pictures != null)
-                    {
-                        this.Current = this.Pictures.FirstOrDefault(p => p.PageIndex == index);
-                    }
+                    this.Pictures = list;
+                    this.Current = list.FirstOrDefault(p => p.Index == index);
                     this.IsBusy = false;
-                });
+                },
+                null);
+
+            //MvxAsyncDispatcher.BeginAsync(
+            //    () =>
+            //    {
+            //        this.Pictures = this.galleryRepository.GetPictures();
+            //        if (this.Pictures != null)
+            //        {
+            //            this.Current = this.Pictures.FirstOrDefault(p => p.Index == index);
+            //        }
+            //        this.IsBusy = false;
+            //    });
         }
     }
 }

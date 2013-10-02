@@ -1,28 +1,20 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="PdfView.cs" company="ip-connect GmbH">
+//  <copyright file="YoutubeView.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Plugin.WebVideo.Droid
 {
-    using System;
-
     using Android.App;
-    using Android.Media;
     using Android.OS;
     using Android.Views;
     using Android.Webkit;
     using Android.Widget;
 
-    using  Android.Media;
-
-    using Uri = Android.Net.Uri;
-
     public class YoutubeView : Activity
     {
         private WebView webView;
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,23 +26,23 @@ namespace Lbk.Mobile.Plugin.WebVideo.Droid
 
             this.Title = title;
 
-            webView = new WebView(this.BaseContext)
+            this.webView = new WebView(this.BaseContext)
             {
                 LayoutParameters =
                     new LinearLayout.LayoutParams(
                         ViewGroup.LayoutParams.MatchParent,
                         ViewGroup.LayoutParams.MatchParent)
             };
-            webView.Settings.JavaScriptEnabled = true;
-            webView.Settings.SetPluginState(WebSettings.PluginState.On);
-            webView.LoadUrl(googleUrl);
-            webView.SetWebChromeClient(new WebChromeClient());
+            this.webView.Settings.JavaScriptEnabled = true;
+            this.webView.Settings.SetPluginState(WebSettings.PluginState.On);
+            this.webView.LoadUrl(googleUrl);
+            this.webView.SetWebChromeClient(new WebChromeClient());
 
             //string playVideo = string.Format("<html><body><iframe class=\"youtube-player\" allowfullscreen  type=\"text/html\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/embed/{0}\" frameborder=\"0\"></body></html>", videoId);
 
             //webView.LoadData(playVideo, "text/html", "utf-8");
 
-            this.SetContentView(webView);
+            this.SetContentView(this.webView);
         }
 
         //protected override void OnCreate(Bundle savedInstanceState)
@@ -79,7 +71,5 @@ namespace Lbk.Mobile.Plugin.WebVideo.Droid
         //    webView.Start()
         //    this.SetContentView(webView);
         //}
-
-
     }
 }

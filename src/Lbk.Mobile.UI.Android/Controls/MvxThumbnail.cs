@@ -156,7 +156,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
             if (!fileStore.Exists(filename))
             {
                 var bitmap = BitmapFactory.DecodeResource(this.Resources, resourceId);
-                var array = Utility.ConvertBitmapToByteArray(bitmap);
+                var array = bitmap.ToByteArray();
                 fileStore.WriteFile(filename, array);
             }
 

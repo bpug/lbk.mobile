@@ -5,8 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
     <lbk.mobile.ui.droid.controls.MvxThumbnailView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="102dp"
+        android:layout_height="102dp"
         local:defaultImage="@drawable/ic_launcher"
         local:MvxBind="ImageUrl Url" />
 </LinearLayout>

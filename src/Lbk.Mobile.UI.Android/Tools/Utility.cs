@@ -11,9 +11,12 @@ namespace Lbk.Mobile.UI.Droid.Tools
     using System.IO;
     using System.Threading.Tasks;
 
+    using Android.Content.Res;
     using Android.Graphics;
 
     using Cirrious.CrossCore.Exceptions;
+
+    using Lbk.Mobile.UI.Droid.Extensions;
 
     public class Utility
     {
@@ -32,11 +35,41 @@ namespace Lbk.Mobile.UI.Droid.Tools
             return (int)inSampleSize;
         }
 
+        
+
+        public static int ConvertPixelsToDp(float pixelValue, Resources resources)
+        {
+            int dp = (int)((pixelValue) / resources.DisplayMetrics.Density);
+            return dp;
+        }
+
+        public static Task<Bitmap> DecodeSampledBitmap(Bitmap bitmap, int reqWidth, int reqHeight)
+        {
+            //return Bitmap.CreateScaledBitmap(bitmap, reqWidth, reqHeight, true);
+
+            // First decode with inJustDecodeBounds=true to check dimensions
+            var options = new BitmapFactory.Options
+            {
+                InJustDecodeBounds = true
+            };
+
+            var bitmapData = bitmap.ToByteArray();
+
+            BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
+
+            // Calculate inSampleSize
+            options.InSampleSize = CalculateInSampleSize(options, reqWidth, reqHeight);
+
+            // Decode bitmap with inSampleSize set
+            options.InJustDecodeBounds = false;
+            return BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
+        }
+
         public static Bitmap ResizedBitmap(Bitmap bmp, int newHeight, int newWidth)
         {
             if (bmp == null)
             {
-               return null;
+                return null;
             }
 
             int width = bmp.Width;
@@ -51,51 +84,6 @@ namespace Lbk.Mobile.UI.Droid.Tools
             // "RECREATE" THE NEW BITMAP
             var newBitmap = Bitmap.CreateBitmap(bmp, 0, 0, width, height, matrix, false);
             return newBitmap;
-        }
-
-        public static byte[] ConvertBitmapToByteArray(Bitmap bitmap)
-        {
-            if (bitmap == null)
-            {
-                return null;
-            }
-
-            byte[] bitmapData = null;
-            try
-            {
-                using (var stream = new MemoryStream())
-                {
-                    bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
-                    bitmapData = stream.ToArray();
-                }
-            }
-            catch (Exception e)
-            {
-                Trace.Fail("Failed to convert  bitmap tp array: {0}", e.ToLongString());
-            }
-            return bitmapData;
-        }
-
-        public static Task<Bitmap> DecodeSampledBitmap(Bitmap bitmap, int reqWidth, int reqHeight)
-        {
-            //return Bitmap.CreateScaledBitmap(bitmap, reqWidth, reqHeight, true);
-
-            // First decode with inJustDecodeBounds=true to check dimensions
-            var options = new BitmapFactory.Options
-            {
-                InJustDecodeBounds = true
-            };
-
-            var bitmapData = ConvertBitmapToByteArray(bitmap);
-
-            BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
-
-            // Calculate inSampleSize
-            options.InSampleSize = CalculateInSampleSize(options, reqWidth, reqHeight);
-
-            // Decode bitmap with inSampleSize set
-            options.InJustDecodeBounds = false;
-            return BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
         }
     }
 }

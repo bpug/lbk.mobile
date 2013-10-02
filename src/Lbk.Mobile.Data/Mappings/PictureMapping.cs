@@ -23,7 +23,7 @@ namespace Lbk.Mobile.Data.Mappings
 
             for (var i = 0; i < pictures.Count; i++)
             {
-                pictures[i].PageIndex = i;
+                pictures[i].Index = i;
             }
 
             return pictures;
@@ -33,10 +33,10 @@ namespace Lbk.Mobile.Data.Mappings
         {
             var picture = new Picture()
             {
-                Description = source.Description,
+                Description = source.Description.Trim(),
                 FileName = source.FileName,
                 Url = source.Link,
-                Title = source.Title,
+                Title = source.Title.Trim(),
                 Sort = source.SortOrder
             };
 

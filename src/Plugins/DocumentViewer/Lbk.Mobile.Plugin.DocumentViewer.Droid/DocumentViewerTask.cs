@@ -22,9 +22,10 @@ namespace Lbk.Mobile.Plugin.DocumentViewer.Droid
         public void ShowPdf(string localPath, string url, bool onTop = false)
         {
 
-            var test  = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext;
-            var path = test.FilesDir.Path;
-            var path2 = test.GetExternalFilesDir(null);
+            //var context  = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext;
+            //var path = context.FilesDir.Path;
+            //var path2 = context.GetExternalFilesDir(null);
+            //var path3 = context.ExternalCacheDir;
             
             var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
             var uri = Uri.FromFile(new File(localPath));

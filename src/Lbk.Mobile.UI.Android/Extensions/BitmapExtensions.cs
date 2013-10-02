@@ -7,11 +7,18 @@
 namespace Lbk.Mobile.UI.Droid.Extensions
 {
     using System;
+    using System.Diagnostics;
+    using System.IO;
 
     using Android.Graphics;
 
+    using Cirrious.CrossCore.Exceptions;
+
+    using Lbk.Mobile.UI.Droid.Tools;
+
     public static class BitmapExtensions
     {
+
         public static Bitmap ScaleCenterCrop(this Bitmap source, int newHeight, int newWidth)
         {
             int sourceWidth = source.Width;
@@ -45,6 +52,61 @@ namespace Lbk.Mobile.UI.Droid.Extensions
 
             return dest;
         }
+
+        public static byte[] ToByteArray(this Bitmap bitmap)
+        {
+            if (bitmap == null)
+            {
+                return null;
+            }
+
+            byte[] bitmapData = null;
+            try
+            {
+                using (var stream = new MemoryStream())
+                {
+                    bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    bitmapData = stream.ToArray();
+                }
+            }
+            catch (Exception e)
+            {
+                Trace.Fail("Failed to convert  bitmap tp array: {0}", e.ToLongString());
+            }
+            return bitmapData;
+        }
+        //public static Bitmap ScaleCenterCrop(this Bitmap bitmap, int reqWidth, int reqHeight)
+        //{
+        //   // First decode with inJustDecodeBounds=true to check dimensions
+        //    var options = new BitmapFactory.Options
+        //    {
+        //        InJustDecodeBounds = true
+        //    };
+
+        //    var bitmapData = Utility.ConvertBitmapToByteArray(bitmap);
+
+        //    BitmapFactory.DecodeByteArrayAsync(bitmapData, 0, bitmapData.Length, options);
+
+        //    //// Calculate inSampleSize
+        //    //options.InSampleSize = CalculateInSampleSize(options, reqWidth, reqHeight);
+
+        //    int REQUIRED_WIDTH = reqWidth;
+        //    int REQUIRED_HIGHT = reqHeight;
+        //    int scale = 1;
+        //    while (options.OutWidth / scale / 2 >= REQUIRED_WIDTH
+        //            && options.OutHeight / scale / 2 >= REQUIRED_HIGHT)
+        //        scale *= 2;
+
+        //    // Decode bitmap with inSampleSize set
+        //    var options2 = new BitmapFactory.Options
+        //    {
+        //        InSampleSize = scale,
+        //        InPurgeable = true
+        //    };
+        //    return BitmapFactory.DecodeByteArray(bitmapData, 0, bitmapData.Length, options2);
+        //}
+        
+       
 
         //// **** From  LBK Toch ****
         //public static ImageView Thumbnail(this ImageView source, Bitmap bitmap, SizeF newSize)

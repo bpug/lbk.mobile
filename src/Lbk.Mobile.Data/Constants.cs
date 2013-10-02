@@ -10,7 +10,7 @@ namespace Lbk.Mobile.Data
     {
         public const string HistoryResourceFileName = @"Xml/History.xml";
         public const string RoomResourceFileName = @"Xml/Room.xml";
-        public const string GaleryFileName = @"Galery.xml";
+        public const string GaleryFileName = @"Galery.txt";
         public const string DbName = @"lbk.sql";
     }
 }

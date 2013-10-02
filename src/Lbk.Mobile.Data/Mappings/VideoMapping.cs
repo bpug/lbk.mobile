@@ -28,7 +28,7 @@ namespace Lbk.Mobile.Data.Mappings
             {
                 ThumbnailLink = source.ThumbnailLink,
                 Url = source.Link,
-                Title = source.Description,
+                Title = source.Description.Trim(),
                 Sort = source.SortOrder
             };
 

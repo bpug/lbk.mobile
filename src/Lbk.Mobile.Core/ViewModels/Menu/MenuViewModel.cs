@@ -72,6 +72,8 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
             var fileStore = Mvx.Resolve<IMvxFileStore>();
 
+            fileStore.EnsureFolderExists(Constants.SdcardRootFolder);
+
             if (!userLastUpdate.HasValue || !fileStore.Exists(Constants.LocalMenuFilePath))
             {
                 this.DownloadMenu(updateDate);
@@ -111,12 +113,17 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
         private void OnDownloadError(Exception exception)
         {
-            this.IsBusy = false;
-            this.MessageBoxService.Show(
-                this.SharedTextSource.GetText("DownloadError"),
-                this.SharedTextSource.GetText("PleaseTryNow"),
-                this.SharedTextSource.GetText("OK"),
-                () => { });
+            //TODO: BFix Bug
+           InvokeOnMainThread(() =>
+            {
+                this.IsBusy = false;
+                this.MessageBoxService.Show(
+                    this.SharedTextSource.GetText("DownloadError"),
+                    this.SharedTextSource.GetText("PleaseTryNow"),
+                    this.SharedTextSource.GetText("OK"),
+                    () => { });
+            });
+            
         }
 
         private void OnDownloadSuccess(DateTime? updateDate)
@@ -138,6 +145,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             var viewer = Mvx.Resolve<IDocumentViewerTask>();
 
             var path = fileStore.NativePath(Constants.LocalMenuFilePath);
+
             viewer.ShowPdf(path, Constants.MenuUrl, true);
         }
     }

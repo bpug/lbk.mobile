@@ -7,6 +7,7 @@
 namespace Lbk.Mobile.Core.ViewModels.Gallery
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Input;
 
@@ -59,7 +60,7 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
                     item => this.ShowViewModel<PictureViewModel>(
                         new
                         {
-                            index = item.PageIndex
+                            index = item.Index
                         }));
             }
         }
@@ -76,8 +77,8 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
 
         private void OnLoadSuccess(List<Picture> pictureList)
         {
-            this.Pictures = pictureList;
-            this.galleryRepository.SavePictures(pictureList);
+            this.Pictures = pictureList; //.Where( p => (p.Index == 6 || p.Index == 7)).ToList();
+            this.galleryRepository.SavePictures(this.Pictures);
         }
     }
 }

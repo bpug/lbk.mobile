@@ -149,6 +149,10 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controls\ExpandCollapseAnimation.cs" />
+    <Compile Include="Controls\MvxResizableImageView.cs" />
+    <Compile Include="Controls\MvxScaleImageView.cs" />
     <Compile Include="Controls\MvxThumbnail.cs" />
     <Compile Include="Controls\PullToRefresh\BindingPullToRefreshListView.cs" />
     <Compile Include="Controls\MessageBoxDisplayer.cs" />
@@ -350,9 +354,18 @@
     <AndroidResource Include="Resources\Drawable\historie_15.jpg" />
     <AndroidResource Include="Resources\Drawable\historie_16.jpg" />
     <AndroidResource Include="Resources\Drawable\historie_17.jpg" />
+    <AndroidResource Include="Resources\Anim\slide_up.xml" />
+    <AndroidResource Include="Resources\Anim\slide_down.xml" />
+    <AndroidResource Include="Resources\Drawable\picture_title_bg.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lbk.Mobile.Common\Lbk.Mobile.Common.csproj">
+      <Project>{6a7d73d4-92cd-4760-9309-e211709da0df}</Project>
+      <Name>Lbk.Mobile.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Core\Lbk.Mobile.Core.csproj">
       <Project>{64e36d12-5247-4d85-b9c4-be09937b9185}</Project>
       <Name>Lbk.Mobile.Core</Name>
