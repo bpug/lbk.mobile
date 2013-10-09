@@ -4,9 +4,10 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.Services
+namespace Lbk.Mobile.Plugin.UserInteraction
 {
     using System;
+    using System.Threading.Tasks;
 
     public interface IMessageBoxService
     {
@@ -20,5 +21,7 @@ namespace Lbk.Mobile.Core.Services
         void Show(string message, string title, string buttonConfirmText, string buttonCancelText);
 
         void Show(string message, string title, string buttonText, Action onBoxClose);
+
+        Task<bool?> ShowAsync(string message, string title, string buttonConfirmText, string buttonCancelText);
     }
 }

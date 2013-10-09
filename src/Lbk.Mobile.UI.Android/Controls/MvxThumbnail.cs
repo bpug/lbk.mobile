@@ -10,10 +10,8 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
     using Android.Content;
     using Android.Graphics;
-    using Android.Graphics.Drawables;
     using Android.Runtime;
     using Android.Util;
-    using Android.Views.Animations;
     using Android.Widget;
 
     using Cirrious.CrossCore;
@@ -23,9 +21,6 @@ namespace Lbk.Mobile.UI.Droid.Controls
     using Cirrious.MvvmCross.Plugins.File;
 
     using Lbk.Mobile.UI.Droid.Extensions;
-    using Lbk.Mobile.UI.Droid.Tools;
-
-    using UrlImageViewHelper;
 
     using Path = System.IO.Path;
 
@@ -34,6 +29,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
         protected readonly IMvxImageHelper<Bitmap> ImageHelper;
 
         private readonly int defaultImageResource;
+
         private readonly bool isThumbnail;
 
         public MvxThumbnailView(Context context, IAttributeSet attrs)
@@ -70,7 +66,6 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
             var isThumbnailSrc = context.ObtainStyledAttributes(attrs, Resource.Styleable.IsThumbnail);
             this.isThumbnail = isThumbnailSrc.GetBoolean(Resource.Styleable.IsThumbnail_thumbnail, false);
-            
         }
 
         public MvxThumbnailView(Context context)
@@ -107,8 +102,6 @@ namespace Lbk.Mobile.UI.Droid.Controls
         //    }
         //}
 
-
-       
         public string ImageUrl
         {
             get
@@ -118,7 +111,6 @@ namespace Lbk.Mobile.UI.Droid.Controls
                     return null;
                 }
                 return this.ImageHelper.ImageUrl;
-               
             }
             set
             {
@@ -127,11 +119,8 @@ namespace Lbk.Mobile.UI.Droid.Controls
                     return;
                 }
                 this.ImageHelper.ImageUrl = value;
-                
-               
             }
         }
-        
 
         protected override void Dispose(bool disposing)
         {
@@ -145,7 +134,6 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
             base.Dispose(disposing);
         }
-
 
         private string GetDefaultImagePath(int resourceId)
         {
@@ -169,7 +157,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
         {
             if (mvxValueEventArgs.Value != null)
             {
-                if (isThumbnail)
+                if (this.isThumbnail)
                 {
                     using (var bmp = mvxValueEventArgs.Value.Scale(this.MeasuredWidth, this.MeasuredHeight))
                     {
@@ -180,7 +168,6 @@ namespace Lbk.Mobile.UI.Droid.Controls
                 {
                     this.SetImageBitmap(mvxValueEventArgs.Value);
                 }
-                
             }
             else
             {
