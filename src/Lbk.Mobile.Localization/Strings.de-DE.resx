@@ -165,13 +165,16 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
     <value>Die Reservierung wurde nicht bestätigt.</value>
   </data>
   <data name="Lbk.Shared.ButtonCancel" xml:space="preserve">
-    <value>Nein</value>
+    <value>Beenden</value>
   </data>
   <data name="Lbk.Shared.ButtonConfirm" xml:space="preserve">
-    <value>Ja</value>
+    <value>Ok</value>
+  </data>
+  <data name="Lbk.Shared.ButtonNo" xml:space="preserve">
+    <value>Nein</value>
   </data>
   <data name="Lbk.Shared.ButtonOk" xml:space="preserve">
-    <value>Ok</value>
+    <value>Ja</value>
   </data>
   <data name="Lbk.Shared.DownloadError" xml:space="preserve">
     <value>Es ist ein Fehler beim Download aufgetreten.</value>

@@ -33,6 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\..\..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -53,15 +68,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MessageBoxService.cs" />
+    <Compile Include="Plugin.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbk.Mobile.Plugin.UserInteraction\Lbk.Mobile.Plugin.UserInteraction.csproj">
+      <Project>{c4d307ea-3f84-48da-8159-aed94655cd7b}</Project>
+      <Name>Lbk.Mobile.Plugin.UserInteraction</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

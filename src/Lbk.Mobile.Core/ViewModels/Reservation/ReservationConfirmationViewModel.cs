@@ -77,7 +77,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 
         private void AbortExecute()
         {
-            this.ShowMessage(
+            this.ShowConfirm(
                 this.TextSource.GetText("AbortReservationQuestion"),
                 string.Empty,
                 async result =>
@@ -99,7 +99,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
                                     }
                                     else
                                     {
-                                        this.ShowMessage(
+                                        this.ShowAlert(
                                             this.TextSource.GetText("AbortReservationNotConfirmed"),
                                             string.Empty);
                                     }
@@ -127,7 +127,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
             }
             else
             {
-                this.ShowMessage(this.TextSource.GetText("ReservationNotConfirmed"), string.Empty);
+                this.ShowAlert(this.TextSource.GetText("ReservationNotConfirmed"), string.Empty);
             }
         }
 

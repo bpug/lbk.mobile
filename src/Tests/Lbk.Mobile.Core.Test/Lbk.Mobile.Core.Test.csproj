@@ -143,10 +143,6 @@
       <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
       <Name>Lbk.Mobile.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj">
-      <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
-      <Name>Lbk.Mobile.Plugin.Reachability</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
       <Project>{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}</Project>
       <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>

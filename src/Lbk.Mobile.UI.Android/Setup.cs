@@ -62,8 +62,6 @@ namespace Lbk.Mobile.UI.Droid
         {
             var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
 
-            Mvx.RegisterSingleton<IMessageBoxService>(new MessageBoxDisplayer());
-
             base.InitializeLastChance();
         }
 

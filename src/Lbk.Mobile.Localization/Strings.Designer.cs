@@ -186,25 +186,34 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        public static string Lbk_Shared_ButtonCancelText {
+        public static string Lbk_Shared_ButtonCancel {
             get {
-                return ResourceManager.GetString("Lbk.Shared.ButtonCancelText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yes.
-        /// </summary>
-        public static string Lbk_Shared_ButtonConfirmText {
-            get {
-                return ResourceManager.GetString("Lbk.Shared.ButtonConfirmText", resourceCulture);
+                return ResourceManager.GetString("Lbk.Shared.ButtonCancel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string Lbk_Shared_ButtonConfirm {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.ButtonConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string Lbk_Shared_ButtonNo {
+            get {
+                return ResourceManager.GetString("Lbk.Shared.ButtonNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string Lbk_Shared_ButtonOk {
             get {

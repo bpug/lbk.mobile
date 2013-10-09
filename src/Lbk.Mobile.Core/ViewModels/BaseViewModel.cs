@@ -24,6 +24,7 @@ namespace Lbk.Mobile.Core.ViewModels
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Plugin.Reachability;
+    using Lbk.Mobile.Plugin.UserInteraction;
     using Lbk.Mobile.Plugin.WebVideo;
 
     public abstract class BaseViewModel : MvxViewModel
@@ -204,18 +205,18 @@ namespace Lbk.Mobile.Core.ViewModels
             task.ComposeEmail(to, null, subject, body, false);
         }
 
-        protected void ShowMessage(string message, string title, Action<bool> onDialogClose)
+        protected void ShowConfirm(string message, string title, Action<bool> onDialogClose)
         {
-            string buttonConfirmText = this.SharedTextSource.GetText("ButtonConfirmText");
-            string buttonCancelText = this.SharedTextSource.GetText("ButtonCancelText");
-            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
+            string buttonConfirmText = this.SharedTextSource.GetText("ButtonOk");
+            string buttonCancelText = this.SharedTextSource.GetText("ButtonNo");
+            this.MessageBoxService.Confirm(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
         }
 
-        protected void ShowMessage(string message, string title)
+        protected void ShowAlert(string message, string title)
         {
-            string buttonConfirmText = this.SharedTextSource.GetText("ButtonConfirmText");
-            string buttonCancelText = this.SharedTextSource.GetText("ButtonCancelText");
-            this.MessageBoxService.Show(message, title, buttonConfirmText, buttonCancelText);
+            string buttonConfirmText = this.SharedTextSource.GetText("ButtonOk");
+            string buttonCancelText = this.SharedTextSource.GetText("ButtonNo");
+            this.MessageBoxService.Alert(message, title, buttonConfirmText);
         }
 
         protected void ShowWebPage(string webPage)

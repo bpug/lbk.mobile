@@ -85,11 +85,11 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
             else if (updateDate.HasValue && !(Math.Abs((updateDate.Value - userLastUpdate.Value).TotalSeconds) < 1))
             {
-                this.MessageBoxService.Show(
+                this.MessageBoxService.Confirm(
                     this.TextSource.GetText("PdfDownloadQuestion"),
                     string.Empty,
-                    this.SharedTextSource.GetText("Yes"),
-                    this.SharedTextSource.GetText("No"),
+                    this.SharedTextSource.GetText("ButtonOk"),
+                    this.SharedTextSource.GetText("ButtonNo"),
                     b =>
                     {
                         if (b)
@@ -121,7 +121,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
            InvokeOnMainThread(() =>
             {
                 this.IsBusy = false;
-                this.MessageBoxService.Show(
+                this.MessageBoxService.Alert(
                     this.SharedTextSource.GetText("DownloadError"),
                     this.SharedTextSource.GetText("PleaseTryNow"),
                     this.SharedTextSource.GetText("OK"),

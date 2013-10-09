@@ -71,7 +71,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             this.Question.IsRight = answer.Correct;
             string title = answer.Correct ? this.TextSource.GetText("Right") : this.TextSource.GetText("Wrong");
 
-            this.MessageBoxService.Show(
+            this.MessageBoxService.Alert(
                 title,
                 answer.Explanation,
                 this.TextSource.GetText("Next"),

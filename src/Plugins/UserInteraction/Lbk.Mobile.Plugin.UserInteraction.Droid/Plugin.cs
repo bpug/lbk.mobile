@@ -1,15 +1,19 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="AppSettingsBootstrap.cs" company="ip-connect GmbH">
+//  <copyright file="Plugin.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Bootstrap
+namespace Lbk.Mobile.Plugin.UserInteraction.Droid
 {
+    using Cirrious.CrossCore;
     using Cirrious.CrossCore.Plugins;
 
-  
-    public class AppsettingsBootstrap : MvxPluginBootstrapAction<Plugin.AppSettings.PluginLoader>
+    public class Plugin : IMvxPlugin
     {
+        public void Load()
+        {
+            Mvx.RegisterSingleton<IMessageBoxService>(new MessageBoxService());
+        }
     }
 }

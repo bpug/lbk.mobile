@@ -52,8 +52,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reachability", "Reachabilit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.Reachability.Droid", "Plugins\Reachability\Lbk.Mobile.Plugin.Reachability.Droid\Lbk.Mobile.Plugin.Reachability.Droid.csproj", "{9CABAB9C-B303-4891-A75C-3E8AFB1B4915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.Reachability", "Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj", "{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{5A1F3A03-FD7F-4BF0-93E2-A9B7D29537D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindableViewPager.Droid", "ThirdParty\BindableViewPager.Droid\BindableViewPager.Droid.csproj", "{B7748ADC-59AE-4800-9DEA-91CE95C64D43}"
@@ -79,6 +77,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.AppSettings", "Plugins\AppSettings\Lbk.Mobile.Plugin.AppSettings\Lbk.Mobile.Plugin.AppSettings.csproj", "{1A39BDF5-05D8-4F35-A274-EDE24FF2285A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.AppSettings.Droid", "Plugins\AppSettings\Lbk.Mobile.Plugin.AppSettings.Droid\Lbk.Mobile.Plugin.AppSettings.Droid.csproj", "{9158FAB6-34CF-4E6F-9150-DED9491E2A75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInteraction", "UserInteraction", "{6879D60F-D2EA-49A5-A57D-0FC8D45F6813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.UserInteraction", "Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction\Lbk.Mobile.Plugin.UserInteraction.csproj", "{C4D307EA-3F84-48DA-8159-AED94655CD7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.UserInteraction.Droid", "Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction.Droid\Lbk.Mobile.Plugin.UserInteraction.Droid.csproj", "{9D692B92-3ACC-4219-B8C5-481350035766}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lbk.Mobile.Plugin.Reachability", "Plugins\Reachability\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj", "{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -162,10 +168,6 @@ Global
 		{9CABAB9C-B303-4891-A75C-3E8AFB1B4915}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CABAB9C-B303-4891-A75C-3E8AFB1B4915}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CABAB9C-B303-4891-A75C-3E8AFB1B4915}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B7748ADC-59AE-4800-9DEA-91CE95C64D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B7748ADC-59AE-4800-9DEA-91CE95C64D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7748ADC-59AE-4800-9DEA-91CE95C64D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -202,6 +204,18 @@ Global
 		{9158FAB6-34CF-4E6F-9150-DED9491E2A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9158FAB6-34CF-4E6F-9150-DED9491E2A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9158FAB6-34CF-4E6F-9150-DED9491E2A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D307EA-3F84-48DA-8159-AED94655CD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D307EA-3F84-48DA-8159-AED94655CD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D307EA-3F84-48DA-8159-AED94655CD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D307EA-3F84-48DA-8159-AED94655CD7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D692B92-3ACC-4219-B8C5-481350035766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D692B92-3ACC-4219-B8C5-481350035766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D692B92-3ACC-4219-B8C5-481350035766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D692B92-3ACC-4219-B8C5-481350035766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5553A4-F75A-4AD0-8F09-C5E77EFF4828}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -220,6 +234,7 @@ Global
 		{E110EE81-A256-4D7F-9DCD-CAF9540FE02B} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
 		{8006ED0C-DD1B-4553-9430-5DAD70BC6A47} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
 		{FBC3C29E-6F11-45BC-AD82-C44A8E90C2E1} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
+		{6879D60F-D2EA-49A5-A57D-0FC8D45F6813} = {AB9B6CE4-C617-4113-A770-7C9976D174AA}
 		{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B} = {A853016C-6BCC-4946-BD0C-FDDF894A9A32}
 		{46CE9CF2-E7C6-4D5C-8B36-23D4FC2C9D98} = {A853016C-6BCC-4946-BD0C-FDDF894A9A32}
 		{98B92483-7A7E-4DA4-B7EA-0DD5F132264D} = {2A654FF5-A82D-4311-8826-ECA94C5FEF0E}
@@ -235,5 +250,7 @@ Global
 		{36A79756-82BA-4C27-BA04-6B38F8C3D0E8} = {8006ED0C-DD1B-4553-9430-5DAD70BC6A47}
 		{1A39BDF5-05D8-4F35-A274-EDE24FF2285A} = {FBC3C29E-6F11-45BC-AD82-C44A8E90C2E1}
 		{9158FAB6-34CF-4E6F-9150-DED9491E2A75} = {FBC3C29E-6F11-45BC-AD82-C44A8E90C2E1}
+		{C4D307EA-3F84-48DA-8159-AED94655CD7B} = {6879D60F-D2EA-49A5-A57D-0FC8D45F6813}
+		{9D692B92-3ACC-4219-B8C5-481350035766} = {6879D60F-D2EA-49A5-A57D-0FC8D45F6813}
 	EndGlobalSection
 EndGlobal

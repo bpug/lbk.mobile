@@ -11,17 +11,38 @@ namespace Lbk.Mobile.Plugin.UserInteraction
 
     public interface IMessageBoxService
     {
-       void Show(
+        void Alert(string message, string title, string buttonText, Action done = null);
+
+        Task AlertAsync(string message, string title, string buttonText);
+
+        void Confirm(string message, string title, string okButton, string cancelButton, Action<bool> answer);
+
+        void Confirm(string message, string title, string okButton, string cancelButton, Action okClicked);
+        
+
+        Task<bool> ConfirmAsync(string message, string title, string okButton, string buttonCancelText);
+
+        void Input(
             string message,
             string title,
-            string buttonConfirmText,
-            string buttonCancelText,
-            Action<bool> onBoxClose);
+            string okButton,
+            string cancelButton,
+            Action<string> okClicked,
+            string placeholder = null);
 
-        void Show(string message, string title, string buttonConfirmText, string buttonCancelText);
+        void Input(
+            string message,
+            string title,
+            string okButton,
+            string cancelButton,
+            Action<bool, string> answer,
+            string placeholder = null);
 
-        void Show(string message, string title, string buttonText, Action onBoxClose);
-
-        Task<bool?> ShowAsync(string message, string title, string buttonConfirmText, string buttonCancelText);
+        Task<InputResponse> InputAsync(
+            string message,
+            string title,
+            string okButton,
+            string cancelButton,
+            string placeholder = null);
     }
 }

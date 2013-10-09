@@ -92,7 +92,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                             this.voucherRepository.Update(voucher);
                                             this.Load();
                                             // TODO: DialogService-Alert: string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code) 
-                                            this.ShowMessage(string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code), null);
+                                            this.ShowAlert(string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code), null);
                                         }
                                         else
                                         {
@@ -100,7 +100,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                             voucher.Deleted = true;
                                             this.voucherRepository.Update(voucher);
                                             // TODO: DialogService-Alert: string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code) 
-                                            this.ShowMessage(string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code), null);
+                                            this.ShowAlert(string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code), null);
                                         }
                                     });
                             }

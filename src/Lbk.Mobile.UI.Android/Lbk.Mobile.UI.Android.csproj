@@ -143,6 +143,7 @@
     <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
     <Compile Include="Bootstrap\AppSettingsBootstrap.cs" />
+    <Compile Include="Bootstrap\UserInteractionBootstrap.cs" />
     <Compile Include="Bootstrap\DocumentViewerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\EmailPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebVideoPluginBootstrap.cs" />
@@ -165,7 +166,6 @@
     <Compile Include="Controls\MvxScaleImageView.cs" />
     <Compile Include="Controls\MvxThumbnail.cs" />
     <Compile Include="Controls\PullToRefresh\BindingPullToRefreshListView.cs" />
-    <Compile Include="Controls\MessageBoxDisplayer.cs" />
     <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
     <Compile Include="Controls\PullToRefresh\VideoBindingListView.cs" />
     <Compile Include="Controls\PullToRefresh\EventBindingListView.cs" />
@@ -410,10 +410,6 @@
       <Project>{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}</Project>
       <Name>Lbk.Mobile.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj">
-      <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
-      <Name>Lbk.Mobile.Plugin.Reachability</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Plugins\AppSettings\Lbk.Mobile.Plugin.AppSettings.Droid\Lbk.Mobile.Plugin.AppSettings.Droid.csproj">
       <Project>{9158fab6-34cf-4e6f-9150-ded9491e2a75}</Project>
       <Name>Lbk.Mobile.Plugin.AppSettings.Droid</Name>
@@ -449,6 +445,14 @@
     <ProjectReference Include="..\Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj">
       <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
       <Name>Lbk.Mobile.Plugin.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction.Droid\Lbk.Mobile.Plugin.UserInteraction.Droid.csproj">
+      <Project>{9d692b92-3acc-4219-b8c5-481350035766}</Project>
+      <Name>Lbk.Mobile.Plugin.UserInteraction.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction\Lbk.Mobile.Plugin.UserInteraction.csproj">
+      <Project>{c4d307ea-3f84-48da-8159-aed94655cd7b}</Project>
+      <Name>Lbk.Mobile.Plugin.UserInteraction</Name>
     </ProjectReference>
     <ProjectReference Include="..\Plugins\WebVideo\Lbk.Mobile.Plugin.WebVideo.Droid\Lbk.Mobile.Plugin.WebVideo.Droid.csproj">
       <Project>{8979480e-7b11-403f-bee2-6346a42f7943}</Project>
