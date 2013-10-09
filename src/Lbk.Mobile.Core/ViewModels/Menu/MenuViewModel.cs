@@ -15,6 +15,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
     using Cirrious.MvvmCross.Plugins.File;
     using Cirrious.MvvmCross.ViewModels;
 
+    using Lbk.Mobile.Core.ViewModels.Home;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Plugin.AppSettings;
     using Lbk.Mobile.Plugin.DocumentViewer;
@@ -63,7 +64,8 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             this.GetLastUpdateCommand.Execute(null);
         }
 
-        private void CheckMenu(DateTime? updateDate)
+
+       private void CheckMenu(DateTime? updateDate)
         {
             this.LastUpdate = updateDate;
 
@@ -112,13 +114,13 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
                 this.OnDownloadError);
         }
 
-        private void OnDownloadError(Exception exception)
+        private  void OnDownloadError(Exception exception)
         {
             this.IsBusy = false;
-            this.MessageBoxService.Alert(
+             this.MessageBoxService.Alert(
                 this.SharedTextSource.GetText("DownloadError"),
                 this.SharedTextSource.GetText("PleaseTryNow"),
-                this.SharedTextSource.GetText("ButtonConfirm"));
+                this.SharedTextSource.GetText("ButtonConfirm"), () => this.Close(this));
         }
 
         private void OnDownloadSuccess(DateTime? updateDate)

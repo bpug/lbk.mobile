@@ -188,72 +188,63 @@ namespace Lbk.Mobile.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        public static string Lbk_Shared_ButtonCancel {
+        public static string Lbk_Share_ButtonCancel {
             get {
-                return ResourceManager.GetString("Lbk.Shared.ButtonCancel", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.ButtonCancel", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
-        public static string Lbk_Shared_ButtonConfirm {
+        public static string Lbk_Share_ButtonConfirm {
             get {
-                return ResourceManager.GetString("Lbk.Shared.ButtonConfirm", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.ButtonConfirm", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
-        public static string Lbk_Shared_ButtonNo {
+        public static string Lbk_Share_ButtonNo {
             get {
-                return ResourceManager.GetString("Lbk.Shared.ButtonNo", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.ButtonNo", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
-        public static string Lbk_Shared_ButtonOk {
+        public static string Lbk_Share_ButtonOk {
             get {
-                return ResourceManager.GetString("Lbk.Shared.ButtonOk", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.ButtonOk", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to There was an error during the download..
         /// </summary>
-        public static string Lbk_Shared_DownloadError {
+        public static string Lbk_Share_DownloadError {
             get {
-                return ResourceManager.GetString("Lbk.Shared.DownloadError", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.DownloadError", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to To destination approx: {0}.
         /// </summary>
-        public static string Lbk_Shared_LocationDistance {
+        public static string Lbk_Share_LocationDistance {
             get {
-                return ResourceManager.GetString("Lbk.Shared.LocationDistance", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.LocationDistance", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Please try again later..
         /// </summary>
-        public static string Lbk_Shared_PleaseTryNow {
+        public static string Lbk_Share_PleaseTryNow {
             get {
-                return ResourceManager.GetString("Lbk.Shared.PleaseTryNow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English.
-        /// </summary>
-        public static string Lbk_Test_Text {
-            get {
-                return ResourceManager.GetString("Lbk.Test.Text", resourceCulture);
+                return ResourceManager.GetString("Lbk.Share.PleaseTryNow", resourceCulture);
             }
         }
         

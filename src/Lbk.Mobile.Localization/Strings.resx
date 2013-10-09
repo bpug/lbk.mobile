@@ -164,29 +164,26 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
   <data name="Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed" xml:space="preserve">
     <value>The reservation is not confirmed.</value>
   </data>
-  <data name="Lbk.Shared.ButtonCancel" xml:space="preserve">
+  <data name="Lbk.Share.ButtonCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="Lbk.Shared.ButtonConfirm" xml:space="preserve">
+  <data name="Lbk.Share.ButtonConfirm" xml:space="preserve">
     <value>Ok</value>
   </data>
-  <data name="Lbk.Shared.ButtonNo" xml:space="preserve">
+  <data name="Lbk.Share.ButtonNo" xml:space="preserve">
     <value>No</value>
   </data>
-  <data name="Lbk.Shared.ButtonOk" xml:space="preserve">
+  <data name="Lbk.Share.ButtonOk" xml:space="preserve">
     <value>Yes</value>
   </data>
-  <data name="Lbk.Shared.DownloadError" xml:space="preserve">
+  <data name="Lbk.Share.DownloadError" xml:space="preserve">
     <value>There was an error during the download.</value>
   </data>
-  <data name="Lbk.Shared.LocationDistance" xml:space="preserve">
+  <data name="Lbk.Share.LocationDistance" xml:space="preserve">
     <value>To destination approx: {0}</value>
   </data>
-  <data name="Lbk.Shared.PleaseTryNow" xml:space="preserve">
+  <data name="Lbk.Share.PleaseTryNow" xml:space="preserve">
     <value>Please try again later.</value>
-  </data>
-  <data name="Lbk.Test.Text" xml:space="preserve">
-    <value>English</value>
   </data>
   <data name="Lbk.VoucherViewModel.ActivateVoucherQuestion" xml:space="preserve">
     <value>Do you want to activate the coupon {0} now?</value>
