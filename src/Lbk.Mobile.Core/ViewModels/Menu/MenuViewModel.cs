@@ -22,11 +22,11 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
     public class MenuViewModel : BaseViewModel
     {
+        private readonly IAppSettings appSettings;
+
         private readonly ILbkMobileService service;
 
         private readonly ISettings userSettings;
-
-        private readonly IAppSettings appSettings;
 
         private DateTime? lastUpdate;
 
@@ -65,9 +65,6 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
         private void CheckMenu(DateTime? updateDate)
         {
-
-            
-            
             this.LastUpdate = updateDate;
 
             var userLastUpdate = this.userSettings.GetValueOrDefault<DateTime?>(
@@ -76,9 +73,9 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
             var fileStore = Mvx.Resolve<IMvxFileStore>();
 
-            fileStore.EnsureFolderExists(appSettings.SharedRootFolder);
+            fileStore.EnsureFolderExists(this.appSettings.SharedRootFolder);
 
-            if (!userLastUpdate.HasValue || !fileStore.Exists(appSettings.MenuFilePath))
+            if (!userLastUpdate.HasValue || !fileStore.Exists(this.appSettings.MenuFilePath))
             {
                 this.DownloadMenu(updateDate);
             }
@@ -110,24 +107,18 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             var downloader = Mvx.Resolve<IMvxHttpFileDownloader>();
             downloader.RequestDownload(
                 Constants.MenuUrl,
-                appSettings.MenuFilePath,
+                this.appSettings.MenuFilePath,
                 () => this.OnDownloadSuccess(updateDate),
                 this.OnDownloadError);
         }
 
         private void OnDownloadError(Exception exception)
         {
-            //TODO: BFix Bug
-           InvokeOnMainThread(() =>
-            {
-                this.IsBusy = false;
-                this.MessageBoxService.Alert(
-                    this.SharedTextSource.GetText("DownloadError"),
-                    this.SharedTextSource.GetText("PleaseTryNow"),
-                    this.SharedTextSource.GetText("OK"),
-                    () => { });
-            });
-            
+            this.IsBusy = false;
+            this.MessageBoxService.Alert(
+                this.SharedTextSource.GetText("DownloadError"),
+                this.SharedTextSource.GetText("PleaseTryNow"),
+                this.SharedTextSource.GetText("ButtonConfirm"));
         }
 
         private void OnDownloadSuccess(DateTime? updateDate)
@@ -148,7 +139,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             var fileStore = Mvx.Resolve<IMvxFileStore>();
             var viewer = Mvx.Resolve<IDocumentViewerTask>();
 
-            var path = fileStore.NativePath(appSettings.MenuFilePath);
+            string path = fileStore.NativePath(this.appSettings.MenuFilePath);
 
             viewer.ShowPdf(path, Constants.MenuUrl, true);
         }

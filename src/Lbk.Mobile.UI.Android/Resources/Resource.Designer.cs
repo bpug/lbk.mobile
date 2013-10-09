@@ -36,6 +36,8 @@ namespace Lbk.Mobile.UI.Droid
 			Lbk.Mobile.Plugin.Reachability.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			Lbk.Mobile.Plugin.Settings.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
 			Lbk.Mobile.Plugin.Settings.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
+			Lbk.Mobile.Plugin.UserInteraction.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
+			Lbk.Mobile.Plugin.UserInteraction.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			Lbk.Mobile.Plugin.WebVideo.Droid.Resource.String.ApplicationName = Lbk.Mobile.UI.Droid.Resource.String.ApplicationName;
 			Lbk.Mobile.Plugin.WebVideo.Droid.Resource.String.Hello = Lbk.Mobile.UI.Droid.Resource.String.Hello;
 			DK.Ostebaronen.Droid.ViewPagerIndicator.Resource.Attribute.centered = Lbk.Mobile.UI.Droid.Resource.Attribute.centered;

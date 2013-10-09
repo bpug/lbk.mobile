@@ -71,8 +71,9 @@
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.1.1309.1617, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Moq.4.1.1309.1617\lib\net40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
@@ -147,9 +148,17 @@
       <Project>{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}</Project>
       <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\Reachability\Lbk.Mobile.Plugin.Reachability\Lbk.Mobile.Plugin.Reachability.csproj">
+      <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
+      <Name>Lbk.Mobile.Plugin.Reachability</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj">
       <Project>{98B92483-7A7E-4DA4-B7EA-0DD5F132264D}</Project>
       <Name>Lbk.Mobile.Plugin.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction\Lbk.Mobile.Plugin.UserInteraction.csproj">
+      <Project>{c4d307ea-3f84-48da-8159-aed94655cd7b}</Project>
+      <Name>Lbk.Mobile.Plugin.UserInteraction</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

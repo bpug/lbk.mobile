@@ -23,6 +23,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     using Lbk.Mobile.Localization;
     using Lbk.Mobile.Plugin.Reachability;
     using Lbk.Mobile.Plugin.Settings;
+    using Lbk.Mobile.Plugin.UserInteraction;
 
     using Moq;
 
