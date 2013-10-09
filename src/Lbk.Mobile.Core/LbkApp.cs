@@ -17,7 +17,6 @@ namespace Lbk.Mobile.Core
     using Lbk.Mobile.Core.ViewModels.Home;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
-    using Lbk.Mobile.Localization;
 
     public class LbkApp : LbkAppBase
     {

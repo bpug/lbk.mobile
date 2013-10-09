@@ -18,6 +18,8 @@ namespace Lbk.Mobile.Core.Test.Services
 
     using NUnit.Framework;
 
+   
+
     [TestFixture]
     public class LocalizationTest : MvxIoCSupportingTest
     {
@@ -27,21 +29,23 @@ namespace Lbk.Mobile.Core.Test.Services
             const string TestDe = "Deutsch";
             const string TestEn = "English";
 
-            base.ClearAll();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("de-DE");
+            base.Setup();
             var textProvider = this.Ioc.Resolve<IMvxTextProvider>();
-            var text = textProvider.GetText(Constants.GeneralNamespace, "Test", "Text");
-            Assert.AreEqual(text, TestDe);
+            //var text = textProvider.GetText(Constants.GeneralNamespace, "Test", "Text");
+            //Assert.AreEqual(text, TestDe);
 
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-GB");
-            base.ClearAll();
+            base.Setup();
             textProvider = this.Ioc.Resolve<IMvxTextProvider>();
-            text = textProvider.GetText(Constants.GeneralNamespace, "Test", "Text");
-            Assert.AreEqual(text, TestEn);
+            var text2 = textProvider.GetText(Constants.GeneralNamespace, "Test", "Text");
+            Assert.AreEqual(text2, TestEn);
         }
 
         protected override void AdditionalSetup()
         {
             this.Ioc.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
+
         }
     }
 }

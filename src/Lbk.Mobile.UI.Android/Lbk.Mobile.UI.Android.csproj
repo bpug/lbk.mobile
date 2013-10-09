@@ -409,10 +409,6 @@
       <Project>{64e36d12-5247-4d85-b9c4-be09937b9185}</Project>
       <Name>Lbk.Mobile.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lbk.Mobile.Localization\Lbk.Mobile.Localization.csproj">
-      <Project>{1519d84e-fcdd-45ba-9f1c-161a01e24fe0}</Project>
-      <Name>Lbk.Mobile.Localization</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
       <Project>{8A5C8E87-48F9-4ACC-9AB3-CA91B34772EE}</Project>
       <Name>Lbk.Mobile.Model</Name>

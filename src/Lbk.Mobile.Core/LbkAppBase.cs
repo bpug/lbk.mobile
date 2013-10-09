@@ -10,7 +10,7 @@ namespace Lbk.Mobile.Core
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
-
+    
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Data.Repositories;
@@ -37,7 +37,7 @@ namespace Lbk.Mobile.Core
             //Mvx.RegisterSingleton<IErrorReporter>(errorService);
             //Mvx.RegisterSingleton<IErrorSource>(errorService);
             
-            Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
+           
 
             // use dynamic:
             Mvx.RegisterType<ILbkMobileService, LbkMobileService>();
@@ -60,6 +60,8 @@ namespace Lbk.Mobile.Core
             //    .EndingWith("Service")
             //    .AsInterfaces()
             //    .RegisterAsLazySingleton();
+
+            Mvx.RegisterSingleton<IMvxTextProvider>(new ResxTextProvider(Strings.ResourceManager));
         }
 
         private void InitialisePlugins()

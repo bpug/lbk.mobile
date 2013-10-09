@@ -15,7 +15,6 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
     using Cirrious.MvvmCross.Plugins.File;
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Core.ViewModels.Home;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Plugin.AppSettings;
     using Lbk.Mobile.Plugin.DocumentViewer;
@@ -64,8 +63,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             this.GetLastUpdateCommand.Execute(null);
         }
 
-
-       private void CheckMenu(DateTime? updateDate)
+        private void CheckMenu(DateTime? updateDate)
         {
             this.LastUpdate = updateDate;
 
@@ -85,10 +83,10 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             else if (updateDate.HasValue && !(Math.Abs((updateDate.Value - userLastUpdate.Value).TotalSeconds) < 1))
             {
                 this.MessageBoxService.Confirm(
-                    this.TextSource.GetText("PdfDownloadQuestion"),
+                    this.GetText("PdfDownloadQuestion"),
                     string.Empty,
-                    this.SharedTextSource.GetText("ButtonOk"),
-                    this.SharedTextSource.GetText("ButtonNo"),
+                    this.GetSharedText("ButtonYes"),
+                    this.GetSharedText("ButtonNo"),
                     b =>
                     {
                         if (b)
@@ -114,13 +112,14 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
                 this.OnDownloadError);
         }
 
-        private  void OnDownloadError(Exception exception)
+        private void OnDownloadError(Exception exception)
         {
             this.IsBusy = false;
-             this.MessageBoxService.Alert(
-                this.SharedTextSource.GetText("DownloadError"),
-                this.SharedTextSource.GetText("PleaseTryNow"),
-                this.SharedTextSource.GetText("ButtonConfirm"), () => this.Close(this));
+            this.MessageBoxService.Alert(
+                this.GetSharedText("PleaseTryNow"),
+                this.GetSharedText("DownloadError"),
+                this.GetSharedText("ButtonOk"),
+                () => this.Close(this));
         }
 
         private void OnDownloadSuccess(DateTime? updateDate)
@@ -133,7 +132,11 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
         private async Task OnGetLastUpdateExecute()
         {
-            await this.AsyncExecute(() => this.service.GetMenuLastUpdateAsync(), this.CheckMenu);
+            await
+                this.AsyncExecute(
+                    () => this.service.GetMenuLastUpdateAsync(),
+                    this.CheckMenu,
+                    exception => this.Close(this));
         }
 
         private void ShowMenu()

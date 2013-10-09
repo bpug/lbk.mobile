@@ -21,7 +21,6 @@ namespace Lbk.Mobile.Core.ViewModels
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Common.Utils;
-    using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Plugin.Reachability;
     using Lbk.Mobile.Plugin.UserInteraction;
@@ -77,14 +76,6 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        protected IMvxMessenger MvxMessenger
-        {
-            get
-            {
-                return this.mvxMessenger ?? (this.mvxMessenger = Mvx.Resolve<IMvxMessenger>());
-            }
-        }
-
         public IMvxLanguageBinder SharedTextSource
         {
             get
@@ -101,10 +92,18 @@ namespace Lbk.Mobile.Core.ViewModels
             }
         }
 
-        public void ReportError(string error)
+        protected IMvxMessenger MvxMessenger
         {
-            Mvx.Resolve<IErrorService>().ReportError(error);
+            get
+            {
+                return this.mvxMessenger ?? (this.mvxMessenger = Mvx.Resolve<IMvxMessenger>());
+            }
         }
+
+        //public void ReportError(string error)
+        //{
+        //    Mvx.Resolve<IErrorService>().ReportError(error);
+        //}
 
         protected async Task AsyncExecute<T>(
             Func<Task<T>> execute,
@@ -193,30 +192,62 @@ namespace Lbk.Mobile.Core.ViewModels
             await AsyncExecute(task, onSuccess, onError);
         }
 
-        protected void MakePhoneCall(string name, string number)
-        {
-            var task = Mvx.Resolve<IMvxPhoneCallTask>();
-            task.MakePhoneCall(name, number);
-        }
-
         protected void ComposeEmail(string to, string subject, string body)
         {
             var task = Mvx.Resolve<IMvxComposeEmailTask>();
             task.ComposeEmail(to, null, subject, body, false);
         }
 
-        protected void ShowConfirm(string message, string title, Action<bool> onDialogClose)
+        protected string GetErrorText(string text)
         {
-            string buttonConfirmText = this.SharedTextSource.GetText("ButtonOk");
-            string buttonCancelText = this.SharedTextSource.GetText("ButtonNo");
-            this.MessageBoxService.Confirm(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
+            return this.ErrorTextSource.GetText(text);
+        }
+
+        protected string GetSharedText(string text)
+        {
+            var textProvider = Mvx.Resolve<IMvxTextProvider>();
+            return textProvider.GetText(Constants.GeneralNamespace, Constants.ShareType, text);
+            //return this.SharedTextSource.GetText(text);
+        }
+
+        protected string GetText(string text)
+        {
+            return this.TextSource.GetText(text);
+        }
+
+        protected void MakePhoneCall(string name, string number)
+        {
+            var task = Mvx.Resolve<IMvxPhoneCallTask>();
+            task.MakePhoneCall(name, number);
+        }
+
+        protected void PlayYoutubeVideo(string videoUrl, string title)
+        {
+            if (string.IsNullOrEmpty(videoUrl))
+            {
+                return;
+            }
+
+            string id = Utility.GetYuotubeVideoId(videoUrl);
+            if (string.IsNullOrEmpty(videoUrl))
+            {
+                return;
+            }
+            var task = Mvx.Resolve<IWebVideoTask>();
+            task.PlayYoutubeVideo(id, title);
         }
 
         protected void ShowAlert(string message, string title)
         {
-            string buttonConfirmText = this.SharedTextSource.GetText("ButtonOk");
-            string buttonCancelText = this.SharedTextSource.GetText("ButtonNo");
+            string buttonConfirmText = this.GetSharedText("ButtonOk");
             this.MessageBoxService.Alert(message, title, buttonConfirmText);
+        }
+
+        protected void ShowConfirm(string message, string title, Action<bool> onDialogClose)
+        {
+            string buttonConfirmText = this.GetSharedText("ButtonYes");
+            string buttonCancelText = this.GetSharedText("ButtonNo");
+            this.MessageBoxService.Confirm(message, title, buttonConfirmText, buttonCancelText, onDialogClose);
         }
 
         protected void ShowWebPage(string webPage)
@@ -227,22 +258,6 @@ namespace Lbk.Mobile.Core.ViewModels
             }
             var task = Mvx.Resolve<IMvxWebBrowserTask>();
             task.ShowWebPage(webPage);
-        }
-
-        protected void PlayYoutubeVideo(string videoUrl, string title)
-        {
-            if (string.IsNullOrEmpty(videoUrl))
-            {
-                return;
-            }
-
-            var id = Utility.GetYuotubeVideoId(videoUrl);
-            if (string.IsNullOrEmpty(videoUrl))
-            {
-                return;
-            }
-            var task = Mvx.Resolve<IWebVideoTask>();
-            task.PlayYoutubeVideo(id, title);
         }
 
         protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage
@@ -278,7 +293,8 @@ namespace Lbk.Mobile.Core.ViewModels
                     {
                         var ex = (Exception)t.Exception;
                         Trace.Error("OnAsyncExecute Error: " + ex.Message);
-                        this.ReportError(this.ErrorTextSource.GetText("OnAsyncExecute") + ex.Message);
+                        //this.ReportError(this.GetErrorText("OnAsyncExecute") + ex.Message);
+                        this.MessageBoxService.Error(this.GetErrorText("OnAsyncExecute") + ex.Message);
                         if (onError != null)
                         {
                             onError(ex);
@@ -296,11 +312,18 @@ namespace Lbk.Mobile.Core.ViewModels
         {
             if (!IsReachable())
             {
-                this.ReportError(this.ErrorTextSource.GetText("NotReachable"));
-                if (onError != null)
-                {
-                    onError(new ReachabilityException());
-                }
+                string errorText = this.GetErrorText("NotReachable");
+                this.MessageBoxService.Error(
+                    errorText,
+                    this.GetSharedText("Sorry"),
+                    () =>
+                    {
+                        if (onError != null)
+                        {
+                            onError(new ReachabilityException(errorText));
+                        }
+                    });
+
                 return false;
             }
 

@@ -33,6 +33,11 @@ namespace Lbk.Mobile.Core.Test.Implementation
         //    throw new NotImplementedException();
         //}
 
+        public void Error(string message, string title = "Sorry!", Action done = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Alert(string message, string title, string buttonText, Action done = null)
         {
             throw new NotImplementedException();

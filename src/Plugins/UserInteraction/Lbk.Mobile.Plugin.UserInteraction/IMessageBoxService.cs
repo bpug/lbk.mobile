@@ -11,6 +11,8 @@ namespace Lbk.Mobile.Plugin.UserInteraction
 
     public interface IMessageBoxService
     {
+        void Error(string message, string title = "Sorry!", Action done = null);
+
         void Alert(string message, string title, string buttonText, Action done = null);
 
         Task AlertAsync(string message, string title, string buttonText);

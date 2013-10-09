@@ -25,6 +25,11 @@ namespace Lbk.Mobile.Plugin.UserInteraction.Droid
             }
         }
 
+        public void Error(string message, string title = "Sorry!", Action done = null)
+        {
+            this.Alert(message, title, "Ok", done);
+        }
+
         public void Alert(string message, string title, string buttonText, Action done = null)
         {
             Application.SynchronizationContext.Post(
