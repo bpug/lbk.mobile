@@ -10,8 +10,10 @@ namespace Lbk.Mobile.UI.Droid.Controls
 
     using Android.Content;
     using Android.Graphics;
+    using Android.Graphics.Drawables;
     using Android.Runtime;
     using Android.Util;
+    using Android.Views.Animations;
     using Android.Widget;
 
     using Cirrious.CrossCore;
@@ -23,6 +25,8 @@ namespace Lbk.Mobile.UI.Droid.Controls
     using Lbk.Mobile.UI.Droid.Extensions;
     using Lbk.Mobile.UI.Droid.Tools;
 
+    using UrlImageViewHelper;
+
     using Path = System.IO.Path;
 
     public class MvxThumbnailView : ImageView
@@ -30,6 +34,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
         protected readonly IMvxImageHelper<Bitmap> ImageHelper;
 
         private readonly int defaultImageResource;
+        private readonly bool isThumbnail;
 
         public MvxThumbnailView(Context context, IAttributeSet attrs)
             : base(context, attrs)
@@ -59,9 +64,13 @@ namespace Lbk.Mobile.UI.Droid.Controls
             }
             typedArray.Recycle();
 
-            var defaultSrc = context.ObtainStyledAttributes(attrs, Resource.Styleable.MvxThumbnail);
-            this.defaultImageResource = defaultSrc.GetResourceId(Resource.Styleable.MvxThumbnail_defaultImage, 0);
+            var defaultSrc = context.ObtainStyledAttributes(attrs, Resource.Styleable.DefaultImage);
+            this.defaultImageResource = defaultSrc.GetResourceId(Resource.Styleable.DefaultImage_defaultImage, 0);
             //this.DefaultImageSrc = this.GetDefaultImagePath(defaultImageResource);
+
+            var isThumbnailSrc = context.ObtainStyledAttributes(attrs, Resource.Styleable.IsThumbnail);
+            this.isThumbnail = isThumbnailSrc.GetBoolean(Resource.Styleable.IsThumbnail_thumbnail, false);
+            
         }
 
         public MvxThumbnailView(Context context)
@@ -98,19 +107,8 @@ namespace Lbk.Mobile.UI.Droid.Controls
         //    }
         //}
 
-        [Obsolete("Use ImageUrl instead")]
-        public string HttpImageUrl
-        {
-            get
-            {
-                return this.ImageUrl;
-            }
-            set
-            {
-                this.ImageUrl = value;
-            }
-        }
 
+       
         public string ImageUrl
         {
             get
@@ -120,6 +118,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
                     return null;
                 }
                 return this.ImageHelper.ImageUrl;
+               
             }
             set
             {
@@ -128,8 +127,11 @@ namespace Lbk.Mobile.UI.Droid.Controls
                     return;
                 }
                 this.ImageHelper.ImageUrl = value;
+                
+               
             }
         }
+        
 
         protected override void Dispose(bool disposing)
         {
@@ -167,10 +169,18 @@ namespace Lbk.Mobile.UI.Droid.Controls
         {
             if (mvxValueEventArgs.Value != null)
             {
-                using (var bmp = mvxValueEventArgs.Value.ScaleCenterCrop(this.MeasuredWidth, this.MeasuredHeight))
+                if (isThumbnail)
                 {
-                    this.SetImageBitmap(bmp);
+                    using (var bmp = mvxValueEventArgs.Value.Scale(this.MeasuredWidth, this.MeasuredHeight))
+                    {
+                        this.SetImageBitmap(bmp);
+                    }
                 }
+                else
+                {
+                    this.SetImageBitmap(mvxValueEventArgs.Value);
+                }
+                
             }
             else
             {

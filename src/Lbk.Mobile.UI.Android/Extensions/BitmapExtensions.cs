@@ -21,6 +21,11 @@ namespace Lbk.Mobile.UI.Droid.Extensions
 
         public static Bitmap ScaleCenterCrop(this Bitmap source, int newHeight, int newWidth)
         {
+            if (source == null)
+            {
+                return null;
+            }
+
             int sourceWidth = source.Width;
             int sourceHeight = source.Height;
 
@@ -53,6 +58,47 @@ namespace Lbk.Mobile.UI.Droid.Extensions
             return dest;
         }
 
+        public static Bitmap Scale(this Bitmap source, int newHeight, int newWidth)
+        {
+            if (source == null)
+            {
+                return null;
+            }
+
+            int sourceWidth = source.Width;
+            int sourceHeight = source.Height;
+            float xScale = ((float)newWidth) / sourceWidth;
+            float yScale = ((float)newHeight) / sourceHeight;
+            float scale = Math.Max(xScale, yScale);
+
+            // Now get the size of the source bitmap when scaled
+            float scaledWidth = scale * sourceWidth;
+            float scaledHeight = scale * sourceHeight;
+
+            // create a matrix for the manipulation
+            Matrix matrix = new Matrix();
+            // resize the bit map
+            matrix.PostScale(scale, scale);
+
+            // recreate the new Bitmap
+            Bitmap resizedBitmap ;
+            try
+            {
+                resizedBitmap = Bitmap.CreateScaledBitmap(source, (int)scaledWidth, (int)scaledHeight, false);
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+            
+            //Debug.WriteLineIf(true, "NewWidth: " + newWidth + " NewWidthToDp: " + Utility.ConvertPixelsToDp(newWidth) + " ResizedWith: " + resizedBitmap.Width + " ResizedWithToDp: " + Utility.ConvertPixelsToDp(resizedBitmap.Width));
+            //Debug.WriteLineIf(true, "NewHeight: " + newHeight + " NewHeightToDp: " + Utility.ConvertPixelsToDp(newHeight) + " ResizedHeight: " + resizedBitmap.Height + " ResizedHeightToDp: " + Utility.ConvertPixelsToDp(resizedBitmap.Height));
+            
+            //Bitmap resizedBitmap2 = Bitmap.CreateBitmap(source, 0, 0, sourceWidth, sourceHeight, matrix, false);
+           
+            return resizedBitmap;
+        }
+
         public static byte[] ToByteArray(this Bitmap bitmap)
         {
             if (bitmap == null)
@@ -75,6 +121,8 @@ namespace Lbk.Mobile.UI.Droid.Extensions
             }
             return bitmapData;
         }
+
+
         //public static Bitmap ScaleCenterCrop(this Bitmap bitmap, int reqWidth, int reqHeight)
         //{
         //   // First decode with inJustDecodeBounds=true to check dimensions
@@ -106,56 +154,5 @@ namespace Lbk.Mobile.UI.Droid.Extensions
         //    return BitmapFactory.DecodeByteArray(bitmapData, 0, bitmapData.Length, options2);
         //}
         
-       
-
-        //// **** From  LBK Toch ****
-        //public static ImageView Thumbnail(this ImageView source, Bitmap bitmap, SizeF newSize)
-        //{
-        //    int sourceWidth = source.MeasuredWidth;
-        //    int sourceHeight = source.MeasuredHeight;
-        //    int offsetY = 0;
-        //    int offsetX = 0;
-        //    Size croppedSize;
-
-        //    RectangleF rect = new RectangleF(0, 0, newSize.Width, newSize.Height);
-
-        //    // check the size of the image, we want to make it
-        //    // a square with sides the size of the smallest dimension
-        //    if (sourceWidth > sourceHeight)
-        //    {
-        //        offsetX = (sourceHeight - sourceWidth) / 2;
-        //        croppedSize = new Size(sourceHeight, sourceHeight);
-        //    }
-        //    else
-        //    {
-        //        offsetY = (sourceWidth - sourceHeight) / 2;
-        //        croppedSize = new Size(sourceWidth, sourceWidth);
-        //    }
-
-        //    // Crop the image before resize
-        //    //RectangleF clippedRect = new RectangleF(offsetX * -1, offsetY * -1, croppedSize.Width, croppedSize.Height);
-        //    //ImageView cropped = ImageView.FromImage(source.CGImage.WithImageInRect(clippedRect));
-
-        //    Bitmap croppedBmp = Bitmap.CreateBitmap(bitmap, offsetX * -1, offsetY * -1, croppedSize.Width, croppedSize.Height);
-        //    // Done cropping
-
-        //    UIGraphics.BeginImageContext(newSize);
-        //    var ctx = UIGraphics.GetCurrentContext();
-
-        //    ctx.DrawImage(rect, cropped.CGImage);
-
-        //    var ret = UIGraphics.GetImageFromCurrentImageContext();
-
-        //    //Flip
-        //    ctx.DrawImage(rect, ret.CGImage);
-        //    ctx.RotateCTM(M_PI);
-        //    ret = UIGraphics.GetImageFromCurrentImageContext();
-
-        //    UIGraphics.EndImageContext();
-
-        //    //ret = ret.FlipImage (newSize);
-        //    return ret;
-
-        //}
     }
 }

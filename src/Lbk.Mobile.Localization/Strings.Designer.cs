@@ -79,7 +79,15 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Eng) Hallo ......
+        ///   Looks up a localized string similar to Hallo,
+        ///
+        ///also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbedingt mal anschauen.
+        ///
+        ///					http://itunes.apple.com/de/app/lowenbraukeller/id523578226
+        ///
+        ///					Da findest Du auch ein witziges Quiz, bei dem Du eine frische Maß Löwenbräu-Bier gewinnen kannst.
+        ///
+        ///					Servus, bis demnächst im Löwenbräukeller.
         /// </summary>
         public static string Lbk_HomeViewModel_Recommend_MailBody {
             get {
@@ -88,7 +96,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Eng) Löwenbräukeller-App Empfelung.
+        ///   Looks up a localized string similar to Löwenbräukeller-App Empfelung.
         /// </summary>
         public static string Lbk_HomeViewModel_Recommend_MailSubject {
             get {

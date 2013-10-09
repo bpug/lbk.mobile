@@ -7,34 +7,18 @@
 namespace Lbk.Mobile.UI.Droid.Extensions
 {
     using Android.App;
-    using Android.Content;
     using Android.Graphics;
-    using Android.Views;
-
-    using Cirrious.CrossCore;
-    using Cirrious.CrossCore.Droid;
-
     using Java.Lang;
 
     public static class ActivityExtensions
     {
-        public static void SetBackground(this Activity activity)
-        {
-            var drawable = activity.Resources.GetDrawable(Resource.Drawable.background);
-            drawable.SetDither(true);
-            activity.Window.SetBackgroundDrawable(drawable);
-            activity.Window.DecorView.Background.SetDither(true);
-        }
-
-
         public static int GetScreenWidth(this Activity activity)
         {
-          
             int columnWidth = 0;
 
             var wm = activity.WindowManager;
 
-            Display display = wm.DefaultDisplay;
+            var display = wm.DefaultDisplay;
 
             var point = new Point();
             try
@@ -49,6 +33,14 @@ namespace Lbk.Mobile.UI.Droid.Extensions
             }
             columnWidth = point.X;
             return columnWidth;
+        }
+
+        public static void SetBackground(this Activity activity)
+        {
+            var drawable = activity.Resources.GetDrawable(Resource.Drawable.background);
+            drawable.SetDither(true);
+            activity.Window.SetBackgroundDrawable(drawable);
+            activity.Window.DecorView.Background.SetDither(true);
         }
     }
 }

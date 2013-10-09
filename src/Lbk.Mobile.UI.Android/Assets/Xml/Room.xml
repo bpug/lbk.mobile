@@ -7,10 +7,10 @@
     <Description>Hier brüllt der Löwe täglich von 10 bis 24 Uhr bei traditionell bayerischen Schmankerln, abwechslungsreichen Tagesgerichten und süffigen Löwenbräu-Bierspezialitäten.</Description>
     <Images>
       <Image>
-        <Url>Braueustueberl1</Url>
+        <Url>r_braueustueberl1</Url>
       </Image>
       <Image>
-        <Url>Braueustueberl2</Url>
+        <Url>r_braueustueberl2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_braeustueberl</ThumbnailUrl>
@@ -25,10 +25,10 @@
     <Description>Für konspirative Treffen im kleinen Kreis oder kleinere Familienfeiern bestens geeignet.</Description>
     <Images>
       <Image>
-        <Url>Gartenanbau1</Url>
+        <Url>r_gartenanbau1</Url>
       </Image>
       <Image>
-        <Url>Gartenanbau1</Url>
+        <Url>r_gartenanbau1</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_gartenanbau</ThumbnailUrl>
@@ -43,10 +43,10 @@
     <Description>Ideal für Veranstaltungen im kleineren Stil grenzt die Runde Stube an das Bräustüberl. Auf Wunsch steht Ihnen hier ein Riesen-Plasma-TV zur Verfügung.</Description>
     <Images>
       <Image>
-        <Url>Filserstube1</Url>
+        <Url>r_filserstube1</Url>
       </Image>
       <Image>
-        <Url>Filserstube2</Url>
+        <Url>r_filserstube2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_filserstube</ThumbnailUrl>
@@ -61,10 +61,10 @@
     <Description>Ganz unter sich feiert man in der Dachauer Stube, die für Veranstaltungen bis zu 110 Personen besonders gut geeignet ist.</Description>
     <Images>
       <Image>
-        <Url>DachauerStube1</Url>
+        <Url>r_dachauerstube1</Url>
       </Image>
       <Image>
-        <Url>DachauerStube2</Url>
+        <Url>r_dachauerstube2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_dachauerstube</ThumbnailUrl>
@@ -79,10 +79,10 @@
     <Description>Wer Brauhausatmosphäre sucht, aber nicht mitten im Getümmel sitzen möchte, ist hier genau richtig.</Description>
     <Images>
       <Image>
-        <Url>LoewenEmpore1</Url>
+        <Url>r_loewenempore1</Url>
       </Image>
       <Image>
-        <Url>LoewenEmpore2</Url>
+        <Url>r_loewenempore2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_loewenempore</ThumbnailUrl>
@@ -97,16 +97,16 @@
     <Description>Mit Bühne, zwei Küchen, drei Schänken und zur Terrasse hin komplett zu öffnenden Glasfronten.</Description>
     <Images>
       <Image>
-        <Url>Festsaal_Galadinner</Url>
+        <Url>r_festsaal_galadinner</Url>
       </Image>
       <Image>
-        <Url>Festsaal_Balkon</Url>
+        <Url>r_festsaal_balkon</Url>
       </Image>
       <Image>
-        <Url>Festsaal_Ballnacht</Url>
+        <Url>r_festsaal_ballnacht</Url>
       </Image>
       <Image>
-        <Url>Festsaal_Business</Url>
+        <Url>r_festsaal_business</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_festsaal</ThumbnailUrl>
@@ -121,10 +121,10 @@
     <Description>Unmittelbar an den Festsaal angrenzend kann die Hochterrasse über dem Biergarten für große Veranstaltungen zusätzlich oder auch separat gebucht werden.</Description>
     <Images>
       <Image>
-        <Url>Hochterrasse1</Url>
+        <Url>r_hochterrasse1</Url>
       </Image>
       <Image>
-        <Url>Hochterrasse2</Url>
+        <Url>r_hochterrasse2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_terrasse</ThumbnailUrl>
@@ -139,10 +139,10 @@
     <Description>Der Galeriesaal vermittelt umlaufend von drei Seiten aus einen fantastischen Blick auf den Festsaal.</Description>
     <Images>
       <Image>
-        <Url>Galeriesaal1</Url>
+        <Url>r_galeriesaal1</Url>
       </Image>
       <Image>
-        <Url>Galeriesaal2</Url>
+        <Url>r_galeriesaal2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_galeriesaal</ThumbnailUrl>
@@ -157,10 +157,10 @@
     <Description>Mit eigener Bar ausgestattet wird der Bennosaal zum vibrierenden Dancefloor von großen Festsaal-Veranstaltungen.</Description>
     <Images>
       <Image>
-        <Url>Bennosaal1</Url>
+        <Url>r_bennosaal1</Url>
       </Image>
       <Image>
-        <Url>Bennosaal2</Url>
+        <Url>r_bennosaal2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_bennosaal</ThumbnailUrl>
@@ -175,13 +175,13 @@
     <Description>Vom Stüberl im 1. OG aus gelangt man direkt auf die wunderschöne Löwenterrasse. Auch das Stüberl im 2. OG ist kreisrund dank der besonderen Lage im Turm.</Description>
     <Images>
       <Image>
-        <Url>TurmzimmerErsterStock1</Url>
+        <Url>r_turmzimmerersterstock1</Url>
       </Image>
       <Image>
-        <Url>TurmzimmerErsterStock2</Url>
+        <Url>r_turmzimmerersterstock2</Url>
       </Image>
       <Image>
-        <Url>TurmzimmerZweiterStock</Url>
+        <Url>r_turmzimmerzweiterstock</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_turmzimmer</ThumbnailUrl>
@@ -196,10 +196,10 @@
     <Description>Erleben Sie ganz besonderes Flair auf unserer Löwen-Terrasse und genießen Sie laue Sommerabende mit Blick auf den Stiglmaier Platz.</Description>
     <Images>
       <Image>
-        <Url>LoewenTerrasse1</Url>
+        <Url>r_loewenterrasse1</Url>
       </Image>
       <Image>
-        <Url>LoewenTerrasse2</Url>
+        <Url>r_loewenterrasse2</Url>
       </Image>
     </Images>
     <ThumbnailUrl>thumb_loewenterasse</ThumbnailUrl>

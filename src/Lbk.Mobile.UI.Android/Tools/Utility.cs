@@ -13,7 +13,10 @@ namespace Lbk.Mobile.UI.Droid.Tools
 
     using Android.Content.Res;
     using Android.Graphics;
+    using Android.Util;
 
+    using Cirrious.CrossCore;
+    using Cirrious.CrossCore.Droid;
     using Cirrious.CrossCore.Exceptions;
 
     using Lbk.Mobile.UI.Droid.Extensions;
@@ -37,9 +40,24 @@ namespace Lbk.Mobile.UI.Droid.Tools
 
         
 
-        public static int ConvertPixelsToDp(float pixelValue, Resources resources)
+        public static int ConvertPixelsToDp(float pixelValue)
         {
-            int dp = (int)((pixelValue) / resources.DisplayMetrics.Density);
+            DisplayMetrics displayMetrics = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext.Resources.DisplayMetrics;
+            int dp = (int)((pixelValue) / displayMetrics.Density);
+            return dp;
+        }
+
+        public int DpToPx(int dp)
+        {
+            DisplayMetrics displayMetrics = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext.Resources.DisplayMetrics;
+            var px = (int)(dp * (displayMetrics.Xdpi / (float)DisplayMetricsDensity.Default));
+            return px;
+        }
+
+        public int PxToDp(int px)
+        {
+            DisplayMetrics displayMetrics = Mvx.Resolve<IMvxAndroidGlobals>().ApplicationContext.Resources.DisplayMetrics;
+            var dp = (int)(px / (displayMetrics.Xdpi / (float)DisplayMetricsDensity.Default));
             return dp;
         }
 

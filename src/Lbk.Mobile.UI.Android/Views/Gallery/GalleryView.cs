@@ -14,6 +14,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Gallery
     using Cirrious.MvvmCross.Binding.Droid.Views;
 
     using Lbk.Mobile.Core.ViewModels.Gallery;
+    using Lbk.Mobile.UI.Droid.Controls;
     using Lbk.Mobile.UI.Droid.Extensions;
 
     [Activity(Label = "Bilder", Icon = "@drawable/ic_launcher")]
@@ -42,7 +43,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Gallery
 
             gridView.SetNumColumns(Constants.Gallery.GridColumnsCount);
             gridView.SetColumnWidth(this.columnWidth);
-            gridView.StretchMode = StretchMode.NoStretch;
+            //gridView.StretchMode = StretchMode.NoStretch;
             gridView.SetPadding((int)padding, (int)padding, (int)padding, (int)padding);
             gridView.SetHorizontalSpacing((int)padding);
             gridView.SetVerticalSpacing((int)padding);

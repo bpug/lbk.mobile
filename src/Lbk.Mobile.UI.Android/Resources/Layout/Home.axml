@@ -71,7 +71,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/ic_facebook" />
+                    android:background="@drawable/ic_facebook"
+                    local:MvxBind="Click ShowFacebookCommand" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

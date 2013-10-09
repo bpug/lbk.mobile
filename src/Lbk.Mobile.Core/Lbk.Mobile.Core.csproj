@@ -163,6 +163,10 @@
       <Project>{9c5553a4-f75a-4ad0-8f09-c5e77eff4828}</Project>
       <Name>Lbk.Mobile.Plugin.Reachability</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Plugins\AppSettings\Lbk.Mobile.Plugin.AppSettings\Lbk.Mobile.Plugin.AppSettings.csproj">
+      <Project>{1a39bdf5-05d8-4f35-a274-ede24ff2285a}</Project>
+      <Name>Lbk.Mobile.Plugin.AppSettings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
       <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
       <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>

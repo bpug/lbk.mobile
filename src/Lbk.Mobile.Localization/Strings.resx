@@ -124,10 +124,18 @@
     <value>Service Error: </value>
   </data>
   <data name="Lbk.HomeViewModel.Recommend.MailBody" xml:space="preserve">
-    <value>(Eng) Hallo .....</value>
+    <value>Hallo,
+
+also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbedingt mal anschauen.
+
+					http://itunes.apple.com/de/app/lowenbraukeller/id523578226
+
+					Da findest Du auch ein witziges Quiz, bei dem Du eine frische Maß Löwenbräu-Bier gewinnen kannst.
+
+					Servus, bis demnächst im Löwenbräukeller</value>
   </data>
   <data name="Lbk.HomeViewModel.Recommend.MailSubject" xml:space="preserve">
-    <value>(Eng) Löwenbräukeller-App Empfelung</value>
+    <value>Löwenbräukeller-App Empfelung</value>
   </data>
   <data name="Lbk.MenuViewModel.PdfDownloadQuestion" xml:space="preserve">
     <value>It is valid for a new menu, which can be downloaded now.</value>

@@ -16,6 +16,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Plugin.AppSettings;
     using Lbk.Mobile.Plugin.DocumentViewer;
     using Lbk.Mobile.Plugin.Settings;
 
@@ -23,14 +24,17 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
     {
         private readonly ILbkMobileService service;
 
-        private readonly ISettings settings;
+        private readonly ISettings userSettings;
+
+        private readonly IAppSettings appSettings;
 
         private DateTime? lastUpdate;
 
-        public MenuViewModel(ILbkMobileService service, ISettings settings)
+        public MenuViewModel(ILbkMobileService service, ISettings userSettings, IAppSettings appSettings)
         {
             this.service = service;
-            this.settings = settings;
+            this.userSettings = userSettings;
+            this.appSettings = appSettings;
         }
 
         public ICommand GetLastUpdateCommand
@@ -66,15 +70,15 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             
             this.LastUpdate = updateDate;
 
-            var userLastUpdate = this.settings.GetValueOrDefault<DateTime?>(
+            var userLastUpdate = this.userSettings.GetValueOrDefault<DateTime?>(
                 Constants.UserSettings.PdfLastUpdate,
                 default(DateTime?));
 
             var fileStore = Mvx.Resolve<IMvxFileStore>();
 
-            fileStore.EnsureFolderExists(Constants.SdcardRootFolder);
+            fileStore.EnsureFolderExists(appSettings.SharedRootFolder);
 
-            if (!userLastUpdate.HasValue || !fileStore.Exists(Constants.LocalMenuFilePath))
+            if (!userLastUpdate.HasValue || !fileStore.Exists(appSettings.MenuFilePath))
             {
                 this.DownloadMenu(updateDate);
             }
@@ -106,7 +110,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             var downloader = Mvx.Resolve<IMvxHttpFileDownloader>();
             downloader.RequestDownload(
                 Constants.MenuUrl,
-                Constants.LocalMenuFilePath,
+                appSettings.MenuFilePath,
                 () => this.OnDownloadSuccess(updateDate),
                 this.OnDownloadError);
         }
@@ -129,8 +133,8 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
         private void OnDownloadSuccess(DateTime? updateDate)
         {
             this.IsBusy = false;
-            this.settings.AddOrUpdateValue(Constants.UserSettings.PdfLastUpdate, updateDate);
-            this.settings.Save();
+            this.userSettings.AddOrUpdateValue(Constants.UserSettings.PdfLastUpdate, updateDate);
+            this.userSettings.Save();
             this.ShowMenu();
         }
 
@@ -144,7 +148,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             var fileStore = Mvx.Resolve<IMvxFileStore>();
             var viewer = Mvx.Resolve<IDocumentViewerTask>();
 
-            var path = fileStore.NativePath(Constants.LocalMenuFilePath);
+            var path = fileStore.NativePath(appSettings.MenuFilePath);
 
             viewer.ShowPdf(path, Constants.MenuUrl, true);
         }

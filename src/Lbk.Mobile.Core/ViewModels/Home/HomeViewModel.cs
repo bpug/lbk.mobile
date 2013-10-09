@@ -92,6 +92,17 @@ namespace Lbk.Mobile.Core.ViewModels.Home
             }
         }
 
+
+        public ICommand ShowFacebookCommand
+        {
+            get
+            {
+                return new MvxCommand(() => this.ShowWebPage(Constants.FacebookUrl));
+            }
+        }
+
+        
+
         public ICommand ShowReservationCommand
         {
             get
