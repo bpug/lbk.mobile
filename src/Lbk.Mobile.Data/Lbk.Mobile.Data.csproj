@@ -35,7 +35,9 @@
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <None Include="packages.config" />
+    <None Include="Proxies\Lbk-dev.wsdl" />
     <None Include="Proxies\Lbk.wsdl" />
+    <None Include="Service References\LbkMobileService\lbk-dev.wsdl" />
     <None Include="Service References\LbkMobileService\Lbk.Mobile.Data.LbkMobileService.DishesOfTheDay.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -60,7 +62,6 @@
     <None Include="Service References\LbkMobileService\Lbk.Mobile.Data.LbkMobileService.Video.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\LbkMobileService\lbk1.wsdl" />
     <None Include="wsdlutil_LbkMobile.cmd" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
     <None Include="svcutil_LbkMobile.cmd" />

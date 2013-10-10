@@ -34,6 +34,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Converters\AreaValueConverter.cs" />
+    <Compile Include="Converters\QuizCategoryImageConverter.cs" />
+    <Compile Include="Converters\ToLetterConverter.cs" />
     <Compile Include="Converters\YoutubeImageValueConverter.cs" />
     <Compile Include="Extensions\QuestionExtensions.cs" />
     <Compile Include="Extensions\QuizExtensions.cs" />

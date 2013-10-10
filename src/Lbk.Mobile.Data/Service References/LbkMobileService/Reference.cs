@@ -119,7 +119,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class DishesOfTheDay : object, System.ComponentModel.INotifyPropertyChanged {
@@ -149,7 +149,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class category : object, System.ComponentModel.INotifyPropertyChanged {
@@ -207,7 +207,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class dish : object, System.ComponentModel.INotifyPropertyChanged {
@@ -265,7 +265,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Quiz : object, System.ComponentModel.INotifyPropertyChanged {
@@ -323,7 +323,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Question : object, System.ComponentModel.INotifyPropertyChanged {
@@ -437,7 +437,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Answer : object, System.ComponentModel.INotifyPropertyChanged {
@@ -523,7 +523,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Serie : object, System.ComponentModel.INotifyPropertyChanged {
@@ -595,7 +595,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public enum QuestionCategory {
         
@@ -622,7 +622,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Video : object, System.ComponentModel.INotifyPropertyChanged {
@@ -708,7 +708,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Picture : object, System.ComponentModel.INotifyPropertyChanged {
@@ -794,7 +794,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Event : object, System.ComponentModel.INotifyPropertyChanged {
@@ -936,7 +936,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public partial class Reservation : object, System.ComponentModel.INotifyPropertyChanged {
@@ -1106,7 +1106,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18054")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18060")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://loewenbraeuservice.ip-connect.de/")]
     public enum StatusArt {
         
@@ -2593,7 +2593,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration) {
             if ((endpointConfiguration == EndpointConfiguration.Service1Soap)) {
-                return new System.ServiceModel.EndpointAddress("http://lbkmobile.loewenbraeukeller.com/service/Service1.asmx");
+                return new System.ServiceModel.EndpointAddress("http://loewenbraeu.ip-connect.de/service/Service1.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

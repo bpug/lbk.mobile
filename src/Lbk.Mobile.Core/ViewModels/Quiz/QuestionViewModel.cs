@@ -13,6 +13,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common.Extensions;
+    using Lbk.Mobile.Core.Extensions;
     using Lbk.Mobile.Model;
 
     public class QuestionViewModel : BaseViewModel
@@ -21,12 +22,16 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
         private Question question;
 
-        public event EventHandler QuestionAnswered;
-
         public QuestionViewModel(Question question)
         {
             this.Question = question;
         }
+
+        public QuestionViewModel()
+        {
+        }
+
+        public event EventHandler QuestionAnswered;
 
         public ICommand AnsweredCommand
         {
@@ -69,12 +74,13 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         private void AnsweredCommandExecute(Answer answer)
         {
             this.Question.IsRight = answer.Correct;
-            string title = answer.Correct ? this.TextSource.GetText("Right") : this.TextSource.GetText("Wrong");
+            string explanation = this.Question.GetRightAnswer().Explanation;
+            string isCorrect = answer.Correct ? this.GetText("Right") : this.GetText("Wrong");
 
             this.MessageBoxService.Alert(
-                title,
-                answer.Explanation,
-                this.TextSource.GetText("Next"),
+                explanation,
+                isCorrect,
+                this.GetText("Next"),
                 () => { this.QuestionAnswered.RaiseEvent(this, EventArgs.Empty); });
         }
     }

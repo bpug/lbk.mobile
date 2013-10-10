@@ -35,9 +35,9 @@ namespace Lbk.Mobile.UI.Droid.Extensions
             return columnWidth;
         }
 
-        public static void SetBackground(this Activity activity)
+        public static void SetBackground(this Activity activity, int resourceId)
         {
-            var drawable = activity.Resources.GetDrawable(Resource.Drawable.background);
+            var drawable = activity.Resources.GetDrawable(resourceId);
             drawable.SetDither(true);
             activity.Window.SetBackgroundDrawable(drawable);
             activity.Window.DecorView.Background.SetDither(true);

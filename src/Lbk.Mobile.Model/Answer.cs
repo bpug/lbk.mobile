@@ -11,5 +11,6 @@ namespace Lbk.Mobile.Model
         public bool Correct { get; set; }
         public string Explanation { get; set; }
         public string Text { get; set; }
+        public int Number { get; set; }
     }
 }

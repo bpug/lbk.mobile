@@ -68,6 +68,7 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
         public override void Start()
         {
             this.LoadCommand.Execute(null);
+            base.Start();
         }
 
         private async Task OnLoadExecute()

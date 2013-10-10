@@ -41,12 +41,7 @@
             local:MvxBind="Text Item.Description" />
         <Button
             android:text="Event buchen"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:background="@drawable/btn_lbk"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:layout_gravity="right"
+            style="@style/button_lbk"
             local:MvxBind="Visibility Visibility(Item.ReservationLink); Click Command"
             android:layout_marginTop="7dp" />
     </LinearLayout>

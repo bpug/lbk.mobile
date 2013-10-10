@@ -15,7 +15,13 @@ namespace Lbk.Mobile.Data.Mappings
     {
         public static List<Answer> ToModel(this IEnumerable<LbkMobileService.Answer> sourceList)
         {
-            return sourceList.Select(p => p.ToModel()).ToList();
+            var answers =  sourceList.Select(p => p.ToModel()).ToList();
+
+            for (var i = 0; i < answers.Count; i++)
+            {
+                answers[i].Number = i;
+            }
+            return answers;
         }
 
         public static Answer ToModel(this LbkMobileService.Answer source)

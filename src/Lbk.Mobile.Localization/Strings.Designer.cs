@@ -159,6 +159,24 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} von {1} Punkten erreicht.
+        /// </summary>
+        public static string Lbk_QuizViewModel_CurrentPoints {
+            get {
+                return ResourceManager.GetString("Lbk.QuizViewModel.CurrentPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frage {0} von {1}.
+        /// </summary>
+        public static string Lbk_QuizViewModel_CurrentQuestionNumber {
+            get {
+                return ResourceManager.GetString("Lbk.QuizViewModel.CurrentQuestionNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Der Abbruchwunsch konnte nicht bestätigt werden..
         /// </summary>
         public static string Lbk_ReservationConfirmationViewModel_AbortReservationNotConfirmed {

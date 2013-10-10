@@ -12,8 +12,7 @@ namespace Lbk.Mobile.Plugin.AppSettings.Droid
         {
             get
             {
-                //return this.SharedRootFolder + "triumphator.pdf";
-                return "/triumphator.pdf";
+                return this.SharedRootFolder + "triumphator.pdf";
             }
         }
 

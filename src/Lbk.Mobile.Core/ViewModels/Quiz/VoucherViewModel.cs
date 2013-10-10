@@ -77,7 +77,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 this.ActivateVoucherQuestion(
                     this,
                     new NotificationEventArgs<string, bool>(
-                        string.Format(this.TextSource.GetText("ActivateVoucherQuestion"), voucher.Code),
+                        string.Format(this.GetText("ActivateVoucherQuestion"), voucher.Code),
                         string.Empty,
                         isActivated =>
                         {
@@ -92,7 +92,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                             this.voucherRepository.Update(voucher);
                                             this.Load();
                                             // TODO: DialogService-Alert: string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code) 
-                                            this.ShowAlert(string.Format(this.TextSource.GetText("VoucherActvated"), voucher.Code), null);
+                                            this.ShowAlert(this.GetText("VoucherActvated", voucher.Code), null);
                                         }
                                         else
                                         {
@@ -100,7 +100,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                                             voucher.Deleted = true;
                                             this.voucherRepository.Update(voucher);
                                             // TODO: DialogService-Alert: string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code) 
-                                            this.ShowAlert(string.Format(this.TextSource.GetText("VoucherAlreadyActvated"), voucher.Code), null);
+                                            this.ShowAlert(this.GetText("VoucherAlreadyActvated", voucher.Code), null);
                                         }
                                     });
                             }
@@ -115,7 +115,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 this.UseVoucherQuestion(
                     this,
                     new NotificationEventArgs<string, bool>(
-                        this.TextSource.GetText("UseVoucherQuestion"),
+                        this.GetText("UseVoucherQuestion"),
                         string.Empty,
                         result =>
                         {

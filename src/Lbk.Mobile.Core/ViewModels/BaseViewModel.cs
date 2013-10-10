@@ -21,7 +21,6 @@ namespace Lbk.Mobile.Core.ViewModels
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Common.Utils;
-    using Lbk.Mobile.Core.Services.Error;
     using Lbk.Mobile.Plugin.Reachability;
     using Lbk.Mobile.Plugin.UserInteraction;
     using Lbk.Mobile.Plugin.WebVideo;
@@ -205,14 +204,17 @@ namespace Lbk.Mobile.Core.ViewModels
 
         protected string GetSharedText(string text)
         {
-            var textProvider = Mvx.Resolve<IMvxTextProvider>();
-            return textProvider.GetText(Constants.GeneralNamespace, Constants.ShareType, text);
-            //return this.SharedTextSource.GetText(text);
+            return this.SharedTextSource.GetText(text);
         }
 
         protected string GetText(string text)
         {
             return this.TextSource.GetText(text);
+        }
+
+        protected string GetText(string text, params object[] formatArgs)
+        {
+            return this.TextSource.GetText(text, formatArgs);
         }
 
         protected void MakePhoneCall(string name, string number)

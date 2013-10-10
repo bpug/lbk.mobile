@@ -16,7 +16,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Extensions;
-    using Lbk.Mobile.Data.Mappings;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
 
@@ -31,6 +30,8 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         private Question currentQuestion;
 
         private int currentQuestionNumber;
+
+        private QuestionViewModel questionViewModel;
 
         private List<Question> questions;
 
@@ -57,15 +58,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-
-        private QuestionViewModel questionViewModel;
-
-        public QuestionViewModel QuestionViewModel
-        {
-            get { return questionViewModel; }
-            set { questionViewModel = value; this.RaisePropertyChanged(() => this.QuestionViewModel); }
-        }
-
         public int CurrentPoints
         {
             get
@@ -76,6 +68,15 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             {
                 this.currentPoints = value;
                 this.RaisePropertyChanged(() => this.CurrentPoints);
+                this.RaisePropertyChanged(() => this.CurrentPointsText);
+            }
+        }
+
+        public string CurrentPointsText
+        {
+            get
+            {
+                return this.GetText("CurrentPoints", this.CurrentPoints, this.TotalPoints);
             }
         }
 
@@ -90,7 +91,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 this.currentQuestion = value;
                 this.CurrentPoints = this.Quiz.GetRightPoints();
                 this.RightAnswerCount = this.Quiz.GetRightAnswerCount();
-
+                this.QuestionViewModel.Question = this.currentQuestion;
                 this.RaisePropertyChanged(() => this.CurrentQuestion);
             }
         }
@@ -105,6 +106,15 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             {
                 this.currentQuestionNumber = value;
                 this.RaisePropertyChanged(() => this.CurrentQuestionNumber);
+                this.RaisePropertyChanged(() => this.CurrentQuestionNumberText);
+            }
+        }
+
+        public string CurrentQuestionNumberText
+        {
+            get
+            {
+                return this.GetText("CurrentQuestionNumber", this.CurrentQuestionNumber, this.TotalQuestionCount);
             }
         }
 
@@ -113,6 +123,19 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             get
             {
                 return new MvxCommand(async () => await this.LoadExecute());
+            }
+        }
+
+        public QuestionViewModel QuestionViewModel
+        {
+            get
+            {
+                return this.questionViewModel;
+            }
+            set
+            {
+                this.questionViewModel = value;
+                this.RaisePropertyChanged(() => this.QuestionViewModel);
             }
         }
 
@@ -187,6 +210,13 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
         public void Init()
         {
+            this.QuestionViewModel = new QuestionViewModel();
+            this.QuestionViewModel.QuestionAnswered += this.OnQuestionAnswered;
+        }
+
+        public override void Start()
+        {
+            base.Start();
             this.LoadCommand.Execute(null);
         }
 
@@ -197,7 +227,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 this.AbortQuizQuestion(
                     this,
                     new NotificationEventArgs<string, bool>(
-                        this.TextSource.GetText("AbortQuizQuestion"),
+                        this.GetText("AbortQuizQuestion"),
                         string.Empty,
                         result =>
                         {
@@ -215,29 +245,33 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 () => this.service.GetQuizAsync(QuestionCount),
                 q =>
                 {
-                    this.Quiz = q.ToModel();
-
+                    this.Quiz = q;
                     this.CurrentQuestionNumber = 1;
                     this.CurrentQuestion = this.Quiz.GetNextQuestion();
                     this.TotalQuestionCount = this.Quiz.GetTotalQuestionsCount();
                     this.TotalPoints = this.Quiz.GetTotalPoints();
-
-                    this.QuestionViewModel = new QuestionViewModel(this.CurrentQuestion);
-                    this.QuestionViewModel.QuestionAnswered += OnQuestionAnswered;
                 });
         }
 
         private void OnQuestionAnswered(object sender, EventArgs eventArgs)
         {
-            QuestionViewModel qv = sender as QuestionViewModel;
+            var qv = sender as QuestionViewModel;
             if (qv == null)
+            {
                 return;
+            }
 
             this.CurrentQuestionNumber++;
+            //this.TotalQuestionCount = this.Quiz.GetTotalQuestionsCount();
+
             var nextQuestion = this.Quiz.GetNextQuestion();
             if (nextQuestion != null)
             {
                 //TODO: In View Change Question-Fagment
+                this.CurrentQuestion = nextQuestion;
+            }
+            else
+            {
             }
         }
     }

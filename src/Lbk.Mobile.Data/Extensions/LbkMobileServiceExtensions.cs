@@ -17,8 +17,8 @@ namespace Lbk.Mobile.Data.Extensions
 
     using Event = Lbk.Mobile.Model.Event;
     using Picture = Lbk.Mobile.Model.Picture;
-    using Question = Lbk.Mobile.Data.LbkMobileService.Question;
-    using Quiz = Lbk.Mobile.Data.LbkMobileService.Quiz;
+    //using Question = Lbk.Mobile.Data.LbkMobileService.Question;
+    using Quiz = Lbk.Mobile.Model.Quiz;
     using Video = Lbk.Mobile.Model.Video;
 
     public static class LbkMobileServiceExtensions
@@ -122,18 +122,18 @@ namespace Lbk.Mobile.Data.Extensions
             return tcs.Task;
         }
 
-        public static Task<Question> GetQuestionAsyncTask(this Service1SoapClient client, int questionCount)
-        {
-            var tcs = CreateSource<Question>(null);
-            client.GetQuestionCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
-            client.GetQuestionAsync(questionCount);
-            return tcs.Task;
-        }
+        //public static Task<Question> GetQuestionAsyncTask(this Service1SoapClient client, int questionCount)
+        //{
+        //    var tcs = CreateSource<Question>(null);
+        //    client.GetQuestionCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+        //    client.GetQuestionAsync(questionCount);
+        //    return tcs.Task;
+        //}
 
         public static Task<Quiz> GetQuizAsyncTask(this Service1SoapClient client, string fingerprint, int questionCount)
         {
             var tcs = CreateSource<Quiz>(null);
-            client.GetQuizCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
+            client.GetQuizCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result.ToModel(), null);
             client.GetQuizAsync(fingerprint, questionCount);
             return tcs.Task;
         }

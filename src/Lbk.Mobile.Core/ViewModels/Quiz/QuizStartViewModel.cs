@@ -20,7 +20,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     public class QuizStartViewModel : BaseViewModel
     {
-        public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
+        //public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
 
         private readonly IQuizVoucherRepository voucherRepository;
 
@@ -41,7 +41,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<InstructionsViewModel>(), () => this.voucherRepository.GetNotUsed().Any());
+                return new MvxCommand(() => this.ShowViewModel<VoucherViewModel>(), () => this.voucherRepository.GetNotUsed().Any());
             }
         }
 
@@ -51,14 +51,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             get
             {
                 return new MvxCommand(this.StartExecute);
-            }
-        }
-
-        public ICommand StartCommandWithMessenger
-        {
-            get
-            {
-                return new MvxCommand(this.StartMessengerExecute);
             }
         }
 
@@ -74,29 +66,19 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         {
             if (!Settings.YouthProtection)
             {
-                // Notify view 
-                this.YouthProtectionQuestion.RaiseEvent(this, new NotificationEventArgs<string, bool>(
-                            this.TextSource.GetText("YouthProtectionQuestion"),
-                            string.Empty,
-                            result =>
-                            {
-                                if (result)
-                                {
-                                    Settings.YouthProtection = true;
-                                    this.StartQuizCommand.Execute(null);
-                                }
-                            }));
-
-                ////With MessageBoxService
-                //this.ShowMessage(this.TextSource.GetText("YouthProtectionQuestion"), null,
-                //    result =>
-                //    {
-                //        if (result)
-                //        {
-                //            Settings.YouthProtection = true;
-                //            this.StartQuizCommand.Execute(null);
-                //        }
-                //    });
+                this.MessageBoxService.Confirm(
+                    this.GetText("YouthProtectionQuestion"),
+                    string.Empty,
+                    this.GetSharedText("ButtonYes"),
+                    this.GetSharedText("ButtonNo"),
+                    b =>
+                    {
+                        if (b)
+                        {
+                            Settings.YouthProtection = true;
+                            this.StartQuizCommand.Execute(null);
+                        }
+                    });
             }
             else
             {
@@ -104,22 +86,44 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        private void StartMessengerExecute()
-        {
-            if (!Settings.YouthProtection)
-            {
-                var message = new YouthProtectionMessage(this);
-                this.MvxMessenger.Publish(message);
-                if (message.Result == DialogResult.Ok)
-                {
-                    Settings.YouthProtection = true;
-                    this.StartQuizCommand.Execute(null);
-                }
-            }
-            else
-            {
-                this.StartQuizCommand.Execute(null);
-            }
-        }
+
+        //public ICommand StartCommandWithMessenger
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(this.StartMessengerExecute);
+        //    }
+        //}
+
+        //private void StartMessengerExecute()
+        //{
+        //    if (!Settings.YouthProtection)
+        //    {
+        //        var message = new YouthProtectionMessage(this);
+        //        this.MvxMessenger.Publish(message);
+        //        if (message.Result == DialogResult.Ok)
+        //        {
+        //            Settings.YouthProtection = true;
+        //            this.StartQuizCommand.Execute(null);
+        //        }
+
+        //        //// Notify view 
+        //        //this.YouthProtectionQuestion.RaiseEvent(this, new NotificationEventArgs<string, bool>(
+        //        //            this.TextSource.GetText("YouthProtectionQuestion"),
+        //        //            string.Empty,
+        //        //            result =>
+        //        //            {
+        //        //                if (result)
+        //        //                {
+        //        //                    Settings.YouthProtection = true;
+        //        //                    this.StartQuizCommand.Execute(null);
+        //        //                }
+        //        //            }));
+        //    }
+        //    else
+        //    {
+        //        this.StartQuizCommand.Execute(null);
+        //    }
+        //}
     }
 }

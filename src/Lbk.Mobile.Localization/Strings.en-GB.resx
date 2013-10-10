@@ -155,6 +155,12 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
   <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
     <value>Do you want to leave quiz?</value>
   </data>
+  <data name="Lbk.QuizViewModel.CurrentPoints" xml:space="preserve">
+    <value>Reaches {0} out of {1} points</value>
+  </data>
+  <data name="Lbk.QuizViewModel.CurrentQuestionNumber" xml:space="preserve">
+    <value>Question {0} of {1}</value>
+  </data>
   <data name="Lbk.ReservationConfirmationViewModel.AbortReservationNotConfirmed" xml:space="preserve">
     <value>The cancellation request could not be confirmed.</value>
   </data>

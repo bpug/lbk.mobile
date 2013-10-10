@@ -1,5 +1,5 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="BaseView.cs" company="ip-connect GmbH">
+//  <copyright file="BaseMvxFragmentActivity.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
@@ -7,22 +7,17 @@
 namespace Lbk.Mobile.UI.Droid.Views
 {
     using Android.App;
-
-    using Cirrious.MvvmCross.Binding.BindingContext;
-    using Cirrious.MvvmCross.Droid.Views;
-
     using Android.OS;
 
+    using Cirrious.MvvmCross.Droid.Fragging;
+
     using Lbk.Mobile.Core.ViewModels;
-    using Lbk.Mobile.UI.Droid.Controls.ProgressBarDialog;
     using Lbk.Mobile.UI.Droid.Extensions;
 
     [Activity(Icon = "@drawable/ic_launcher")]
-    public abstract class BaseView<TViewModel> : MvxActivity, IBaseView<TViewModel>
+    public abstract class BaseMvxFragmentActivity<TViewModel> : MvxFragmentActivity, IBaseView<TViewModel>
         where TViewModel : BaseViewModel
     {
-        private BindableProgress bindableProgress;
-
         public new TViewModel ViewModel
         {
             get
@@ -37,29 +32,17 @@ namespace Lbk.Mobile.UI.Droid.Views
 
         protected override void OnCreate(Bundle bundle)
         {
-            //this.RequestWindowFeature(WindowFeatures.NoTitle);
-
             base.OnCreate(bundle);
 
             this.SetBackground(this.Background);
-
-            this.BindHud();
         }
 
         protected virtual int Background
         {
             get
             {
-                return  Resource.Drawable.background;
+                return Resource.Drawable.background;
             }
-        }
-
-        private void BindHud()
-        {
-            this.bindableProgress = new BindableProgress(this);
-            var set = this.CreateBindingSet<BaseView<TViewModel>, TViewModel>();
-            set.Bind(this.bindableProgress).For(p => p.Visible).To(vm => vm.IsBusy);
-            set.Apply();
         }
     }
 }

@@ -86,8 +86,8 @@ namespace Lbk.Mobile.Core.ViewModels.Home
             get
             {
                 //string subject = this.TextProvider.GetText(Constants.GeneralNamespace, "Recommend", "Recommend.MailSubject");
-                string subject = this.TextSource.GetText("Recommend.MailSubject");
-                string body = this.TextSource.GetText("Recommend.MailBody");
+                string subject = this.GetText("Recommend.MailSubject");
+                string body = this.GetText("Recommend.MailBody");
                 return new MvxCommand(() => this.ComposeEmail("", subject, body));
             }
         }

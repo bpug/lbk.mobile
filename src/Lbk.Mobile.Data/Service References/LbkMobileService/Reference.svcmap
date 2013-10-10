@@ -20,10 +20,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="D:\Projects\Loewenbraeu\mono\Lbk.Mobile\branches\dev\src\Lbk.Mobile.Data\Proxies\lbk.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="D:\Projects\Loewenbraeu\mono\Lbk.Mobile\branches\dev\src\Lbk.Mobile.Data\Proxies\lbk-dev.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="lbk1.wsdl" MetadataType="Wsdl" ID="10a5e17c-af1a-4013-9a51-55a15950873c" SourceId="1" SourceUrl="file:///D:/Projects/Loewenbraeu/mono/Lbk.Mobile/branches/dev/src/Lbk.Mobile.Data/Proxies/lbk.wsdl" />
+    <MetadataFile FileName="lbk-dev.wsdl" MetadataType="Wsdl" ID="059fa0f9-3a40-4889-87e7-4569a584d07f" SourceId="1" SourceUrl="file:///D:/Projects/Loewenbraeu/mono/Lbk.Mobile/branches/dev/src/Lbk.Mobile.Data/Proxies/lbk-dev.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

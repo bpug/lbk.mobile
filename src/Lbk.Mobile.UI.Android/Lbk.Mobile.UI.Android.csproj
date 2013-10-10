@@ -66,6 +66,9 @@
     <Reference Include="Cirrious.MvvmCross.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid.Fragging">
+      <HintPath>..\packages\MvvmCross.HotTuna.Droid.Fragging.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Droid.Fragging.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
@@ -106,6 +109,13 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Sqlite.Droid.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
@@ -150,6 +160,7 @@
     <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
     <Compile Include="Bootstrap\AppSettingsBootstrap.cs" />
+    <Compile Include="Bootstrap\SqlitePluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserInteractionBootstrap.cs" />
     <Compile Include="Bootstrap\DocumentViewerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\EmailPluginBootstrap.cs" />
@@ -204,12 +215,17 @@
     <Compile Include="Tools\Utility.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
+    <Compile Include="Views\BaseMvxFragmentActivity.cs" />
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
     <Compile Include="Views\Gallery\GalleryView.cs" />
     <Compile Include="Views\Gallery\PictureView.cs" />
     <Compile Include="Views\History\HisroryView.cs" />
     <Compile Include="Views\History\HistoryDetailView.cs" />
+    <Compile Include="Views\Quiz\QuizView.cs" />
+    <Compile Include="Views\Quiz\InstructionsView.cs" />
+    <Compile Include="Views\Quiz\QuestionFragment.cs" />
+    <Compile Include="Views\Quiz\QuizStartView.cs" />
     <Compile Include="Views\Room\RoomDetailView.cs" />
     <Compile Include="Views\Room\RoomListView.cs" />
     <Compile Include="Views\HomeView.cs" />
@@ -262,6 +278,21 @@
     <AndroidResource Include="Resources\Layout\Gallery_Picture.axml" />
     <AndroidResource Include="Resources\Layout\Gallery_Item.axml" />
     <AndroidResource Include="Resources\Layout-small\History_Details.axml" />
+    <AndroidResource Include="Resources\Layout\Quiz_Start.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Quiz_Instructions.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Quiz_Question.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Quiz_AnswerItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Quiz_Page.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -402,6 +433,13 @@
     <AndroidResource Include="Resources\Drawable\r_loewenempore1.jpg" />
     <AndroidResource Include="Resources\Drawable\r_loewenempore2.jpg" />
     <AndroidResource Include="Resources\Drawable\r_loewenterrasse1.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_BAY.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_BIE.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_FOD.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_LBK.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_MUC.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_SCH.jpg" />
+    <AndroidResource Include="Resources\Drawable\quiz_background.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
