@@ -5,14 +5,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:baselineAligned="false"
-    android:padding="10dp">
+    android:padding="10dp"
+    local:MvxBind="Visibility Visibility(CurrentQuestion);">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_gravity="top"
-        android:background="@drawable/runde_ecken_top"
-        android:paddingBottom="5dp"
+        android:background="@drawable/runde_ecken"
         android:layout_weight="1">
         <TextView
             style="@style/quiz_info1"
@@ -25,6 +25,6 @@
         <FrameLayout
             android:id="@+id/question_holder"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="fill_parent" />
     </LinearLayout>
 </LinearLayout>

@@ -14,10 +14,70 @@ namespace Lbk.Mobile.UI.Droid.Extensions
 
     using Cirrious.CrossCore.Exceptions;
 
-    using Lbk.Mobile.UI.Droid.Tools;
-
     public static class BitmapExtensions
     {
+        public static Bitmap RoundedCorner(this Bitmap bitmap, int pixels)
+        {
+            var output = Bitmap.CreateBitmap(bitmap.Width, bitmap.Height, Bitmap.Config.Argb8888);
+            var canvas = new Canvas(output);
+
+            uint color = 0xff424242;
+            var paint = new Paint();
+            var rect = new Rect(0, 0, bitmap.Width, bitmap.Height);
+            var rectF = new RectF(rect);
+            float roundPx = pixels;
+
+            paint.AntiAlias = true;
+            canvas.DrawARGB(0, 0, 0, 0);
+            paint.Color = new Color((int)color);
+            canvas.DrawRoundRect(rectF, roundPx, roundPx, paint);
+
+            paint.SetXfermode(new PorterDuffXfermode(PorterDuff.Mode.SrcIn));
+            canvas.DrawBitmap(bitmap, rect, rect, paint);
+
+            return output;
+        }
+
+        public static Bitmap Scale(this Bitmap source, int newHeight, int newWidth)
+        {
+            if (source == null)
+            {
+                return null;
+            }
+
+            int sourceWidth = source.Width;
+            int sourceHeight = source.Height;
+            float xScale = ((float)newWidth) / sourceWidth;
+            float yScale = ((float)newHeight) / sourceHeight;
+            float scale = Math.Max(xScale, yScale);
+
+            // Now get the size of the source bitmap when scaled
+            float scaledWidth = scale * sourceWidth;
+            float scaledHeight = scale * sourceHeight;
+
+            // create a matrix for the manipulation
+            var matrix = new Matrix();
+            // resize the bit map
+            matrix.PostScale(scale, scale);
+
+            // recreate the new Bitmap
+            Bitmap resizedBitmap;
+            try
+            {
+                resizedBitmap = Bitmap.CreateScaledBitmap(source, (int)scaledWidth, (int)scaledHeight, false);
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+
+            //Debug.WriteLineIf(true, "NewWidth: " + newWidth + " NewWidthToDp: " + Utility.ConvertPixelsToDp(newWidth) + " ResizedWith: " + resizedBitmap.Width + " ResizedWithToDp: " + Utility.ConvertPixelsToDp(resizedBitmap.Width));
+            //Debug.WriteLineIf(true, "NewHeight: " + newHeight + " NewHeightToDp: " + Utility.ConvertPixelsToDp(newHeight) + " ResizedHeight: " + resizedBitmap.Height + " ResizedHeightToDp: " + Utility.ConvertPixelsToDp(resizedBitmap.Height));
+
+            //Bitmap resizedBitmap2 = Bitmap.CreateBitmap(source, 0, 0, sourceWidth, sourceHeight, matrix, false);
+
+            return resizedBitmap;
+        }
 
         public static Bitmap ScaleCenterCrop(this Bitmap source, int newHeight, int newWidth)
         {
@@ -58,47 +118,6 @@ namespace Lbk.Mobile.UI.Droid.Extensions
             return dest;
         }
 
-        public static Bitmap Scale(this Bitmap source, int newHeight, int newWidth)
-        {
-            if (source == null)
-            {
-                return null;
-            }
-
-            int sourceWidth = source.Width;
-            int sourceHeight = source.Height;
-            float xScale = ((float)newWidth) / sourceWidth;
-            float yScale = ((float)newHeight) / sourceHeight;
-            float scale = Math.Max(xScale, yScale);
-
-            // Now get the size of the source bitmap when scaled
-            float scaledWidth = scale * sourceWidth;
-            float scaledHeight = scale * sourceHeight;
-
-            // create a matrix for the manipulation
-            Matrix matrix = new Matrix();
-            // resize the bit map
-            matrix.PostScale(scale, scale);
-
-            // recreate the new Bitmap
-            Bitmap resizedBitmap ;
-            try
-            {
-                resizedBitmap = Bitmap.CreateScaledBitmap(source, (int)scaledWidth, (int)scaledHeight, false);
-            }
-            catch (Exception exception)
-            {
-                return null;
-            }
-            
-            //Debug.WriteLineIf(true, "NewWidth: " + newWidth + " NewWidthToDp: " + Utility.ConvertPixelsToDp(newWidth) + " ResizedWith: " + resizedBitmap.Width + " ResizedWithToDp: " + Utility.ConvertPixelsToDp(resizedBitmap.Width));
-            //Debug.WriteLineIf(true, "NewHeight: " + newHeight + " NewHeightToDp: " + Utility.ConvertPixelsToDp(newHeight) + " ResizedHeight: " + resizedBitmap.Height + " ResizedHeightToDp: " + Utility.ConvertPixelsToDp(resizedBitmap.Height));
-            
-            //Bitmap resizedBitmap2 = Bitmap.CreateBitmap(source, 0, 0, sourceWidth, sourceHeight, matrix, false);
-           
-            return resizedBitmap;
-        }
-
         public static byte[] ToByteArray(this Bitmap bitmap)
         {
             if (bitmap == null)
@@ -121,7 +140,6 @@ namespace Lbk.Mobile.UI.Droid.Extensions
             }
             return bitmapData;
         }
-
 
         //public static Bitmap ScaleCenterCrop(this Bitmap bitmap, int reqWidth, int reqHeight)
         //{
@@ -153,6 +171,5 @@ namespace Lbk.Mobile.UI.Droid.Extensions
         //    };
         //    return BitmapFactory.DecodeByteArray(bitmapData, 0, bitmapData.Length, options2);
         //}
-        
     }
 }

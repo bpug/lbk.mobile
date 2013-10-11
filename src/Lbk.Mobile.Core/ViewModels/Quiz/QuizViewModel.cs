@@ -15,15 +15,19 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common;
+    using Lbk.Mobile.Common.Utils;
     using Lbk.Mobile.Core.Extensions;
+    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
 
     public class QuizViewModel : BaseViewModel
     {
-        private const int QuestionCount = 10;
+        private const int QuestionCount = 2;
 
         private readonly ILbkMobileService service;
+
+        
 
         private int currentPoints;
 
@@ -46,6 +50,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         public QuizViewModel(ILbkMobileService service)
         {
             this.service = service;
+            
         }
 
         public event EventHandler<NotificationEventArgs<string, bool>> AbortQuizQuestion;
@@ -272,7 +277,26 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
             else
             {
+                var result = this.ToQuizResult();
+                
+                if (this.Quiz.IsRightAnswered())
+                {
+                    
+                    // http://stackoverflow.com/questions/16524236/custom-types-in-navigation-parameters-in-v3/16540174#16540174
+                    // http://stackoverflow.com/questions/19058173/passing-complex-navigation-parameters-with-mvvmcross-showviewmodel/19059938#19059938
+                    var bundle = new MvxBundle();
+                    bundle.Write(result);
+                    //bundle.Write(voucher);
+                    this.ShowViewModel<QuizSuccessResultViewModel>(result);
+                }
+                else
+                {
+                    this.ShowViewModel<QuizNotSuccessResultViewModel>(result);
+                }
+                
             }
         }
+
+        
     }
 }

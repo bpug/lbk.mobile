@@ -215,13 +215,15 @@
     <Compile Include="Tools\Utility.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
-    <Compile Include="Views\BaseMvxFragmentActivity.cs" />
+    <Compile Include="Views\BaseFragmentActivity.cs" />
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
     <Compile Include="Views\Gallery\GalleryView.cs" />
     <Compile Include="Views\Gallery\PictureView.cs" />
     <Compile Include="Views\History\HisroryView.cs" />
     <Compile Include="Views\History\HistoryDetailView.cs" />
+    <Compile Include="Views\Quiz\QuizNotSuccessResultView.cs" />
+    <Compile Include="Views\Quiz\QuizSuccessResultView.cs" />
     <Compile Include="Views\Quiz\QuizView.cs" />
     <Compile Include="Views\Quiz\InstructionsView.cs" />
     <Compile Include="Views\Quiz\QuestionFragment.cs" />
@@ -291,6 +293,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Quiz_Page.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Quiz_ResultSuccess.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Quiz_ResultNotSuccess.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -440,6 +448,8 @@
     <AndroidResource Include="Resources\Drawable\quiz_MUC.jpg" />
     <AndroidResource Include="Resources\Drawable\quiz_SCH.jpg" />
     <AndroidResource Include="Resources\Drawable\quiz_background.png" />
+    <AndroidResource Include="Resources\Drawable\runde_ecken_top_grey.xml" />
+    <AndroidResource Include="Resources\Drawable\text_selector.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

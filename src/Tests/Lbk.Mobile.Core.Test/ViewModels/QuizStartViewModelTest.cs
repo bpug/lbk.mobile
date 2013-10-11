@@ -33,38 +33,38 @@ namespace Lbk.Mobile.Core.Test.ViewModels
     [TestFixture]
     public class QuizStartViewModelTest : TestBase
     {
-        [Test]
-        public void GetQuiz()
-        {
-            // Need for viewModel.PropertyChanged
-            this.CreateMockDispatcher();
-            var mockService = this.CreateMockLbkMobileService();
+        //[Test]
+        //public void GetQuiz()
+        //{
+        //    // Need for viewModel.PropertyChanged
+        //    this.CreateMockDispatcher();
+        //    var mockService = this.CreateMockLbkMobileService();
 
-            var result = this.GetQuizData();
+        //    var result = this.GetQuizData();
 
-            var tcs = new TaskCompletionSource<Model.Quiz>();
-            tcs.SetResult(result);
-            mockService.Setup(s => s.GetQuizAsync(It.IsAny<int>())).Returns(tcs.Task);
+        //    var tcs = new TaskCompletionSource<Model.Quiz>();
+        //    tcs.SetResult(result);
+        //    mockService.Setup(s => s.GetQuizAsync(It.IsAny<int>())).Returns(tcs.Task);
 
-            var viewModel = new QuizViewModel(mockService.Object);
-            viewModel.PropertyChanged += (sender, args) =>
-            {
-                var vm = (QuizViewModel)sender;
-                switch (args.PropertyName)
-                {
-                    case "Quiz":
-                        Assert.IsNotNull(vm.Quiz);
-                        Assert.AreEqual(2, vm.Questions.Count);
-                        break;
-                }
-            };
+        //    var viewModel = new QuizViewModel(mockService.Object);
+        //    viewModel.PropertyChanged += (sender, args) =>
+        //    {
+        //        var vm = (QuizViewModel)sender;
+        //        switch (args.PropertyName)
+        //        {
+        //            case "Quiz":
+        //                Assert.IsNotNull(vm.Quiz);
+        //                Assert.AreEqual(2, vm.Questions.Count);
+        //                break;
+        //        }
+        //    };
 
-            viewModel.Init();
+        //    viewModel.Init();
 
-            mockService.Verify(quiz => quiz.GetQuizAsync(It.IsAny<int>()), Times.Once());
-            //Assert.IsNotNull(viewModel.Quiz);
-            //Assert.AreEqual(2, viewModel.Questions.Count);
-        }
+        //    mockService.Verify(quiz => quiz.GetQuizAsync(It.IsAny<int>()), Times.Once());
+        //    //Assert.IsNotNull(viewModel.Quiz);
+        //    //Assert.AreEqual(2, viewModel.Questions.Count);
+        //}
 
         [Test]
         public void Instructions()

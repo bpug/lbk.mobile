@@ -37,6 +37,7 @@
     <Compile Include="Converters\QuizCategoryImageConverter.cs" />
     <Compile Include="Converters\ToLetterConverter.cs" />
     <Compile Include="Converters\YoutubeImageValueConverter.cs" />
+    <Compile Include="Extensions\QuizViewModelExtensions.cs" />
     <Compile Include="Extensions\QuestionExtensions.cs" />
     <Compile Include="Extensions\QuizExtensions.cs" />
     <Compile Include="LbkAppBase.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="ViewModels\History\HistoryDetailViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\QuizNotSuccessResultViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\QuizSuccessResultViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuestionViewModel.cs" />
     <Compile Include="ViewModels\Quiz\VoucherViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
