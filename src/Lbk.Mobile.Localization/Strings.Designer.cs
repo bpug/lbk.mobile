@@ -141,11 +141,29 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Congratulations!.
+        /// </summary>
+        public static string Lbk_QuizNotSuccessResultViewModel_Congratulations {
+            get {
+                return ResourceManager.GetString("Lbk.QuizNotSuccessResultViewModel.Congratulations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I confirm that I am at least 18 years old..
         /// </summary>
         public static string Lbk_QuizStartViewModel_YouthProtectionQuestion {
             get {
                 return ResourceManager.GetString("Lbk.QuizStartViewModel.YouthProtectionQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Congratulations!.
+        /// </summary>
+        public static string Lbk_QuizSuccessResultViewModel_Congratulations {
+            get {
+                return ResourceManager.GetString("Lbk.QuizSuccessResultViewModel.Congratulations", resourceCulture);
             }
         }
         
@@ -263,6 +281,60 @@ namespace Lbk.Mobile.Localization {
         public static string Lbk_Share_PleaseTryNow {
             get {
                 return ResourceManager.GetString("Lbk.Share.PleaseTryNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have already gotten your coupon code..
+        /// </summary>
+        public static string Lbk_Share_QuizAlreadyReceiveVoucher {
+            get {
+                return ResourceManager.GetString("Lbk.Share.QuizAlreadyReceiveVoucher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unfortunately there is {0} right answer to a free beer voucher..
+        /// </summary>
+        public static string Lbk_Share_QuizMissingPoint {
+            get {
+                return ResourceManager.GetString("Lbk.Share.QuizMissingPoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unfortunately, you are missing {0} correct answers to a free beer voucher..
+        /// </summary>
+        public static string Lbk_Share_QuizMissingPoints {
+            get {
+                return ResourceManager.GetString("Lbk.Share.QuizMissingPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have reached {0} of {1} points..
+        /// </summary>
+        public static string Lbk_Share_QuizResultPoints {
+            get {
+                return ResourceManager.GetString("Lbk.Share.QuizResultPoints", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have won a free beer voucher..
+        /// </summary>
+        public static string Lbk_Share_QuizWinVoucher {
+            get {
+                return ResourceManager.GetString("Lbk.Share.QuizWinVoucher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your coupon code:.
+        /// </summary>
+        public static string Lbk_Share_QuizYourCouponCode {
+            get {
+                return ResourceManager.GetString("Lbk.Share.QuizYourCouponCode", resourceCulture);
             }
         }
         

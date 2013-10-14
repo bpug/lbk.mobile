@@ -4,11 +4,37 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    style="@style/main_content">
     <TextView
-        android:text="Text"
+        android:text="Gratulation!"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Text Voucher.Code" />
+        local:MvxLang="Text Congratulations" />
+    <TextView
+        android:text="Points Text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text ResultPointsMessage" />
+    <TextView
+        android:text="Win Text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text WinVoucherMessage" />
+    <TextView
+        android:text="Gutschein-Code:"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Visibility Visibility(Voucher)" />
+    <TextView
+        android:text="ABCDE"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text Voucher.Code; Visibility Visibility(Voucher)" />
+    <ImageView
+        android:src="@drawable/quiz_pitcher"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center_horizontal"
+        local:MvxBind="Visibility Visibility(ShowPitcher)" />
 </LinearLayout>

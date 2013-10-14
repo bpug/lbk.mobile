@@ -450,6 +450,7 @@
     <AndroidResource Include="Resources\Drawable\quiz_background.png" />
     <AndroidResource Include="Resources\Drawable\runde_ecken_top_grey.xml" />
     <AndroidResource Include="Resources\Drawable\text_selector.xml" />
+    <AndroidResource Include="Resources\Drawable\quiz_krug.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

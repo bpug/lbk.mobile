@@ -149,8 +149,14 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
   <data name="Lbk.QuestionViewModel.Wrong" xml:space="preserve">
     <value>Falsch!</value>
   </data>
+  <data name="Lbk.QuizNotSuccessResultViewModel.Congratulations" xml:space="preserve">
+    <value>Gratulation!</value>
+  </data>
   <data name="Lbk.QuizStartViewModel.YouthProtectionQuestion" xml:space="preserve">
     <value>Hiermit bestätige ich, dass ich mindestens 18 Jahre alt bin.</value>
+  </data>
+  <data name="Lbk.QuizSuccessResultViewModel.Congratulations" xml:space="preserve">
+    <value>Gratulation!</value>
   </data>
   <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
     <value>Wollen Sie Quiz verlassen ?</value>
@@ -190,6 +196,24 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
   </data>
   <data name="Lbk.Share.PleaseTryNow" xml:space="preserve">
     <value>Bitte versuchen Sie es später noch einmal.</value>
+  </data>
+  <data name="Lbk.Share.QuizAlreadyReceiveVoucher" xml:space="preserve">
+    <value>Sie haben Ihren Gutschein-Code bereits bekommen.</value>
+  </data>
+  <data name="Lbk.Share.QuizMissingPoint" xml:space="preserve">
+    <value>Leider fehlt Ihnen {0} richtige Antwort zu einem Freibiergutschein.</value>
+  </data>
+  <data name="Lbk.Share.QuizMissingPoints" xml:space="preserve">
+    <value>Leider fehlen Ihnen {0} richtige Antworten zu einem Freibiergutschein.</value>
+  </data>
+  <data name="Lbk.Share.QuizResultPoints" xml:space="preserve">
+    <value>Sie haben {0} von {1} Punkten erreicht.</value>
+  </data>
+  <data name="Lbk.Share.QuizWinVoucher" xml:space="preserve">
+    <value>Sie haben einen Freibiergutschein gewonnen!</value>
+  </data>
+  <data name="Lbk.Share.QuizYourCouponCode" xml:space="preserve">
+    <value>Ihre Gutschein-Code:</value>
   </data>
   <data name="Lbk.Share.Sorry" xml:space="preserve">
     <value>Entschuldigung</value>

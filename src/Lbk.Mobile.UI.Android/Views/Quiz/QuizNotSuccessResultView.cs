@@ -7,11 +7,12 @@
 namespace Lbk.Mobile.UI.Droid.Views.Quiz
 {
     using Android.App;
+    using Android.Content.PM;
     using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels.Quiz;
 
-    [Activity(Label = "Bavaria Quiz Gaudi", Icon = "@drawable/ic_launcher")]
+    [Activity(Label = "Bavaria Quiz Gaudi", Icon = "@drawable/ic_launcher",ScreenOrientation = ScreenOrientation.Portrait)]
     public class QuizNotSuccessResultView : BaseView<QuizNotSuccessResultViewModel>
     {
         

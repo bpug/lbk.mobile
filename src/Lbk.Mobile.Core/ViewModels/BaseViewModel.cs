@@ -207,6 +207,11 @@ namespace Lbk.Mobile.Core.ViewModels
             return this.SharedTextSource.GetText(text);
         }
 
+        protected string GetSharedText(string text, params object[] formatArgs)
+        {
+            return this.SharedTextSource.GetText(text, formatArgs);
+        }
+
         protected string GetText(string text)
         {
             return this.TextSource.GetText(text);
