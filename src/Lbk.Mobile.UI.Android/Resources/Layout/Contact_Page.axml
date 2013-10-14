@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    style="@style/main_content">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Löwenbräukeller Gastronomie GmbH \nNymphenburgerstrasse 2 \n80335 München"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="3dp" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_map"
+                    local:MvxBind="Click StartWatcherCommand" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bis zum Ziel ca: "
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    local:MvxBind="Visibility Visibility(Distance)" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1,3km"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    local:MvxBind="Text Distance, Converter=Distance; Visibility Visibility(Distance)" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tel.: +49 (0)89 - 547 2669-0 \nFax: +49 (0)89 - 547 2669-25"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="3dp"
+                    android:singleLine="false"
+                    android:layout_gravity="center_vertical" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_phone"
+                    local:MvxBind="Click PhoneCallCommand" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="info@loewenbraeukeller.com"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="3dp"
+                    android:layout_gravity="center_vertical" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_mail"
+                    local:MvxBind="Click EmailCommand" />
+            </LinearLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/bullet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="•" />
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Öffentliche Verkehrsmittel halten direkt und bequem vor der Haustür (U1, Trambahnlinie 20 und 21)."
+                        android:layout_marginLeft="5dp" />
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/bullet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="•" />
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Der Hauptbahnhof (Zug- und S-Bahn-Anschluss) ist nur eine U-Bahnstation (U1) entfernt oder zu Fuß in ca. 30 Minuten entfernt."
+                        android:layout_marginLeft="5dp" />
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/bullet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="•" />
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Der FLughafen liegt mit dem Auto nur ca. 30 Minuten entfernt."
+                        android:layout_marginLeft="5dp" />
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/bullet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="•" />
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:text="Direkt vor dem Haus stehen Taxis zur Verfügung"
+                        android:layout_marginLeft="5dp" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Impressum"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginBottom="10dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verantwortlich für den Inhalt:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Christian Schottenhammel"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Geschäftsführer:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Christian Schottenhammel"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anschrift/Firmierung:"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Löwenbräukeller Gastronomie GmbH \nNymphenburgerstrasse 2 \n80335 München"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tel.: +49 (0)89 - 547 2669-0 \nFax: +49 (0)89 - 547 2669-25"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Öffnungszeiten"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10.00 bis 24.00"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ust.-IdNr.:"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DE256569850"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amtsgericht\nMünchen:\nHRB 170083"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="zuständige\nAufsichts-\nbehörde KVR\nMünchen"
+                        android:textColor="@color/white"
+                        android:lineSpacingExtra="3dp"
+                        android:layout_marginBottom="20dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -32,7 +32,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         public QuizVoucher Voucher { get; set; }
         public string WinVoucherMessage { get; set; }
 
-        public bool ShowKrug { get; set; }
+        public bool ShowPitcher { get; set; }
 
         public void Init(QuizResult quizResult)
         {
@@ -72,7 +72,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                         this.voucherRepository.Update(quizVoucher);
                         this.WinVoucherMessage = this.GetSharedText("QuizAlreadyReceiveVoucher");
                     }
-                    ShowKrug = true;
+                    ShowPitcher = true;
                 },
                 this.OnLoadErrorActivate);
         }
@@ -87,7 +87,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             else
             {
                 this.WinVoucherMessage = this.GetSharedText("QuizAlreadyReceiveVoucher");
-                ShowKrug = true;
+                ShowPitcher = true;
             }
         }
 

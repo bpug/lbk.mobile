@@ -13,6 +13,13 @@
         local:MvxBind="Click StartCommand"
         android:layout_marginTop="250dp" />
     <Button
+        android:text="Gutscheine"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        style="@style/button_lbk"
+        local:MvxBind="Click ShowVouchersCommand; Visibility Visibility(IsNotUsedVoucher)"
+        android:layout_marginTop="15dp" />
+    <Button
         android:text="Spielanleitung"
         android:layout_gravity="center_horizontal"
         android:layout_width="150dp"

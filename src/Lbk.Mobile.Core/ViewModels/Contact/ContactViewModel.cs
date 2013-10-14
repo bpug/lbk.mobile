@@ -8,6 +8,7 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
 {
     using System.Windows.Input;
 
+    using Cirrious.CrossCore;
     using Cirrious.MvvmCross.Plugins.Location;
     using Cirrious.MvvmCross.ViewModels;
 
@@ -18,30 +19,48 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
     {
         private readonly IMvxGeoLocationWatcher watcher;
 
-        private double distance;
-
-        public ContactViewModel(IMvxGeoLocationWatcher watcher)
+        public ContactViewModel()
         {
-            this.watcher = watcher;
-            watcher.Start(
-                new MvxGeoLocationOptions
-                {
-                    EnableHighAccuracy = true
-                },
-                this.OnLocation,
-                this.OnLocationError);
+            this.watcher  = Mvx.Resolve<IMvxGeoLocationWatcher>();
+            //this.watcher = watcher;
         }
 
-        public double Distance
+        public bool IsStarted { get; set; }
+        public double Distance { get; set; }
+
+        public override void Start()
+        {
+            base.Start();
+            DoStartStop();
+        }
+
+
+        public void StopWatcher()
+        {
+            if (this.watcher.Started)
+            {
+                this.watcher.Stop();
+            }
+        }
+
+        private void DoStartStop()
+        {
+            if (!this.watcher.Started)
+            {
+                this.watcher.Start(new MvxGeoLocationOptions() { EnableHighAccuracy = true, Timeout = 60}, OnNewLocation, OnLocationError);
+            }
+            else
+            {
+                this.watcher.Stop();
+            }
+        }
+
+
+        public ICommand StartWatcherCommand
         {
             get
             {
-                return this.distance;
-            }
-            set
-            {
-                this.distance = value;
-                this.RaisePropertyChanged(() => this.Distance);
+                return new MvxCommand(this.DoStartStop);
             }
         }
 
@@ -79,11 +98,14 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
 
         private void OnLocationError(MvxLocationError error)
         {
+            this.watcher.Stop();
             Trace.Error("Seen location error {0}", error.Code);
         }
 
-        private void OnLocation(MvxGeoLocation location)
+        private void OnNewLocation(MvxGeoLocation location)
         {
+           
+
             double lat = location.Coordinates.Latitude;
             double lng = location.Coordinates.Longitude;
             this.Distance = DistanceCalcs.DistanceInMetres(lat, lng, Constants.LbkLatitude, Constants.LbkLongitude);

@@ -40,6 +40,7 @@ namespace Lbk.Mobile.Plugin.UserInteraction.Droid
                         return;
                     }
                     new AlertDialog.Builder(this.CurrentActivity).SetMessage(message)
+                        .SetCancelable(false)
                         .SetTitle(title)
                         .SetPositiveButton(
                             buttonText,
@@ -71,6 +72,7 @@ namespace Lbk.Mobile.Plugin.UserInteraction.Droid
                         return;
                     }
                     new AlertDialog.Builder(this.CurrentActivity).SetMessage(message)
+                        .SetCancelable(false)
                         .SetTitle(title)
                         .SetPositiveButton(
                             okButton,

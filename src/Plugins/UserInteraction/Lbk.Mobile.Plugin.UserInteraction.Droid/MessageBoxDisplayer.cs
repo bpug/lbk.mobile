@@ -27,6 +27,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
         {
             var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity as IMvxBindingContextOwner;
             var alertDialog = new AlertDialog.Builder((Activity)activity).Create();
+            alertDialog.SetCancelable(false);
             alertDialog.SetTitle(title);
             alertDialog.SetMessage(message);
             alertDialog.SetButton(buttonConfirmText, (sender, args) => onBoxClose(true));

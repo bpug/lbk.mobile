@@ -656,13 +656,13 @@ namespace Lbk.Mobile.UI.Droid
 			public const int quiz_FOD = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int quiz_krug = 2130837549;
+			public const int quiz_LBK = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int quiz_LBK = 2130837550;
+			public const int quiz_MUC = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int quiz_MUC = 2130837551;
+			public const int quiz_pitcher = 2130837551;
 			
 			// aapt resource value: 0x7f020030
 			public const int quiz_SCH = 2130837552;
@@ -839,95 +839,104 @@ namespace Lbk.Mobile.UI.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f05001e
-			public const int ErrorImage = 2131034142;
+			// aapt resource value: 0x7f050021
+			public const int ErrorImage = 2131034145;
 			
-			// aapt resource value: 0x7f05001f
-			public const int ErrorText1 = 2131034143;
+			// aapt resource value: 0x7f050022
+			public const int ErrorText1 = 2131034146;
 			
-			// aapt resource value: 0x7f050020
-			public const int ErrorText2 = 2131034144;
+			// aapt resource value: 0x7f050023
+			public const int ErrorText2 = 2131034147;
 			
-			// aapt resource value: 0x7f050011
-			public const int GalleryImage = 2131034129;
+			// aapt resource value: 0x7f050014
+			public const int GalleryImage = 2131034132;
 			
 			// aapt resource value: 0x7f050005
 			public const int MvxBindingTagUnique = 2131034117;
 			
-			// aapt resource value: 0x7f05000f
-			public const int PictureDescription = 2131034127;
+			// aapt resource value: 0x7f050012
+			public const int PictureDescription = 2131034130;
 			
-			// aapt resource value: 0x7f05000e
-			public const int PictureTitle = 2131034126;
+			// aapt resource value: 0x7f050011
+			public const int PictureTitle = 2131034129;
+			
+			// aapt resource value: 0x7f050008
+			public const int TextView01 = 2131034120;
 			
 			// aapt resource value: 0x7f050003
 			public const int bottom = 2131034115;
 			
-			// aapt resource value: 0x7f05000a
-			public const int gallery_gridview = 2131034122;
+			// aapt resource value: 0x7f050007
+			public const int bullet = 2131034119;
 			
-			// aapt resource value: 0x7f05000b
-			public const int gallery_imageitem = 2131034123;
+			// aapt resource value: 0x7f05000d
+			public const int gallery_gridview = 2131034125;
 			
-			// aapt resource value: 0x7f050012
-			public const int history_pager = 2131034130;
+			// aapt resource value: 0x7f05000e
+			public const int gallery_imageitem = 2131034126;
 			
-			// aapt resource value: 0x7f050013
-			public const int history_pager_indicator = 2131034131;
+			// aapt resource value: 0x7f050015
+			public const int history_pager = 2131034133;
 			
-			// aapt resource value: 0x7f05001b
-			public const int image_pager = 2131034139;
+			// aapt resource value: 0x7f050016
+			public const int history_pager_indicator = 2131034134;
 			
-			// aapt resource value: 0x7f05001c
-			public const int image_pager_indicator = 2131034140;
+			// aapt resource value: 0x7f05001e
+			public const int image_pager = 2131034142;
+			
+			// aapt resource value: 0x7f05001f
+			public const int image_pager_indicator = 2131034143;
 			
 			// aapt resource value: 0x7f050000
 			public const int none = 2131034112;
 			
-			// aapt resource value: 0x7f05000c
-			public const int picture_layout = 2131034124;
-			
-			// aapt resource value: 0x7f05000d
-			public const int picture_pager = 2131034125;
+			// aapt resource value: 0x7f05000f
+			public const int picture_layout = 2131034127;
 			
 			// aapt resource value: 0x7f050010
-			public const int picture_pager_indicator = 2131034128;
+			public const int picture_pager = 2131034128;
 			
-			// aapt resource value: 0x7f050016
-			public const int pull_to_refresh_image = 2131034134;
-			
-			// aapt resource value: 0x7f050007
-			public const int pull_to_refresh_layout = 2131034119;
-			
-			// aapt resource value: 0x7f050015
-			public const int pull_to_refresh_progress = 2131034133;
-			
-			// aapt resource value: 0x7f050017
-			public const int pull_to_refresh_text = 2131034135;
-			
-			// aapt resource value: 0x7f050018
-			public const int pull_to_refresh_updated_at = 2131034136;
-			
-			// aapt resource value: 0x7f05001a
-			public const int question_holder = 2131034138;
-			
-			// aapt resource value: 0x7f050008
-			public const int refresh_lower_button = 2131034120;
-			
-			// aapt resource value: 0x7f050009
-			public const int refresh_upper_button = 2131034121;
-			
-			// aapt resource value: 0x7f050014
-			public const int scrollView = 2131034132;
+			// aapt resource value: 0x7f050013
+			public const int picture_pager_indicator = 2131034131;
 			
 			// aapt resource value: 0x7f050019
-			public const int textView1 = 2131034137;
+			public const int pull_to_refresh_image = 2131034137;
 			
-			// aapt resource value: 0x7f050022
-			public const int title = 2131034146;
+			// aapt resource value: 0x7f05000a
+			public const int pull_to_refresh_layout = 2131034122;
+			
+			// aapt resource value: 0x7f050018
+			public const int pull_to_refresh_progress = 2131034136;
+			
+			// aapt resource value: 0x7f05001a
+			public const int pull_to_refresh_text = 2131034138;
+			
+			// aapt resource value: 0x7f05001b
+			public const int pull_to_refresh_updated_at = 2131034139;
 			
 			// aapt resource value: 0x7f05001d
-			public const int toast_layout_error_root = 2131034141;
+			public const int question_holder = 2131034141;
+			
+			// aapt resource value: 0x7f05000b
+			public const int refresh_lower_button = 2131034123;
+			
+			// aapt resource value: 0x7f05000c
+			public const int refresh_upper_button = 2131034124;
+			
+			// aapt resource value: 0x7f050017
+			public const int scrollView = 2131034135;
+			
+			// aapt resource value: 0x7f050006
+			public const int tableRow1 = 2131034118;
+			
+			// aapt resource value: 0x7f05001c
+			public const int textView1 = 2131034140;
+			
+			// aapt resource value: 0x7f050025
+			public const int title = 2131034149;
+			
+			// aapt resource value: 0x7f050020
+			public const int toast_layout_error_root = 2131034144;
 			
 			// aapt resource value: 0x7f050004
 			public const int top = 2131034116;
@@ -935,14 +944,14 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f050001
 			public const int triangle = 2131034113;
 			
-			// aapt resource value: 0x7f050021
-			public const int txtHeadline = 2131034145;
+			// aapt resource value: 0x7f050024
+			public const int txtHeadline = 2131034148;
 			
 			// aapt resource value: 0x7f050002
 			public const int underline = 2131034114;
 			
-			// aapt resource value: 0x7f050006
-			public const int webView_booking = 2131034118;
+			// aapt resource value: 0x7f050009
+			public const int webView_booking = 2131034121;
 			
 			static Id()
 			{
@@ -986,112 +995,121 @@ namespace Lbk.Mobile.UI.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Event_Booking = 2130903040;
+			public const int Contact_Page = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Event_List = 2130903041;
+			public const int Event_Booking = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Event_ListItem = 2130903042;
+			public const int Event_List = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Event_ListView = 2130903043;
+			public const int Event_ListItem = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Gallery = 2130903044;
+			public const int Event_ListView = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Gallery_Item = 2130903045;
+			public const int Gallery = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Gallery_Picture = 2130903046;
+			public const int Gallery_Item = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Gallery_PictureItem = 2130903047;
+			public const int Gallery_Picture = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int History = 2130903048;
+			public const int Gallery_PictureItem = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int History_Details = 2130903049;
+			public const int History = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Home = 2130903050;
+			public const int History_Details = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int Menu = 2130903051;
+			public const int Home = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int pull_down_pull_to_refresh_list = 2130903052;
+			public const int Menu = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int pull_up_pull_to_refresh_list = 2130903053;
+			public const int pull_down_pull_to_refresh_list = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int Quiz_AnswerItem = 2130903054;
+			public const int pull_up_pull_to_refresh_list = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int Quiz_Instructions = 2130903055;
+			public const int Quiz_AnswerItem = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int Quiz_Page = 2130903056;
+			public const int Quiz_Instructions = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int Quiz_Question = 2130903057;
+			public const int Quiz_Page = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int Quiz_ResultNotSuccess = 2130903058;
+			public const int Quiz_Question = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int Quiz_ResultSuccess = 2130903059;
+			public const int Quiz_ResultNotSuccess = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int Quiz_Start = 2130903060;
+			public const int Quiz_ResultSuccess = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int Reservation = 2130903061;
+			public const int Quiz_Start = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int Room_Details = 2130903062;
+			public const int Quiz_VoucherList = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int Room_ImagePagerItem = 2130903063;
+			public const int Quiz_VoucherListItem = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int Room_List = 2130903064;
+			public const int Reservation = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int Room_ListItem = 2130903065;
+			public const int Room_Details = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int SplashScreen = 2130903066;
+			public const int Room_ImagePagerItem = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int ToastLayout_Error = 2130903067;
+			public const int Room_List = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int TodaysMenu_List = 2130903068;
+			public const int Room_ListItem = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int TodaysMenu_ListItem = 2130903069;
+			public const int SplashScreen = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int TodaysMenu_ListItem_Footer = 2130903070;
+			public const int ToastLayout_Error = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int TodaysMenu_ListItem_Header = 2130903071;
+			public const int TodaysMenu_List = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int TodaysMenu_ListView = 2130903072;
+			public const int TodaysMenu_ListItem = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int Video_List = 2130903073;
+			public const int TodaysMenu_ListItem_Footer = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int Video_ListItem = 2130903074;
+			public const int TodaysMenu_ListItem_Header = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int Video_ListView = 2130903075;
+			public const int TodaysMenu_ListView = 2130903075;
+			
+			// aapt resource value: 0x7f030024
+			public const int Video_List = 2130903076;
+			
+			// aapt resource value: 0x7f030025
+			public const int Video_ListItem = 2130903077;
+			
+			// aapt resource value: 0x7f030026
+			public const int Video_ListView = 2130903078;
 			
 			static Layout()
 			{

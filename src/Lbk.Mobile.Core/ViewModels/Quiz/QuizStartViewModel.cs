@@ -37,13 +37,29 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
+        public override void Start()
+        {
+            base.Start();
+            this.IsNotUsedVoucher = this.voucherRepository.GetNotUsed().Any();
+        }
+
         public ICommand ShowVouchersCommand
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<VoucherViewModel>(), () => this.voucherRepository.GetNotUsed().Any());
+                return new MvxCommand(() => this.ShowViewModel<VoucherViewModel>());
             }
         }
+
+        public bool IsNotUsedVoucher { get; set; }
+
+        //public ICommand ShowVouchersCommand
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(() => this.ShowViewModel<VoucherViewModel>(), () => this.voucherRepository.GetNotUsed().Any());
+        //    }
+        //}
 
 
         public ICommand StartCommand

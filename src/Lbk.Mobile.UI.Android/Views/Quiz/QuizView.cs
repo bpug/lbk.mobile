@@ -30,6 +30,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Quiz
             trans.Replace(Resource.Id.question_holder, question);
             trans.Commit();
         }
+       
 
         public override bool OnKeyDown(Android.Views.Keycode keyCode, Android.Views.KeyEvent e)
         {
