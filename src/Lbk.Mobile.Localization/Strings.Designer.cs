@@ -61,7 +61,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Keine Internetverbindung.
+        ///   Looks up a localized string similar to No internet connection.
         /// </summary>
         public static string Lbk_Error_NotReachable {
             get {
@@ -70,7 +70,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service Fehler: .
+        ///   Looks up a localized string similar to Service Error: .
         /// </summary>
         public static string Lbk_Error_OnAsyncExecute {
             get {
@@ -105,7 +105,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es ist eine eine neue Speisekarte gültig, die nun geladen werden kann..
+        ///   Looks up a localized string similar to It is valid for a new menu, which can be downloaded now..
         /// </summary>
         public static string Lbk_MenuViewModel_PdfDownloadQuestion {
             get {
@@ -114,7 +114,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Weiter.
+        ///   Looks up a localized string similar to Next.
         /// </summary>
         public static string Lbk_QuestionViewModel_Next {
             get {
@@ -123,7 +123,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Richtig!.
+        ///   Looks up a localized string similar to Right!.
         /// </summary>
         public static string Lbk_QuestionViewModel_Right {
             get {
@@ -132,7 +132,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Falsch!.
+        ///   Looks up a localized string similar to Wrong!.
         /// </summary>
         public static string Lbk_QuestionViewModel_Wrong {
             get {
@@ -141,7 +141,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hiermit bestätige ich, dass ich mindestens 18 Jahre alt bin..
+        ///   Looks up a localized string similar to I confirm that I am at least 18 years old..
         /// </summary>
         public static string Lbk_QuizStartViewModel_YouthProtectionQuestion {
             get {
@@ -150,7 +150,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wollen Sie Quiz verlassen ?.
+        ///   Looks up a localized string similar to Do you want to leave quiz?.
         /// </summary>
         public static string Lbk_QuizViewModel_AbortQuizQuestion {
             get {
@@ -159,7 +159,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} von {1} Punkten erreicht.
+        ///   Looks up a localized string similar to Reaches {0} out of {1} points.
         /// </summary>
         public static string Lbk_QuizViewModel_CurrentPoints {
             get {
@@ -168,7 +168,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Frage {0} von {1}.
+        ///   Looks up a localized string similar to Question {0} of {1}.
         /// </summary>
         public static string Lbk_QuizViewModel_CurrentQuestionNumber {
             get {
@@ -177,7 +177,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Der Abbruchwunsch konnte nicht bestätigt werden..
+        ///   Looks up a localized string similar to The cancellation request could not be confirmed..
         /// </summary>
         public static string Lbk_ReservationConfirmationViewModel_AbortReservationNotConfirmed {
             get {
@@ -186,7 +186,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wollen Sie die Reservierung abrechen?.
+        ///   Looks up a localized string similar to Do you want to abort the reservation?.
         /// </summary>
         public static string Lbk_ReservationConfirmationViewModel_AbortReservationQuestion {
             get {
@@ -195,7 +195,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Die Reservierung wurde nicht bestätigt..
+        ///   Looks up a localized string similar to The reservation is not confirmed..
         /// </summary>
         public static string Lbk_ReservationConfirmationViewModel_ReservationNotConfirmed {
             get {
@@ -204,7 +204,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beenden.
+        ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Lbk_Share_ButtonCancel {
             get {
@@ -213,7 +213,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nein.
+        ///   Looks up a localized string similar to No.
         /// </summary>
         public static string Lbk_Share_ButtonNo {
             get {
@@ -231,7 +231,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ja.
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
         public static string Lbk_Share_ButtonYes {
             get {
@@ -240,7 +240,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Es ist ein Fehler beim Download aufgetreten..
+        ///   Looks up a localized string similar to There was an error during the download..
         /// </summary>
         public static string Lbk_Share_DownloadError {
             get {
@@ -249,7 +249,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bis zum Ziel ca: {0}.
+        ///   Looks up a localized string similar to To destination approx: {0}.
         /// </summary>
         public static string Lbk_Share_LocationDistance {
             get {
@@ -258,7 +258,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bitte versuchen Sie es später noch einmal..
+        ///   Looks up a localized string similar to Please try again later..
         /// </summary>
         public static string Lbk_Share_PleaseTryNow {
             get {
@@ -267,7 +267,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Entschuldigung.
+        ///   Looks up a localized string similar to Sorry.
         /// </summary>
         public static string Lbk_Share_Sorry {
             get {
@@ -276,7 +276,16 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wollen Sie den Gutschein {0} jetzt aktivieren?.
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        public static string Lbk_Test_Text {
+            get {
+                return ResourceManager.GetString("Lbk.Test.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to activate the coupon {0} now?.
         /// </summary>
         public static string Lbk_VoucherViewModel_ActivateVoucherQuestion {
             get {
@@ -285,7 +294,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Haben Sie den Gutschein jetzt eingelöst. Haben Sie ihr Getränk erhalten?.
+        ///   Looks up a localized string similar to You now have redeemed the voucher. Did you get their drink?.
         /// </summary>
         public static string Lbk_VoucherViewModel_UseVoucherQuestion {
             get {
@@ -294,7 +303,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Den Gutschein {0} wurde erfolgreich aktiviert..
+        ///   Looks up a localized string similar to The voucher {0} has been successfully activated..
         /// </summary>
         public static string Lbk_VoucherViewModel_VoucherActvated {
             get {
@@ -303,7 +312,7 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sie haben Ihren Gutschein-Code {0} bereits bekommen..
+        ///   Looks up a localized string similar to You have already gotten your coupon code {0}..
         /// </summary>
         public static string Lbk_VoucherViewModel_VoucherAlreadyActvated {
             get {

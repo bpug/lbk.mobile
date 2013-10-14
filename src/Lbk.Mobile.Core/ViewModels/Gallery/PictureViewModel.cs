@@ -16,43 +16,14 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
     {
         private readonly IGalleryRepository galleryRepository;
 
-        private Picture current;
-       
-
-        private List<Picture> pictures;
-
         public PictureViewModel(IGalleryRepository galleryRepository)
         {
             this.galleryRepository = galleryRepository;
         }
 
-        public Picture Current
-        {
-            get
-            {
-                return this.current;
-            }
-            set
-            {
-                this.current = value;
-                this.RaisePropertyChanged(() => this.Current);
-            }
-        }
+        public Picture Current { get; set; }
 
-       
-
-        public List<Picture> Pictures
-        {
-            get
-            {
-                return this.pictures;
-            }
-            set
-            {
-                this.pictures = value;
-                this.RaisePropertyChanged(() => this.Pictures);
-            }
-        }
+        public List<Picture> Pictures { get; set; }
 
         public void Init(int index)
         {

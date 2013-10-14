@@ -23,8 +23,6 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
 
         private readonly ILbkMobileService service;
 
-        private List<Picture> pictures;
-
         public GalleryViewModel(ILbkMobileService service, IGalleryRepository galleryRepository)
         {
             this.service = service;
@@ -39,18 +37,7 @@ namespace Lbk.Mobile.Core.ViewModels.Gallery
             }
         }
 
-        public List<Picture> Pictures
-        {
-            get
-            {
-                return this.pictures;
-            }
-            set
-            {
-                this.pictures = value;
-                this.RaisePropertyChanged(() => this.Pictures);
-            }
-        }
+        public List<Picture> Pictures { get; set; }
 
         public ICommand ShowPictureCommand
         {

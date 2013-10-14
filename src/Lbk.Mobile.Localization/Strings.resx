@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Lbk.Error.NotReachable" xml:space="preserve">
-    <value>Keine Internetverbindung</value>
+    <value>No internet connection</value>
   </data>
   <data name="Lbk.Error.OnAsyncExecute" xml:space="preserve">
-    <value>Service Fehler: </value>
+    <value>Service Error: </value>
   </data>
   <data name="Lbk.HomeViewModel.Recommend.MailBody" xml:space="preserve">
     <value>Hallo,
@@ -138,72 +138,75 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
     <value>Löwenbräukeller-App Empfelung</value>
   </data>
   <data name="Lbk.MenuViewModel.PdfDownloadQuestion" xml:space="preserve">
-    <value>Es ist eine eine neue Speisekarte gültig, die nun geladen werden kann.</value>
+    <value>It is valid for a new menu, which can be downloaded now.</value>
   </data>
   <data name="Lbk.QuestionViewModel.Next" xml:space="preserve">
-    <value>Weiter</value>
+    <value>Next</value>
   </data>
   <data name="Lbk.QuestionViewModel.Right" xml:space="preserve">
-    <value>Richtig!</value>
+    <value>Right!</value>
   </data>
   <data name="Lbk.QuestionViewModel.Wrong" xml:space="preserve">
-    <value>Falsch!</value>
+    <value>Wrong!</value>
   </data>
   <data name="Lbk.QuizStartViewModel.YouthProtectionQuestion" xml:space="preserve">
-    <value>Hiermit bestätige ich, dass ich mindestens 18 Jahre alt bin.</value>
+    <value>I confirm that I am at least 18 years old.</value>
   </data>
   <data name="Lbk.QuizViewModel.AbortQuizQuestion" xml:space="preserve">
-    <value>Wollen Sie Quiz verlassen ?</value>
+    <value>Do you want to leave quiz?</value>
   </data>
   <data name="Lbk.QuizViewModel.CurrentPoints" xml:space="preserve">
-    <value>{0} von {1} Punkten erreicht</value>
+    <value>Reaches {0} out of {1} points</value>
   </data>
   <data name="Lbk.QuizViewModel.CurrentQuestionNumber" xml:space="preserve">
-    <value>Frage {0} von {1}</value>
+    <value>Question {0} of {1}</value>
   </data>
   <data name="Lbk.ReservationConfirmationViewModel.AbortReservationNotConfirmed" xml:space="preserve">
-    <value>Der Abbruchwunsch konnte nicht bestätigt werden.</value>
+    <value>The cancellation request could not be confirmed.</value>
   </data>
   <data name="Lbk.ReservationConfirmationViewModel.AbortReservationQuestion" xml:space="preserve">
-    <value>Wollen Sie die Reservierung abrechen?</value>
+    <value>Do you want to abort the reservation?</value>
   </data>
   <data name="Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed" xml:space="preserve">
-    <value>Die Reservierung wurde nicht bestätigt.</value>
+    <value>The reservation is not confirmed.</value>
   </data>
   <data name="Lbk.Share.ButtonCancel" xml:space="preserve">
-    <value>Beenden</value>
+    <value>Cancel</value>
   </data>
   <data name="Lbk.Share.ButtonNo" xml:space="preserve">
-    <value>Nein</value>
+    <value>No</value>
   </data>
   <data name="Lbk.Share.ButtonOk" xml:space="preserve">
     <value>Ok</value>
   </data>
   <data name="Lbk.Share.ButtonYes" xml:space="preserve">
-    <value>Ja</value>
+    <value>Yes</value>
   </data>
   <data name="Lbk.Share.DownloadError" xml:space="preserve">
-    <value>Es ist ein Fehler beim Download aufgetreten.</value>
+    <value>There was an error during the download.</value>
   </data>
   <data name="Lbk.Share.LocationDistance" xml:space="preserve">
-    <value>Bis zum Ziel ca: {0}</value>
+    <value>To destination approx: {0}</value>
   </data>
   <data name="Lbk.Share.PleaseTryNow" xml:space="preserve">
-    <value>Bitte versuchen Sie es später noch einmal.</value>
+    <value>Please try again later.</value>
   </data>
   <data name="Lbk.Share.Sorry" xml:space="preserve">
-    <value>Entschuldigung</value>
+    <value>Sorry</value>
+  </data>
+  <data name="Lbk.Test.Text" xml:space="preserve">
+    <value>English</value>
   </data>
   <data name="Lbk.VoucherViewModel.ActivateVoucherQuestion" xml:space="preserve">
-    <value>Wollen Sie den Gutschein {0} jetzt aktivieren?</value>
+    <value>Do you want to activate the coupon {0} now?</value>
   </data>
   <data name="Lbk.VoucherViewModel.UseVoucherQuestion" xml:space="preserve">
-    <value>Haben Sie den Gutschein jetzt eingelöst. Haben Sie ihr Getränk erhalten?</value>
+    <value>You now have redeemed the voucher. Did you get their drink?</value>
   </data>
   <data name="Lbk.VoucherViewModel.VoucherActvated" xml:space="preserve">
-    <value>Den Gutschein {0} wurde erfolgreich aktiviert.</value>
+    <value>The voucher {0} has been successfully activated.</value>
   </data>
   <data name="Lbk.VoucherViewModel.VoucherAlreadyActvated" xml:space="preserve">
-    <value>Sie haben Ihren Gutschein-Code {0} bereits bekommen.</value>
+    <value>You have already gotten your coupon code {0}.</value>
   </data>
 </root>

@@ -1,5 +1,5 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="HelpViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="VoucherViewModel.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
@@ -10,7 +10,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using System.Collections.Generic;
     using System.Linq;
     using System.Windows.Input;
-    using System.Xml.Linq;
 
     using Cirrious.MvvmCross.ViewModels;
 
@@ -21,12 +20,9 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     public class VoucherViewModel : BaseViewModel
     {
-        public event EventHandler<NotificationEventArgs<string, bool>> UseVoucherQuestion;
-
-        public event EventHandler<NotificationEventArgs<string, bool>> ActivateVoucherQuestion;
+        private readonly ILbkMobileService lbkMobileservice;
 
         private readonly IQuizVoucherRepository voucherRepository;
-        private readonly ILbkMobileService lbkMobileservice;
 
         public VoucherViewModel(ILbkMobileService lbkMobileservice, IQuizVoucherRepository voucherRepository)
         {
@@ -34,22 +30,14 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             this.voucherRepository = voucherRepository;
         }
 
-        public void Init()
-        {
-            this.Load();
-        }
+        public event EventHandler<NotificationEventArgs<string, bool>> ActivateVoucher;
+        public event EventHandler<NotificationEventArgs<string, bool>> UseVoucher;
 
-        private List<QuizVoucher> vouchers;
-        public List<QuizVoucher> Vouchers
+        public ICommand ActivateVoucherCommand
         {
             get
             {
-                return this.vouchers;
-            }
-            set
-            {
-                this.vouchers = value;
-                this.RaisePropertyChanged(() => this.Vouchers);
+                return new MvxCommand<QuizVoucher>(this.ActivateVoucherExecute);
             }
         }
 
@@ -61,20 +49,18 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public ICommand ActivateVoucherCommand
-        {
-            get
-            {
-                return new MvxCommand<QuizVoucher>(this.ActivateVoucherExecute);
-            }
-        }
+        public List<QuizVoucher> Vouchers { get; set; }
 
+        public void Init()
+        {
+            this.Load();
+        }
 
         private void ActivateVoucherExecute(QuizVoucher voucher)
         {
-            if (this.ActivateVoucherQuestion != null)
+            if (this.ActivateVoucher != null)
             {
-                this.ActivateVoucherQuestion(
+                this.ActivateVoucher(
                     this,
                     new NotificationEventArgs<string, bool>(
                         string.Format(this.GetText("ActivateVoucherQuestion"), voucher.Code),
@@ -83,7 +69,8 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                         {
                             if (isActivated)
                             {
-                                this.AsyncExecute( () => this.lbkMobileservice.ActivateVoucherAsync(voucher),
+                                this.AsyncExecute(
+                                    () => this.lbkMobileservice.ActivateVoucherAsync(voucher),
                                     serviceResult =>
                                     {
                                         if (serviceResult)
@@ -108,11 +95,16 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
+        private void Load()
+        {
+            this.Vouchers = this.voucherRepository.GetNotUsed().ToList();
+        }
+
         private void UseVoucherExecute(QuizVoucher voucher)
         {
-            if (this.UseVoucherQuestion != null)
+            if (this.UseVoucher != null)
             {
-                this.UseVoucherQuestion(
+                this.UseVoucher(
                     this,
                     new NotificationEventArgs<string, bool>(
                         this.GetText("UseVoucherQuestion"),
@@ -128,11 +120,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                             }
                         }));
             }
-        }
-
-        private void Load()
-        {
-            this.Vouchers =  this.voucherRepository.GetNotUsed().ToList();
         }
     }
 }

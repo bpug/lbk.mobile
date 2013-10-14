@@ -23,55 +23,33 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
         private readonly IQuizVoucherRepository voucherRepository;
         private readonly ILbkMobileService service;
 
-        private QuizResult result;
-
-        private QuizVoucher voucher;
-
         public QuizSuccessResultViewModel(ILbkMobileService service, IQuizVoucherRepository voucherRepository)
         {
             this.voucherRepository = voucherRepository;
             this.service = service;
         }
 
-        public QuizResult Result
-        {
-            get
-            {
-                return this.result;
-            }
-            set
-            {
-                this.result = value;
-                this.RaisePropertyChanged(() => this.Result);
-            }
-        }
+        public QuizResult Result { get; set; }
 
-        public QuizVoucher Voucher
-        {
-            get
-            {
-                return this.voucher;
-            }
-            set
-            {
-                this.voucher = value;
-                this.RaisePropertyChanged(() => this.Voucher);
-            }
-        }
+        public QuizVoucher Voucher { get; set; }
 
         public void Init(QuizResult quizResult)
         {
             this.Result = quizResult;
         }
 
-        public override void Start()
+        public override  void Start()
         {
             base.Start();
+            CheckVoucher();
+        }
 
-            Voucher = this.GetNewVoucher();
-            if (!Voucher.IsActivated)
+        private async void CheckVoucher()
+        {
+             var newVoucher = this.GetNewVoucher();
+            if (newVoucher != null)
             {
-                
+               await ActivateVoucher(newVoucher);
             }
         }
 
@@ -89,22 +67,34 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
                 return newVoucher;
             }
-            return savedVoucher;
+            return null;
         }
 
         private async Task ActivateVoucher(QuizVoucher quizVoucher)
         {
-            await this.AsyncExecute(() => this.service.ActivateVoucherAsync(quizVoucher), OnSuccessActivate, this.OnLoadErrorActivate);
-        }
-
-        private void OnSuccessActivate(bool b)
-        {
-            throw new NotImplementedException();
+            await this.AsyncExecute(() => this.service.ActivateVoucherAsync(quizVoucher),
+                isActivated =>
+                {
+                    if (isActivated)
+                    {
+                        quizVoucher.IsActivated = true;
+                        voucherRepository.Update(quizVoucher);
+                        this.Voucher = quizVoucher;
+                    }
+                    else
+                    {
+                        //Wurde schon aufgelöst ????
+                        //???? - Copy from Touch logik
+                        quizVoucher.IsUsed = true;
+                        quizVoucher.Deleted = true;
+                        voucherRepository.Update(quizVoucher);
+                    }
+                }, this.OnLoadErrorActivate);
         }
 
         private void OnLoadErrorActivate(Exception obj)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

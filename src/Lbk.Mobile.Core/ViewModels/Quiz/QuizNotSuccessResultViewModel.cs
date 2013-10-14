@@ -10,20 +10,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     public class QuizNotSuccessResultViewModel : BaseViewModel
     {
-        private QuizResult result;
-
-        public QuizResult Result
-        {
-            get
-            {
-                return this.result;
-            }
-            set
-            {
-                this.result = value;
-                this.RaisePropertyChanged(() => this.Result);
-            }
-        }
+       public QuizResult Result { get; set; }
 
         public void Init(QuizResult quizResult)
         {

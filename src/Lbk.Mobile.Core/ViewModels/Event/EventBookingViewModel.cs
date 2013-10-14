@@ -8,35 +8,9 @@ namespace Lbk.Mobile.Core.ViewModels.Event
 {
     public class EventBookingViewModel : BaseViewModel
     {
-        private string reservationLink;
+       public string ReservationLink { get; set; }
 
-        private string title;
-
-        public string ReservationLink
-        {
-            get
-            {
-                return this.reservationLink;
-            }
-            set
-            {
-                this.reservationLink = value;
-                this.RaisePropertyChanged(() => this.ReservationLink);
-            }
-        }
-
-        public string Title
-        {
-            get
-            {
-                return this.title;
-            }
-            set
-            {
-                this.title = value;
-                this.RaisePropertyChanged(() => this.Title);
-            }
-        }
+        public string Title { get; set; }
 
         public void Init(Nav navigation)
         {

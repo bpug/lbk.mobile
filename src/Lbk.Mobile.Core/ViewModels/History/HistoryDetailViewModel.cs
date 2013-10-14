@@ -13,25 +13,13 @@ namespace Lbk.Mobile.Core.ViewModels.History
     {
         private readonly IHistoryRepository historyRepository;
 
-        private History history;
-
+        
         public HistoryDetailViewModel(IHistoryRepository historyRepository)
         {
             this.historyRepository = historyRepository;
         }
 
-        public History History
-        {
-            get
-            {
-                return this.history;
-            }
-            set
-            {
-                this.history = value;
-                this.RaisePropertyChanged(() => this.History);
-            }
-        }
+        public History History { get; set; }
 
         public void Init(int id)
         {

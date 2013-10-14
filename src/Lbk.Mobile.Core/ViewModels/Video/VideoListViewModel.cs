@@ -17,8 +17,6 @@ namespace Lbk.Mobile.Core.ViewModels.Video
     {
         private readonly ILbkMobileService service;
 
-        private List<Video> videos;
-
         public VideoListViewModel(ILbkMobileService service)
         {
             this.service = service;
@@ -32,18 +30,7 @@ namespace Lbk.Mobile.Core.ViewModels.Video
             }
         }
 
-        public List<Video> Videos
-        {
-            get
-            {
-                return this.videos;
-            }
-            set
-            {
-                this.videos = value;
-                this.RaisePropertyChanged(() => this.Videos);
-            }
-        }
+        public List<Video> Videos { get; set; }
 
 
         public ICommand ShowVideoCommand

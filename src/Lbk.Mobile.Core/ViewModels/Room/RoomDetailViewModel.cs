@@ -15,25 +15,12 @@ namespace Lbk.Mobile.Core.ViewModels.Room
     {
         private readonly IRoomRepository roomRepository;
 
-        private Room room;
-
         public RoomDetailViewModel(IRoomRepository roomRepository)
         {
             this.roomRepository = roomRepository;
         }
-        
-        public Room Room
-        {
-            get
-            {
-                return this.room;
-            }
-            set
-            {
-                this.room = value;
-                this.RaisePropertyChanged(() => this.Room);
-            }
-        }
+
+        public Room Room { get; set; }
 
         public void Init(int id)
         {

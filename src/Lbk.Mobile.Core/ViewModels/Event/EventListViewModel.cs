@@ -25,25 +25,12 @@ namespace Lbk.Mobile.Core.ViewModels.Event
     {
         private readonly ILbkMobileService service;
 
-        private List<ModelWithCommand<Event>> events;
-
         public EventListViewModel(ILbkMobileService service)
         {
             this.service = service;
         }
 
-        public List<ModelWithCommand<Event>> Events
-        {
-            get
-            {
-                return this.events;
-            }
-            set
-            {
-                this.events = value;
-                this.RaisePropertyChanged(() => this.Events);
-            }
-        }
+        public List<ModelWithCommand<Event>> Events { get; set; }
 
         public ICommand LoadCommand
         {

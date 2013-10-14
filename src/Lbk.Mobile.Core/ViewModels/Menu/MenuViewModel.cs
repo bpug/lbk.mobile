@@ -28,8 +28,6 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
 
         private readonly ISettings userSettings;
 
-        private DateTime? lastUpdate;
-
         public MenuViewModel(ILbkMobileService service, ISettings userSettings, IAppSettings appSettings)
         {
             this.service = service;
@@ -45,18 +43,7 @@ namespace Lbk.Mobile.Core.ViewModels.Menu
             }
         }
 
-        public DateTime? LastUpdate
-        {
-            get
-            {
-                return this.lastUpdate;
-            }
-            set
-            {
-                this.lastUpdate = value;
-                this.RaisePropertyChanged(() => this.LastUpdate);
-            }
-        }
+        public DateTime? LastUpdate { get; set; }
 
         public override void Start()
         {

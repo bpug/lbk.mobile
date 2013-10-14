@@ -24,28 +24,10 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     public class QuizViewModel : BaseViewModel
     {
         private const int QuestionCount = 2;
-
         private readonly ILbkMobileService service;
-
-        
-
-        private int currentPoints;
-
         private Question currentQuestion;
-
-        private int currentQuestionNumber;
-
-        private QuestionViewModel questionViewModel;
-
-        private List<Question> questions;
-
         private Quiz quiz;
-
-        private int rightAnswerCount;
-
-        private int totalPoints;
-
-        private int totalQuestionCount;
+        
 
         public QuizViewModel(ILbkMobileService service)
         {
@@ -63,19 +45,8 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public int CurrentPoints
-        {
-            get
-            {
-                return this.currentPoints;
-            }
-            set
-            {
-                this.currentPoints = value;
-                this.RaisePropertyChanged(() => this.CurrentPoints);
-                this.RaisePropertyChanged(() => this.CurrentPointsText);
-            }
-        }
+        public int CurrentPoints { get; set; }
+        
 
         public string CurrentPointsText
         {
@@ -101,19 +72,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public int CurrentQuestionNumber
-        {
-            get
-            {
-                return this.currentQuestionNumber;
-            }
-            set
-            {
-                this.currentQuestionNumber = value;
-                this.RaisePropertyChanged(() => this.CurrentQuestionNumber);
-                this.RaisePropertyChanged(() => this.CurrentQuestionNumberText);
-            }
-        }
+        public int CurrentQuestionNumber { get; set; }
 
         public string CurrentQuestionNumberText
         {
@@ -131,31 +90,9 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public QuestionViewModel QuestionViewModel
-        {
-            get
-            {
-                return this.questionViewModel;
-            }
-            set
-            {
-                this.questionViewModel = value;
-                this.RaisePropertyChanged(() => this.QuestionViewModel);
-            }
-        }
+        public QuestionViewModel QuestionViewModel { get; set; }
 
-        public List<Question> Questions
-        {
-            get
-            {
-                return this.questions;
-            }
-            set
-            {
-                this.questions = value;
-                this.RaisePropertyChanged(() => this.Questions);
-            }
-        }
+        public List<Question> Questions { get; set; }
 
         public Quiz Quiz
         {
@@ -174,44 +111,11 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public int RightAnswerCount
-        {
-            get
-            {
-                return this.rightAnswerCount;
-            }
-            set
-            {
-                this.rightAnswerCount = value;
-                this.RaisePropertyChanged(() => this.RightAnswerCount);
-            }
-        }
+        public int RightAnswerCount { get; set; }
 
-        public int TotalPoints
-        {
-            get
-            {
-                return this.totalPoints;
-            }
-            set
-            {
-                this.totalPoints = value;
-                this.RaisePropertyChanged(() => this.TotalPoints);
-            }
-        }
+        public int TotalPoints { get; set; }
 
-        public int TotalQuestionCount
-        {
-            get
-            {
-                return this.totalQuestionCount;
-            }
-            set
-            {
-                this.totalQuestionCount = value;
-                this.RaisePropertyChanged(() => this.TotalQuestionCount);
-            }
-        }
+        public int TotalQuestionCount { get; set; }
 
         public void Init()
         {

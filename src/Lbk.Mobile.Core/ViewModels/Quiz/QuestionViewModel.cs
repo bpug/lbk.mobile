@@ -18,8 +18,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     public class QuestionViewModel : BaseViewModel
     {
-        private List<Answer> answers;
-
         private Question question;
 
         public QuestionViewModel(Question question)
@@ -41,18 +39,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public List<Answer> Answers
-        {
-            get
-            {
-                return this.answers;
-            }
-            set
-            {
-                this.answers = value;
-                this.RaisePropertyChanged(() => this.Answers);
-            }
-        }
+        public List<Answer> Answers { get; set; }
 
         public Question Question
         {

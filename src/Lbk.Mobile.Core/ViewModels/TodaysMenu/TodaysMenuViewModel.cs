@@ -20,8 +20,6 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
     {
         private readonly ILbkMobileService service;
 
-        private List<MenuCategory> menuCategories;
-
         public TodaysMenuViewModel(ILbkMobileService service)
         {
             this.service = service;
@@ -35,18 +33,7 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
             }
         }
 
-        public List<MenuCategory> MenuCategories
-        {
-            get
-            {
-                return this.menuCategories;
-            }
-            set
-            {
-                this.menuCategories = value;
-                this.RaisePropertyChanged(() => this.MenuCategories);
-            }
-        }
+        public List<MenuCategory> MenuCategories { get; set; }
 
         public override void Start()
         {

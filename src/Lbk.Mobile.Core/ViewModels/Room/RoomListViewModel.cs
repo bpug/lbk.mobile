@@ -20,8 +20,6 @@ namespace Lbk.Mobile.Core.ViewModels.Room
     {
         private readonly IRoomRepository roomRepository;
 
-        private IObservableCollection<Room> rooms;
-
         public RoomListViewModel(IRoomRepository roomRepository)
         {
             this.roomRepository = roomRepository;
@@ -35,18 +33,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
             }
         }
 
-        public IObservableCollection<Room> Rooms
-        {
-            get
-            {
-                return this.rooms;
-            }
-            set
-            {
-                this.rooms = value;
-                this.RaisePropertyChanged(() => this.Rooms);
-            }
-        }
+        public IObservableCollection<Room> Rooms { get; set; }
 
         public ICommand ShowDetailCommand
         {
