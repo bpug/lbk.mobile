@@ -80,11 +80,11 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
             }
         }
 
-        public ICommand ShowAppInfoCommand
+        public ICommand ShowImpressumCommand
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<AppInfoViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<ImpressumViewModel>());
             }
         }
 
@@ -104,8 +104,6 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
 
         private void OnNewLocation(MvxGeoLocation location)
         {
-           
-
             double lat = location.Coordinates.Latitude;
             double lng = location.Coordinates.Longitude;
             this.Distance = DistanceCalcs.DistanceInMetres(lat, lng, Constants.LbkLatitude, Constants.LbkLongitude);

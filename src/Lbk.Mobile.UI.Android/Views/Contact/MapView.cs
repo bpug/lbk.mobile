@@ -1,25 +1,23 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="QuizStartView.cs" company="ip-connect GmbH">
+//  <copyright file="MapView.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Views.Quiz
+namespace Lbk.Mobile.UI.Droid.Views.Contact
 {
     using Android.App;
-    using Android.Content.PM;
     using Android.OS;
 
-    using Lbk.Mobile.Core.ViewModels.Quiz;
+    using Lbk.Mobile.Core.ViewModels.Contact;
 
-    [Activity(Label = "Bavaria Quiz Gaudi", Icon = "@drawable/ic_launcher")]
-    public class VoucherView : BaseView<VoucherViewModel>
+    [Activity(Label = "", Icon = "@drawable/ic_launcher")]
+    public class MapView : BaseView<MapViewModel>
     {
-        
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.SetContentView(Resource.Layout.Quiz_Start);
+            this.SetContentView(Resource.Layout.Map_Page);
         }
     }
 }

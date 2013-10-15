@@ -1,5 +1,5 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="VoucherViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="VoucherListViewModel.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
@@ -10,18 +10,21 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using System.Linq;
     using System.Windows.Input;
 
+    using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
+
+    using Lbk.Mobile.Core.Messages;
+    using Lbk.Mobile.Core.ViewModels.Helpers;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
 
-    public class VoucherViewModel : BaseViewModel
+    public class VoucherListViewModel : BaseViewModel
     {
         private readonly ILbkMobileService lbkMobileservice;
-
         private readonly IQuizVoucherRepository voucherRepository;
 
-        public VoucherViewModel(ILbkMobileService lbkMobileservice, IQuizVoucherRepository voucherRepository)
+        public VoucherListViewModel(ILbkMobileService lbkMobileservice, IQuizVoucherRepository voucherRepository)
         {
             this.lbkMobileservice = lbkMobileservice;
             this.voucherRepository = voucherRepository;
@@ -43,9 +46,9 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
-        public List<QuizVoucher> Vouchers { get; set; }
+        //public List<QuizVoucher> Vouchers { get; set; }
+        public List<VoucherWithCommands> Vouchers { get; set; }
 
-       
         public override void Start()
         {
             base.Start();
@@ -87,11 +90,18 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 });
         }
 
-        
-
         private void Load()
         {
-            this.Vouchers = this.voucherRepository.GetNotUsed().ToList();
+            //this.Vouchers = this.voucherRepository.GetNotUsed().ToList();
+            var notUsed = this.voucherRepository.GetNotUsed();
+            var wrapped =
+                notUsed.Select(
+                    x =>
+                        new VoucherWithCommands(
+                            x,
+                            new MvxCommand(() => this.ActivateVoucherExecute(x)),
+                            new MvxCommand(() => this.UseVoucherExecute(x)))).ToList();
+            this.Vouchers = wrapped;
         }
 
         private void UseVoucherExecute(QuizVoucher voucher)
@@ -107,12 +117,11 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                     {
                         voucher.IsUsed = true;
                         this.voucherRepository.Update(voucher);
-                        //Navigate to QuizStartViewModel ?
-                        this.ShowViewModel<QuizStartViewModel>();
+                        this.MvxMessenger.Publish(new VoucherActivatedMessage(this));
+                        this.Close(this);
                     }
                 });
         }
-
 
         //public event EventHandler<NotificationEventArgs<string, bool>> ActivateVoucher;
         //public event EventHandler<NotificationEventArgs<string, bool>> UseVoucher;

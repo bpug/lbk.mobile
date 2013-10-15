@@ -17,7 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="150dp"
         style="@style/button_lbk"
-        local:MvxBind="Click ShowVouchersCommand; Visibility Visibility(IsNotUsedVoucher)"
+        local:MvxBind="Click ShowVouchersCommand; Visibility Visibility(ExistNotUsedVoucher)"
         android:layout_marginTop="15dp" />
     <Button
         android:text="Spielanleitung"

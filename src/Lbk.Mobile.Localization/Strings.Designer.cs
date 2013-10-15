@@ -359,36 +359,36 @@ namespace Lbk.Mobile.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Do you want to activate the coupon {0} now?.
         /// </summary>
-        public static string Lbk_VoucherViewModel_ActivateVoucherQuestion {
+        public static string Lbk_VoucherListViewModel_ActivateVoucherQuestion {
             get {
-                return ResourceManager.GetString("Lbk.VoucherViewModel.ActivateVoucherQuestion", resourceCulture);
+                return ResourceManager.GetString("Lbk.VoucherListViewModel.ActivateVoucherQuestion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to You now have redeemed the voucher. Did you get their drink?.
         /// </summary>
-        public static string Lbk_VoucherViewModel_UseVoucherQuestion {
+        public static string Lbk_VoucherListViewModel_UseVoucherQuestion {
             get {
-                return ResourceManager.GetString("Lbk.VoucherViewModel.UseVoucherQuestion", resourceCulture);
+                return ResourceManager.GetString("Lbk.VoucherListViewModel.UseVoucherQuestion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to The voucher {0} has been successfully activated..
         /// </summary>
-        public static string Lbk_VoucherViewModel_VoucherActvated {
+        public static string Lbk_VoucherListViewModel_VoucherActvated {
             get {
-                return ResourceManager.GetString("Lbk.VoucherViewModel.VoucherActvated", resourceCulture);
+                return ResourceManager.GetString("Lbk.VoucherListViewModel.VoucherActvated", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to You have already gotten your coupon code {0}..
         /// </summary>
-        public static string Lbk_VoucherViewModel_VoucherAlreadyActvated {
+        public static string Lbk_VoucherListViewModel_VoucherAlreadyActvated {
             get {
-                return ResourceManager.GetString("Lbk.VoucherViewModel.VoucherAlreadyActvated", resourceCulture);
+                return ResourceManager.GetString("Lbk.VoucherListViewModel.VoucherAlreadyActvated", resourceCulture);
             }
         }
     }

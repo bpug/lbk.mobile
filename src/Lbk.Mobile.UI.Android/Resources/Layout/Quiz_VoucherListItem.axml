@@ -8,13 +8,15 @@
         android:text="Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        local:MvxBind="Text Code" />
+        local:MvxBind="Text Item.Code" />
     <Button
         android:text="Aktivieren"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        local:MvxBind="Click ActivateCommand; Visibility InvertedVisibility(Item.IsActivated)" />
     <Button
-        android:text="Auflösen"
+        android:text="Einlösen"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        local:MvxBind="Click UseCommand" />
 </LinearLayout>

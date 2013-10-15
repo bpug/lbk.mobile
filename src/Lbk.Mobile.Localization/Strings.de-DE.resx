@@ -218,16 +218,16 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
   <data name="Lbk.Share.Sorry" xml:space="preserve">
     <value>Entschuldigung</value>
   </data>
-  <data name="Lbk.VoucherViewModel.ActivateVoucherQuestion" xml:space="preserve">
+  <data name="Lbk.VoucherListViewModel.ActivateVoucherQuestion" xml:space="preserve">
     <value>Wollen Sie den Gutschein {0} jetzt aktivieren?</value>
   </data>
-  <data name="Lbk.VoucherViewModel.UseVoucherQuestion" xml:space="preserve">
+  <data name="Lbk.VoucherListViewModel.UseVoucherQuestion" xml:space="preserve">
     <value>Haben Sie den Gutschein jetzt eingelöst. Haben Sie ihr Getränk erhalten?</value>
   </data>
-  <data name="Lbk.VoucherViewModel.VoucherActvated" xml:space="preserve">
+  <data name="Lbk.VoucherListViewModel.VoucherActvated" xml:space="preserve">
     <value>Den Gutschein {0} wurde erfolgreich aktiviert.</value>
   </data>
-  <data name="Lbk.VoucherViewModel.VoucherAlreadyActvated" xml:space="preserve">
+  <data name="Lbk.VoucherListViewModel.VoucherAlreadyActvated" xml:space="preserve">
     <value>Sie haben Ihren Gutschein-Code {0} bereits bekommen.</value>
   </data>
 </root>

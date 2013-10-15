@@ -1,24 +1,38 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="ContactView.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.UI.Droid.Views.Contact
 {
+    using Android.App;
+    using Android.OS;
+    using Android.Views;
+
     using Lbk.Mobile.Core.ViewModels.Contact;
-    using Lbk.Mobile.Core.ViewModels.Event;
 
     [Activity(Label = "Kontakt", Icon = "@drawable/ic_launcher")]
     public class ContactView : BaseView<ContactViewModel>
     {
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            var inflater = this.MenuInflater;
+            inflater.Inflate(Resource.Menu.contact_actions, menu);
+            return true;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_imressum:
+                    this.ViewModel.ShowImpressumCommand.Execute(null);
+                    return true;
+            }
+            return base.OnOptionsItemSelected(item);
+        }
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);

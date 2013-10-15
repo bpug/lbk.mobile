@@ -9,7 +9,10 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using System;
     using System.Threading.Tasks;
 
+    using Cirrious.MvvmCross.Plugins.Messenger;
+
     using Lbk.Mobile.Common.Utils;
+    using Lbk.Mobile.Core.Messages;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;
@@ -17,7 +20,6 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     public class QuizSuccessResultViewModel : BaseViewModel
     {
         private readonly ILbkMobileService service;
-
         private readonly IQuizVoucherRepository voucherRepository;
 
         public QuizSuccessResultViewModel(ILbkMobileService service, IQuizVoucherRepository voucherRepository)
@@ -62,6 +64,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                         this.voucherRepository.Update(quizVoucher);
                         this.Voucher = quizVoucher;
                         this.WinVoucherMessage = this.GetSharedText("QuizWinVoucher");
+                        this.MvxMessenger.Publish(new VoucherActivatedMessage(this));
                     }
                     else
                     {

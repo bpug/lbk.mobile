@@ -1,12 +1,18 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="MenuViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="VoucherUsedMessage.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Core.ViewModels.Contact
+namespace Lbk.Mobile.Core.Messages
 {
-    public class AppInfoViewModel : BaseViewModel
+    using Cirrious.MvvmCross.Plugins.Messenger;
+
+    public class VoucherActivatedMessage : MvxMessage
     {
+        public VoucherActivatedMessage(object sender)
+            : base(sender)
+        {
+        }
     }
 }

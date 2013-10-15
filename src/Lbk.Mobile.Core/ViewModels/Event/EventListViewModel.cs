@@ -40,6 +40,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
             }
         }
 
+        
         public ICommand ShowBookingCommand
         {
             get
@@ -72,7 +73,7 @@ namespace Lbk.Mobile.Core.ViewModels.Event
                 this.AsyncExecute(() => this.service.GetEventsAsync(),
                     result =>
                     {
-                        this.Events = result.Select(x => new ModelWithCommand<Event>(x, new MvxCommand(() => ShowBookingExecute(x)))).ToList(); ;
+                        this.Events = result.Select(x => new ModelWithCommand<Event>(x, new MvxCommand(() => ShowBookingExecute(x)))).ToList();
                     }, this.OnLoadError);
         }
 

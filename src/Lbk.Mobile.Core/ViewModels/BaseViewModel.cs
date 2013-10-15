@@ -31,6 +31,7 @@ namespace Lbk.Mobile.Core.ViewModels
 
         private IMessageBoxService messageBoxService;
 
+        
         private IMvxMessenger mvxMessenger;
 
         public ICommand BackCommand
@@ -270,6 +271,11 @@ namespace Lbk.Mobile.Core.ViewModels
         protected MvxSubscriptionToken Subscribe<TMessage>(Action<TMessage> action) where TMessage : MvxMessage
         {
             return this.MvxMessenger.Subscribe<TMessage>(action, MvxReference.Weak);
+        }
+
+        protected MvxSubscriptionToken SubscribeOnMainThread<TMessage>(Action<TMessage> action) where TMessage : MvxMessage
+        {
+            return this.MvxMessenger.SubscribeOnMainThread<TMessage>(action, MvxReference.Weak);
         }
 
         protected void Unsubscribe<TMessage>(MvxSubscriptionToken token) where TMessage : MvxMessage

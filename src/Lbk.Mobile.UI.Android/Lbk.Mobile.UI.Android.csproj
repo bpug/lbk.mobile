@@ -233,13 +233,15 @@
     <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
     <Compile Include="Views\BaseFragmentActivity.cs" />
     <Compile Include="Views\Contact\ContactView.cs" />
+    <Compile Include="Views\Contact\MapView.cs" />
+    <Compile Include="Views\Contact\ImpressumView.cs" />
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
     <Compile Include="Views\Gallery\GalleryView.cs" />
     <Compile Include="Views\Gallery\PictureView.cs" />
     <Compile Include="Views\History\HisroryView.cs" />
     <Compile Include="Views\History\HistoryDetailView.cs" />
-    <Compile Include="Views\Quiz\VoucherView.cs" />
+    <Compile Include="Views\Quiz\VoucherListView.cs" />
     <Compile Include="Views\Quiz\QuizNotSuccessResultView.cs" />
     <Compile Include="Views\Quiz\QuizSuccessResultView.cs" />
     <Compile Include="Views\Quiz\QuizView.cs" />
@@ -326,6 +328,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Contact_Page.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Impressum_Page.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Map_Page.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -478,6 +486,12 @@
     <AndroidResource Include="Resources\Drawable\runde_ecken_top_grey.xml" />
     <AndroidResource Include="Resources\Drawable\text_selector.xml" />
     <AndroidResource Include="Resources\Drawable\quiz_pitcher.png" />
+    <AndroidResource Include="Resources\Drawable\ipconnect.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ipconnect.png" />
+    <AndroidResource Include="Resources\Menu\contact_actions.xml" />
+    <AndroidResource Include="Resources\Drawable\ic_info.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_info.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_info.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

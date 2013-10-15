@@ -46,6 +46,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Converters\Converters.cs" />
     <Compile Include="Converters\CurrencyValueConverter.cs" />
+    <Compile Include="Messages\VoucherActivatedMessage.cs" />
     <Compile Include="Messages\DialogMessage.cs" />
     <Compile Include="Messages\YouthProtectionMessage.cs" />
     <Compile Include="Services\Error\ErrorService.cs" />
@@ -59,7 +60,7 @@
     <Compile Include="Utils\MvxAsyncCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
-    <Compile Include="ViewModels\Contact\AppInfoViewModel.cs" />
+    <Compile Include="ViewModels\Contact\ImpressumViewModel.cs" />
     <Compile Include="ViewModels\Contact\MapViewModel.cs" />
     <Compile Include="ViewModels\Event\EventListViewModel.cs" />
     <Compile Include="ViewModels\Event\EventBookingViewModel.cs" />
@@ -70,10 +71,11 @@
     <Compile Include="ViewModels\History\HistoryDetailViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\SplashScreenViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\VoucherWithCommands.cs" />
     <Compile Include="ViewModels\Quiz\QuizNotSuccessResultViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizSuccessResultViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuestionViewModel.cs" />
-    <Compile Include="ViewModels\Quiz\VoucherViewModel.cs" />
+    <Compile Include="ViewModels\Quiz\VoucherListViewModel.cs" />
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
     <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
     <Compile Include="ViewModels\Reservation\ReservationConfirmationViewModel.cs" />

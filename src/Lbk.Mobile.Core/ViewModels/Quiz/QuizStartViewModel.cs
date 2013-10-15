@@ -6,28 +6,28 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Quiz
 {
-    using System;
     using System.Linq;
     using System.Windows.Input;
 
+    using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Common;
-    using Lbk.Mobile.Common.Extensions;
     using Lbk.Mobile.Core.Messages;
     using Lbk.Mobile.Data.Repositories;
-    using Lbk.Mobile.Model.Enums;
 
     public class QuizStartViewModel : BaseViewModel
     {
-        //public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
+        private readonly MvxSubscriptionToken token;
 
         private readonly IQuizVoucherRepository voucherRepository;
 
         public QuizStartViewModel(IQuizVoucherRepository voucherRepository)
         {
             this.voucherRepository = voucherRepository;
+            this.token = this.SubscribeOnMainThread<VoucherActivatedMessage>(this.OnVoucherActivated);
         }
+
+        public bool ExistNotUsedVoucher { get; set; }
 
         public ICommand InstructionsCommand
         {
@@ -36,31 +36,14 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
                 return new MvxCommand(() => this.ShowViewModel<InstructionsViewModel>());
             }
         }
-
-        public override void Start()
-        {
-            base.Start();
-            this.IsNotUsedVoucher = this.voucherRepository.GetNotUsed().Any();
-        }
-
+       
         public ICommand ShowVouchersCommand
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<VoucherViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<VoucherListViewModel>(), this.IsExistNotUsedVoucher);
             }
         }
-
-        public bool IsNotUsedVoucher { get; set; }
-
-        //public ICommand ShowVouchersCommand
-        //{
-        //    get
-        //    {
-        //        return new MvxCommand(() => this.ShowViewModel<VoucherViewModel>(), () => this.voucherRepository.GetNotUsed().Any());
-        //    }
-        //}
-
 
         public ICommand StartCommand
         {
@@ -76,6 +59,24 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             {
                 return new MvxCommand(() => this.ShowViewModel<QuizViewModel>());
             }
+        }
+
+        public override void Start()
+        {
+            base.Start();
+            this.IsExistNotUsedVoucher();
+        }
+
+        private bool IsExistNotUsedVoucher()
+        {
+            bool result = this.voucherRepository.GetNotUsed().Any();
+            this.ExistNotUsedVoucher = result;
+            return result;
+        }
+
+        private void OnVoucherActivated(VoucherActivatedMessage voucherActivatedMessage)
+        {
+            this.IsExistNotUsedVoucher();
         }
 
         private void StartExecute()
@@ -102,6 +103,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
             }
         }
 
+        //public event EventHandler<NotificationEventArgs<string, bool>> YouthProtectionQuestion;
 
         //public ICommand StartCommandWithMessenger
         //{
