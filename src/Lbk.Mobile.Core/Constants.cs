@@ -13,6 +13,8 @@ namespace Lbk.Mobile.Core
         public const string ErrorType = "Error";
         public const string HostReachableName = "www.google.com";
 
+        public const string LbkTitle = "Löwenbräukeller";
+        public const string LbkAddress = "Nymphenburgerstrasse 2, 80335 München";
         public const double LbkLatitude = 48.147849;
         public const double LbkLongitude = 11.558634;
         public const string LbkPhone = "+498954726690";

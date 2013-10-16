@@ -61,7 +61,9 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
     <Compile Include="ViewModels\Contact\ImpressumViewModel.cs" />
+    <Compile Include="ViewModels\Contact\Location.cs" />
     <Compile Include="ViewModels\Contact\MapViewModel.cs" />
+    <Compile Include="ViewModels\Contact\MarkerInfo.cs" />
     <Compile Include="ViewModels\Event\EventListViewModel.cs" />
     <Compile Include="ViewModels\Event\EventBookingViewModel.cs" />
     <Compile Include="ViewModels\Gallery\GalleryViewModel.cs" />

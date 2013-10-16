@@ -145,6 +145,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.10\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="GooglePlayServicesFroyoLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Components\googleplayservicesfroyo12-12.0.0\lib\android\GooglePlayServicesFroyoLib.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="Mono.Android.Support.v4" />
@@ -218,11 +222,13 @@
     <Compile Include="Controls\PullToRefresh\Library\PullToRefreshListView.cs" />
     <Compile Include="Controls\PullToRefresh\Library\PullToRefreshState.cs" />
     <Compile Include="Controls\PullToRefresh\Library\RefreshingState.cs" />
+    <Compile Include="Converters\LocationToLatLngValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="ErrorDisplayer.cs" />
     <Compile Include="Extensions\ActivityExtensions.cs" />
     <Compile Include="Extensions\BaseViewExtensions.cs" />
     <Compile Include="Extensions\BitmapExtensions.cs" />
+    <Compile Include="Extensions\LocationExtensions.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -336,6 +342,9 @@
     <AndroidResource Include="Resources\Layout\Map_Page.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Map_MarkerInfo.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -346,7 +355,9 @@
       <SubType>Designer</SubType>
     </AndroidAsset>
     <Content Include="Controls\PullToRefresh\Library\License.txt" />
-    <Content Include="Properties\AndroidManifest.xml" />
+    <Content Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <AndroidResource Include="Resources\Values\SplashStyle.xml" />
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\Drawable\background.png" />
@@ -492,6 +503,7 @@
     <AndroidResource Include="Resources\Drawable\ic_info.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_info.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_info.png" />
+    <AndroidResource Include="Resources\Drawable\ic_lbk_map.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -572,7 +584,12 @@
       <Name>ViewPagerIndicator.Droid</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <XamarinComponentReference Include="googleplayservicesfroyo12">
+      <Visible>False</Visible>
+      <Version>12.0.0</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.
