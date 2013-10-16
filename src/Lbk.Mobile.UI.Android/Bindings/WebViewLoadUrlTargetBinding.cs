@@ -13,7 +13,7 @@ namespace Lbk.Mobile.UI.Droid.Bindings
         {
         }
 
-        public override void SetValue(object value)
+        protected override void SetValueImpl(object target, object value)
         {
             var webView = this.WebView;
             if (webView == null)

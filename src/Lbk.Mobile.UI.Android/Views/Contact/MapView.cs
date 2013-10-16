@@ -23,11 +23,9 @@ namespace Lbk.Mobile.UI.Droid.Views.Contact
     [Activity(Label = "", Icon = "@drawable/ic_launcher")]
     public class MapView : BaseFragmentActivity<MapViewModel>
     {
-        private CenterHelper centerHelper;
+        private GoogleMap googleMap;
 
         private Marker lbkMarker;
-
-        private GoogleMap googleMap;
 
         private View mapView;
 
@@ -36,104 +34,57 @@ namespace Lbk.Mobile.UI.Droid.Views.Contact
             base.OnCreate(bundle);
             this.SetContentView(Resource.Layout.Map_Page);
 
-            SetUpMapIfNeeded();
+            this.SetUpMapIfNeeded();
+        }
+
+        private void AddMarkersToMap()
+        {
+            this.lbkMarker =
+                this.googleMap.AddMarker(
+                    new MarkerOptions().SetPosition(this.ViewModel.LbkInfo.Location.ToLatLng())
+                        .SetTitle(this.ViewModel.LbkInfo.Title)
+                        .SetSnippet(this.ViewModel.LbkInfo.Description)
+                        .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure)));
+            //this.currentMarker = googleMap.AddMarker(new MarkerOptions()
+            //                            .SetPosition(this.ViewModel.CurrentLocation.ToLatLng())
+            //                            .SetTitle("Aktueller Ort")
+            //                            .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)));
+        }
+
+        private void SetUpMap()
+        {
+            this.AddMarkersToMap();
+            this.googleMap.MyLocationEnabled = true;
+            this.googleMap.SetInfoWindowAdapter(new LbkInfoWindowsAdapter(this));
+
+            this.mapView = this.SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map).View;
+            if (this.mapView.ViewTreeObserver.IsAlive)
+            {
+                this.mapView.ViewTreeObserver.GlobalLayout += this.ViewTreeObserverOnGlobalLayout;
+            }
         }
 
         private void SetUpMapIfNeeded()
         {
             // Do a null check to confirm that we have not already instantiated the map.
-            if (googleMap == null)
+            if (this.googleMap == null)
             {
                 // Try to obtain the map from the SupportMapFragment.
-                googleMap = ((SupportMapFragment)SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map)).Map;
+                this.googleMap = ((SupportMapFragment)this.SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map)).Map;
                 // Check if we were successful in obtaining the map.
-                if (googleMap != null)
+                if (this.googleMap != null)
                 {
-                    SetUpMap();
+                    this.SetUpMap();
                 }
             }
         }
 
-        private void SetUpMap()
-        {
-            AddMarkersToMap();
-            //googleMap.UiSettings.MyLocationButtonEnabled = true;
-            googleMap.MyLocationEnabled = true;
-
-            googleMap.SetInfoWindowAdapter(new LbkInfoWindowsAdapter(this));
-
-            //this.ZoomToFitMarkers(googleMap);
-
-            //centerHelper = new CenterHelper(googleMap);
-            //var set = this.CreateBindingSet<MapView, MapViewModel>();
-            //set.Bind(centerHelper)
-            //   .For(m => m.Center)
-            //   .To(vm => vm.LbkLocation)
-            //   .WithConversion(new LocationToLatLngValueConverter(), null);
-            //set.Apply();
-
-            // Pan to see all markers in view.
-			// Cannot zoom to bounds until the map has a size.
-            mapView = SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map).View;
-            if (mapView.ViewTreeObserver.IsAlive)
-            {
-                mapView.ViewTreeObserver.GlobalLayout += ViewTreeObserverOnGlobalLayout;
-            }
-        }
-
-        protected override void OnDestroy()
-        {
-            this.mapView.ViewTreeObserver.GlobalLayout -= ViewTreeObserverOnGlobalLayout;
-            base.OnDestroy();
-        } 
-
         private void ViewTreeObserverOnGlobalLayout(object sender, EventArgs eventArgs)
         {
             var lbkCoordinates = this.ViewModel.LbkInfo.Location.ToLatLng();
-           LatLngBounds bounds =
-                            new LatLngBounds.Builder()
-                                .Include(lbkCoordinates)
-                                .Build();
-           googleMap.MoveCamera(CameraUpdateFactory.NewLatLngBounds(bounds, 50));
-            
-        }
-
-        private void AddMarkersToMap()
-        {
-            this.lbkMarker = googleMap.AddMarker(new MarkerOptions()
-                                        .SetPosition(this.ViewModel.LbkInfo.Location.ToLatLng())
-                                        .SetTitle(this.ViewModel.LbkInfo.Title)
-                                        .SetSnippet(this.ViewModel.LbkInfo.Description)
-                                        .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure)));
-        }
-
-        private void ZoomToFitMarkers(GoogleMap googleMap)
-        {
-            var lbkCoordinates = this.ViewModel.LbkInfo.Location.ToLatLng();
-
-            var builder = new LatLngBounds.Builder();
-            builder.Include(lbkCoordinates);
-            var bounds = builder.Build();
-            int padding = 0; // offset from edges of the map in pixels
-            //CameraUpdate cu = CameraUpdateFactory.NewLatLngBounds(bounds, padding);
-
-            googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(lbkCoordinates, 10));
-            //googleMap.MoveCamera(cu);
-        }
-
-        class GlobalLayoutListener : Java.Lang.Object, ViewTreeObserver.IOnGlobalLayoutListener
-        {
-            readonly Action onGlobalLayout;
-
-            public GlobalLayoutListener(Action onGlobalLayout)
-            {
-                this.onGlobalLayout = onGlobalLayout;
-            }
-
-            public void OnGlobalLayout()
-            {
-                onGlobalLayout();
-            }
+            var currentCoordinates = this.ViewModel.CurrentLocation.ToLatLng();
+            var bounds = new LatLngBounds.Builder().Include(lbkCoordinates).Include(currentCoordinates).Build();
+            this.googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngBounds(bounds, 50));
         }
 
         private class LbkInfoWindowsAdapter : Object, GoogleMap.IInfoWindowAdapter
@@ -174,29 +125,6 @@ namespace Lbk.Mobile.UI.Droid.Views.Contact
                 title.Text = marker.Title;
                 snippet.Text = marker.Snippet;
                 icon.SetImageResource(markerIcon);
-            }
-        }
-    }
-
-    public class CenterHelper
-    {
-        private GoogleMap map;
-
-        public CenterHelper(GoogleMap map)
-        {
-            this.map = map;
-        }
-
-        public LatLng Center
-        {
-            get
-            {
-                return this.map.Projection.VisibleRegion.LatLngBounds.Center;
-            }
-            set
-            {
-                var center = CameraUpdateFactory.NewLatLng(value);
-                this.map.MoveCamera(center);
             }
         }
     }

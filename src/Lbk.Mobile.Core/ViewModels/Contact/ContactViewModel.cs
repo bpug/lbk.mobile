@@ -8,7 +8,6 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
 {
     using System.Windows.Input;
 
-    using Cirrious.CrossCore;
     using Cirrious.MvvmCross.Plugins.Location;
     using Cirrious.MvvmCross.ViewModels;
 
@@ -17,52 +16,22 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
 
     public class ContactViewModel : BaseViewModel
     {
-        private readonly IMvxGeoLocationWatcher watcher;
+        private readonly IMvxLocationWatcher watcher;
 
-        public ContactViewModel()
+        public ContactViewModel(IMvxLocationWatcher watcher)
         {
-            this.watcher  = Mvx.Resolve<IMvxGeoLocationWatcher>();
-            //this.watcher = watcher;
+            this.watcher = watcher;
         }
 
-        public bool IsStarted { get; set; }
-        public double Distance { get; set; }
-
-        public override void Start()
-        {
-            base.Start();
-            DoStartStop();
-        }
-
-
-        public void StopWatcher()
-        {
-            if (this.watcher.Started)
-            {
-                this.watcher.Stop();
-            }
-        }
-
-        private void DoStartStop()
-        {
-            if (!this.watcher.Started)
-            {
-                this.watcher.Start(new MvxGeoLocationOptions() { EnableHighAccuracy = true, Timeout = 60}, OnNewLocation, OnLocationError);
-            }
-            else
-            {
-                this.watcher.Stop();
-            }
-        }
-
-
-        public ICommand StartWatcherCommand
+        public ICommand CurrentLocationCommand
         {
             get
             {
-                return new MvxCommand(this.DoStartStop);
+                return new MvxCommand(this.CurrentLocationExecute);
             }
         }
+
+        public double Distance { get; set; }
 
         public ICommand EmailCommand
         {
@@ -71,6 +40,13 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
                 return new MvxCommand(() => this.ComposeEmail(Constants.LbkEmail, "Löwenbräu", string.Empty));
             }
         }
+
+        public void Init()
+        {
+            this.StartWatcher();
+        }
+
+        public bool IsStarted { get; set; }
 
         public ICommand PhoneCallCommand
         {
@@ -96,6 +72,37 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
             }
         }
 
+        public override void Start()
+        {
+            base.Start();
+            this.CurrentLocationExecute();
+        }
+
+        public void StopWatcher()
+        {
+            if (this.watcher.Started)
+            {
+                this.watcher.Stop();
+            }
+        }
+
+        private void CalculateDistance(MvxGeoLocation location)
+        {
+            double lat = location.Coordinates.Latitude;
+            double lng = location.Coordinates.Longitude;
+            this.Distance = DistanceCalcs.DistanceInMetres(lat, lng, Constants.LbkLatitude, Constants.LbkLongitude);
+        }
+
+        private void CurrentLocationExecute()
+        {
+            var currentLocation = this.watcher.CurrentLocation;
+            if (currentLocation != null)
+            {
+                this.CalculateDistance(currentLocation);
+                this.StopWatcher();
+            }
+        }
+
         private void OnLocationError(MvxLocationError error)
         {
             this.watcher.Stop();
@@ -104,11 +111,26 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
 
         private void OnNewLocation(MvxGeoLocation location)
         {
-            double lat = location.Coordinates.Latitude;
-            double lng = location.Coordinates.Longitude;
-            this.Distance = DistanceCalcs.DistanceInMetres(lat, lng, Constants.LbkLatitude, Constants.LbkLongitude);
-
+            this.CalculateDistance(location);
             this.watcher.Stop();
+        }
+
+        private void StartWatcher()
+        {
+            if (!this.watcher.Started)
+            {
+                this.watcher.Start(
+                    new MvxLocationOptions
+                    {
+                        Accuracy = MvxLocationAccuracy.Fine
+                    },
+                    this.OnNewLocation,
+                    this.OnLocationError);
+            }
+            else
+            {
+                this.watcher.Stop();
+            }
         }
     }
 }

@@ -27,11 +27,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
         {
         }
 
-        protected MvxResizableImageView(IntPtr javaReference, JniHandleOwnership transfer)
-            : base(javaReference, transfer)
-        {
-        }
-
+        
         protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec)
         {
             Drawable drawable = this.Drawable;

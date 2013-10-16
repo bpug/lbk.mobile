@@ -14,6 +14,7 @@ namespace Lbk.Mobile.Core.ViewModels
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Email;
     using Cirrious.MvvmCross.Plugins.Messenger;
+    using Cirrious.MvvmCross.Plugins.Network.Reachability;
     using Cirrious.MvvmCross.Plugins.PhoneCall;
     using Cirrious.MvvmCross.Plugins.WebBrowser;
     using Cirrious.MvvmCross.ViewModels;
@@ -21,7 +22,6 @@ namespace Lbk.Mobile.Core.ViewModels
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Exceptions;
     using Lbk.Mobile.Common.Utils;
-    using Lbk.Mobile.Plugin.Reachability;
     using Lbk.Mobile.Plugin.UserInteraction;
     using Lbk.Mobile.Plugin.WebVideo;
 
@@ -285,7 +285,7 @@ namespace Lbk.Mobile.Core.ViewModels
 
         private static bool IsReachable()
         {
-            var reachability = Mvx.Resolve<IReachability>();
+            var reachability = Mvx.Resolve<IMvxReachability>();
             return reachability.IsHostReachable(Constants.HostReachableName);
         }
 

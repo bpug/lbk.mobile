@@ -12,8 +12,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
             android:adjustViewBounds="true"
-            android:id="@+id/marker_icon"
-            android:src="@drawable/ic_launcher" />
+            android:id="@+id/marker_icon" />
         <TextView
             android:id="@+id/marker_title"
             android:layout_width="wrap_content"
