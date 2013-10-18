@@ -12,7 +12,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
 
@@ -80,7 +80,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
                 () => this.lbkMobileService.CreateReservationAsync(this.Reservation),
                 result =>
                 {
-                    this.Reservation.ReservationId = result;
+                    this.Reservation.ReservationId = result.ToString();
                     this.reservationRepository.Update(this.Reservation);
                     this.ShowReservationResult(this.Reservation);
                 });

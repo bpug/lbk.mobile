@@ -79,11 +79,11 @@ namespace Lbk.Mobile.Data.Extensions
             return tcs.Task;
         }
 
-        public static Task<Guid> CreateReservationAsyncTask(this Service1SoapClient client, Reservation reservation)
+        public static Task<Guid> CreateReservationAsyncTask(this Service1SoapClient client, Model.Reservation reservation)
         {
             var tcs = CreateSource<Guid>(null);
             client.CreateReservationByObjectCompleted += (sender, e) => TransferCompletion(tcs, e, () => e.Result, null);
-            client.CreateReservationByObjectAsync(reservation);
+            client.CreateReservationByObjectAsync(reservation.ToServiceModel());
             return tcs.Task;
         }
 

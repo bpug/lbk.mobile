@@ -1,21 +1,20 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="IReservationDataService.cs" company="ip-connect GmbH">
+//  <copyright file="IReservationRepository.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Data.Repositories
 {
-    using System;
     using System.Collections.Generic;
 
-    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
 
     public interface IReservationRepository
     {
         void Delete(Reservation reservation);
 
-        Reservation Get(Guid reservationId);
+        Reservation Get(string reservationId);
 
         IEnumerable<Reservation> GetAll();
 

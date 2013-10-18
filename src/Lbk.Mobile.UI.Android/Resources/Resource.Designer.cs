@@ -716,34 +716,34 @@ namespace Lbk.Mobile.UI.Droid
 			public const int historie_8 = 2130837542;
 			
 			// aapt resource value: 0x7f020027
-			public const int ic_ = 2130837543;
+			public const int ic_action_about = 2130837543;
 			
 			// aapt resource value: 0x7f020028
-			public const int ic_advise = 2130837544;
+			public const int ic_action_map = 2130837544;
 			
 			// aapt resource value: 0x7f020029
-			public const int ic_events = 2130837545;
+			public const int ic_action_refresh = 2130837545;
 			
 			// aapt resource value: 0x7f02002a
-			public const int ic_facebook = 2130837546;
+			public const int ic_advise = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int ic_galery = 2130837547;
+			public const int ic_events = 2130837547;
 			
 			// aapt resource value: 0x7f02002c
-			public const int ic_historie = 2130837548;
+			public const int ic_facebook = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int ic_info = 2130837549;
+			public const int ic_galery = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int ic_kontakt = 2130837550;
+			public const int ic_historie = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int ic_launcher = 2130837551;
+			public const int ic_kontakt = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int ic_lbk_map = 2130837552;
+			public const int ic_launcher = 2130837552;
 			
 			// aapt resource value: 0x7f020031
 			public const int ic_mail = 2130837553;
@@ -1070,6 +1070,18 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f060020
 			public const int lbk_map = 2131099680;
 			
+			// aapt resource value: 0x7f06002f
+			public const int map_actions = 2131099695;
+			
+			// aapt resource value: 0x7f060032
+			public const int map_hybrid = 2131099698;
+			
+			// aapt resource value: 0x7f060030
+			public const int map_normal = 2131099696;
+			
+			// aapt resource value: 0x7f060031
+			public const int map_satellite = 2131099697;
+			
 			// aapt resource value: 0x7f06001d
 			public const int marker_icon = 2131099677;
 			
@@ -1211,118 +1223,115 @@ namespace Lbk.Mobile.UI.Droid
 			public const int Event_ListView = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int FirstView = 2130903045;
+			public const int Gallery = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Gallery = 2130903046;
+			public const int Gallery_Item = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Gallery_Item = 2130903047;
+			public const int Gallery_Picture = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int Gallery_Picture = 2130903048;
+			public const int Gallery_PictureItem = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Gallery_PictureItem = 2130903049;
+			public const int History = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int History = 2130903050;
+			public const int History_Details = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int History_Details = 2130903051;
+			public const int Home = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int Home = 2130903052;
+			public const int Impressum_Page = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int Impressum_Page = 2130903053;
+			public const int Map_MarkerInfo = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int Map_MarkerInfo = 2130903054;
+			public const int Map_Page = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int Map_Page = 2130903055;
+			public const int Menu = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int Menu = 2130903056;
+			public const int pull_down_pull_to_refresh_list = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int pull_down_pull_to_refresh_list = 2130903057;
+			public const int pull_up_pull_to_refresh_list = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int pull_up_pull_to_refresh_list = 2130903058;
+			public const int Quiz_AnswerItem = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int Quiz_AnswerItem = 2130903059;
+			public const int Quiz_Instructions = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int Quiz_Instructions = 2130903060;
+			public const int Quiz_Page = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int Quiz_Page = 2130903061;
+			public const int Quiz_Question = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int Quiz_Question = 2130903062;
+			public const int Quiz_ResultNotSuccess = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int Quiz_ResultNotSuccess = 2130903063;
+			public const int Quiz_ResultSuccess = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int Quiz_ResultSuccess = 2130903064;
+			public const int Quiz_Start = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int Quiz_Start = 2130903065;
+			public const int Quiz_VoucherList = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int Quiz_VoucherList = 2130903066;
+			public const int Quiz_VoucherListItem = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int Quiz_VoucherListItem = 2130903067;
+			public const int Reservation_Form = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int Reservation = 2130903068;
+			public const int Room_Details = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int Room_Details = 2130903069;
+			public const int Room_ImagePagerItem = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int Room_ImagePagerItem = 2130903070;
+			public const int Room_List = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int Room_List = 2130903071;
+			public const int Room_ListItem = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int Room_ListItem = 2130903072;
+			public const int SplashScreen = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int SplashScreen = 2130903073;
+			public const int ToastLayout_Error = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int ToastLayout_Error = 2130903074;
+			public const int TodaysMenu_List = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int TodaysMenu_List = 2130903075;
+			public const int TodaysMenu_ListItem = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int TodaysMenu_ListItem = 2130903076;
+			public const int TodaysMenu_ListItem_Footer = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int TodaysMenu_ListItem_Footer = 2130903077;
+			public const int TodaysMenu_ListItem_Header = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int TodaysMenu_ListItem_Header = 2130903078;
+			public const int TodaysMenu_ListView = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int TodaysMenu_ListView = 2130903079;
+			public const int Video_List = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int Video_List = 2130903080;
+			public const int Video_ListItem = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int Video_ListItem = 2130903081;
-			
-			// aapt resource value: 0x7f03002a
-			public const int Video_ListView = 2130903082;
+			public const int Video_ListView = 2130903081;
 			
 			static Layout()
 			{
@@ -1339,6 +1348,9 @@ namespace Lbk.Mobile.UI.Droid
 			
 			// aapt resource value: 0x7f0c0000
 			public const int contact_actions = 2131492864;
+			
+			// aapt resource value: 0x7f0c0001
+			public const int map_actions = 2131492865;
 			
 			static Menu()
 			{

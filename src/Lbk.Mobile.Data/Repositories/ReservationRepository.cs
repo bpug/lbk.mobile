@@ -12,7 +12,8 @@ namespace Lbk.Mobile.Data.Repositories
 
     using Cirrious.MvvmCross.Plugins.Sqlite;
 
-    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
+    using Lbk.Mobile.Model.Enums;
 
     public class ReservationRepository : RepositoryBase, IReservationRepository
     {
@@ -28,7 +29,7 @@ namespace Lbk.Mobile.Data.Repositories
             this.Connection.Update(reservation);
         }
 
-        public Reservation Get(Guid reservationId)
+        public Reservation Get(string reservationId)
         {
             return
                 this.Connection.Table<Reservation>()
@@ -44,7 +45,7 @@ namespace Lbk.Mobile.Data.Repositories
         {
             return
                 this.Connection.Table<Reservation>()
-                    .FirstOrDefault(p => (p.Deleted == false && p.Status == StatusArt.Requested));
+                    .FirstOrDefault(p => (p.Deleted == false && p.Status ==  ReservationStatus.Requested));
         }
 
         public void Update(Reservation reservation)

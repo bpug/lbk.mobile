@@ -11,7 +11,7 @@ namespace Lbk.Mobile.Data.Services
     using System.Threading.Tasks;
 
     using Lbk.Mobile.Data.Extensions;
-    using Lbk.Mobile.Data.LbkMobileService;
+    
     using Lbk.Mobile.Model;
     using Lbk.Mobile.Plugin.DeviceIdentifier;
 
@@ -20,7 +20,7 @@ namespace Lbk.Mobile.Data.Services
     using Quiz = Lbk.Mobile.Model.Quiz;
     using Video = Lbk.Mobile.Model.Video;
 
-    public class LbkMobileService : LbkMobileServiceBase<Service1SoapClient>, ILbkMobileService
+    public class LbkMobileService : LbkMobileServiceBase<Data.LbkMobileService.Service1SoapClient>, ILbkMobileService
     {
         private readonly IDeviceUidService deviceUidService;
 
@@ -39,9 +39,9 @@ namespace Lbk.Mobile.Data.Services
         //    this.GetDeviceUid();
         //}
 
-        public Task<bool> AbortedReservationByCustomerAsync(Guid reservationId)
+        public Task<bool> AbortedReservationByCustomerAsync(string  reservationId)
         {
-            return this.Service.AbortedReservationByCustomerAsyncTask(reservationId);
+            return this.Service.AbortedReservationByCustomerAsyncTask(new Guid(reservationId));
         }
 
         public Task<bool> ActivateVoucherAsync(QuizVoucher voucher)
@@ -49,9 +49,9 @@ namespace Lbk.Mobile.Data.Services
             return this.Service.ActivateVoucherAsyncTask(voucher, this.deviceUid);
         }
 
-        public Task<bool> ConfirmedReservationByCustomerAsync(Guid reservationId)
+        public Task<bool> ConfirmedReservationByCustomerAsync(string reservationId)
         {
-            return this.Service.ConfirmReservationByCustomerAsyncTask(reservationId);
+            return this.Service.ConfirmReservationByCustomerAsyncTask(new Guid(reservationId));
         }
 
         public Task<Guid> CreateReservationAsync(Reservation reservation)
@@ -91,9 +91,9 @@ namespace Lbk.Mobile.Data.Services
             return this.Service.GetVideosAsyncTask(this.deviceUid);
         }
 
-        public Task<bool> IsDeclinedReservationByRestaurantAsyn(Guid reservationId)
+        public Task<bool> IsDeclinedReservationByRestaurantAsyn(string reservationId)
         {
-            return this.Service.IsDeclinedByRestaurantAsyncTask(reservationId);
+            return this.Service.IsDeclinedByRestaurantAsyncTask(new Guid(reservationId));
         }
 
         private void GetDeviceUid()

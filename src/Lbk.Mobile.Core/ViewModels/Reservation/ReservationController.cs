@@ -8,9 +8,10 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 {
     using System;
 
-    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model.Enums;
+    using Lbk.Mobile.Model;
 
     public class ReservationController : BaseViewModel
     {
@@ -39,15 +40,16 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
             }
         }
 
-        public void Init()
+        public override void Start()
         {
+            base.Start();
             this.Reservation = this.reservationRepository.GetRequested();
             if (this.Reservation != null)
             {
                 // Is Abgelaufen ?
                 if (this.Reservation.ReservationTime < DateTime.Now)
                 {
-                    this.Reservation.Status = StatusArt.AbortedByCustomer;
+                    this.Reservation.Status = ReservationStatus.AbortedByCustomer;
                     this.reservationRepository.Update(this.Reservation);
 
                     return;
@@ -60,6 +62,11 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
             }
         }
 
+        public void Init()
+        {
+            
+        }
+
         private async void CheckDeclinedByRestaurant()
         {
             await
@@ -69,7 +76,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
                     {
                         if (result)
                         {
-                            this.Reservation.Status = StatusArt.DeclinedByRestaurant;
+                            this.Reservation.Status = ReservationStatus.DeclinedByRestaurant;
                             this.reservationRepository.Update(this.Reservation);
                             this.ShowReservationResult(this.Reservation);
                         }

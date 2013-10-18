@@ -11,9 +11,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_gravity="top"
-        android:background="@drawable/runde_ecken"
-        android:layout_weight="1">
+        android:layout_gravity="top">
         <TextView
             style="@style/quiz_info1"
             android:text="QuestionNumber"
@@ -25,6 +23,8 @@
         <FrameLayout
             android:id="@+id/question_holder"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>

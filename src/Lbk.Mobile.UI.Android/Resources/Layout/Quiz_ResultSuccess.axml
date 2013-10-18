@@ -5,36 +5,71 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     style="@style/main_content">
-    <TextView
-        android:text="Gratulation!"
-        android:layout_width="fill_parent"
+    <ScrollView
         android:layout_height="wrap_content"
-        local:MvxLang="Text Congratulations" />
-    <TextView
-        android:text="Points Text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        local:MvxBind="Text ResultPointsMessage" />
-    <TextView
-        android:text="Win Text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        local:MvxBind="Text WinVoucherMessage" />
-    <TextView
-        android:text="Gutschein-Code:"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        local:MvxBind="Visibility Visibility(Voucher)" />
-    <TextView
-        android:text="ABCDE"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        local:MvxBind="Text Voucher.Code; Visibility Visibility(Voucher)" />
-    <ImageView
-        android:src="@drawable/quiz_pitcher"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center_horizontal"
-        local:MvxBind="Visibility Visibility(ShowPitcher)" />
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Gratulation!"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/yellow1"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textSize="26sp"
+                android:layout_marginBottom="10dp"
+                local:MvxLang="Text Congratulations" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/runde_ecken"
+                android:padding="10dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:text="Points Text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text"
+                    local:MvxBind="Text ResultPointsMessage" />
+                <TextView
+                    android:text="Win Text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    local:MvxBind="Text WinVoucherMessage" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:text="Gutschein-Code:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text"
+                        android:paddingRight="10dp"
+                        local:MvxBind="Visibility Visibility(Voucher)" />
+                    <TextView
+                        android:text="ABCDE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text"
+                        android:textStyle="bold"
+                        local:MvxBind="Text Voucher.Code; Visibility Visibility(Voucher)" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center_horizontal"
+                local:MvxBind="Visibility Visibility(ShowPitcher)"
+                android:src="@drawable/quiz_pitcher" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

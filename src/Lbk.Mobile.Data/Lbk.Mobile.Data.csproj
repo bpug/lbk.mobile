@@ -70,6 +70,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Extensions\LbkMobileServiceExtensions.cs" />
     <Compile Include="Mappings\AnswerMapping.cs" />
+    <Compile Include="Mappings\ReservationMapping.cs" />
     <Compile Include="Mappings\PictureMapping.cs" />
     <Compile Include="Mappings\VideoMapping.cs" />
     <Compile Include="Mappings\EventMapping.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Repositories\IHistoryRepository.cs" />
     <Compile Include="Repositories\IReservationRepository.cs" />
     <Compile Include="Repositories\IQuizVoucherRepository.cs" />
-    <Compile Include="Partials\Reservation.Partial.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
     <Compile Include="Repositories\QuizVoucherRepository.cs" />
     <Compile Include="Repositories\ReservationRepository.cs">

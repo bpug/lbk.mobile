@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Contact
 {
+    using System.Collections.ObjectModel;
+
     using Cirrious.MvvmCross.Plugins.Location;
 
     using Lbk.Mobile.Common;
@@ -14,20 +16,46 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
     public class MapViewModel : BaseViewModel
     {
         private readonly IMvxLocationWatcher watcher;
+        public ObservableCollection<MarkerInfo> MarkerInfos { get; set; }
 
         public MapViewModel(IMvxLocationWatcher watcher)
         {
             this.watcher = watcher;
-            this.LbkInfo = new MarkerInfo
+            this.AddLbkLocation();
+        }
+
+        private void AddLbkLocation()
+        {
+            MarkerInfos = new ObservableCollection<MarkerInfo>
             {
-                Title = Constants.LbkTitle,
-                Description = Constants.LbkAddress,
-                Location = new Location
+                new MarkerInfo
                 {
-                    Lat = Constants.LbkLatitude,
-                    Lng = Constants.LbkLongitude
+                    Title = Constants.LbkTitle,
+                    Description = Constants.LbkAddress,
+                    Location = new Location
+                    {
+                        Lat = Constants.LbkLatitude,
+                        Lng = Constants.LbkLongitude
+                    }
                 }
             };
+        }
+
+
+        private void AddCurrentLocation(Location currentLocation)
+        {
+            if (currentLocation == null)
+            {
+                return;
+            }
+            var currentLocationInfo = new MarkerInfo
+            {
+                Location = currentLocation
+            };
+            if (!MarkerInfos.Contains(currentLocationInfo))
+            {
+                MarkerInfos.Add(currentLocationInfo);
+            }
         }
 
         public void Init()
@@ -38,21 +66,24 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
         public override void Start()
         {
             base.Start();
-            SetCurrentLocation();
+            this.AddCurrentLocation(this.GetCurrentLocation());
         }
 
-        private void SetCurrentLocation()
+        private Location GetCurrentLocation()
         {
             var currentLocation = this.watcher.CurrentLocation;
             if (currentLocation != null)
             {
-                this.CurrentLocation = new Location
+                var loc = new Location
                 {
                     Lat = currentLocation.Coordinates.Latitude,
                     Lng = currentLocation.Coordinates.Longitude
                 };
+                AddCurrentLocation(loc);
                 this.StopWatcher();
+                return loc;
             }
+            return null;
         }
 
         public void StopWatcher()
@@ -86,17 +117,17 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
         private void OnNewLocation(MvxGeoLocation location)
         {
             
-            this.CurrentLocation = new Location
+            var currentLocation = new Location
             {
                 Lat = location.Coordinates.Latitude,
                 Lng = location.Coordinates.Longitude
             };
 
-            //this.watcher.Stop();
+            AddCurrentLocation(currentLocation);
+            this.watcher.Stop();
         }
 
-        public Location CurrentLocation { get; set; }
-        public MarkerInfo LbkInfo { get; set; }
+       
 
         //public IMvxCommand UpdateCenterCommand
         //{

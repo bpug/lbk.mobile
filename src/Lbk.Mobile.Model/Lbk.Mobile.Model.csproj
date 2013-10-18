@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Answer.cs" />
     <Compile Include="BaseDbEntity.cs" />
+    <Compile Include="Enums\ReservationStatus.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="MenuCategory.cs" />
     <Compile Include="Enums\DialogResult.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Quiz.cs" />
     <Compile Include="QuizResult.cs" />
     <Compile Include="QuizVoucher.cs" />
+    <Compile Include="Reservation.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Video.cs" />
   </ItemGroup>

@@ -77,7 +77,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<Quiz.QuizStartViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<QuizStartViewModel>());
             }
         }
 
@@ -107,8 +107,7 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return null;
-                //return new MvxCommand(() => this.ShowViewModel<ReservationFormViewModel>());
+                return new MvxCommand(() => this.ShowViewModel<ReservationFormViewModel>());
             }
         }
 

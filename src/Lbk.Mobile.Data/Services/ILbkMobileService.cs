@@ -10,7 +10,6 @@ namespace Lbk.Mobile.Data.Services
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Model;
 
     using Event = Lbk.Mobile.Model.Event;
@@ -20,7 +19,7 @@ namespace Lbk.Mobile.Data.Services
 
     public interface ILbkMobileService
     {
-        Task<bool> AbortedReservationByCustomerAsync(Guid reservationId);
+        Task<bool> AbortedReservationByCustomerAsync(string reservationId);
 
         Task<bool> ActivateVoucherAsync(QuizVoucher voucher);
 
@@ -38,8 +37,8 @@ namespace Lbk.Mobile.Data.Services
 
         Task<List<Video>> GetVideosAsyn();
 
-        Task<bool> IsDeclinedReservationByRestaurantAsyn(Guid reservationId);
+        Task<bool> IsDeclinedReservationByRestaurantAsyn(string reservationId);
 
-        Task<bool> ConfirmedReservationByCustomerAsync(Guid reservationId);
+        Task<bool> ConfirmedReservationByCustomerAsync(string reservationId);
     }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="Name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:inputType="textPersonName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Zeit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:inputType="date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Plätze"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:inputType="number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Telefon"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:inputType="phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="Notiz"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

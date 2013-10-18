@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.UI.Droid.Views.Contact
 {
+    using System;
+
     using Android.App;
     using Android.Gms.Maps;
     using Android.Gms.Maps.Model;
@@ -15,77 +17,77 @@ namespace Lbk.Mobile.UI.Droid.Views.Contact
 
     using Cirrious.MvvmCross.Binding.BindingContext;
 
-    using Java.Lang;
-
     using Lbk.Mobile.Core.ViewModels.Contact;
     using Lbk.Mobile.UI.Droid.Controls.MapManager;
+    using Lbk.Mobile.UI.Droid.Extensions;
+
+    using Object = Java.Lang.Object;
 
     [Activity(Label = "", Icon = "@drawable/ic_launcher")]
     public class MapView : BaseFragmentActivity<MapViewModel>
     {
         private GoogleMap googleMap;
 
-        private LbkAnnotationManager manager;
+        private Marker lbkMarker;
+
+        private View mapView;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             this.SetContentView(Resource.Layout.Map_Page);
+
             this.SetUpMapIfNeeded();
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        private void AddMarkersToMap()
         {
-            var inflater = this.MenuInflater;
-            inflater.Inflate(Resource.Menu.map_actions, menu);
-            return true;
+            this.lbkMarker =
+                this.googleMap.AddMarker(
+                    new MarkerOptions().SetPosition(this.ViewModel.LbkInfo.Location.ToLatLng())
+                        .SetTitle(this.ViewModel.LbkInfo.Title)
+                        .SetSnippet(this.ViewModel.LbkInfo.Description)
+                        .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)));
+            //this.currentMarker = googleMap.AddMarker(new MarkerOptions()
+            //                            .SetPosition(this.ViewModel.CurrentLocation.ToLatLng())
+            //                            .SetTitle("Aktueller Ort")
+            //                            .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure)));
         }
 
-       
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.map_normal:
-                    item.SetChecked(!item.IsChecked);
-                    this.googleMap.MapType = GoogleMap.MapTypeNormal;
-                    return true;
-                case Resource.Id.map_hybrid:
-                    item.SetChecked(!item.IsChecked);
-                    this.googleMap.MapType = GoogleMap.MapTypeHybrid;
-                    return true;
-                case Resource.Id.map_satellite:
-                    item.SetChecked(!item.IsChecked);
-                    this.googleMap.MapType = GoogleMap.MapTypeSatellite;
-                    return true;
-                default:
-                    return base.OnOptionsItemSelected(item);
-            }
-        }
+        private LbkAnnotationManager manager;
+        
 
         private void SetUpMap()
         {
+            this.AddMarkersToMap();
             this.googleMap.MyLocationEnabled = true;
             this.googleMap.SetInfoWindowAdapter(new LbkInfoWindowsAdapter(this));
-            var googleMapView = this.SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map).View;
-            this.manager = new LbkAnnotationManager(this.googleMap, googleMapView);
 
-            var set = this.CreateBindingSet<MapView, MapViewModel>();
-            set.Bind(this.manager).For(m => m.ItemsSource).To(vm => vm.MarkerInfos);
-            set.Apply();
+            this.mapView = this.SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map).View;
+            if (this.mapView.ViewTreeObserver.IsAlive)
+            {
+                this.mapView.ViewTreeObserver.GlobalLayout += this.ViewTreeObserverOnGlobalLayout;
+            }
         }
 
         private void SetUpMapIfNeeded()
         {
             if (this.googleMap == null)
             {
-                this.googleMap =
-                    ((SupportMapFragment)this.SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map)).Map;
+               this.googleMap = ((SupportMapFragment)this.SupportFragmentManager.FindFragmentById(Resource.Id.lbk_map)).Map;
                 if (this.googleMap != null)
                 {
                     this.SetUpMap();
                 }
             }
+        }
+
+        private void ViewTreeObserverOnGlobalLayout(object sender, EventArgs eventArgs)
+        {
+            var lbkCoordinates = this.ViewModel.LbkInfo.Location.ToLatLng();
+            var currentCoordinates = this.ViewModel.CurrentLocation.ToLatLng();
+            var bounds = new LatLngBounds.Builder().Include(lbkCoordinates).Include(currentCoordinates).Build();
+            this.googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngBounds(bounds, 50));
         }
 
         private class LbkInfoWindowsAdapter : Object, GoogleMap.IInfoWindowAdapter
@@ -114,6 +116,11 @@ namespace Lbk.Mobile.UI.Droid.Views.Contact
             private void Render(Marker marker, View view)
             {
                 int markerIcon = 0;
+                if (marker.Equals(this.parent.lbkMarker))
+                {
+                    markerIcon = Resource.Drawable.ic_launcher;
+                }
+
                 markerIcon = Resource.Drawable.ic_launcher;
                 var title = (TextView)view.FindViewById(Resource.Id.marker_title);
                 var snippet = (TextView)view.FindViewById(Resource.Id.marker_snippet);

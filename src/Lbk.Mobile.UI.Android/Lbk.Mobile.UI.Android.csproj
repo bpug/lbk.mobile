@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -220,6 +223,8 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Controls\GalleryImageView.cs" />
     <Compile Include="Controls\ExpandCollapseAnimation.cs" />
+    <Compile Include="Controls\MapManager\LbkAnnotationManager.cs" />
+    <Compile Include="Controls\MapManager\MvxMarkerManager.cs" />
     <Compile Include="Controls\MvxResizableImageView.cs" />
     <Compile Include="Controls\MvxScaleImageView.cs" />
     <Compile Include="Controls\MvxThumbnail.cs" />
@@ -263,7 +268,6 @@
     <Compile Include="Views\Contact\ImpressumView.cs" />
     <Compile Include="Views\Event\EventBookingView.cs" />
     <Compile Include="Views\Event\EventListView.cs" />
-    <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\Gallery\GalleryView.cs" />
     <Compile Include="Views\Gallery\PictureView.cs" />
     <Compile Include="Views\History\HisroryView.cs" />
@@ -282,7 +286,7 @@
     <Compile Include="Views\TodaysMenu\TodaysMenuListAdapter.cs" />
     <Compile Include="Views\TodaysMenu\TodaysMenuView.cs" />
     <Compile Include="Views\Menu\MenuView.cs" />
-    <Compile Include="Views\ReservationView.cs" />
+    <Compile Include="Views\Reservation\ReservationFormView.cs" />
     <Compile Include="Views\Video\VideoListView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -293,7 +297,7 @@
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_List.axml" />
-    <AndroidResource Include="Resources\Layout\Reservation.axml" />
+    <AndroidResource Include="Resources\Layout\Reservation_Form.axml" />
     <AndroidResource Include="Resources\Layout\Home.axml" />
     <AndroidResource Include="Resources\Layout\Menu.axml" />
     <AndroidResource Include="Resources\Layout\ToastLayout_Error.axml" />
@@ -366,7 +370,9 @@
     <AndroidResource Include="Resources\Layout\Map_MarkerInfo.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Layout\FirstView.axml" />
+    <AndroidResource Include="Resources\Menu\map_actions.xml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -407,7 +413,6 @@
     <AndroidResource Include="Resources\Drawable-hdpi\ic_tageskarte.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_videos.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\splashscreen.png" />
-    <AndroidResource Include="Resources\Drawable-hdpi\ic_.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_galery.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_advise.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_events.png" />
@@ -521,12 +526,23 @@
     <AndroidResource Include="Resources\Drawable\ipconnect.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ipconnect.png" />
     <AndroidResource Include="Resources\Menu\contact_actions.xml" />
-    <AndroidResource Include="Resources\Drawable\ic_info.png" />
-    <AndroidResource Include="Resources\Drawable-hdpi\ic_info.png" />
-    <AndroidResource Include="Resources\Drawable-xhdpi\ic_info.png" />
-    <AndroidResource Include="Resources\Drawable\ic_lbk_map.png" />
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\Drawable\splash.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ipconnect.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\quiz_pitcher.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\quiz_pitcher.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_action_about.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_about.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_about.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_action_refresh.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_refresh.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_refresh.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\ic_action_map.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_map.png" />
+    <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_map.png" />
+    <Content Include="Resources\Drawable\ic_action_about.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_refresh.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_map.png" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

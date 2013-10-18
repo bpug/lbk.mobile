@@ -11,9 +11,10 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 
     using Cirrious.MvvmCross.ViewModels;
 
-    using Lbk.Mobile.Data.LbkMobileService;
+    using Lbk.Mobile.Model;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model.Enums;
 
     public class ReservationConfirmationViewModel : BaseViewModel
     {
@@ -93,7 +94,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
                                 {
                                     if (isAborted)
                                     {
-                                        this.Reservation.Status = StatusArt.AbortedByCustomer;
+                                        this.Reservation.Status = ReservationStatus.AbortedByCustomer;
                                         this.reservationRepository.Update(this.Reservation);
                                         this.ShowReservationResult();
                                     }
@@ -119,7 +120,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
                         {
                             if (result)
                             {
-                                this.Reservation.Status = StatusArt.ConfirmedByCustomer;
+                                this.Reservation.Status = ReservationStatus.ConfirmedByCustomer;
                                 this.reservationRepository.Update(this.Reservation);
                                 this.ShowReservationResult();
                             }

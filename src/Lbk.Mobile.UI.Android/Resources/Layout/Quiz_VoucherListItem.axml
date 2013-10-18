@@ -3,20 +3,34 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/runde_ecken"
+    android:padding="10dp"
+    android:layout_marginBottom="20dp">
     <TextView
-        android:text="Text"
+        android:text="ABCDE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:paddingRight="10dp"
+        android:layout_weight="1"
         local:MvxBind="Text Item.Code" />
     <Button
         android:text="Aktivieren"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_lbk"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         local:MvxBind="Click ActivateCommand; Visibility InvertedVisibility(Item.IsActivated)" />
     <Button
         android:text="Einlösen"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/btn_lbk"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         local:MvxBind="Click UseCommand" />
 </LinearLayout>

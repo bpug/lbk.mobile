@@ -99,7 +99,7 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
             if (currentLocation != null)
             {
                 this.CalculateDistance(currentLocation);
-                this.StopWatcher();
+                //this.StopWatcher();
             }
         }
 
@@ -126,10 +126,6 @@ namespace Lbk.Mobile.Core.ViewModels.Contact
                     },
                     this.OnNewLocation,
                     this.OnLocationError);
-            }
-            else
-            {
-                this.watcher.Stop();
             }
         }
     }

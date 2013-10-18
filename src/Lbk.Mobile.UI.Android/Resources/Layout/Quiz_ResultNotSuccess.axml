@@ -9,15 +9,31 @@
         android:text="Gratulation!"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/yellow1"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="26sp"
+        android:layout_marginBottom="10dp"
         local:MvxLang="Text Congratulations" />
-    <TextView
-        android:text="Points Text"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Text ResultPointsMessage" />
-    <TextView
-        android:text="Missing Points Text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        local:MvxBind="Text MissingPointsMessage" />
+        android:background="@drawable/runde_ecken"
+        android:padding="10dp"
+        android:layout_marginBottom="20dp">
+        <TextView
+            android:text="Points Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            local:MvxBind="Text ResultPointsMessage" />
+        <TextView
+            android:text="Missing Points Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            local:MvxBind="Text MissingPointsMessage" />
+    </LinearLayout>
 </LinearLayout>
