@@ -1,7 +1,10 @@
-using System;
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="LbkAnnotationManager.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
-
-namespace Lbk.Mobile.UI.Droid.Controls.MapManager
+namespace Lbk.Mobile.UI.Droid.Bindings.MapManager
 {
     using Android.Gms.Maps;
     using Android.Gms.Maps.Model;
@@ -27,8 +30,7 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
             }
 
             var options =
-                new MarkerOptions()
-                    .SetPosition(markerInfo.Location.ToLatLng())
+                new MarkerOptions().SetPosition(markerInfo.Location.ToLatLng())
                     .SetTitle(markerInfo.Title)
                     .SetSnippet(markerInfo.Description)
                     .InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed));

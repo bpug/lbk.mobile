@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Controls.MapManager
+namespace Lbk.Mobile.UI.Droid.Bindings.MapManager
 {
     using System;
     using System.Collections;
@@ -20,7 +20,7 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
     using Cirrious.MvvmCross.Binding;
     using Cirrious.MvvmCross.Binding.Attributes;
 
-    public abstract class MvxMarkerManager
+    public abstract class MvxMarkerManager : IDisposable
     {
         private readonly GoogleMap googleMap;
 
@@ -36,7 +36,12 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
         {
             this.googleMap = googleMap;
             this.googleMapView = googleMapView;
-            this.googleMapView.ViewTreeObserver.GlobalLayout += ViewTreeObserverOnGlobalLayout;
+            this.googleMapView.ViewTreeObserver.GlobalLayout += this.ViewTreeObserverOnGlobalLayout;
+        }
+
+        ~MvxMarkerManager()
+        {
+            this.Dispose(false);
         }
 
         // MvxSetToNullAfterBinding isn't strictly needed any more 
@@ -54,6 +59,12 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
             }
         }
 
+        public void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
         protected virtual void AddMarkerFor(object item)
         {
             var markerOptions = this.CreateMarker(item);
@@ -69,31 +80,6 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
             this.MoveCamera();
         }
 
-        protected virtual void MoveCamera()
-        {
-
-            if (this.googleMapView.ViewTreeObserver.IsAlive)
-            {
-                //this.googleMapView.ViewTreeObserver.GlobalLayout -= ViewTreeObserverOnGlobalLayout;
-                //this.googleMapView.ViewTreeObserver.GlobalLayout += ViewTreeObserverOnGlobalLayout;
-            }
-            else
-            {
-                ViewTreeObserverOnGlobalLayout(null, null);
-            }
-        }
-
-        private void ViewTreeObserverOnGlobalLayout(object sender, EventArgs eventArgs)
-        {
-            var boundsBuilder = new LatLngBounds.Builder();
-            foreach (var marker in markers)
-            {
-                boundsBuilder.Include(marker.Value.Position);
-            }
-            var bounds = boundsBuilder.Build();
-            this.googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngBounds(bounds, 50));
-        }
-
         protected virtual void AddMarkers(IEnumerable newItems)
         {
             foreach (var item in newItems)
@@ -103,6 +89,31 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
         }
 
         protected abstract MarkerOptions CreateMarker(object item);
+
+        protected virtual void Dispose(bool isDisposing)
+        {
+            if (isDisposing)
+            {
+                var mapView = this.googleMapView;
+                if (mapView != null)
+                {
+                    mapView.ViewTreeObserver.GlobalLayout -= this.ViewTreeObserverOnGlobalLayout;
+                }
+            }
+        }
+
+        protected virtual void MoveCamera()
+        {
+            if (this.googleMapView.ViewTreeObserver.IsAlive)
+            {
+                //this.googleMapView.ViewTreeObserver.GlobalLayout -= ViewTreeObserverOnGlobalLayout;
+                //this.googleMapView.ViewTreeObserver.GlobalLayout += ViewTreeObserverOnGlobalLayout;
+            }
+            else
+            {
+                this.ViewTreeObserverOnGlobalLayout(null, null);
+            }
+        }
 
         protected virtual void OnItemsSourceCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -188,6 +199,17 @@ namespace Lbk.Mobile.UI.Droid.Controls.MapManager
             {
                 this.subscription = newObservable.WeakSubscribe(this.OnItemsSourceCollectionChanged);
             }
+        }
+
+        private void ViewTreeObserverOnGlobalLayout(object sender, EventArgs eventArgs)
+        {
+            var boundsBuilder = new LatLngBounds.Builder();
+            foreach (var marker in this.markers)
+            {
+                boundsBuilder.Include(marker.Value.Position);
+            }
+            var bounds = boundsBuilder.Build();
+            this.googleMap.AnimateCamera(CameraUpdateFactory.NewLatLngBounds(bounds, 50));
         }
     }
 }

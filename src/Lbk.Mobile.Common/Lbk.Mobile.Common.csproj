@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="Cryptography\MD5.cs" />
     <Compile Include="Exceptions\ReachabilityException.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
     <Compile Include="Extensions\DoubleExtensions.cs" />
     <Compile Include="Extensions\EventHandlerExtensions.cs" />
     <Compile Include="Extensions\IEnumerableExtensions.cs" />
@@ -43,6 +44,7 @@
     <Compile Include="Interfaces\IObservableCollection.cs" />
     <Compile Include="MessageBus\MessageBus.cs" />
     <Compile Include="NotificationEventArgs.cs" />
+    <Compile Include="ObservableDictionary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleObservableCollection.cs" />
     <Compile Include="Trace.cs" />

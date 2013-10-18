@@ -37,7 +37,7 @@ namespace Lbk.Mobile.Data.Mappings
 
         public static LbkMobileService.Reservation ToServiceModel(this Reservation source)
         {
-            var question = new LbkMobileService.Reservation()
+            var reservation = new LbkMobileService.Reservation()
             {
                 Advice = source.Advice,
                 ConfirmCode = source.ConfirmCode,
@@ -47,12 +47,17 @@ namespace Lbk.Mobile.Data.Mappings
                 LastChange = source.LastChange,
                 Mobile = source.Mobile,
                 ReservationId = new Guid(source.ReservationId),
-                ReservationTime = source.ReservationTime,
+                
                 Seats = source.Seats,
                 Status = (StatusArt)source.Status
             };
 
-            return question;
+            if (source.ReservationTime != null)
+            {
+                reservation.ReservationTime = source.ReservationTime.Value;
+            }
+
+            return reservation;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Contact
     using Java.Lang;
 
     using Lbk.Mobile.Core.ViewModels.Contact;
-    using Lbk.Mobile.UI.Droid.Controls.MapManager;
+    using Lbk.Mobile.UI.Droid.Bindings.MapManager;
 
     [Activity(Label = "", Icon = "@drawable/ic_launcher")]
     public class MapView : BaseFragmentActivity<MapViewModel>

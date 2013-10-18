@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <MvxDatePicker
+        android:id="@+id/mvxdate_picker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:calendarViewShown="false"
+        android:spinnersShown="true"
+        local:MvxBind="Value Date; MinDate MinAllowedDate" />
+</LinearLayout>
