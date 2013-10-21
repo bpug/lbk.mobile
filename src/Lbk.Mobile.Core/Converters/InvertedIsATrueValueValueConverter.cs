@@ -1,5 +1,5 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="TimeOfDayConverter.cs" company="ip-connect GmbH">
+//  <copyright file="TimeAgoConverter.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
@@ -11,18 +11,14 @@ namespace Lbk.Mobile.Core.Converters
 
     using Cirrious.CrossCore.Converters;
 
-    public class TimeOfDayConverter : MvxValueConverter
+    using Lbk.Mobile.Common.Extensions;
+
+    public class InvertedIsATrueValueValueConverter : MvxValueConverter
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (!(value is DateTime))
-            {
-                return value;
-            }
-
-            var timeOfDay = ((DateTime)value).TimeOfDay;
-
-            return timeOfDay;
+            var enabled = !value.IsATrueValue(parameter, true);
+            return enabled;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Lbk.Mobile.UI.Droid
 
     using Cirrious.CrossCore;
     using Cirrious.CrossCore.Platform;
+    using Cirrious.MvvmCross.Binding.BindingContext;
     using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
     using Cirrious.MvvmCross.Droid.Platform;
     using Cirrious.MvvmCross.Plugins.DownloadCache;
@@ -51,12 +52,15 @@ namespace Lbk.Mobile.UI.Droid
                                                             imageView => new MvxImageViewDrawableTargetBinding(imageView));
             registry.RegisterCustomBindingFactory<WebView>("Url",
                                                             webView => new WebViewLoadUrlTargetBinding(webView));
+            registry.RegisterCustomBindingFactory<NumberPicker>("Value",
+                                                           picker => new NumberPickerTargetBinding(picker));
+            //registry.RegisterPropertyInfoBindingFactory((typeof(NumberPickerTargetBinding)), typeof(NumberPicker), "Value");
 
             //registry.RegisterCustomBindingFactory<WebView>("YoutubeUrl",
             //                                                webView => new WebViewLoadYoutubeThnTargetBinding(webView));
-
-            
         }
+
+        
 
         protected override void InitializeLastChance()
         {

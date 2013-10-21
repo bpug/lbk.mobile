@@ -25,6 +25,16 @@ namespace Lbk.Mobile.Core.ViewModels.Home
     public class HomeViewModel : BaseViewModel
     {
 
+        public void DisplayViewModel<TViewModel>(object parameterValuesObject) where TViewModel : IMvxViewModel
+        {
+            this.ShowViewModel<TViewModel>(parameterValuesObject);
+        }
+
+        public void DisplayViewModel<TViewModel>() where TViewModel : IMvxViewModel
+        {
+            this.ShowViewModel<TViewModel>();
+        }
+
         public ICommand ShowContactCommand
         {
             get
@@ -107,7 +117,9 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         {
             get
             {
-                return new MvxCommand(() => this.ShowViewModel<ReservationFormViewModel>());
+                //return new MvxCommand(() => this.ShowViewModel<ReservationFormViewModel>());
+                return new MvxCommand(() => new ReservationManager(this));
+                
             }
         }
 

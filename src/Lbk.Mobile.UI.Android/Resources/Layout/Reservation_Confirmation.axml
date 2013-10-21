@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp"
+    android:gravity="center_horizontal">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Lieber Gast,\nvielen Dank für Ihre Anfrage:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginBottom="10dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Name"
+                    android:layout_width="90dp"
+                    android:layout_height="fill_parent"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Name"
+                    local:MvxBind="Text Reservation.GuestName" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Telefon"
+                    android:layout_width="90dp"
+                    android:layout_height="fill_parent"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Telefon"
+                    local:MvxBind="Text Reservation.Mobile" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Zeit"
+                    android:layout_width="90dp"
+                    android:layout_height="fill_parent"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Zeit"
+                    local:MvxBind="Text Format('{0:dd. MMMM yyyy HH:mm}', Reservation.ReservationTime)" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Plätze"
+                    android:layout_width="90dp"
+                    android:layout_height="fill_parent"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Plätze"
+                    local:MvxBind="Text Reservation.Seats" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:text="Notiz"
+                    android:layout_width="90dp"
+                    android:layout_height="fill_parent"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:gravity="top" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Notiz"
+                    local:MvxBind="Text Reservation.Advice" />
+            </LinearLayout>
+            <TextView
+                android:text="In Kürze erhalten Sie einen Löwenbräukeller-Code per SMS, den Sie bitte hier eintragen:"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:gravity="center_horizontal"
+                    android:hint="Code"
+                    android:textColor="@color/black"
+                    android:ems="7"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="5"
+                    android:singleLine="true"
+                    local:MvxBind="Text UserConfirmCode" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="test Code"
+                local:MvxBind="Text Reservation.ConfirmCode" />
+            <TextView
+                android:text="Ihre Reservierung ist dann verbindlich."
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+                <Button
+                    style="@style/button_lbk"
+                    android:text="Bestätigen"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    local:MvxBind="Click ConfirmCommand; Enabled IsCodeLengthVaild" />
+                <Button
+                    style="@style/button_lbk"
+                    android:text="Abbrechen"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    local:MvxBind="Click AbortCommand" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

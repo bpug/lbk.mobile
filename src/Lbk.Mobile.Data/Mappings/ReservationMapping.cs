@@ -8,6 +8,7 @@ namespace Lbk.Mobile.Data.Mappings
 {
     using System;
 
+    using Lbk.Mobile.Common.Extensions;
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Model.Enums;
 
@@ -46,17 +47,11 @@ namespace Lbk.Mobile.Data.Mappings
                 GuestName = source.GuestName,
                 LastChange = source.LastChange,
                 Mobile = source.Mobile,
-                ReservationId = new Guid(source.ReservationId),
-                
                 Seats = source.Seats,
-                Status = (StatusArt)source.Status
+                ReservationTime = source.ReservationTime,
+                Status = (StatusArt)source.Status,
+                ReservationId = source.ReservationId.IsEmpty() ? Guid.Empty : new Guid(source.ReservationId)
             };
-
-            if (source.ReservationTime != null)
-            {
-                reservation.ReservationTime = source.ReservationTime.Value;
-            }
-
             return reservation;
         }
     }

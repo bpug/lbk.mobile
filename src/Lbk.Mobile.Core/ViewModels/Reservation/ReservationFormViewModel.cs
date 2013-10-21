@@ -14,21 +14,36 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Extensions;
+    using Lbk.Mobile.Common.Utils;
     using Lbk.Mobile.Core.Extensions;
-    using Lbk.Mobile.Model;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
+    using Lbk.Mobile.Model;
+    using Lbk.Mobile.Model.Enums;
 
     public class ReservationFormViewModel : BaseViewModel
     {
         private const int HourLimit = 1;
 
-        
+        private const int MaximalSeats = 10;
+
+        private const int MinimalSeats = 2;
+
         private readonly ILbkMobileService lbkMobileService;
 
         private readonly IReservationRepository reservationRepository;
 
-        public ObservableDictionary<string, string> Errors { get; set; }
+        private string advice;
+
+        private DateTime date;
+
+        private string guestName;
+
+        private string mobile;
+
+        private int seats;
+
+        private TimeSpan time;
 
         public ReservationFormViewModel(
             ILbkMobileService lbkMobileService,
@@ -36,149 +51,165 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
         {
             this.lbkMobileService = lbkMobileService;
             this.reservationRepository = reservationRepository;
-            Errors = new ObservableDictionary<string, string>();
+            this.Errors = new ObservableDictionary<string, string>();
+            this.MinSeats = this.Seats = MinimalSeats;
+            this.MaxSeats = MaximalSeats;
+            this.MinAllowedDate = (long)DateTime.Now.Date.GetMillisecondsSinceUnixEpoch();
+            this.Time = DateTime.Now.AddHours(HourLimit).TimeOfDay;
+            this.Date = DateTime.Now.Date;
         }
 
-        
-        public int MinSeats
-        {
-            get
-            {
-                return 2;
-            }
-        }
-        
-        public int MaxSeats
-        {
-            get
-            {
-                return 10;
-            }
-        }
-
-        public long MinAllowedDate
-        {
-            get
-            {
-                return (long)DateTime.Now.Date.GetMillisecondsSinceUnixEpoch();
-            }
-        }
-
-        //public Reservation Reservation { get; set; }
-
-        private string guestName;
-        public string GuestName
-        {
-            get { return guestName; }
-            set { guestName = value; RaisePropertyChanged(() => GuestName); Validate(); }
-        }
-
-        private string mobile;
-        public string Mobile
-        {
-            get { return mobile; }
-            set { mobile = value; RaisePropertyChanged(() => Mobile); Validate(); }
-        }
-
-        private int seats = 2;
-        public int Seats
-        {
-            get { return seats; }
-            set { seats = value; RaisePropertyChanged(() => Seats); Validate(); }
-        }
-
-        private string advice;
         public string Advice
         {
-            get { return advice; }
-            set { advice = value; RaisePropertyChanged(() => Advice); Validate(); }
+            get
+            {
+                return this.advice;
+            }
+            set
+            {
+                this.advice = value;
+                this.RaisePropertyChanged(() => this.Advice);
+                this.Validate();
+            }
         }
 
-       
+        public DateTime Date
+        {
+            get
+            {
+                return this.date;
+            }
+            set
+            {
+                this.date = value;
+                this.RaisePropertyChanged(() => this.Date);
+                this.RaisePropertyChanged(() => this.ReservationTime);
+            }
+        }
 
+        public ObservableDictionary<string, string> Errors { get; set; }
 
-        //private DateTime reservationTime = DateTime.Now.AddHours(HourLimit);
-        //public DateTime ReservationTime
-        //{
-        //    get { return reservationTime; }
-        //    set { reservationTime = value; RaisePropertyChanged(() => ReservationTime); Validate(); }
-        //}
+        public string GuestName
+        {
+            get
+            {
+                return this.guestName;
+            }
+            set
+            {
+                this.guestName = value;
+                this.RaisePropertyChanged(() => this.GuestName);
+                this.Validate();
+            }
+        }
+
+        public int MaxSeats { get; private set; }
+
+        public long MinAllowedDate { get; private set; }
+
+        public int MinSeats { get; private set; }
+
+        public string Mobile
+        {
+            get
+            {
+                return this.mobile;
+            }
+            set
+            {
+                this.mobile = value;
+                this.RaisePropertyChanged(() => this.Mobile);
+                this.Validate();
+            }
+        }
 
         public DateTime ReservationTime
         {
             get
             {
-                var d = this.date.Add(this.time);
-                return d;
+                return this.Date.Add(this.Time);
             }
-            
         }
-
-        private TimeSpan time = DateTime.Now.TimeOfDay;
-        public TimeSpan Time
-        {
-            get { return time; }
-            set { time = value; RaisePropertyChanged(() => Time); RaisePropertyChanged(() => ReservationTime); }
-        }
-
-        private DateTime date = DateTime.Now.Date;
-        public DateTime Date
-        {
-            get { return date; }
-            set { date = value; RaisePropertyChanged(() => Date); RaisePropertyChanged(() => ReservationTime); }
-        }
-
 
         public ICommand ReserveCommand
         {
             get
             {
-                return new MvxCommand(async() => await this.ReserveExecute());
+                return new MvxCommand(async () => await this.ReserveExecute());
+            }
+        }
+
+        public int Seats
+        {
+            get
+            {
+                return this.seats;
+            }
+            set
+            {
+                this.seats = value;
+                this.RaisePropertyChanged(() => this.Seats);
+                this.Validate();
+            }
+        }
+
+        public TimeSpan Time
+        {
+            get
+            {
+                return this.time;
+            }
+            set
+            {
+                this.time = value;
+                this.RaisePropertyChanged(() => this.Time);
+                this.RaisePropertyChanged(() => this.ReservationTime);
             }
         }
 
         private async Task ReserveExecute()
         {
             var reservation = this.ToModel();
+            reservation.ConfirmCode = Utility.GetRandomString(4);
+            reservation.ReservationId = Guid.NewGuid().ToString();
+
             await this.AsyncExecute(
                 () => this.lbkMobileService.CreateReservationAsync(reservation),
                 result =>
                 {
                     reservation.ReservationId = result.ToString();
+                    reservation.Status = ReservationStatus.Requested;
                     this.reservationRepository.Update(reservation);
-                    this.ShowReservationResult(reservation);
+                    this.ShowConfirmation(reservation);
                 });
         }
 
-        private void ShowReservationResult(Reservation booking)
+        private void ShowConfirmation(Reservation booking)
         {
-            this.ShowViewModel<ReservationResultViewModel>(
-                new
-                {
-                    booking = booking
-                });
-        }
-
-
-        private void Validate()
-        {
-            UpdateError(guestName.IsEmpty(), "GuestName", "Please enter a Name");
-            UpdateError(mobile.IsEmpty(), "Mobile", "Please enter a valid Mobile");
-            //UpdateError(!reservationTime.HasValue, "ReservationTime", "Please enter a Reservation Time");
-            UpdateError(seats < 1, "Seats", "Please enter a number of Seats");
+            this.ShowViewModel<ReservationConfirmationViewModel>(new { id = booking.Id });
         }
 
         private void UpdateError(bool isInError, string propertyName, string errorMessage)
         {
             if (isInError)
             {
-                Errors[propertyName] = errorMessage;
+                this.Errors[propertyName] = errorMessage;
             }
             else
             {
-                if (Errors.ContainsKey(propertyName))
-                    Errors.Remove(propertyName);
+                if (this.Errors.ContainsKey(propertyName))
+                {
+                    this.Errors.Remove(propertyName);
+                }
             }
+        }
+
+        private void Validate()
+        {
+            this.UpdateError(this.guestName.IsEmpty(), "GuestName", "Please enter a Name");
+            this.UpdateError(this.mobile.IsEmpty(), "Mobile", "Please enter a valid Mobile");
+            //UpdateError(!reservationTime.HasValue, "ReservationTime", "Please enter a Reservation Time");
+            this.UpdateError(this.seats < 1, "Seats", "Please enter a number of Seats");
         }
     }
 }

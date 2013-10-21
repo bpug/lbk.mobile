@@ -14,10 +14,7 @@ namespace Lbk.Mobile.Core.Converters
         public readonly ToLetterConverter ToLetter = new ToLetterConverter();
         public readonly QuizCategoryImageConverter QuizCategoryImage = new QuizCategoryImageConverter();
         public readonly DistanceValueConverter Distance = new DistanceValueConverter();
-        public readonly TimeOfDayConverter TimeOfDay = new TimeOfDayConverter();
-
-        
-
-        
+        public readonly InvertedIsATrueValueValueConverter InvertedIsATrueValue = new InvertedIsATrueValueValueConverter();
+        public readonly IsATrueValueValueConverter IsATrueValue = new IsATrueValueValueConverter();
     }
 }

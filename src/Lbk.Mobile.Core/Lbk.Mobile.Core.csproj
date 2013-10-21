@@ -35,7 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Converters\AreaValueConverter.cs" />
-    <Compile Include="Converters\TimeOfDayConverter.cs" />
+    <Compile Include="Converters\InvertedIsATrueValueValueConverter.cs" />
+    <Compile Include="Converters\IsATrueValueValueConverter.cs" />
     <Compile Include="Converters\DistanceValueConverter.cs" />
     <Compile Include="Converters\QuizCategoryImageConverter.cs" />
     <Compile Include="Converters\ToLetterConverter.cs" />
@@ -83,7 +84,7 @@
     <Compile Include="ViewModels\Quiz\QuizViewModel.cs" />
     <Compile Include="ViewModels\Quiz\InstructionsViewModel.cs" />
     <Compile Include="ViewModels\Reservation\ReservationConfirmationViewModel.cs" />
-    <Compile Include="ViewModels\Reservation\ReservationController.cs" />
+    <Compile Include="ViewModels\Reservation\ReservationManager.cs" />
     <Compile Include="ViewModels\Reservation\ReservationResultViewModel.cs" />
     <Compile Include="ViewModels\Room\RoomDetailViewModel.cs" />
     <Compile Include="ViewModels\Settings.cs" />

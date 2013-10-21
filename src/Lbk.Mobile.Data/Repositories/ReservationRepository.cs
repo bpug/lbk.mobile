@@ -36,6 +36,13 @@ namespace Lbk.Mobile.Data.Repositories
                     .FirstOrDefault(p => (p.Deleted == false && p.ReservationId == reservationId));
         }
 
+        public Reservation Get(int id)
+        {
+            return
+                this.Connection.Table<Reservation>()
+                    .FirstOrDefault(p => (p.Deleted == false && p.Id == id));
+        }
+
         public IEnumerable<Reservation> GetAll()
         {
             return this.Connection.Table<Reservation>().Where(p => (p.Deleted == false)).ToList();

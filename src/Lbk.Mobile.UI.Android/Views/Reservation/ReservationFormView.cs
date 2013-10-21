@@ -13,7 +13,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Reservation
     using Lbk.Mobile.Core.ViewModels.Reservation;
     using Lbk.Mobile.UI.Droid.Views.Shared;
 
-    [Activity(Label = "Reservierung")]
+    [Activity(Label = "Reservierung", NoHistory = true)]
     public class ReservationFormView : BaseFragmentActivity<ReservationFormViewModel>
     {
         const int TimeDialogId = 0;
@@ -63,7 +63,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Reservation
                     dialogTime.Show(SupportFragmentManager, "TimePickerDialog"); 
                     break;
                 case NumberDialogId:
-                    var dialogNumber = new NumberPickerFragment(this)
+                    var dialogNumber = new LbkNumberPickerFragment(this, "Plätze", Resource.Layout.Dialog_NumberPicker, Resource.Id.mvxnumber_picker)
                     {
                         ViewModel = this.ViewModel
                     };

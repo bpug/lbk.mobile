@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings\BaseWebViewTargetBinding.cs" />
+    <Compile Include="Bindings\NumberPickerTargetBinding.cs" />
     <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
     <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
     <Compile Include="Bootstrap\AppSettingsBootstrap.cs" />
@@ -279,6 +280,9 @@
     <Compile Include="Views\Quiz\InstructionsView.cs" />
     <Compile Include="Views\Quiz\QuestionFragment.cs" />
     <Compile Include="Views\Quiz\QuizStartView.cs" />
+    <Compile Include="Views\Reservation\LbkNumberPickerFragment.cs" />
+    <Compile Include="Views\Reservation\ReservationConfirmationView.cs" />
+    <Compile Include="Views\Reservation\ReservationResultView.cs" />
     <Compile Include="Views\Shared\NumberPickerFragment.cs" />
     <Compile Include="Views\Shared\TimePickerFragment.cs" />
     <Compile Include="Views\Shared\DatePickerFragment.cs" />
@@ -383,6 +387,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Dialog_NumberPicker.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Reservation_Confirmation.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\Reservation_Result.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -553,9 +563,17 @@
     <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_map.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_map.png" />
     <AndroidResource Include="Resources\Drawable\edittext_bg.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_selector_gradient.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_disabled.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_disabled_and_focused.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_focused.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_normal.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_pressed.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_selector_color.xml" />
     <Content Include="Resources\Drawable\ic_action_about.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_refresh.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_map.png" />
+    <AndroidResource Include="Resources\Values\dimens.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -21,9 +21,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
         private readonly ILbkMobileService lbkMobileService;
 
         private readonly IReservationRepository reservationRepository;
-
-        private Reservation reservation;
-
+        
         private string userConfirmCode;
 
         public ReservationConfirmationViewModel(
@@ -46,22 +44,19 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
         {
             get
             {
-                return new MvxCommand(async () => await this.ConfirmExecute(), () => this.UserConfirmCode.Length > 3);
+                return new MvxCommand(async () => await this.ConfirmExecute(), () => this.IsCodeLengthVaild);
             }
         }
 
-        public Reservation Reservation
+        public bool IsCodeLengthVaild
         {
             get
             {
-                return this.reservation;
-            }
-            set
-            {
-                this.reservation = value;
-                this.RaisePropertyChanged(() => this.Reservation);
+                return this.UserConfirmCode.Length > 3;
             }
         }
+
+        public Reservation Reservation { get; set; }
 
         public string UserConfirmCode
         {
@@ -132,9 +127,17 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
             }
         }
 
-        private void Init(Reservation booking)
+
+        private int reservationId;
+        public void Init(int id)
         {
-            this.Reservation = booking;
+            this.reservationId = id;
+        }
+
+        public override void Start()
+        {
+           base.Start();
+           this.Reservation = this.reservationRepository.Get(reservationId);
         }
 
         private void ShowReservationResult()
@@ -142,7 +145,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
             this.ShowViewModel<ReservationResultViewModel>(
                 new
                 {
-                    booking = this.Reservation
+                    id = this.Reservation.Id
                 });
         }
     }

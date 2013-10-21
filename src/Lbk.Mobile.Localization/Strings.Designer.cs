@@ -222,6 +222,37 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The reservation was canceled..
+        /// </summary>
+        public static string Lbk_ReservationResultViewModel_AbortedByCustomer {
+            get {
+                return ResourceManager.GetString("Lbk.ReservationResultViewModel.AbortedByCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Liber guest, unfortunately we can not confirm your reservation request.
+        ///Please call us at:
+        ///089 54726690 an.
+        ///Your Löwenbräukeler team..
+        /// </summary>
+        public static string Lbk_ReservationResultViewModel_DeclinedByRestaurant {
+            get {
+                return ResourceManager.GetString("Lbk.ReservationResultViewModel.DeclinedByRestaurant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Places are reserved.
+        ///You still get a text message with the reservation data..
+        /// </summary>
+        public static string Lbk_ReservationResultViewModel_SuccessConfirmation {
+            get {
+                return ResourceManager.GetString("Lbk.ReservationResultViewModel.SuccessConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Lbk_Share_ButtonCancel {

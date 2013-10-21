@@ -20,7 +20,7 @@ namespace Lbk.Mobile.Model
         public DateTime LastChange { get; set; }
         public string Mobile { get; set; }
         public string ReservationId { get; set; }
-        public DateTime? ReservationTime { get; set; }
+        public DateTime ReservationTime { get; set; }
         public int Seats { get; set; }
         public ReservationStatus Status { get; set; }
     }

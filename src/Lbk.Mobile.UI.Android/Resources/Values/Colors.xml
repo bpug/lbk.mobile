@@ -12,4 +12,31 @@
   <color name="yellow3">#e3c844</color>
   <color name="yellow4">#ccaa00</color>
   <color name="yellow5">#a48800</color>
+
+<!--Button-->
+  <color name="normal_start">#f2d649</color>
+  <color name="normal_end">#998000</color>
+  <color name="normal_border">#665500</color>
+  <color name="normal_text">#ffffff</color>
+
+  <color name="pressed_start">#e5cb45</color>
+  <color name="pressed_end">#a68a00</color>
+  <color name="pressed_border">#665500</color>
+  <color name="pressed_text">#ffffff</color>
+
+  <color name="focused_start">#944224</color>
+  <color name="focused_end">#D8703B</color>
+  <color name="focused_border">#665500</color>
+  <color name="focused_text">#ffffff</color>
+
+  <color name="disabled_start">#807126</color>
+  <color name="disabled_end">#806a00</color>
+  <color name="disabled_border">#665500</color>
+  <color name="disabled_text">#666666</color>
+
+  <color name="disabled_and_focused_start">#99872e</color>
+  <color name="disabled_and_focused_end">#998000</color>
+  <color name="disabled_and_focused_border">#403500</color>
+  <color name="disabled_and_focused_text">#b4b4b4</color>
+
 </resources>

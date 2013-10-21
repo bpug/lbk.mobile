@@ -1,18 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+//  --------------------------------------------------------------------------------------------------------------------
+//  <copyright file="MvxNumberPicker.cs" company="ip-connect GmbH">
+//    Copyright (c) ip-connect GmbH. All rights reserved.
+//  </copyright>
+//  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.UI.Droid.Bindings
 {
+    using System;
+
+    using Android.Content;
     using Android.Util;
+    using Android.Widget;
 
     public class MvxNumberPicker : NumberPicker, NumberPicker.IOnValueChangeListener
     {
@@ -26,17 +24,19 @@ namespace Lbk.Mobile.UI.Droid.Bindings
         {
         }
 
-        public int Value { 
-            get
-        {
-            return this.Value;
-        } }
-
         public event EventHandler ValueChanged;
+
+        public int Value
+        {
+            get
+            {
+                return this.Value;
+            }
+        }
 
         public void OnValueChange(NumberPicker picker, int oldVal, int newVal)
         {
-            var handler = ValueChanged;
+            var handler = this.ValueChanged;
             if (handler != null)
             {
                 handler(this, null);

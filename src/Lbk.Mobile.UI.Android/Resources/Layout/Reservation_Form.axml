@@ -34,11 +34,8 @@
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical" />
                     <TextView
-                        android:text="*"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="@color/text"
-                        android:gravity="top" />
+                        style="@style/required_item"
+                        local:MvxBind="Visibility Visibility(Errors['GuestName'])" />
                 </LinearLayout>
                 <EditText
                     android:layout_width="fill_parent"
@@ -46,6 +43,7 @@
                     android:background="@drawable/edittext_bg"
                     android:inputType="textPersonName"
                     android:hint="Name"
+                    android:textColor="@color/black"
                     local:MvxBind="Text GuestName" />
             </LinearLayout>
             <LinearLayout
@@ -63,12 +61,9 @@
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical" />
                     <TextView
-                        android:text="*"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        style="@style/required_item"
                         android:paddingTop="10dp"
-                        android:textColor="@color/text"
-                        android:gravity="top" />
+                        local:MvxBind="Visibility Visibility(Errors['Seats'])" />
                 </LinearLayout>
                 <Button
                     android:id="@+id/pick_number"
@@ -92,12 +87,9 @@
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical" />
                     <TextView
-                        android:text="*"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
+                        style="@style/required_item"
                         android:paddingTop="10dp"
-                        android:textColor="@color/text"
-                        android:gravity="top" />
+                        local:MvxBind="Visibility Visibility(Errors['ReservationTime'])" />
                 </LinearLayout>
                 <Button
                     android:id="@+id/pick_date"
@@ -127,11 +119,8 @@
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical" />
                     <TextView
-                        android:text="*"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:textColor="@color/text"
-                        android:gravity="top" />
+                        style="@style/required_item"
+                        local:MvxBind="Visibility Visibility(Errors['Mobile'])" />
                 </LinearLayout>
                 <EditText
                     android:layout_width="fill_parent"
@@ -140,6 +129,7 @@
                     android:inputType="phone"
                     android:ems="10"
                     android:hint="Telefon"
+                    android:textColor="@color/black"
                     local:MvxBind="Text Mobile" />
             </LinearLayout>
             <LinearLayout
@@ -157,28 +147,28 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/edittext_bg"
                     android:inputType="textMultiLine"
-                    android:lines="5"
+                    android:lines="3"
                     android:hint="Text"
                     android:gravity="top"
+                    android:textColor="@color/black"
                     local:MvxBind="Text Advice" />
             </LinearLayout>
             <TextView
-                android:text="Die mit Sternchen (*) gekennzeichnetne Felder sind Pflichtfelder."
+                android:text="Die mit Sternchen (*) gekennzeichneten Felder sind Pflichtfelder."
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:paddingTop="5dp"
                 android:textSize="12sp"
-                android:gravity="top" />
+                android:gravity="top"
+                android:enabled="false" />
             <Button
+                style="@style/button_lbk"
                 android:text="Anfragen"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_lbk"
-                android:textColor="@color/white"
-                android:textStyle="bold"
                 android:layout_marginTop="20dp"
-                android:textSize="15sp" />
+                local:MvxBind="Click ReserveCommand; Enabled Errors.Count, Converter=InvertedIsATrueValue" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

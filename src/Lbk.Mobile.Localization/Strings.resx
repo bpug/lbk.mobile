@@ -176,6 +176,19 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
   <data name="Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed" xml:space="preserve">
     <value>The reservation is not confirmed.</value>
   </data>
+  <data name="Lbk.ReservationResultViewModel.AbortedByCustomer" xml:space="preserve">
+    <value>The reservation was canceled.</value>
+  </data>
+  <data name="Lbk.ReservationResultViewModel.DeclinedByRestaurant" xml:space="preserve">
+    <value>Liber guest, unfortunately we can not confirm your reservation request.
+Please call us at:
+089 54726690 an.
+Your Löwenbräukeler team.</value>
+  </data>
+  <data name="Lbk.ReservationResultViewModel.SuccessConfirmation" xml:space="preserve">
+    <value>Places are reserved.
+You still get a text message with the reservation data.</value>
+  </data>
   <data name="Lbk.Share.ButtonCancel" xml:space="preserve">
     <value>Cancel</value>
   </data>

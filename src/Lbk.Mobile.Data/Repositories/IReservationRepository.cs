@@ -16,6 +16,8 @@ namespace Lbk.Mobile.Data.Repositories
 
         Reservation Get(string reservationId);
 
+        Reservation Get(int id);
+
         IEnumerable<Reservation> GetAll();
 
         Reservation GetRequested();

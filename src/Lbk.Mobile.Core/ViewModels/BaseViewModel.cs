@@ -105,7 +105,7 @@ namespace Lbk.Mobile.Core.ViewModels
         //    Mvx.Resolve<IErrorService>().ReportError(error);
         //}
 
-        protected async Task AsyncExecute<T>(
+        public async Task AsyncExecute<T>(
             Func<Task<T>> execute,
             Action<T> onSuccess,
             Action<Exception> onError = null)
@@ -139,7 +139,7 @@ namespace Lbk.Mobile.Core.ViewModels
             //    });
         }
 
-        protected async Task AsyncExecute<TResult, T1>(
+        public async Task AsyncExecute<TResult, T1>(
             Func<T1, Task<TResult>> execute,
             T1 parameter1,
             Action<TResult> onSuccess,
@@ -155,7 +155,7 @@ namespace Lbk.Mobile.Core.ViewModels
             await AsyncExecute(task, onSuccess, onError);
         }
 
-        protected async Task AsyncExecute<TResult, T1, T2>(
+        public async Task AsyncExecute<TResult, T1, T2>(
             Func<T1, T2, Task<TResult>> execute,
             T1 parameter1,
             T2 parameter2,
@@ -172,7 +172,7 @@ namespace Lbk.Mobile.Core.ViewModels
             await AsyncExecute(task, onSuccess, onError);
         }
 
-        protected async Task AsyncExecute<TResult, T1, T2, T3>(
+        public async Task AsyncExecute<TResult, T1, T2, T3>(
             Func<T1, T2, T3, Task<TResult>> execute,
             T1 parameter1,
             T2 parameter2,
