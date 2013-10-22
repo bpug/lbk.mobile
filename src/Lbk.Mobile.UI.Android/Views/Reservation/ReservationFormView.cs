@@ -49,21 +49,21 @@ namespace Lbk.Mobile.UI.Droid.Views.Reservation
             switch (id)
             {
                 case DateDialogId:
-                    var dialogDate = new DatePickerFragment(this)
+                    var dialogDate = new DatePickerFragment(this, "Datum", Resource.Layout.Dialog_DatePicker)
                     {
                         ViewModel = this.ViewModel
                     };
                     dialogDate.Show(SupportFragmentManager, "DatePickerDialog"); 
                     break;
                 case TimeDialogId:
-                    var dialogTime = new TimePickerFragment(this)
+                    var dialogTime = new LbkTimePickerFragment(this, "Zeit", Resource.Layout.Dialog_TimePicker, Resource.Id.mvxtime_picker)
                     {
                         ViewModel = this.ViewModel
                     };
                     dialogTime.Show(SupportFragmentManager, "TimePickerDialog"); 
                     break;
                 case NumberDialogId:
-                    var dialogNumber = new LbkNumberPickerFragment(this, "Plätze", Resource.Layout.Dialog_NumberPicker, Resource.Id.mvxnumber_picker)
+                    var dialogNumber = new NumberPickerFragment(this, "Plätze", Resource.Layout.Dialog_NumberPicker)
                     {
                         ViewModel = this.ViewModel
                     };

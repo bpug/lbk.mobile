@@ -3,6 +3,13 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Android.App;
 
+
+#if RELEASE
+    [assembly: Application(Debuggable=false)]
+#else
+    [assembly: Application(Debuggable = true)]
+#endif
+
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
@@ -12,6 +19,7 @@ using Android.App;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Lbk.Mobile.UI.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
+//[assembly: Application(Icon = "@drawable/ic_launcher")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

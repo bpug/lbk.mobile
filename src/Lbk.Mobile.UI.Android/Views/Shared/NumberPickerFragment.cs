@@ -6,7 +6,6 @@
 
 namespace Lbk.Mobile.UI.Droid.Views.Shared
 {
-    using Android;
     using Android.App;
     using Android.Content;
     using Android.OS;
@@ -15,7 +14,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Shared
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Droid.Fragging.Fragments;
 
-    public abstract class NumberPickerFragment : MvxDialogFragment
+    public class NumberPickerFragment : MvxDialogFragment
     {
         private readonly Context context;
 
@@ -25,12 +24,20 @@ namespace Lbk.Mobile.UI.Droid.Views.Shared
 
         private readonly string title;
 
-        protected NumberPickerFragment(Context context, string title, int resourceId, int pickerId)
+        //public NumberPickerFragment(Context context, string title, int resourceId, int pickerId)
+        //{
+        //    this.context = context;
+        //    this.title = title;
+        //    this.resourceId = resourceId;
+        //    this.pickerId = pickerId;
+        //}
+
+        public NumberPickerFragment(Context context, string title, int resourceId)
         {
             this.context = context;
             this.title = title;
             this.resourceId = resourceId;
-            this.pickerId = pickerId;
+            //this.pickerId = pickerId;
         }
 
         public override Dialog OnCreateDialog(Bundle savedInstanceState)
@@ -38,21 +45,22 @@ namespace Lbk.Mobile.UI.Droid.Views.Shared
             base.EnsureBindingContextSet(savedInstanceState);
 
             var view = this.BindingInflate(this.resourceId, null);
-            var picker = view.FindViewById<NumberPicker>(this.pickerId);
+            //var picker = view.FindViewById<NumberPicker>(this.pickerId);
 
-            if (picker != null)
-            {
-                this.SetInitValue(picker);
-            }
+            //if (picker != null)
+            //{
+            //    this.SetInitValue(picker);
+            //}
 
             var builder = new AlertDialog.Builder(this.context);
-            builder.SetIconAttribute(Resource.Attribute.CalendarViewShown);
+            //builder.SetIconAttribute(Resource.Attribute.CalendarViewShown);
+            builder.SetIcon(Resource.Drawable.ic_action_group);
             builder.SetTitle(this.title);
             builder.SetView(view);
             builder.SetPositiveButton("Ok", (sender, args) => { });
             return builder.Create();
         }
 
-        protected abstract void SetInitValue(NumberPicker picker);
+        //protected abstract void SetInitValue(NumberPicker picker);
     }
 }

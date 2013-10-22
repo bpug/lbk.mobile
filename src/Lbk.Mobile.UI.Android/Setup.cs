@@ -9,23 +9,20 @@ namespace Lbk.Mobile.UI.Droid
     using System.Collections.Generic;
     using System.Reflection;
 
-    using Android.Graphics;
-
-    using Cirrious.CrossCore;
-    using Cirrious.CrossCore.Platform;
-    using Cirrious.MvvmCross.Binding.BindingContext;
-    using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
-    using Cirrious.MvvmCross.Droid.Platform;
-    using Cirrious.MvvmCross.Plugins.DownloadCache;
-    using Cirrious.MvvmCross.ViewModels;
-
     using Android.Content;
     using Android.Webkit;
     using Android.Widget;
 
-    using Lbk.Mobile.Core.Services;
+    using Cheesebaron.MvvmCross.Bindings.Droid;
+
+    using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
+    using Cirrious.MvvmCross.Droid.Platform;
+    using Cirrious.MvvmCross.ViewModels;
+
+    using DK.Ostebaronen.Droid.ViewPagerIndicator;
+
+    using Lbk.Mobile.Core;
     using Lbk.Mobile.UI.Droid.Bindings;
-    using Lbk.Mobile.UI.Droid.Controls;
 
     public class Setup : MvxAndroidSetup
     {
@@ -34,50 +31,49 @@ namespace Lbk.Mobile.UI.Droid
         {
         }
 
-        protected override IMvxApplication CreateApp()
+        protected override IList<Assembly> AndroidViewAssemblies
         {
-            return new Core.LbkApp();
+            get
+            {
+                var assemblies = base.AndroidViewAssemblies;
+                assemblies.Add(typeof(BindableViewPager).Assembly);
+                assemblies.Add(typeof(CirclePageIndicator).Assembly);
+                return assemblies;
+            }
         }
 
-        protected override IMvxTrace CreateDebugTrace()
+        protected override IMvxApplication CreateApp()
         {
-            return new DebugTrace();
+            return new LbkApp();
         }
+
+        //protected override IMvxTrace CreateDebugTrace()
+        //{
+        //    return new DebugTrace();
+        //}
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             base.FillTargetFactories(registry);
 
-            registry.RegisterCustomBindingFactory<ImageView>("DrawableResource",
-                                                            imageView => new MvxImageViewDrawableTargetBinding(imageView));
-            registry.RegisterCustomBindingFactory<WebView>("Url",
-                                                            webView => new WebViewLoadUrlTargetBinding(webView));
-            registry.RegisterCustomBindingFactory<NumberPicker>("Value",
-                                                           picker => new NumberPickerTargetBinding(picker));
+            registry.RegisterCustomBindingFactory<ImageView>(
+                "DrawableResource",
+                imageView => new MvxImageViewDrawableTargetBinding(imageView));
+            registry.RegisterCustomBindingFactory<WebView>("Url", webView => new WebViewLoadUrlTargetBinding(webView));
+            registry.RegisterCustomBindingFactory<NumberPicker>(
+                "Value",
+                picker => new NumberPickerTargetBinding(picker));
             //registry.RegisterPropertyInfoBindingFactory((typeof(NumberPickerTargetBinding)), typeof(NumberPicker), "Value");
 
             //registry.RegisterCustomBindingFactory<WebView>("YoutubeUrl",
             //                                                webView => new WebViewLoadYoutubeThnTargetBinding(webView));
         }
 
-        
-
         protected override void InitializeLastChance()
         {
-            var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
+            //var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
 
             base.InitializeLastChance();
-        }
-
-        protected override IList<Assembly> AndroidViewAssemblies
-        {
-            get
-            {
-                var assemblies = base.AndroidViewAssemblies;
-                assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
-                assemblies.Add(typeof(DK.Ostebaronen.Droid.ViewPagerIndicator.CirclePageIndicator).Assembly);
-                return assemblies;
-            }
         }
     }
 }

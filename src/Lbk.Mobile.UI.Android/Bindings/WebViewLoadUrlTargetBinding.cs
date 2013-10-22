@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.UI.Droid.Bindings
 {
+    using Android.Webkit;
+
     public class WebViewLoadUrlTargetBinding : BaseWebViewTargetBinding
     {
         public WebViewLoadUrlTargetBinding(object target)
@@ -15,7 +17,7 @@ namespace Lbk.Mobile.UI.Droid.Bindings
 
         protected override void SetValueImpl(object target, object value)
         {
-            var webView = this.WebView;
+            var webView = target  as WebView;
             if (webView == null)
             {
                 return;
@@ -25,8 +27,8 @@ namespace Lbk.Mobile.UI.Droid.Bindings
                 return;
             }
 
-            webView.Settings.LoadWithOverviewMode = true;
-            webView.Settings.UseWideViewPort = true;
+            //webView.Settings.LoadWithOverviewMode = true;
+            //webView.Settings.UseWideViewPort = true;
             webView.LoadUrl((string)value);
         }
     }

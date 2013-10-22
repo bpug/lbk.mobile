@@ -9,54 +9,44 @@ namespace Lbk.Mobile.UI.Droid.Views.Shared
     using Android.App;
     using Android.Content;
     using Android.OS;
+    using Android.Views;
 
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Binding.Droid.Views;
     using Cirrious.MvvmCross.Droid.Fragging.Fragments;
 
-    using Java.Lang;
-
-    using Lbk.Mobile.Core.ViewModels.Reservation;
-
-    public class TimePickerFragment : MvxDialogFragment
+    public abstract class TimePickerFragment : MvxDialogFragment
     {
         private readonly Context context;
 
-        private readonly bool is24HourView;
+        private readonly int resourceId;
 
-        public TimePickerFragment(Context context, bool is24HourView = true)
+        private readonly string title;
+
+        protected View TickerView;
+
+        protected TimePickerFragment(Context context, string title, int resourceId)
         {
             this.context = context;
-            this.is24HourView = is24HourView;
+            this.title = title;
+            this.resourceId = resourceId;
         }
 
         public override Dialog OnCreateDialog(Bundle savedInstanceState)
         {
             base.EnsureBindingContextSet(savedInstanceState);
 
-            var view = this.BindingInflate(Resource.Layout.Dialog_TimePicker, null);
-            var timePicker = view.FindViewById<MvxTimePicker>(Resource.Id.mvxtime_picker);
-            if (timePicker != null)
-            {
-                if (this.is24HourView)
-                {
-                    timePicker.SetIs24HourView(Boolean.True);
-                    var vm = this.ViewModel as ReservationFormViewModel;
-                    if (vm != null)
-                    {
-                        timePicker.CurrentHour = new Integer(vm.Time.Hours);
-                        timePicker.CurrentMinute = new Integer(vm.Time.Minutes);
-                    }
-                }
-            }
-
+            TickerView = this.BindingInflate(this.resourceId, null);
+            this.Init();
             var builder = new AlertDialog.Builder(this.context);
-            builder.SetIconAttribute(Android.Resource.Attribute.CalendarViewShown);
-            builder.SetTitle("Zeit");
-            builder.SetView(view);
+            builder.SetIcon(Resource.Drawable.ic_action_time);
+            builder.SetTitle(this.title);
+            builder.SetView(TickerView);
             builder.SetPositiveButton("Ok", (sender, args) => { });
 
             return builder.Create();
         }
+
+        protected abstract void Init();
     }
 }

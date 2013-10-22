@@ -174,7 +174,8 @@ also die kostenlose App vom Münchner Löwenbräukeller solltest Du Dir unbeding
     <value>Do you want to abort the reservation?</value>
   </data>
   <data name="Lbk.ReservationConfirmationViewModel.ReservationNotConfirmed" xml:space="preserve">
-    <value>The reservation is not confirmed.</value>
+    <value>Wrong!
+Please enter the code again.</value>
   </data>
   <data name="Lbk.ReservationResultViewModel.AbortedByCustomer" xml:space="preserve">
     <value>The reservation was canceled.</value>

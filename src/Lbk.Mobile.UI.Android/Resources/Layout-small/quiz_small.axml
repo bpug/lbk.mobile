@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:baselineAligned="false"
+    android:padding="10dp">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+            <TextView
+                style="@style/quiz_info1"
+                android:text="Frage 4 von 10"/>
+
+            <TextView
+                style="@style/quiz_info2"
+                android:text="4 von 10 Punkten erreicht" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="10dp"
+            android:layout_weight="1">
+            <TextView
+                style="@style/quiz_question"
+                android:text="Der Englische Garten gilt als einer der größten Stadtparks weltweit, welchen Geburtstag feiert die grüne Lunge Münchens 2014?"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/quiz_answer"
+                    android:text="A"/>
+
+                <TextView
+                    style="@style/quiz_answer"
+                    android:text="200."/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/quiz_answer"
+                    android:text="B"/>
+
+                <TextView
+                    style="@style/quiz_answer"
+                    android:text="250."/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/quiz_answer"
+                    android:text="C"/>
+
+                <TextView
+                    style="@style/quiz_answer"
+                    android:text="225."/>
+
+            </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/quiz"
+        android:adjustViewBounds="true" />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -42,7 +42,8 @@
         <Button
             android:text="Event buchen"
             style="@style/button_lbk"
-            local:MvxBind="Visibility Visibility(Item.ReservationLink); Click Command"
-            android:layout_marginTop="7dp" />
+            android:layout_gravity="right"
+            android:layout_marginTop="7dp"
+            local:MvxBind="Visibility Visibility(Item.ReservationLink); Click Command" />
     </LinearLayout>
 </LinearLayout>

@@ -213,7 +213,8 @@ namespace Lbk.Mobile.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The reservation is not confirmed..
+        ///   Looks up a localized string similar to Wrong!
+        ///Please enter the code again..
         /// </summary>
         public static string Lbk_ReservationConfirmationViewModel_ReservationNotConfirmed {
             get {

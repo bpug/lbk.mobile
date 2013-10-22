@@ -65,6 +65,11 @@ namespace Lbk.Mobile.UI.Droid.Bindings
         protected override void SetValueImpl(object target, object value)
         {
             var pumberPicker = (NumberPicker)target;
+
+            //TODO: 
+            pumberPicker.MinValue = 0;
+            pumberPicker.MaxValue = 20;
+
             var intValue = ((int)value);
             pumberPicker.Value = intValue;
         }

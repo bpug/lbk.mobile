@@ -267,12 +267,12 @@ namespace UrlImageViewHelper
 					else
 					{
 						//TODO: File cache expired, refreshing
-						Android.Util.Log.Debug(LOGTAG, "File Cache Expired: " + file.Name);
+						//Android.Util.Log.Debug(LOGTAG, "File Cache Expired: " + file.Name);
 					}
 				}
 				catch (Exception ex)
 				{
-					Android.Util.Log.Debug(LOGTAG, "File Cache Exception " + ex.ToString());
+					//Android.Util.Log.Debug(LOGTAG, "File Cache Exception " + ex.ToString());
 				}
 			}
 
@@ -316,7 +316,7 @@ namespace UrlImageViewHelper
 				}
 				catch (Exception ex) 
 				{
-					Android.Util.Log.Debug(LOGTAG, "Download Error: " + ex.ToString());
+					//Android.Util.Log.Debug(LOGTAG, "Download Error: " + ex.ToString());
 					return null; 
 				}
 
@@ -354,7 +354,7 @@ namespace UrlImageViewHelper
 				}
 				catch (Exception ex)
 				{
-					Android.Util.Log.Debug(LOGTAG, "PostExecute Error: " + ex.ToString()); 
+					//Android.Util.Log.Debug(LOGTAG, "PostExecute Error: " + ex.ToString()); 
 				}
 
 			});

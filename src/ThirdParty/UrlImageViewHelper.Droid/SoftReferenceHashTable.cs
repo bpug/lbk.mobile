@@ -77,7 +77,7 @@ namespace UrlImageViewHelper
 
 				if (val == null)
 				{
-					Android.Util.Log.Debug(UrlImageViewHelper.LOGTAG, key.ToString() + " Lost Reference");
+					//Android.Util.Log.Debug(UrlImageViewHelper.LOGTAG, key.ToString() + " Lost Reference");
 					cache.Remove(key);
 					return default(TValue);
 				}

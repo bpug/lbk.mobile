@@ -18,19 +18,13 @@
         android:layout_weight="1"
         local:MvxBind="Text Item.Code" />
     <Button
+        style="@style/button_lbk"
         android:text="Aktivieren"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:background="@drawable/btn_lbk"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         local:MvxBind="Click ActivateCommand; Visibility InvertedVisibility(Item.IsActivated)" />
     <Button
+        style="@style/button_lbk"
         android:text="Einlösen"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:background="@drawable/btn_lbk"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         local:MvxBind="Click UseCommand" />
 </LinearLayout>

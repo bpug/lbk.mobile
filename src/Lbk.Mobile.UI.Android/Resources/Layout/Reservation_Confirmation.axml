@@ -136,7 +136,7 @@
                     android:textColor="@color/black"
                     android:ems="7"
                     android:inputType="textCapCharacters"
-                    android:maxLength="5"
+                    android:maxLength="4"
                     android:singleLine="true"
                     local:MvxBind="Text UserConfirmCode" />
             </LinearLayout>
