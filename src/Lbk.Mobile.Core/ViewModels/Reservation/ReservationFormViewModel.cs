@@ -89,6 +89,14 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 
         public ObservableDictionary<string, string> Errors { get; set; }
 
+        public bool HasNoError
+        {
+            get
+            {
+                return Errors.Count == 0;
+            }
+        }
+
         public string GuestName
         {
             get
@@ -202,6 +210,8 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
                     this.Errors.Remove(propertyName);
                 }
             }
+
+            this.RaisePropertyChanged(() => this.HasNoError);
         }
 
         private void Validate()

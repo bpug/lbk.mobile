@@ -16,7 +16,7 @@ using Android.App;
 [assembly: AssemblyTitle("Lbk.Mobile.UI.Android")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ip-connect")]
 [assembly: AssemblyProduct("Lbk.Mobile.UI.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
@@ -39,3 +39,11 @@ using Android.App;
 // Add some common permissions, these can be removed if not needed
 [assembly: UsesPermission(Android.Manifest.Permission.Internet)]
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessFineLocation)]
+//Google Maps for Android v2 requires OpenGL ES v2
+[assembly: UsesFeature(GLESVersion=0x00020000, Required=true)]
+
+[assembly: UsesPermission("com.google.android.providers.gsf.permission.READ_GSERVICES")]
+[assembly: UsesPermission("de.ipconnect.lbk.permission.MAPS_RECEIVE")]

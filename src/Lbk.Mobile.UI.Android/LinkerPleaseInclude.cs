@@ -1,8 +1,10 @@
 namespace Lbk.Mobile.UI.Droid
 {
+    using System;
     using System.Collections.Specialized;
     using System.Windows.Input;
 
+    using Android.Views;
     using Android.Widget;
 
     // This class is never actually executed, but when Xamarin linking is enabled it does how to ensure types and properties
@@ -12,6 +14,11 @@ namespace Lbk.Mobile.UI.Droid
         public void Include(Button button)
         {
             button.Click += (s, e) => button.Text = button.Text + "";
+        }
+
+        public void Include(ImageButton imageButton)
+        {
+            imageButton.Click += (s, e) => { };
         }
 
         public void Include(CheckBox checkBox)
@@ -43,6 +50,45 @@ namespace Lbk.Mobile.UI.Droid
         public void Include(ICommand command)
         {
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
+        }
+
+        public void IncludeVisibility(View view)
+        {
+            view.Visibility = view.Visibility + 1;
+        }
+
+        public void IncludeEnabled(Button button)
+        {
+            button.Enabled = !button.Enabled;
+        }
+
+        public void IncludeRelativeLayout(RelativeLayout relative)
+        {
+            relative.Visibility = ViewStates.Visible;
+        }
+
+        public void Include(ScrollView scrollView)
+        {
+            scrollView.Visibility = ViewStates.Visible;
+        }
+
+        public void Include(TableRow tableRow)
+        {
+            tableRow.Visibility = ViewStates.Visible;
+        }
+
+        public void Include(DatePicker datePicker)
+        {
+            datePicker.Visibility = ViewStates.Visible;
+            datePicker.MinDate = DateTime.Now.Second;
+            datePicker.SpinnersShown = true;
+        }
+
+        public void Include(NumberPicker numberPicker)
+        {
+            numberPicker.Visibility = ViewStates.Visible;
+            numberPicker.MaxValue = 10;
+            numberPicker.MinValue = 1;
         }
     }
 }

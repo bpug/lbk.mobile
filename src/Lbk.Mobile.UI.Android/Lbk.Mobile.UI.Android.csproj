@@ -172,7 +172,7 @@
     </Reference>
     <Reference Include="GooglePlayServicesFroyoLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Components\googleplayservicesfroyo12-12.0.0\lib\android\GooglePlayServicesFroyoLib.dll</HintPath>
+      <HintPath>..\Components\googleplayservicesfroyo12-12.0.1\lib\android\GooglePlayServicesFroyoLib.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
@@ -345,7 +345,7 @@
     <AndroidResource Include="Resources\Layout\Gallery_Item.axml" />
     <AndroidResource Include="Resources\Layout-small\History_Details.axml" />
     <AndroidResource Include="Resources\Layout\Quiz_Start.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Quiz_Instructions.axml">
       <SubType>AndroidResource</SubType>
@@ -679,7 +679,7 @@
   <ItemGroup>
     <XamarinComponentReference Include="googleplayservicesfroyo12">
       <Visible>False</Visible>
-      <Version>12.0.0</Version>
+      <Version>12.0.1</Version>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
