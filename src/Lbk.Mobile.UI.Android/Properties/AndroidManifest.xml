@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="de.ipconnect.lbk" android:versionCode="1" android:versionName="1.0.0">
-	<uses-sdk android:minSdkVersion="8" />
-	<application android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:debuggable="false">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCtR-sVTTPy8WhlLql-ktZ4audFPQYvzPc" />
-		<activity android:name="lbk.mobile.plugin.documentviewer.droid.PdfView" android:label="@string/menu_name" android:icon="@drawable/ic_launcher" />
-		<activity android:name="lbk.mobile.plugin.webvideo.droid.YoutubeView" android:icon="@drawable/ic_launcher" />
-	</application>
-	<permission android:name="de.ipconnect.lbk.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
-	<uses-permission android:name="de.ipconnect.lbk.permission.MAPS_RECEIVE" />
-	<!-- We need to be able to download map tiles and access Google Play Services-->
-	<uses-permission android:name="android.permission.INTERNET" />
-	<!-- Allow the application to access Google web-based services. -->
-	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-	<!-- Google Maps for Android v2 will cache map tiles on external storage -->
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<!-- Google Maps for Android v2 needs this permission so that it may check the connection state as it must download data -->
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<!-- Google Maps for Android v2 requires OpenGL ES v2 -->
-	<uses-feature android:glEsVersion="0x00020000" android:required="true" />
+  <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17" />
+  <application android:label="@string/app_name" android:icon="@drawable/ic_launcher" >
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCtR-sVTTPy8WhlLql-ktZ4audFPQYvzPc" />
+    <activity android:name="lbk.mobile.plugin.documentviewer.droid.PdfView" android:label="@string/menu_name" android:icon="@drawable/ic_launcher" />
+    <activity android:name="lbk.mobile.plugin.webvideo.droid.YoutubeView" android:icon="@drawable/ic_launcher" />
+  </application>
+  <permission android:name="de.ipconnect.lbk.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
+  <uses-permission android:name="de.ipconnect.lbk.permission.MAPS_RECEIVE" />
+  <!-- We need to be able to download map tiles and access Google Play Services-->
+  <uses-permission android:name="android.permission.INTERNET" />
+  <!-- Allow the application to access Google web-based services. -->
+  <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+  <!-- Google Maps for Android v2 will cache map tiles on external storage -->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <!-- Google Maps for Android v2 needs this permission so that it may check the connection state as it must download data -->
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <!-- These are optional, but recommended. They will allow Maps to use the My Location provider. -->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <!-- Google Maps for Android v2 requires OpenGL ES v2 -->
+  <uses-feature android:glEsVersion="0x00020000" android:required="true" />
 </manifest>

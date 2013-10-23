@@ -133,7 +133,7 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
             base.SetItemsSource(flattened);
         }
 
-        private static Object[] CreateJavaStringArray(IReadOnlyList<string> inputList)
+        private static Object[] CreateJavaStringArray(List<string> inputList)
         {
             if (inputList == null)
             {
