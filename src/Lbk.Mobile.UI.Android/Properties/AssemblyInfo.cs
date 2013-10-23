@@ -19,7 +19,6 @@ using Android.App;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Lbk.Mobile.UI.Android")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
-//[assembly: Application(Icon = "@drawable/ic_launcher")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
