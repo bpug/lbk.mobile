@@ -17,7 +17,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Video
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.SetContentView(Resource.Layout.Video_List);
+            this.SetContentView(Resource.Layout.Video_ListView);
         }
     }
 }

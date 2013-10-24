@@ -17,7 +17,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Event
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.SetContentView(Resource.Layout.Event_List);
+            this.SetContentView(Resource.Layout.Event_ListView);
         }
     }
 }

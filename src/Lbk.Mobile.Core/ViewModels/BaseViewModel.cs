@@ -63,6 +63,7 @@ namespace Lbk.Mobile.Core.ViewModels
                 this.RaisePropertyChanged(() => this.IsBusy);
             }
         }
+        
 
         public IMessageBoxService MessageBoxService
         {

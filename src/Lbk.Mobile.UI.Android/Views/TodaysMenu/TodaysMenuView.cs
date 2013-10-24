@@ -8,6 +8,9 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
 {
     using System;
 
+    using Android.Views;
+
+    using Cirrious.MvvmCross.Binding.BindingContext;
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Binding.Droid.Views;
 
@@ -15,6 +18,9 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
     using Android.OS;
 
     using Lbk.Mobile.Core.ViewModels.TodaysMenu;
+    using Lbk.Mobile.UI.Droid.Controls;
+
+    using PullToRefresharp.Android.Views;
 
     using Resource = Lbk.Mobile.UI.Droid.Resource;
 
@@ -25,10 +31,13 @@ namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
         {
             this.Title = DateTime.Now.ToShortDateString();
             base.OnCreate(bundle);
-            this.SetContentView(Resource.Layout.TodaysMenu_List);
+            this.SetContentView(Resource.Layout.TodaysMenu_ListView);
+
+            var listView = this.FindViewById<MvxPullToRefreshListView>(Resource.Id.todaysmenu_list);
+            listView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
             
-            var sessionListView = this.FindViewById<MvxListView>(Android.Resource.Id.List);
-            sessionListView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
+
+            
         }
 
         //private void BindDishes(IEnumerable<category> categories)

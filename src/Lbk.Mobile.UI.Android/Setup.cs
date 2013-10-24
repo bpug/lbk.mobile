@@ -15,6 +15,7 @@ namespace Lbk.Mobile.UI.Droid
 
     using Cheesebaron.MvvmCross.Bindings.Droid;
 
+    using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Binding.Bindings.Target.Construction;
     using Cirrious.MvvmCross.Droid.Platform;
     using Cirrious.MvvmCross.ViewModels;
@@ -23,6 +24,8 @@ namespace Lbk.Mobile.UI.Droid
 
     using Lbk.Mobile.Core;
     using Lbk.Mobile.UI.Droid.Bindings;
+
+    using PullToRefresharp.Android.Views;
 
     public class Setup : MvxAndroidSetup
     {
@@ -38,6 +41,7 @@ namespace Lbk.Mobile.UI.Droid
                 var assemblies = base.AndroidViewAssemblies;
                 assemblies.Add(typeof(BindableViewPager).Assembly);
                 assemblies.Add(typeof(CirclePageIndicator).Assembly);
+                assemblies.Add(typeof(ViewWrapper).Assembly);
                 return assemblies;
             }
         }
@@ -47,10 +51,10 @@ namespace Lbk.Mobile.UI.Droid
             return new LbkApp();
         }
 
-        //protected override IMvxTrace CreateDebugTrace()
-        //{
-        //    return new DebugTrace();
-        //}
+        protected override IMvxTrace CreateDebugTrace()
+        {
+            return new DebugTrace();
+        }
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {

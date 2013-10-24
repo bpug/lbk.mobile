@@ -182,6 +182,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.13\lib\MonoAndroid16\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PullToRefresharp">
+      <HintPath>..\Components\pulltorefresharp-1.0.1\lib\android\PullToRefresharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net">
@@ -223,32 +226,17 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Controls\MvxTestListView.cs" />
     <Compile Include="Controls\GalleryImageView.cs" />
     <Compile Include="Controls\ExpandCollapseAnimation.cs" />
     <Compile Include="Bindings\MapManager\LbkAnnotationManager.cs" />
     <Compile Include="Bindings\MapManager\MvxMarkerManager.cs" />
+    <Compile Include="Controls\MvxPullToRefreshList.cs" />
     <Compile Include="Controls\MvxResizableImageView.cs" />
     <Compile Include="Controls\MvxScaleImageView.cs" />
     <Compile Include="Controls\MvxThumbnail.cs" />
-    <Compile Include="Controls\PullToRefresh\BindingPullToRefreshListView.cs" />
     <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
-    <Compile Include="Controls\PullToRefresh\VideoBindingListView.cs" />
-    <Compile Include="Controls\PullToRefresh\EventBindingListView.cs" />
     <Compile Include="Controls\SectionFooter.cs" />
-    <Compile Include="Controls\PullToRefresh\TodaysMenuBindingListView.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\ActionBasedRefreshListener.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\IOnPullingAction.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\IOnReleaseReady.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\IRefreshListener.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\IScrollingState.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\NoRefreshListener.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\Pixel.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\PullingDownState.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\PullingUpState.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\PullToRefreshComponent.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\PullToRefreshListView.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\PullToRefreshState.cs" />
-    <Compile Include="Controls\PullToRefresh\Library\RefreshingState.cs" />
     <Compile Include="Converters\LocationToLatLngValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Extensions\ActivityExtensions.cs" />
@@ -300,12 +288,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\runde_ecken.xml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
     <AndroidResource Include="Resources\Values\Styles.xml" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
-    <AndroidResource Include="Resources\Layout\TodaysMenu_List.axml" />
     <AndroidResource Include="Resources\Layout\Reservation_Form.axml" />
     <AndroidResource Include="Resources\Layout\Home.axml">
       <SubType>Designer</SubType>
@@ -313,10 +301,6 @@
     <AndroidResource Include="Resources\Layout\Menu.axml" />
     <AndroidResource Include="Resources\Layout\ToastLayout_Error.axml" />
     <AndroidResource Include="Resources\Layout\Room_List.axml" />
-    <AndroidResource Include="Resources\Layout\pull_down_pull_to_refresh_list.axml" />
-    <AndroidResource Include="Resources\Layout\TodaysMenu_ListView.axml" />
-    <AndroidResource Include="Resources\Layout\pull_up_pull_to_refresh_list.axml" />
-    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Header.axml" />
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Footer.axml" />
     <AndroidResource Include="Resources\Layout\Room_ListItem.axml" />
@@ -324,13 +308,11 @@
     <AndroidResource Include="Resources\Layout\Room_ImagePagerItem.axml" />
     <AndroidResource Include="Resources\Layout\Event_ListView.axml" />
     <AndroidResource Include="Resources\Layout\Event_ListItem.axml" />
-    <AndroidResource Include="Resources\Layout\Event_List.axml" />
     <AndroidResource Include="Resources\Layout\Event_Booking.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Video_ListView.axml" />
     <AndroidResource Include="Resources\Layout\Video_ListItem.axml" />
-    <AndroidResource Include="Resources\Layout\Video_List.axml" />
     <AndroidResource Include="Resources\Layout\History.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -401,6 +383,12 @@
     <AndroidResource Include="Resources\Layout\Reservation_Result.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\PullToRefresh_Header.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
@@ -410,7 +398,6 @@
     <AndroidAsset Include="Assets\Xml\Room.xml">
       <SubType>Designer</SubType>
     </AndroidAsset>
-    <Content Include="Controls\PullToRefresh\Library\License.txt" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -604,6 +591,7 @@
     <AndroidResource Include="Resources\Drawable\ic_action_event.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_time.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_group.png" />
+    <AndroidResource Include="Resources\Values-de\Strings.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -680,6 +668,10 @@
     <XamarinComponentReference Include="googleplayservicesfroyo12">
       <Visible>False</Visible>
       <Version>12.0.1</Version>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="pulltorefresharp">
+      <Visible>False</Visible>
+      <Version>1.0.1</Version>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
