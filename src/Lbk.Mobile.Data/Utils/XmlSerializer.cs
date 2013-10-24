@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.Data.Utility
+namespace Lbk.Mobile.Data.Utils
 {
     using System;
     using System.Xml.Serialization;

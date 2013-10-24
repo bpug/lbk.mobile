@@ -90,7 +90,7 @@
     <Compile Include="Repositories\ReservationRepository.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Utility\XmlSerializer.cs" />
+    <Compile Include="Utils\XmlSerializer.cs" />
     <Compile Include="Repositories\IRoomRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\LbkMobileService\Reference.cs">

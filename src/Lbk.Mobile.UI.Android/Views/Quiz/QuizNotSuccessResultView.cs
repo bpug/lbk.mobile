@@ -12,7 +12,7 @@ namespace Lbk.Mobile.UI.Droid.Views.Quiz
 
     using Lbk.Mobile.Core.ViewModels.Quiz;
 
-    [Activity(Label = "Bavaria Quiz Gaudi", Icon = "@drawable/ic_launcher",ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Bavaria Quiz Gaudi", Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
     public class QuizNotSuccessResultView : BaseView<QuizNotSuccessResultViewModel>
     {
         

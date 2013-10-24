@@ -52,7 +52,7 @@ namespace Lbk.Mobile.UI.Droid
             command.CanExecuteChanged += (s, e) => { if (command.CanExecute(null)) command.Execute(null); };
         }
 
-        public void IncludeVisibility(View view)
+        public void Include(View view)
         {
             view.Visibility = view.Visibility + 1;
         }
@@ -62,33 +62,29 @@ namespace Lbk.Mobile.UI.Droid
             button.Enabled = !button.Enabled;
         }
 
-        public void IncludeRelativeLayout(RelativeLayout relative)
-        {
-            relative.Visibility = ViewStates.Visible;
-        }
-
         public void Include(ScrollView scrollView)
         {
-            scrollView.Visibility = ViewStates.Visible;
         }
 
         public void Include(TableRow tableRow)
         {
-            tableRow.Visibility = ViewStates.Visible;
+            
         }
 
         public void Include(DatePicker datePicker)
         {
-            datePicker.Visibility = ViewStates.Visible;
             datePicker.MinDate = DateTime.Now.Second;
-            datePicker.SpinnersShown = true;
         }
 
         public void Include(NumberPicker numberPicker)
         {
-            numberPicker.Visibility = ViewStates.Visible;
             numberPicker.MaxValue = 10;
             numberPicker.MinValue = 1;
         }
+
+        //public void Include(RelativeLayout relative)
+        //{
+        //    relative.Visibility = ViewStates.Visible;
+        //}
     }
 }

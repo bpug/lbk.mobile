@@ -7,13 +7,14 @@
 namespace Lbk.Mobile.UI.Droid.Views.Reservation
 {
     using Android.App;
+    using Android.Content.PM;
     using Android.OS;
     using Android.Widget;
 
     using Lbk.Mobile.Core.ViewModels.Reservation;
     using Lbk.Mobile.UI.Droid.Views.Shared;
 
-    [Activity(Label = "Reservierung", NoHistory = true)]
+    [Activity(Label = "Reservierung", NoHistory = true, ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class ReservationFormView : BaseFragmentActivity<ReservationFormViewModel>
     {
         const int TimeDialogId = 0;

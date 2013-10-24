@@ -23,6 +23,7 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
         public TodaysMenuViewModel(ILbkMobileService service)
         {
             this.service = service;
+            this.Date = DateTime.Now.ToString("D");
         }
 
         public ICommand LoadCommand
@@ -32,6 +33,8 @@ namespace Lbk.Mobile.Core.ViewModels.TodaysMenu
                 return new MvxCommand(async () => await this.OnLoadExecute());
             }
         }
+
+        public string Date { get; set; }
 
         public List<MenuCategory> MenuCategories { get; set; }
 

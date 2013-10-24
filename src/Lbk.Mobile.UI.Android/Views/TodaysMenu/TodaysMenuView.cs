@@ -6,38 +6,25 @@
 
 namespace Lbk.Mobile.UI.Droid.Views.TodaysMenu
 {
-    using System;
-
-    using Android.Views;
-
-    using Cirrious.MvvmCross.Binding.BindingContext;
-    using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-    using Cirrious.MvvmCross.Binding.Droid.Views;
-
     using Android.App;
     using Android.OS;
 
+    using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+
     using Lbk.Mobile.Core.ViewModels.TodaysMenu;
     using Lbk.Mobile.UI.Droid.Controls;
-
-    using PullToRefresharp.Android.Views;
-
-    using Resource = Lbk.Mobile.UI.Droid.Resource;
 
     [Activity(Label = "Tageskarte", Icon = "@drawable/ic_launcher")]
     public class TodaysMenuView : BaseView<TodaysMenuViewModel>
     {
         protected override void OnCreate(Bundle bundle)
         {
-            this.Title = DateTime.Now.ToShortDateString();
             base.OnCreate(bundle);
+            this.Title = this.ViewModel.Date;
             this.SetContentView(Resource.Layout.TodaysMenu_ListView);
 
             var listView = this.FindViewById<MvxPullToRefreshListView>(Resource.Id.todaysmenu_list);
             listView.Adapter = new TodaysMenuListAdapter(this, (IMvxAndroidBindingContext)this.BindingContext);
-            
-
-            
         }
 
         //private void BindDishes(IEnumerable<category> categories)

@@ -13,7 +13,7 @@ namespace Lbk.Mobile.Data.Repositories
 
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Common.Interfaces;
-    using Lbk.Mobile.Data.Utility;
+    using Lbk.Mobile.Data.Utils;
     using Lbk.Mobile.Model;
 
     public class RoomRepository : XmlRepositoryBase, IRoomRepository

@@ -4,7 +4,7 @@
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
-namespace Lbk.Mobile.UI.Droid.Tools
+namespace Lbk.Mobile.UI.Droid.Utils
 {
     using Android.Graphics;
     using Android.Util;
