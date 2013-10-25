@@ -32,9 +32,9 @@ namespace Lbk.Mobile.Core.ViewModels.Room
             this.IsBusy = true;
             this.roomRepository.GetRoom(
                 this.roomId,
-                room =>
+                mroom =>
                 {
-                    this.Room = room;
+                    this.Room = mroom;
                     this.IsBusy = false;
                 },
                 exception => { this.IsBusy = false; });

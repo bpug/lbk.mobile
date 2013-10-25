@@ -8,19 +8,13 @@ namespace Lbk.Mobile.UI.Droid.Views.Gallery
 {
     using Android.App;
     using Android.OS;
-    using Android.Util;
-    using Android.Widget;
-
-    using Cirrious.MvvmCross.Binding.Droid.Views;
 
     using Lbk.Mobile.Core.ViewModels.Gallery;
-    using Lbk.Mobile.UI.Droid.Controls;
-    using Lbk.Mobile.UI.Droid.Extensions;
 
     [Activity(Label = "Bilder", Icon = "@drawable/ic_launcher")]
     public class GalleryView : BaseView<GalleryViewModel>
     {
-        private int columnWidth;
+        //private int columnWidth;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -30,24 +24,24 @@ namespace Lbk.Mobile.UI.Droid.Views.Gallery
             //InitilizeGridLayout(gridView);
         }
 
-        private void InitilizeGridLayout(MvxGridView gridView)
-        {
-            float padding = TypedValue.ApplyDimension(
-                ComplexUnitType.Dip,
-                Constants.Gallery.GridPadding,
-                this.Resources.DisplayMetrics);
-            this.columnWidth =
-                (int)
-                    ((this.GetScreenWidth() - ((Constants.Gallery.GridColumnsCount + 1) * padding))
-                     / Constants.Gallery.GridColumnsCount);
+        //private void InitilizeGridLayout(MvxGridView gridView)
+        //{
+        //    float padding = TypedValue.ApplyDimension(
+        //        ComplexUnitType.Dip,
+        //        Constants.Gallery.GridPadding,
+        //        this.Resources.DisplayMetrics);
+        //    this.columnWidth =
+        //        (int)
+        //            ((this.GetScreenWidth() - ((Constants.Gallery.GridColumnsCount + 1) * padding))
+        //             / Constants.Gallery.GridColumnsCount);
 
-            gridView.SetNumColumns(Constants.Gallery.GridColumnsCount);
-            gridView.SetColumnWidth(this.columnWidth);
-            //gridView.StretchMode = StretchMode.NoStretch;
-            gridView.SetPadding((int)padding, (int)padding, (int)padding, (int)padding);
-            gridView.SetHorizontalSpacing((int)padding);
-            gridView.SetVerticalSpacing((int)padding);
-        }
+        //    gridView.SetNumColumns(Constants.Gallery.GridColumnsCount);
+        //    gridView.SetColumnWidth(this.columnWidth);
+        //    //gridView.StretchMode = StretchMode.NoStretch;
+        //    gridView.SetPadding((int)padding, (int)padding, (int)padding, (int)padding);
+        //    gridView.SetHorizontalSpacing((int)padding);
+        //    gridView.SetVerticalSpacing((int)padding);
+        //}
     }
 }
 

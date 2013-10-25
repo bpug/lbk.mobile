@@ -22,7 +22,7 @@ namespace Lbk.Mobile.UI.Droid.Controls
     {
         private readonly ListViewDelegate ptrDelegate;
 
-        private bool _isRefreshing;
+        private bool isRefreshing;
 
         public MvxPullToRefreshListView(Context context, IAttributeSet attrs)
             : this(context, attrs, new MvxAdapter(context))
@@ -98,12 +98,12 @@ namespace Lbk.Mobile.UI.Droid.Controls
         {
             get
             {
-                return this._isRefreshing;
+                return this.isRefreshing;
             }
             set
             {
-                this._isRefreshing = value;
-                if (this._isRefreshing)
+                this.isRefreshing = value;
+                if (this.isRefreshing)
                 {
                     //OnRefreshActivated();
                 }

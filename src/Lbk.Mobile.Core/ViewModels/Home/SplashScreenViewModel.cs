@@ -15,13 +15,13 @@ namespace Lbk.Mobile.Core.ViewModels.Home
         public SplashScreenViewModel()
         {
             this.SplashScreenComplete = false;
-            this.PropertyChanged += (sender, args) =>
-            {
-                if (args.PropertyName == "IsSearching")
-                {
-                    this.MoveForwardsIfPossible();
-                }
-            };
+            //this.PropertyChanged += (sender, args) =>
+            //{
+            //    if (args.PropertyName == "IsSearching")
+            //    {
+            //        this.MoveForwardsIfPossible();
+            //    }
+            //};
         }
 
         public bool SplashScreenComplete

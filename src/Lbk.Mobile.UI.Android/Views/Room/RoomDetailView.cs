@@ -11,9 +11,8 @@ namespace Lbk.Mobile.UI.Droid.Views.Room
     using Android.OS;
 
     using Cheesebaron.MvvmCross.Bindings.Droid;
-
+    using Cirrious.MvvmCross.Binding.BindingContext;
     using DK.Ostebaronen.Droid.ViewPagerIndicator;
-
     using Lbk.Mobile.Core.ViewModels.Room;
 
     using Resource = Lbk.Mobile.UI.Droid.Resource;
@@ -24,12 +23,18 @@ namespace Lbk.Mobile.UI.Droid.Views.Room
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.Title = this.ViewModel.Room.Title;
             this.SetContentView(Resource.Layout.Room_Details);
+
+            var set = this.CreateBindingSet<RoomDetailView, RoomDetailViewModel>();
+            set.Bind(this).For(v => v.Title).To(vm => vm.Room.Title);
+            set.Apply();
 
             var pager = this.FindViewById<BindableViewPager>(Resource.Id.image_pager);
             var indicator = this.FindViewById<CirclePageIndicator>(Resource.Id.image_pager_indicator);
-            indicator.SetViewPager(pager);
+            if (pager != null && indicator != null)
+            {
+                indicator.SetViewPager(pager);
+            }
         }
     }
 }

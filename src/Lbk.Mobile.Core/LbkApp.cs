@@ -7,16 +7,9 @@
 namespace Lbk.Mobile.Core
 {
     using Cirrious.CrossCore;
-    using Cirrious.CrossCore.IoC;
-    using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Core.ApplicationObjects;
-    using Lbk.Mobile.Core.Services;
-    using Lbk.Mobile.Core.Services.Error;
-    using Lbk.Mobile.Core.ViewModels.Home;
-    using Lbk.Mobile.Data.Repositories;
-    using Lbk.Mobile.Data.Services;
 
     public class LbkApp : LbkAppBase
     {
@@ -31,5 +24,4 @@ namespace Lbk.Mobile.Core
             Mvx.RegisterSingleton<IMvxAppStart>(startApplicationObject);
         }
     }
-    
 }

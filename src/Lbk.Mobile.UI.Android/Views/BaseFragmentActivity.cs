@@ -1,5 +1,5 @@
 //  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="BaseMvxFragmentActivity.cs" company="ip-connect GmbH">
+//  <copyright file="BaseFragmentActivity.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
@@ -10,9 +10,7 @@ namespace Lbk.Mobile.UI.Droid.Views
     using Android.OS;
 
     using Cirrious.MvvmCross.Binding.BindingContext;
-    using Cirrious.MvvmCross.Binding.Droid.BindingContext;
     using Cirrious.MvvmCross.Droid.Fragging;
-    using Cirrious.MvvmCross.Droid.Fragging.Fragments;
 
     using Lbk.Mobile.Core.ViewModels;
     using Lbk.Mobile.UI.Droid.Controls.ProgressBarDialog;
@@ -36,6 +34,14 @@ namespace Lbk.Mobile.UI.Droid.Views
             }
         }
 
+        protected virtual int Background
+        {
+            get
+            {
+                return Resource.Drawable.background;
+            }
+        }
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -43,14 +49,6 @@ namespace Lbk.Mobile.UI.Droid.Views
             this.SetBackground(this.Background);
 
             this.BindHud();
-        }
-
-        protected virtual int Background
-        {
-            get
-            {
-                return Resource.Drawable.background;
-            }
         }
 
         private void BindHud()

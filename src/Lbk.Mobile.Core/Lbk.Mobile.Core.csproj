@@ -50,15 +50,12 @@
     <Compile Include="Messages\VoucherActivatedMessage.cs" />
     <Compile Include="Messages\DialogMessage.cs" />
     <Compile Include="Messages\YouthProtectionMessage.cs" />
-    <Compile Include="Services\Error\ErrorService.cs" />
     <Compile Include="LbkApp.cs" />
     <Compile Include="Messages\ErrorMessage.cs" />
     <Compile Include="Messages\Message .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ApplicationObjects\AppStart.cs" />
-    <Compile Include="Services\Error\IErrorService.cs" />
     <Compile Include="Services\ResxTextProvider.cs" />
-    <Compile Include="Utils\MvxAsyncCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
     <Compile Include="ViewModels\Contact\ImpressumViewModel.cs" />
@@ -127,9 +124,6 @@
     <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.13\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite">
-      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.13\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.Sqlite.dll</HintPath>
-    </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser">
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.13\lib\portable-win+net45+MonoAndroid16+MonoTouch40+sl40+wp71\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
     </Reference>
@@ -180,10 +174,6 @@
       <Project>{1a39bdf5-05d8-4f35-a274-ede24ff2285a}</Project>
       <Name>Lbk.Mobile.Plugin.AppSettings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
-      <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
-      <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Plugins\DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer.csproj">
       <Project>{36a79756-82ba-4c27-ba04-6b38f8c3d0e8}</Project>
       <Name>Lbk.Mobile.Plugin.DocumentViewer</Name>
@@ -203,6 +193,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Error\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />

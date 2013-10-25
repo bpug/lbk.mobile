@@ -12,7 +12,6 @@ namespace Lbk.Mobile.UI.Droid.Views.Shared
     using Android.Views;
 
     using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-    using Cirrious.MvvmCross.Binding.Droid.Views;
     using Cirrious.MvvmCross.Droid.Fragging.Fragments;
 
     public abstract class TimePickerFragment : MvxDialogFragment

@@ -19,8 +19,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
     public class QuizViewModel : BaseViewModel
     {
-        private const int QuestionCount = 2;
-
+        
         private readonly ILbkMobileService service;
 
         public QuizViewModel(ILbkMobileService service)
@@ -117,7 +116,7 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
 
         private async Task LoadExecute()
         {
-            await this.AsyncExecute(() => this.service.GetQuizAsync(QuestionCount), this.SetCurrentQuiz);
+            await this.AsyncExecute(() => this.service.GetQuizAsync(Constants.UserSettings.QuizQuestionCount), this.SetCurrentQuiz);
         }
 
         private void OnQuestionAnswered(object sender, EventArgs eventArgs)

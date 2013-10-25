@@ -47,7 +47,8 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <AndroidLinkSkip>mscorlib</AndroidLinkSkip>
+    <AndroidLinkSkip>
+    </AndroidLinkSkip>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
     <BundleAssemblies>False</BundleAssemblies>
   </PropertyGroup>
@@ -182,8 +183,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.13\lib\MonoAndroid16\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PullToRefresharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="PullToRefresharp">
       <HintPath>..\Components\pulltorefresharp-1.0.1\lib\android\PullToRefresharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -227,12 +227,11 @@
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Controls\MvxTestListView.cs" />
     <Compile Include="Controls\GalleryImageView.cs" />
     <Compile Include="Controls\ExpandCollapseAnimation.cs" />
     <Compile Include="Bindings\MapManager\LbkAnnotationManager.cs" />
     <Compile Include="Bindings\MapManager\MvxMarkerManager.cs" />
-    <Compile Include="Controls\MvxPullToRefreshList.cs" />
+    <Compile Include="Controls\MvxPullToRefreshListView.cs" />
     <Compile Include="Controls\MvxResizableImageView.cs" />
     <Compile Include="Controls\MvxScaleImageView.cs" />
     <Compile Include="Controls\MvxThumbnail.cs" />
@@ -249,7 +248,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Utils\Utility.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
     <Compile Include="Views\BaseFragmentActivity.cs" />
@@ -547,12 +545,9 @@
     <AndroidResource Include="Resources\Drawable-xhdpi\quiz_pitcher.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_action_about.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_about.png" />
-    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_about.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_action_refresh.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_refresh.png" />
-    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_refresh.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_action_map.png" />
-    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_map.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_map.png" />
     <AndroidResource Include="Resources\Drawable\edittext_bg.xml" />
     <AndroidResource Include="Resources\Drawable\btn_selector_gradient.xml" />
@@ -564,10 +559,8 @@
     <AndroidResource Include="Resources\Drawable\btn_selector_color.xml" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_action_event.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_event.png" />
-    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_event.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_action_time.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_time.png" />
-    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_time.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_galery.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_advise.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_events.png" />
@@ -575,14 +568,13 @@
     <AndroidResource Include="Resources\Drawable-ldpi\ic_historie.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_kontakt.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_quiz.png" />
-    <AndroidResource Include="Resources\Drawable-ldpi\ic_raeume.png" />
+    <AndroidResource Include="Resources\Drawable-ldpi\ic_rooms.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_reservierung.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_speisekarte.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_tageskarte.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\ic_videos.png" />
     <AndroidResource Include="Resources\Drawable-hdpi\ic_action_group.png" />
     <AndroidResource Include="Resources\Drawable-xhdpi\ic_action_group.png" />
-    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_group.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_about.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_refresh.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_map.png" />
@@ -672,6 +664,9 @@
       <Visible>False</Visible>
       <Version>1.0.1</Version>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

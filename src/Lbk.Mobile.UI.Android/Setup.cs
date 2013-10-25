@@ -65,19 +65,17 @@ namespace Lbk.Mobile.UI.Droid
                 imageView => new MvxImageViewDrawableTargetBinding(imageView));
             registry.RegisterCustomBindingFactory<WebView>("Url", webView => new WebViewLoadUrlTargetBinding(webView));
             registry.RegisterCustomBindingFactory<NumberPicker>(
-                "Value",
-                picker => new NumberPickerTargetBinding(picker));
+                "Value", picker => new NumberPickerTargetBinding(picker));
             //registry.RegisterPropertyInfoBindingFactory((typeof(NumberPickerTargetBinding)), typeof(NumberPicker), "Value");
 
             //registry.RegisterCustomBindingFactory<WebView>("YoutubeUrl",
             //                                                webView => new WebViewLoadYoutubeThnTargetBinding(webView));
         }
 
-        protected override void InitializeLastChance()
-        {
-            //var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
-
-            base.InitializeLastChance();
-        }
+        //protected override void InitializeLastChance()
+        //{
+        //    var errorDisplayer = new ErrorDisplayer(base.ApplicationContext);
+        //    base.InitializeLastChance();
+        //}
     }
 }

@@ -9,12 +9,9 @@ namespace Lbk.Mobile.Core.ViewModels.Quiz
     using System.Collections.Generic;
     using System.Linq;
     using System.Windows.Input;
-
-    using Cirrious.MvvmCross.Plugins.Messenger;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Core.Messages;
-    using Lbk.Mobile.Core.ViewModels.Helpers;
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Data.Services;
     using Lbk.Mobile.Model;

@@ -21,15 +21,13 @@ namespace Lbk.Mobile.Core
         public const string LbkEmail = "info@loewenbraeukeller.com";
 
         public const string FacebookUrl = "http://www.facebook.com/Loewenbraeukeller";
-
-        //public const string SharedRootFolder = "/sdcard/lbk/";
-        //public const string MenuFilePath = SharedRootFolder + "menu.pdf";// "/sdcard/menu.pdf";
-
         public const string MenuUrl = "http://lbkmobile.loewenbraeukeller.com/media/speisekarte/speisekarte.pdf";
 
         public class UserSettings
         {
             public const string PdfLastUpdate = "PdfLastUpdate";
+            public const int QuizQuestionCount = 10;
+
         }
     }
 }
