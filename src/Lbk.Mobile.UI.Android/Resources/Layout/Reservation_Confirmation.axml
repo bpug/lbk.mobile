@@ -140,12 +140,12 @@
                     android:singleLine="true"
                     local:MvxBind="Text UserConfirmCode" />
             </LinearLayout>
-            <TextView
+            <!--<TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:text="test Code"
-                local:MvxBind="Text Reservation.ConfirmCode" />
+                local:MvxBind="Text Reservation.ConfirmCode" />-->
             <TextView
                 android:text="Ihre Reservierung ist dann verbindlich."
                 android:layout_width="fill_parent"

@@ -6,14 +6,14 @@
 
 namespace Lbk.Mobile.Core.ViewModels.Room
 {
-    using Cirrious.MvvmCross.ViewModels;
-
     using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Model;
 
     public class RoomDetailViewModel : BaseViewModel
     {
         private readonly IRoomRepository roomRepository;
+
+        private int roomId;
 
         public RoomDetailViewModel(IRoomRepository roomRepository)
         {
@@ -24,7 +24,20 @@ namespace Lbk.Mobile.Core.ViewModels.Room
 
         public void Init(int id)
         {
-            this.Room = this.roomRepository.GetRoom(id);
+            this.roomId = id;
+        }
+
+        public override void Start()
+        {
+            this.IsBusy = true;
+            this.roomRepository.GetRoom(
+                this.roomId,
+                room =>
+                {
+                    this.Room = room;
+                    this.IsBusy = false;
+                },
+                exception => { this.IsBusy = false; });
         }
     }
 }

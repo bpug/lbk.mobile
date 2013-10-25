@@ -8,9 +8,7 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings>
-      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
-    </CollectionMappings>
+    <CollectionMappings />
     <GenerateSerializableTypes>false</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
@@ -20,10 +18,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="D:\Projects\Loewenbraeu\mono\Lbk.Mobile\branches\dev\src\Lbk.Mobile.Data\Proxies\lbk-dev.wsdl" Protocol="file" SourceId="1" />
+    <MetadataSource Address="D:\Projects\Loewenbraeu\mono\Lbk.Mobile\branches\dev\src\Lbk.Mobile.Data\Proxies\lbk.wsdl" Protocol="file" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="lbk-dev.wsdl" MetadataType="Wsdl" ID="059fa0f9-3a40-4889-87e7-4569a584d07f" SourceId="1" SourceUrl="file:///D:/Projects/Loewenbraeu/mono/Lbk.Mobile/branches/dev/src/Lbk.Mobile.Data/Proxies/lbk-dev.wsdl" />
+    <MetadataFile FileName="lbk.wsdl" MetadataType="Wsdl" ID="da72a464-d690-46bd-87b7-fa6069c296ed" SourceId="1" SourceUrl="file:///D:/Projects/Loewenbraeu/mono/Lbk.Mobile/branches/dev/src/Lbk.Mobile.Data/Proxies/lbk.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

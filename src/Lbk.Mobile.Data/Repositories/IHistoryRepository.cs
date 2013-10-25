@@ -6,13 +6,16 @@
 
 namespace Lbk.Mobile.Data.Repositories
 {
+    using System;
     using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Model;
 
     public interface IHistoryRepository
     {
-        IObservableCollection<History> GetHistories();
+        void GetHistories(Action<IObservableCollection<History>> onSuccess, Action<Exception> onError);
+        void GetHistory(int id, Action<History> onSuccess, Action<Exception> onError);
 
-        History GetHistory(int id);
+        //IObservableCollection<History> GetHistories();
+        //History GetHistory(int id);
     }
 }

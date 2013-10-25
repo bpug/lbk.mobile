@@ -32,14 +32,12 @@ namespace Lbk.Mobile.UI.Droid.Views.Quiz
         }
        
 
-        public override bool OnKeyDown(Android.Views.Keycode keyCode, Android.Views.KeyEvent e)
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
         {
             if (keyCode == Keycode.Back)
             {
-
                 this.ViewModel.AbortCommand.Execute(null);
                 return false;
-
             }
             return base.OnKeyDown(keyCode, e);
         }

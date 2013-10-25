@@ -9,6 +9,7 @@ namespace Lbk.Mobile.Core.Test.Implementation
     using System;
     using System.IO;
 
+    using Cirrious.CrossCore.Platform;
     using Cirrious.MvvmCross.Plugins.File;
 
     public class MvxTestFileStore : MvxFileStore

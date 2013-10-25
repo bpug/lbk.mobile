@@ -1,0 +1,4 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/Housekeeping/ProjectModelSynchronizer/UseMsbuildToObtainProjectReferencesForCertainProjects/=10700230_002D8c64_002D41f7_002D8dd2_002D9a693e7dd0f0/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Housekeeping/ProjectModelSynchronizer/UseMsbuildToObtainProjectReferencesForCertainProjects/=8a5c8e87_002D48f9_002D4acc_002D9ab3_002Dca91b34772ee/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Housekeeping/ProjectModelSynchronizer/UseMsbuildToObtainProjectReferencesForCertainProjects/=ffc48f3c_002Df8e2_002D4bbf_002D8147_002D588b588a75e0/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

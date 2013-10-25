@@ -2593,7 +2593,7 @@ namespace Lbk.Mobile.Data.LbkMobileService {
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration) {
             if ((endpointConfiguration == EndpointConfiguration.Service1Soap)) {
-                return new System.ServiceModel.EndpointAddress("http://loewenbraeu.ip-connect.de/service/Service1.asmx");
+                return new System.ServiceModel.EndpointAddress("http://lbkmobile.loewenbraeukeller.com/service/Service1.asmx");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }

@@ -5,11 +5,15 @@
     <Title>Bräustüberl</Title>
     <Subtitle>Für jeden Tag</Subtitle>
     <Description>Hier brüllt der Löwe täglich von 10 bis 24 Uhr bei traditionell bayerischen Schmankerln, abwechslungsreichen Tagesgerichten und süffigen Löwenbräu-Bierspezialitäten.</Description>
-    <ImageUrl>
-      <string>image/raueme/Braueustueberl1.jpg</string>
-      <string>image/raueme/Braueustueberl2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Braeustueberl.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_braueustueberl1</Url>
+      </Image>
+      <Image>
+        <Url>r_braueustueberl2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_braeustueberl</ThumbnailUrl>
     <Seats>145</Seats>
     <Area>190</Area>
   </Room>
@@ -17,13 +21,17 @@
   <Room>
     <Id>2</Id>
     <Title>Gartenanbau</Title>
-    <Subtitle>Der Mini Löwe</Subtitle>
+    <Subtitle>Der Mini Löwe</Subtitle>
     <Description>Für konspirative Treffen im kleinen Kreis oder kleinere Familienfeiern bestens geeignet.</Description>
-    <ImageUrl>
-      <string>image/raueme/Gartenanbau1.jpg</string>
-      <string>image/raueme/Gartenanbau2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Gartenanbau.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_gartenanbau1</Url>
+      </Image>
+      <Image>
+        <Url>r_gartenanbau2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_gartenanbau</ThumbnailUrl>
     <Seats>20 bis 25</Seats>
     <Area>20</Area>
   </Room>
@@ -33,11 +41,15 @@
     <Title>Filserstube</Title>
     <Subtitle>Klein und fein</Subtitle>
     <Description>Ideal für Veranstaltungen im kleineren Stil grenzt die Runde Stube an das Bräustüberl. Auf Wunsch steht Ihnen hier ein Riesen-Plasma-TV zur Verfügung.</Description>
-    <ImageUrl>
-      <string>image/raueme/Filserstube1.jpg</string>
-      <string>image/raueme/Filserstube2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Filserstube.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_filserstube1</Url>
+      </Image>
+      <Image>
+        <Url>r_filserstube2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_filserstube</ThumbnailUrl>
     <Seats>40</Seats>
     <Area>47</Area>
   </Room>
@@ -47,11 +59,15 @@
     <Title>Dachauer Stube</Title>
     <Subtitle>Gemütlich unter sich sein</Subtitle>
     <Description>Ganz unter sich feiert man in der Dachauer Stube, die für Veranstaltungen bis zu 110 Personen besonders gut geeignet ist.</Description>
-    <ImageUrl>
-      <string>image/raueme/DachauerStube1.jpg</string>
-      <string>image/raueme/DachauerStube2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/DachauerStube.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_dachauerstube1</Url>
+      </Image>
+      <Image>
+        <Url>r_dachauerstube2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_dachauerstube</ThumbnailUrl>
     <Seats>50 bis 110</Seats>
     <Area>109</Area>
   </Room>
@@ -61,11 +77,15 @@
     <Title>Löwen-Empore</Title>
     <Subtitle>Mit Aussicht</Subtitle>
     <Description>Wer Brauhausatmosphäre sucht, aber nicht mitten im Getümmel sitzen möchte, ist hier genau richtig.</Description>
-    <ImageUrl>
-      <string>image/raueme/LoewenEmpore1.jpg</string>
-      <string>image/raueme/LoewenEmpore2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/LoewenEmpore1.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_loewenempore1</Url>
+      </Image>
+      <Image>
+        <Url>r_loewenempore2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_loewenempore</ThumbnailUrl>
     <Seats>25 bis 60</Seats>
     <Area>67</Area>
   </Room>
@@ -75,14 +95,21 @@
     <Title>Festsaal</Title>
     <Subtitle>Das Prunkstück des Löwen</Subtitle>
     <Description>Mit Bühne, zwei Küchen, drei Schänken und zur Terrasse hin komplett zu öffnenden Glasfronten.</Description>
-    <ImageUrl>
-      <string>image/raueme/Festsaal_Galadinner.jpg</string>
-      <string>image/raueme/Festsaal_Balkon.jpg</string>
-      <string>image/raueme/Festsaal_Ballnacht.jpg</string>
-      <string>image/raueme/Festsaal_Buehnenbar.jpg</string>
-      <string>image/raueme/Festsaal_Business.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Festsaal.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_festsaal_galadinner</Url>
+      </Image>
+      <Image>
+        <Url>r_festsaal_balkon</Url>
+      </Image>
+      <Image>
+        <Url>r_festsaal_ballnacht</Url>
+      </Image>
+      <Image>
+        <Url>r_festsaal_business</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_festsaal</ThumbnailUrl>
     <Seats>650 bis 1.650</Seats>
     <Area>1665</Area>
   </Room>
@@ -92,11 +119,15 @@
     <Title>Hochterrasse</Title>
     <Subtitle>Höhenluft</Subtitle>
     <Description>Unmittelbar an den Festsaal angrenzend kann die Hochterrasse über dem Biergarten für große Veranstaltungen zusätzlich oder auch separat gebucht werden.</Description>
-    <ImageUrl>
-      <string>image/raueme/Hochterrasse1.jpg</string>
-      <string>image/raueme/Hochterrasse2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Terrasse.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_hochterrasse1</Url>
+      </Image>
+      <Image>
+        <Url>r_hochterrasse2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_terrasse</ThumbnailUrl>
     <Seats>250</Seats>
     <Area>130</Area>
   </Room>
@@ -106,11 +137,15 @@
     <Title>Galeriesaal</Title>
     <Subtitle>Das Geschehen verfolgen</Subtitle>
     <Description>Der Galeriesaal vermittelt umlaufend von drei Seiten aus einen fantastischen Blick auf den Festsaal.</Description>
-    <ImageUrl>
-      <string>image/raueme/Galeriesaal1.jpg</string>
-      <string>image/raueme/Galeriesaal2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Galeriesaal.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_galeriesaal1</Url>
+      </Image>
+      <Image>
+        <Url>r_galeriesaal2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_galeriesaal</ThumbnailUrl>
     <Seats>200 bis 300</Seats>
     <Area>259</Area>
   </Room>
@@ -120,11 +155,15 @@
     <Title>Bennosaal</Title>
     <Subtitle>Wunderbar wandelbar</Subtitle>
     <Description>Mit eigener Bar ausgestattet wird der Bennosaal zum vibrierenden Dancefloor von großen Festsaal-Veranstaltungen.</Description>
-    <ImageUrl>
-      <string>image/raueme/Bennosaal1.jpg</string>
-      <string>image/raueme/Bennosaal2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Bennosaal.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_bennosaal1</Url>
+      </Image>
+      <Image>
+        <Url>r_bennosaal2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_bennosaal</ThumbnailUrl>
     <Seats>120 bis 280</Seats>
     <Area>196</Area>
   </Room>
@@ -134,26 +173,36 @@
     <Title>Turmzimmer</Title>
     <Subtitle>Eine runde Sache</Subtitle>
     <Description>Vom Stüberl im 1. OG aus gelangt man direkt auf die wunderschöne Löwenterrasse. Auch das Stüberl im 2. OG ist kreisrund dank der besonderen Lage im Turm.</Description>
-    <ImageUrl>
-      <string>image/raueme/TurmzimmerErsterStock1.jpg</string>
-      <string>image/raueme/TurmzimmerErsterStock2.jpg</string>
-      <string>image/raueme/TurmzimmerZweiterStock.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Turmzimmer.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_turmzimmerersterstock1</Url>
+      </Image>
+      <Image>
+        <Url>r_turmzimmerersterstock2</Url>
+      </Image>
+      <Image>
+        <Url>r_turmzimmerzweiterstock</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_turmzimmer</ThumbnailUrl>
     <Seats>20 bis 40</Seats>
     <Area>47</Area>
   </Room>
 
   <Room>
     <Id>11</Id>
-    <Title>Löwenterrasse</Title>
-    <Subtitle>Über allem erhaben</Subtitle>
+    <Title>Löwenterrasse</Title>
+    <Subtitle>Über allem erhaben</Subtitle>
     <Description>Erleben Sie ganz besonderes Flair auf unserer Löwen-Terrasse und genießen Sie laue Sommerabende mit Blick auf den Stiglmaier Platz.</Description>
-    <ImageUrl>
-      <string>image/raueme/LoewenTerrasse1.jpg</string>
-      <string>image/raueme/LoewenTerrasse2.jpg</string>
-    </ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Loewenterasse.jpg</ThumbnailUrl>
+    <Images>
+      <Image>
+        <Url>r_loewenterrasse1</Url>
+      </Image>
+      <Image>
+        <Url>r_loewenterrasse2</Url>
+      </Image>
+    </Images>
+    <ThumbnailUrl>thumb_loewenterasse</ThumbnailUrl>
     <Seats>80</Seats>
   </Room>
 
@@ -162,10 +211,10 @@
     <Title>Turmstüberl</Title>
     <Subtitle>Münchner Gaudi</Subtitle>
     <Description>Wöchentlich wiederkehrend ist das Turmstüberl seit 1928 Vereinsheimat der Damischen Ritter - die Turmfalken e.V.</Description>
-    <ImageUrl>
-		<string>image/raueme/Turmstueberl.jpg</string>
-	</ImageUrl>
-    <ThumbnailUrl>image/raueme/thumbnails/Turmstueberl.jpg</ThumbnailUrl>
+    <Images>
+		<Url>image/raueme/Turmstueberl</Url>
+	</Images>
+    <ThumbnailUrl>image/raueme/thumbnails/Turmstueberl</ThumbnailUrl>
     <Seats>20 bis 40</Seats>
     <Area>47</Area>
   </Room-->

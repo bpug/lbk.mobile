@@ -8,8 +8,10 @@ namespace Lbk.Mobile.Data
 {
     public class Constants
     {
-        public const string HistoryResourceFileName = @"Xml/History.xml";
-        public const string RoomResourceFileName = @"Xml/Room.xml";
+        //public const string HistoryResourceFileName = @"Data/History.xml";
+        public const string HistoryResourcejFileName = @"Data/History.json";
+        //public const string RoomResourceFileName = @"Data/Room.xml";
+        public const string RoomResourceJFileName = @"Data/Room.json";
         public const string GaleryFileName = @"Galery.txt";
         public const string DbName = @"lbk.sql";
     }

@@ -25,6 +25,14 @@ namespace Lbk.Mobile.Data.Utils
             return serializableObject;
         }
 
+        public static T Load(string path, IMvxFileStore fileService)
+        {
+            var serializableObject = LoadFromDocumentFormat(null, path, fileService);
+            return serializableObject;
+        }
+
+        
+
          public static T LoadFromResource(string path)
         {
             var serializableObject = LoadFromResourceDocumentFormat(null, path);
@@ -86,11 +94,9 @@ namespace Lbk.Mobile.Data.Utils
             return serializableObject;
         }
 
-        private static T LoadFromDocumentFormat(Type[] extraTypes, string path)
+        private static T LoadFromDocumentFormat(Type[] extraTypes, string path, IMvxFileStore fileService)
         {
             T serializableObject = null;
-
-            var fileService = Mvx.Resolve<IMvxFileStore>();
 
             fileService.TryReadBinaryFile(
                 path,
@@ -110,6 +116,12 @@ namespace Lbk.Mobile.Data.Utils
                 });
 
             return serializableObject;
+        }
+
+        private static T LoadFromDocumentFormat(Type[] extraTypes, string path)
+        {
+            var fileService = Mvx.Resolve<IMvxFileStore>();
+            return LoadFromDocumentFormat(extraTypes, path, fileService);
         }
 
         private static void SaveToDocumentFormat(T serializableObject, Type[] extraTypes, string path)

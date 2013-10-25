@@ -7,22 +7,20 @@
 namespace Lbk.Mobile.Core.Test.ViewModels
 {
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
     using Cirrious.MvvmCross.Localization;
     using Cirrious.MvvmCross.Plugins.Messenger;
+    using Cirrious.MvvmCross.Plugins.Network.Reachability;
+
     using Lbk.Mobile.Common;
     using Lbk.Mobile.Core.Messages;
     using Lbk.Mobile.Core.Services;
     using Lbk.Mobile.Core.Test.Implementation;
-    using Lbk.Mobile.Core.ViewModels;
     using Lbk.Mobile.Core.ViewModels.Quiz;
-    using Lbk.Mobile.Data.LbkMobileService;
-    using Lbk.Mobile.Data.Repositories;
     using Lbk.Mobile.Localization;
-    using Lbk.Mobile.Plugin.Reachability;
+    using Lbk.Mobile.Model;
     using Lbk.Mobile.Plugin.Settings;
     using Lbk.Mobile.Plugin.UserInteraction;
 
@@ -42,7 +40,7 @@ namespace Lbk.Mobile.Core.Test.ViewModels
 
             var result = this.GetQuizData();
 
-            var tcs = new TaskCompletionSource<Model.Quiz>();
+            var tcs = new TaskCompletionSource<Quiz>();
             tcs.SetResult(result);
             mockService.Setup(s => s.GetQuizAsync(It.IsAny<int>())).Returns(tcs.Task);
 
@@ -70,75 +68,53 @@ namespace Lbk.Mobile.Core.Test.ViewModels
         //public void Instructions()
         //{
         //    var mockNavigation = this.CreateMockDispatcher();
-
         //    var mockDataService = new Mock<IQuizVoucherRepository>();
-
         //    var viewModel = new QuizStartViewModel(mockDataService.Object);
-
         //    // Test InstructionsCommand
         //    viewModel.InstructionsCommand.Execute(null);
         //    Assert.AreEqual(1, mockNavigation.Requests.Count);
         //    var request = mockNavigation.Requests[0];
         //    Assert.AreEqual(typeof(InstructionsViewModel), request.ViewModelType);
         //}
-
         //[Test]
         //public async void YouthProtectionMesenger()
         //{
         //    var mockNavigation = this.CreateMockNavigation();
         //    var mvxMessenger = this.Ioc.Resolve<IMvxMessenger>();
         //    Settings.YouthProtection = false;
-
         //    mvxMessenger.Subscribe<YouthProtectionMessage>(this.ShowAlert, MvxReference.Strong);
-
         //    var viewModel = new QuizStartViewModel();
-
         //    viewModel.StartMessengerCommand.Execute(null);
         //}
-
         //[Test]
         //public void YouthProtectionNo()
         //{
         //    var mockNavigation = this.CreateMockDispatcher();
-
         //    Settings.YouthProtection = false;
-
         //    var mockDataService = new Mock<IQuizVoucherRepository>();
-
         //    var viewModel = new QuizStartViewModel(mockDataService.Object);
-
         //    viewModel.YouthProtectionQuestion += (sender, args) => args.Completed(false);
-
         //    viewModel.StartCommand.Execute(null);
-
         //    Assert.IsFalse(Settings.YouthProtection);
-
         //    Assert.AreEqual(0, mockNavigation.Requests.Count);
         //}
-
         //[Test]
         //public void YouthProtectionYes()
         //{
         //    var mockNavigation = this.CreateMockDispatcher();
-
         //    Settings.YouthProtection = false;
-
         //    var mockDataService = new Mock<IQuizVoucherRepository>();
-
         //    var viewModel = new QuizStartViewModel(mockDataService.Object);
         //    viewModel.YouthProtectionQuestion += (sender, args) => args.Completed(true);
         //    viewModel.StartCommand.Execute(null);
-
         //    Assert.IsTrue(Settings.YouthProtection);
         //    Assert.AreEqual(1, mockNavigation.Requests.Count);
-
         //    var request = mockNavigation.Requests.First();
         //    Assert.AreEqual(typeof(QuizViewModel), request.ViewModelType);
         //}
-
         protected override void AdditionalSetup()
         {
-            this.Ioc.RegisterType<IReachability, MvxTestReachability>();
+            this.Ioc.RegisterType<IMvxReachability, MvxTestReachability>();
             this.Ioc.RegisterSingleton<IMvxMessenger>(new MvxMessengerHub());
 
             var userSettings = this.Ioc.IoCConstruct<UserSettings>();
@@ -149,19 +125,19 @@ namespace Lbk.Mobile.Core.Test.ViewModels
             this.Ioc.RegisterSingleton<IMessageBoxService>(new MessageBoxService());
         }
 
-        private Model.Quiz GetQuizData()
+        private Quiz GetQuizData()
         {
-            var result = new Model.Quiz
+            var result = new Quiz
             {
-                Questions = new List<Model.Question>
+                Questions = new List<Question>
                 {
-                    new Model.Question
+                    new Question
                     {
-                       Text  = "Q1"
+                        Text = "Q1"
                     },
-                    new Model.Question
+                    new Question
                     {
-                       Text = "Q2"
+                        Text = "Q2"
                     }
                 }
             };

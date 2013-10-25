@@ -13,7 +13,8 @@ namespace Lbk.Mobile.Core.ViewModels.History
     {
         private readonly IHistoryRepository historyRepository;
 
-        
+        private int historyId;
+
         public HistoryDetailViewModel(IHistoryRepository historyRepository)
         {
             this.historyRepository = historyRepository;
@@ -23,7 +24,20 @@ namespace Lbk.Mobile.Core.ViewModels.History
 
         public void Init(int id)
         {
-            this.History = this.historyRepository.GetHistory(id);
+            this.historyId = id;
+        }
+
+        public override void Start()
+        {
+            this.IsBusy = true;
+            this.historyRepository.GetHistory(
+                this.historyId,
+                history =>
+                {
+                    this.History = history;
+                    this.IsBusy = false;
+                },
+                exception => { this.IsBusy = false; });
         }
     }
 }

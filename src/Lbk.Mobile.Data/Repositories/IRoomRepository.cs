@@ -6,15 +6,16 @@
 
 namespace Lbk.Mobile.Data.Repositories
 {
-    using System.Collections.Generic;
-
+    using System;
     using Lbk.Mobile.Common.Interfaces;
     using Lbk.Mobile.Model;
 
     public interface IRoomRepository
     {
-        Room GetRoom(int id);
+        void GetRoom(int id, Action<Room> onSuccess, Action<Exception> onError);
+        void GetRooms(Action<IObservableCollection<Room>> onSuccess, Action<Exception> onError);
 
-        IObservableCollection<Room> GetRooms();
+        //Room GetRoom(int id);
+        //IObservableCollection<Room> GetRooms();
     }
 }

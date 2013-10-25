@@ -37,7 +37,6 @@
     <None Include="packages.config" />
     <None Include="Proxies\Lbk-dev.wsdl" />
     <None Include="Proxies\Lbk.wsdl" />
-    <None Include="Service References\LbkMobileService\lbk-dev.wsdl" />
     <None Include="Service References\LbkMobileService\Lbk.Mobile.Data.LbkMobileService.DishesOfTheDay.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -62,9 +61,7 @@
     <None Include="Service References\LbkMobileService\Lbk.Mobile.Data.LbkMobileService.Video.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="wsdlutil_LbkMobile.cmd" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
-    <None Include="svcutil_LbkMobile.cmd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
@@ -78,10 +75,10 @@
     <Compile Include="Mappings\MenuCategoryMapping.cs" />
     <Compile Include="Mappings\QuestionMapping.cs" />
     <Compile Include="Mappings\QuizMapping.cs" />
+    <Compile Include="Repositories\HistoryRepository.cs" />
+    <Compile Include="Repositories\RoomRepository.cs" />
     <Compile Include="Repositories\GalleryRepository.cs" />
     <Compile Include="Repositories\IGalleryRepository.cs" />
-    <Compile Include="Repositories\XmlRepositoryBase.cs" />
-    <Compile Include="Repositories\HistoryRepository.cs" />
     <Compile Include="Repositories\IHistoryRepository.cs" />
     <Compile Include="Repositories\IReservationRepository.cs" />
     <Compile Include="Repositories\IQuizVoucherRepository.cs" />
@@ -90,7 +87,6 @@
     <Compile Include="Repositories\ReservationRepository.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Utils\XmlSerializer.cs" />
     <Compile Include="Repositories\IRoomRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\LbkMobileService\Reference.cs">
@@ -101,7 +97,6 @@
     <Compile Include="Services\LbkMobileServiceBase.cs" />
     <Compile Include="Services\ILbkMobileService.cs" />
     <Compile Include="Services\LbkMobileService.cs" />
-    <Compile Include="Repositories\RoomRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -116,6 +111,7 @@
     <None Include="Service References\LbkMobileService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\LbkMobileService\lbk.wsdl" />
     <None Include="Service References\LbkMobileService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -163,6 +159,9 @@
       <Project>{771F2E74-9365-4C8C-8C62-C8E3A5F08D8B}</Project>
       <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />

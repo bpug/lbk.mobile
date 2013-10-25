@@ -6,11 +6,11 @@
 
 namespace Lbk.Mobile.Core.Test.Implementation
 {
-    using Lbk.Mobile.Plugin.Reachability;
+    using Cirrious.MvvmCross.Plugins.Network.Reachability;
 
     using Constants = Lbk.Mobile.Core.Constants;
 
-    public class MvxTestReachability : IReachability
+    public class MvxTestReachability : IMvxReachability
     {
         public bool IsHostReachable(string host)
         {

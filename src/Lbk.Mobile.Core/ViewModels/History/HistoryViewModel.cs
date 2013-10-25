@@ -43,13 +43,25 @@ namespace Lbk.Mobile.Core.ViewModels.History
         private void OnLoadExecute()
         {
             IsBusy = true;
-            MvxAsyncDispatcher.BeginAsync(
-                () =>
+            this.historyRepository.GetHistories(
+                histories =>
                 {
-                    this.Histories = this.historyRepository.GetHistories();
+                    this.Histories = histories;
                     IsBusy = false;
-                });
+                },
+                exception => { IsBusy = false; });
         }
+
+        //private void OnLoadExecute()
+        //{
+        //    IsBusy = true;
+        //    MvxAsyncDispatcher.BeginAsync(
+        //        () =>
+        //        {
+        //            this.Histories = this.historyRepository.GetHistories();
+        //            IsBusy = false;
+        //        });
+        //}
 
     }
 }

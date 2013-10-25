@@ -1,15 +1,13 @@
 ﻿//  --------------------------------------------------------------------------------------------------------------------
-//  <copyright file="RoomViewModel.cs" company="ip-connect GmbH">
+//  <copyright file="RoomListViewModel.cs" company="ip-connect GmbH">
 //    Copyright (c) ip-connect GmbH. All rights reserved.
 //  </copyright>
 //  --------------------------------------------------------------------------------------------------------------------
 
 namespace Lbk.Mobile.Core.ViewModels.Room
 {
-    using System.Collections.Generic;
     using System.Windows.Input;
 
-    using Cirrious.CrossCore.Core;
     using Cirrious.MvvmCross.ViewModels;
 
     using Lbk.Mobile.Common.Interfaces;
@@ -39,8 +37,12 @@ namespace Lbk.Mobile.Core.ViewModels.Room
         {
             get
             {
-                return new MvxCommand<Room>(item => this.ShowViewModel<RoomDetailViewModel>(new { id = item.Id }));
-                
+                return new MvxCommand<Room>(
+                    item => this.ShowViewModel<RoomDetailViewModel>(
+                        new
+                        {
+                            id = item.Id
+                        }));
             }
         }
 
@@ -51,14 +53,27 @@ namespace Lbk.Mobile.Core.ViewModels.Room
 
         private void OnLoadExecute()
         {
-            IsBusy = true;
-            MvxAsyncDispatcher.BeginAsync(
-                () =>
+            this.IsBusy = true;
+
+            this.roomRepository.GetRooms(
+                rooms =>
                 {
-                    this.Rooms = this.roomRepository.GetRooms();
-                    IsBusy = false;
-                });
+                    this.Rooms = rooms;
+                    this.IsBusy = false;
+                },
+                exception => { this.IsBusy = false; });
         }
+
+        //private void OnLoadExecute()
+        //{
+        //    IsBusy = true;
+        //    MvxAsyncDispatcher.BeginAsync(
+        //        () =>
+        //        {
+        //            this.Rooms = this.roomRepository.GetRooms();
+        //            IsBusy = false;
+        //        });
+        //}
 
         //private void OnLoadExecute()
         //{

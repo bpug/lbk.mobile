@@ -9,7 +9,6 @@ namespace Lbk.Mobile.Data.Extensions
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Linq;
     using System.Threading.Tasks;
     using Lbk.Mobile.Data.LbkMobileService;
     using Lbk.Mobile.Data.Mappings;
@@ -17,7 +16,6 @@ namespace Lbk.Mobile.Data.Extensions
 
     using Event = Lbk.Mobile.Model.Event;
     using Picture = Lbk.Mobile.Model.Picture;
-    //using Question = Lbk.Mobile.Data.LbkMobileService.Question;
     using Quiz = Lbk.Mobile.Model.Quiz;
     using Video = Lbk.Mobile.Model.Video;
 

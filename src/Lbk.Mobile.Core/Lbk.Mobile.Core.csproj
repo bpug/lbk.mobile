@@ -35,8 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Converters\AreaValueConverter.cs" />
-    <Compile Include="Converters\InvertedIsATrueValueValueConverter.cs" />
-    <Compile Include="Converters\IsATrueValueValueConverter.cs" />
     <Compile Include="Converters\DistanceValueConverter.cs" />
     <Compile Include="Converters\QuizCategoryImageConverter.cs" />
     <Compile Include="Converters\ToLetterConverter.cs" />
