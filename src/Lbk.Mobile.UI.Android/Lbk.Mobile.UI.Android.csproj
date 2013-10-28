@@ -171,8 +171,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
     </Reference>
-    <Reference Include="GooglePlayServicesFroyoLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="GooglePlayServicesFroyoLib">
       <HintPath>..\Components\googleplayservicesfroyo12-12.0.1\lib\android\GooglePlayServicesFroyoLib.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
@@ -183,7 +182,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.13\lib\MonoAndroid16\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PullToRefresharp">
+    <Reference Include="PullToRefresharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Components\pulltorefresharp-1.0.1\lib\android\PullToRefresharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -287,6 +287,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\runde_ecken.xml" />
+    <AndroidResource Include="Resources\Layout-small\Quiz_Question.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
     <AndroidResource Include="Resources\Values\Styles.xml" />
     <AndroidAsset Include="Assets\Data\Room.json" />
@@ -388,6 +391,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\PullToRefresh_Header.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout-small\Quiz_Page.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

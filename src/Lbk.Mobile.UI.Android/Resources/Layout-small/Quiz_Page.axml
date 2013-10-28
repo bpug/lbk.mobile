@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:padding="10dp"
+    local:MvxBind="Visibility Visibility(CurrentQuestion);">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/quiz_info1"
+                    android:text="QuestionNumber"
+                    local:MvxBind="Text CurrentQuestionNumberText" />
+                <TextView
+                    style="@style/quiz_info2"
+                    android:text="Points"
+                    local:MvxBind="Text CurrentPointsText" />
+                <FrameLayout
+                    android:id="@+id/question_holder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
