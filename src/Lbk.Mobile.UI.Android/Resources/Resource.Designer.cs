@@ -1242,14 +1242,14 @@ namespace Lbk.Mobile.UI.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f06002d
-			public const int ErrorImage = 2131099693;
-			
 			// aapt resource value: 0x7f06002e
-			public const int ErrorText1 = 2131099694;
+			public const int ErrorImage = 2131099694;
 			
 			// aapt resource value: 0x7f06002f
-			public const int ErrorText2 = 2131099695;
+			public const int ErrorText1 = 2131099695;
+			
+			// aapt resource value: 0x7f060030
+			public const int ErrorText2 = 2131099696;
 			
 			// aapt resource value: 0x7f060018
 			public const int GalleryImage = 2131099672;
@@ -1266,8 +1266,8 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f06000c
 			public const int TextView01 = 2131099660;
 			
-			// aapt resource value: 0x7f060033
-			public const int action_imressum = 2131099699;
+			// aapt resource value: 0x7f060034
+			public const int action_imressum = 2131099700;
 			
 			// aapt resource value: 0x7f060007
 			public const int bottom = 2131099655;
@@ -1302,26 +1302,26 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f060023
 			public const int icon = 2131099683;
 			
-			// aapt resource value: 0x7f06002a
-			public const int image_pager = 2131099690;
-			
 			// aapt resource value: 0x7f06002b
-			public const int image_pager_indicator = 2131099691;
+			public const int image_pager = 2131099691;
+			
+			// aapt resource value: 0x7f06002c
+			public const int image_pager_indicator = 2131099692;
 			
 			// aapt resource value: 0x7f06001f
 			public const int lbk_map = 2131099679;
 			
-			// aapt resource value: 0x7f060034
-			public const int map_actions = 2131099700;
-			
-			// aapt resource value: 0x7f060037
-			public const int map_hybrid = 2131099703;
-			
 			// aapt resource value: 0x7f060035
-			public const int map_normal = 2131099701;
+			public const int map_actions = 2131099701;
+			
+			// aapt resource value: 0x7f060038
+			public const int map_hybrid = 2131099704;
 			
 			// aapt resource value: 0x7f060036
-			public const int map_satellite = 2131099702;
+			public const int map_normal = 2131099702;
+			
+			// aapt resource value: 0x7f060037
+			public const int map_satellite = 2131099703;
 			
 			// aapt resource value: 0x7f06001c
 			public const int marker_icon = 2131099676;
@@ -1350,8 +1350,8 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f060028
 			public const int pick_date = 2131099688;
 			
-			// aapt resource value: 0x7f060027
-			public const int pick_number = 2131099687;
+			// aapt resource value: 0x7f06002a
+			public const int pick_number = 2131099690;
 			
 			// aapt resource value: 0x7f060029
 			public const int pick_time = 2131099689;
@@ -1386,14 +1386,14 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f06001b
 			public const int textView1 = 2131099675;
 			
+			// aapt resource value: 0x7f060033
+			public const int title = 2131099699;
+			
+			// aapt resource value: 0x7f06002d
+			public const int toast_layout_error_root = 2131099693;
+			
 			// aapt resource value: 0x7f060032
-			public const int title = 2131099698;
-			
-			// aapt resource value: 0x7f06002c
-			public const int toast_layout_error_root = 2131099692;
-			
-			// aapt resource value: 0x7f060031
-			public const int todaysmenu_list = 2131099697;
+			public const int todaysmenu_list = 2131099698;
 			
 			// aapt resource value: 0x7f060008
 			public const int top = 2131099656;
@@ -1401,8 +1401,11 @@ namespace Lbk.Mobile.UI.Droid
 			// aapt resource value: 0x7f060005
 			public const int triangle = 2131099653;
 			
-			// aapt resource value: 0x7f060030
-			public const int txtHeadline = 2131099696;
+			// aapt resource value: 0x7f060031
+			public const int txtHeadline = 2131099697;
+			
+			// aapt resource value: 0x7f060027
+			public const int txt_seats = 2131099687;
 			
 			// aapt resource value: 0x7f060006
 			public const int underline = 2131099654;

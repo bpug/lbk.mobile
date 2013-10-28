@@ -6,6 +6,8 @@
 
 namespace Lbk.Mobile.Common.Extensions
 {
+    using System.Text.RegularExpressions;
+
     using Lbk.Mobile.Common.Cryptography;
 
     public static class StringExtensions
@@ -23,6 +25,25 @@ namespace Lbk.Mobile.Common.Extensions
         public static bool IsEmpty(this string source)
         {
             return string.IsNullOrWhiteSpace(source);
+        }
+
+        public static bool IsPhone(this string source)
+        {
+            if (source.IsEmpty())
+            {
+                return false;
+            }
+            var objPhonePattern = new Regex(@"^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$");
+            return objPhonePattern.IsMatch(source); 
+        }
+
+        public static bool IsName(this string source)
+        {
+            if (source.IsEmpty())
+            {
+                return false;
+            }
+            return source.Length > 3;
         }
     }
 }

@@ -39,10 +39,14 @@ namespace Lbk.Mobile.UI.Droid.Views.Reservation
             };
 
             Button pickNumber = FindViewById<Button>(Resource.Id.pick_number);
-            pickNumber.Click += delegate
+            if (pickNumber != null)
             {
-                ShowDialog(NumberDialogId);
-            };
+                pickNumber.Click += delegate
+                {
+                    ShowDialog(NumberDialogId);
+                };
+            }
+            
         }
 
         protected override Dialog OnCreateDialog(int id)

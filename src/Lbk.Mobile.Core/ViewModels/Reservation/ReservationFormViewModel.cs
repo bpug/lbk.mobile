@@ -216,8 +216,8 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
 
         private void Validate()
         {
-            this.UpdateError(this.guestName.IsEmpty(), "GuestName", "Please enter a Name");
-            this.UpdateError(this.mobile.IsEmpty(), "Mobile", "Please enter a valid Mobile");
+            this.UpdateError(!this.guestName.IsName(), "GuestName", "Please enter a Name");
+            this.UpdateError(!this.mobile.IsPhone(), "Mobile", "Please enter a valid Mobile");
             //UpdateError(!reservationTime.HasValue, "ReservationTime", "Please enter a Reservation Time");
             this.UpdateError(this.seats < 1, "Seats", "Please enter a number of Seats");
         }

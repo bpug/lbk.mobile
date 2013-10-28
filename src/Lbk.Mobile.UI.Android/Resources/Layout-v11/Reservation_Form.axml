@@ -65,19 +65,12 @@
                         android:paddingTop="10dp"
                         local:MvxBind="Visibility Visibility(Errors['Seats'])" />
                 </LinearLayout>
-            <!--<Button
+                <Button
                     android:id="@+id/pick_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Plätze"
-                    local:MvxBind="Text Seats" />-->
-                <EditText
-                    android:text="2"
-                    android:inputType="number"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/txt_seats"
-                    local:MvxBind="Text Seats, Converter=SeatsNumber" />
+                    local:MvxBind="Text Seats" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"

@@ -396,6 +396,7 @@
     <AndroidResource Include="Resources\Layout-small\Quiz_Page.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Layout-v11\Reservation_Form.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
