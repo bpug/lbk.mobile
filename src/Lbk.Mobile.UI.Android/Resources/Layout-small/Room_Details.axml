@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10dp">
+    <lbk.mobile.ui.droid.controls.VerticalScrollview
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal|top"
+            android:background="@drawable/runde_ecken"
+            android:padding="10dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top">
+                <BindableViewPager
+                    android:layout_weight="0"
+                    android:id="@+id/image_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/raum_hg"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="5dp"
+                    local:MvxItemTemplate="@layout/room_imagepageritem"
+                    local:MvxBind="ItemsSource Room.Images" />
+                <dk.ostebaronen.droid.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/image_pager_indicator"
+                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:paddingTop="5dp"
+                    local:fillColor="@color/text"
+                    local:strokeColor="@color/text" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/text"
+                    local:MvxBind="Text Room.Subtitle" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text"
+                    local:MvxBind="Text Room.Description"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:gravity="bottom">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Plätze:"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/text" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/text"
+                        local:MvxBind="Text Room.Seats" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="0"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nutzfläche:"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/text" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:textColor="@color/text"
+                        local:MvxBind="Text Room.Area, Converter=Area" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </lbk.mobile.ui.droid.controls.VerticalScrollview>
+</LinearLayout>

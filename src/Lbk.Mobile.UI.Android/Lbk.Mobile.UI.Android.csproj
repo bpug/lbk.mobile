@@ -237,6 +237,7 @@
     <Compile Include="Controls\MvxThumbnail.cs" />
     <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
     <Compile Include="Controls\SectionFooter.cs" />
+    <Compile Include="Controls\VerticalScrollview.cs" />
     <Compile Include="Converters\LocationToLatLngValueConverter.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Extensions\ActivityExtensions.cs" />
@@ -397,6 +398,7 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout-v11\Reservation_Form.axml" />
+    <AndroidResource Include="Resources\Layout-small\Room_Details.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
