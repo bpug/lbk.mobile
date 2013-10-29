@@ -3,10 +3,9 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
-    <Mvx.MvxImageView
+    <lbk.mobile.ui.droid.controls.DynamicImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         local:MvxBind="DrawableResource Url" />
 </LinearLayout>

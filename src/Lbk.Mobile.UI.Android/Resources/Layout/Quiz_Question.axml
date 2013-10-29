@@ -3,26 +3,31 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="wrap_content">
     <TextView
         style="@style/quiz_question"
         android:text="Question"
+        android:layout_marginBottom="8dp"
         local:MvxBind="Text Question.Text" />
     <Mvx.MvxListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:cacheColorHint="@color/transparent"
         android:listSelector="@color/transparent"
-        android:divider="@color/transparent"
-        android:dividerHeight="3dp"
+        android:divider="@color/white"
+        android:dividerHeight="6dp"
         local:MvxBind="ItemsSource Answers; ItemClick AnsweredCommand"
         local:MvxItemTemplate="@layout/quiz_answeritem" />
-    <ImageView
-        android:src="@drawable/quiz_BAY"
+    <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:gravity="bottom"
-        android:scaleType="fitEnd"
-        local:MvxBind="DrawableResource Question.Category, Converter=QuizCategoryImage" />
+        android:layout_height="wrap_content"
+        android:gravity="bottom">
+        <lbk.mobile.ui.droid.controls.DynamicImageView
+            android:src="@drawable/quiz_BAY"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:adjustViewBounds="true"
+            local:MvxBind="DrawableResource Question.Category, Converter=QuizCategoryImage" />
+    </RelativeLayout>
 </LinearLayout>

@@ -219,7 +219,7 @@ namespace Lbk.Mobile.Core.ViewModels.Reservation
             this.UpdateError(!this.guestName.IsName(), "GuestName", "Please enter a Name");
             this.UpdateError(!this.mobile.IsPhone(), "Mobile", "Please enter a valid Mobile");
             //UpdateError(!reservationTime.HasValue, "ReservationTime", "Please enter a Reservation Time");
-            this.UpdateError(this.seats < 1, "Seats", "Please enter a number of Seats");
+            this.UpdateError(this.seats < 1 || this.seats > 10, "Seats", "Please enter a number of Seats");
         }
     }
 }

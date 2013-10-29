@@ -57,6 +57,11 @@ namespace Lbk.Mobile.UI.Droid
             view.Visibility = view.Visibility + 1;
         }
 
+        public void Include(LinearLayout linearLayout)
+        {
+            linearLayout.Visibility = linearLayout.Visibility + 1;
+        }
+
         public void IncludeEnabled(Button button)
         {
             button.Enabled = !button.Enabled;

@@ -86,7 +86,8 @@
                 android:orientation="horizontal"
                 android:layout_weight="0"
                 android:gravity="bottom"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                local:MvxBind="Visibility Visibility(Room.Area);">
                 <TextView
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"

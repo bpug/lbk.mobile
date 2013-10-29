@@ -27,6 +27,7 @@ namespace Lbk.Mobile.Core.ViewModels.Room
             this.roomId = id;
         }
 
+        
         public override void Start()
         {
             this.IsBusy = true;

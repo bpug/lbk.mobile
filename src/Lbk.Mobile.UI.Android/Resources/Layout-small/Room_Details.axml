@@ -7,7 +7,8 @@
     android:padding="10dp">
     <lbk.mobile.ui.droid.controls.VerticalScrollview
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent">
+        android:layout_width="fill_parent"
+        android:visibility="invisible">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
@@ -89,7 +90,8 @@
                     android:orientation="horizontal"
                     android:layout_weight="0"
                     android:gravity="bottom"
-                    android:layout_gravity="bottom">
+                    android:layout_gravity="bottom"
+                    local:MvxBind="Visibility Visibility(Room.Area)">
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"

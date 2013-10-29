@@ -4,26 +4,27 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="bottom"
     android:background="@drawable/quiz_background">
     <Button
         android:text="Neues Spiel"
-        android:layout_gravity="center_horizontal"
         android:layout_width="150dp"
         style="@style/button_lbk"
         local:MvxBind="Click StartCommand"
-        android:layout_marginTop="250dp" />
+        android:layout_gravity="center_horizontal" />
     <Button
         android:text="Gutscheine"
-        android:layout_gravity="center_horizontal"
         android:layout_width="150dp"
         style="@style/button_lbk"
-        local:MvxBind="Click ShowVouchersCommand; Visibility Visibility(ExistNotUsedVoucher)"
-        android:layout_marginTop="15dp" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        local:MvxBind="Click ShowVouchersCommand; Visibility Visibility(ExistNotUsedVoucher)" />
     <Button
         android:text="Spielanleitung"
-        android:layout_gravity="center_horizontal"
         android:layout_width="150dp"
         style="@style/button_lbk"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
         local:MvxBind="Click InstructionsCommand"
-        android:layout_marginTop="15dp" />
+        android:layout_marginBottom="50dp" />
 </LinearLayout>
