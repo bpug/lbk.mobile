@@ -42,9 +42,10 @@
     <style name="required_item">
       <item name="android:text">*</item>
       <item name="android:layout_width">wrap_content</item>
-      <item name="android:layout_height">fill_parent</item>
+      <item name="android:layout_height">match_parent</item>
       <item name="android:textColor">@color/white</item>
       <item name="android:gravity">top</item>
+      <item name="android:textSize">18sp</item>
     </style>
 
     <style name="picture_title">
@@ -119,5 +120,12 @@
     <item name="android:paddingBottom">5dp</item>
     <item name="android:paddingLeft">5dp</item>
     <item name="android:paddingRight">5dp</item>
+  </style>
+
+  <style name="button_picker">
+    <item name="android:background">@drawable/btn_res_selector_gradient</item>
+    <item name="android:padding">@dimen/btn_padding</item>
+    <item name="android:textColor">@drawable/btn_res_selector_color</item>
+    <item name="android:textStyle">normal</item>
   </style>
 </resources>

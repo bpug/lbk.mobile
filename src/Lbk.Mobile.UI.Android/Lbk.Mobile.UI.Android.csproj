@@ -301,7 +301,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
-    <AndroidResource Include="Resources\Layout\Reservation_Form.axml" />
+    <AndroidResource Include="Resources\Layout\Reservation_Form.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Layout\Home.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -594,7 +596,16 @@
     <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_map.png" />
     <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_refresh.png" />
     <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_time.png" />
-    <AndroidResource Include="Resources\Drawable\room_bg.xml" />
+    <AndroidResource Include="Resources\Drawable\room_bg.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\btn_res_pressed.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_res_selector_color.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_res_selector_gradient.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_res_disabled.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_res_disabled_and_focused.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_res_focused.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_res_normal.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
