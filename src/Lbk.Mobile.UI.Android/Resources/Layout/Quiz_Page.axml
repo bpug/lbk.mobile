@@ -6,27 +6,27 @@
     android:layout_height="fill_parent"
     android:padding="10dp"
     local:MvxBind="Visibility Visibility(CurrentQuestion);">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            style="@style/quiz_info1"
-            android:text="QuestionNumber"
-            local:MvxBind="Text CurrentQuestionNumberText" />
-        <TextView
-            style="@style/quiz_info2"
-            android:text="Points"
-            local:MvxBind="Text CurrentPointsText" />
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/quiz_info1"
+                android:text="QuestionNumber"
+                local:MvxBind="Text CurrentQuestionNumberText" />
+            <TextView
+                style="@style/quiz_info2"
+                android:text="Points"
+                local:MvxBind="Text CurrentPointsText" />
             <FrameLayout
                 android:id="@+id/question_holder"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white" />
-        </ScrollView>
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

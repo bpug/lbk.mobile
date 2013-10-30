@@ -7,6 +7,7 @@
 namespace Lbk.Mobile.UI.Droid.Views.History
 {
     using Android.App;
+    using Android.Content.PM;
     using Android.OS;
 
     using Cheesebaron.MvvmCross.Bindings.Droid;
@@ -17,7 +18,7 @@ namespace Lbk.Mobile.UI.Droid.Views.History
 
     using Resource = Lbk.Mobile.UI.Droid.Resource;
 
-    [Activity(Label = "Historie", Icon = "@drawable/ic_launcher")]
+    [Activity(Label = "Historie", Icon = "@drawable/ic_launcher", ScreenOrientation = ScreenOrientation.Portrait)]
     public class HisroryView : BaseView<HistoryViewModel>
     {
         protected override void OnCreate(Bundle bundle)

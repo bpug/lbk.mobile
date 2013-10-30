@@ -22,11 +22,7 @@
                 android:id="@+id/image_pager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/raum_hg"
-                android:paddingRight="10dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="5dp"
-                android:paddingLeft="5dp"
+                android:background="@drawable/room_bg"
                 local:MvxItemTemplate="@layout/room_imagepageritem"
                 local:MvxBind="ItemsSource Room.Images" />
             <dk.ostebaronen.droid.viewpagerindicator.CirclePageIndicator

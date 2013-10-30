@@ -290,7 +290,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\runde_ecken.xml" />
     <AndroidResource Include="Resources\Layout-small\History_Details.axml" />
-    <AndroidResource Include="Resources\Layout-small\Room_Details.axml" />
+    <AndroidResource Include="Resources\Layout-small\Room_Details.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
     <AndroidResource Include="Resources\Values\Styles.xml" />
     <AndroidAsset Include="Assets\Data\Room.json" />
@@ -462,7 +464,6 @@
     <AndroidResource Include="Resources\Drawable\Icon.png" />
     <AndroidResource Include="Resources\Values\ProgressBarStyle.xml" />
     <AndroidResource Include="Resources\Drawable\list_item_arrow.png" />
-    <AndroidResource Include="Resources\Drawable\raum_hg.png" />
     <AndroidResource Include="Resources\Drawable\thumb_festsaal.jpg" />
     <AndroidResource Include="Resources\Drawable\thumb_filserstube.jpg" />
     <AndroidResource Include="Resources\Drawable\thumb_galeriesaal.jpg" />
@@ -485,9 +486,6 @@
     <AndroidResource Include="Resources\Drawable\divider_transparent.xml" />
     <AndroidResource Include="Resources\Values\Atts.xml" />
     <AndroidResource Include="Resources\Drawable\btn_lbk.xml" />
-    <AndroidResource Include="Resources\Drawable\historie_2.jpg" />
-    <AndroidResource Include="Resources\Drawable\historie_0.jpg" />
-    <AndroidResource Include="Resources\Drawable\historie_4.jpg" />
     <AndroidResource Include="Resources\Drawable\historie_5.jpg" />
     <AndroidResource Include="Resources\Drawable\historie_6.jpg" />
     <AndroidResource Include="Resources\Drawable\historie_8.jpg" />
@@ -587,6 +585,16 @@
     <AndroidResource Include="Resources\Drawable\ic_action_group.png" />
     <AndroidResource Include="Resources\Values-de\Strings.xml" />
     <AndroidResource Include="Resources\Drawable\historie_1.png" />
+    <AndroidResource Include="Resources\Drawable\historie_0.png" />
+    <AndroidResource Include="Resources\Drawable\historie_2.png" />
+    <AndroidResource Include="Resources\Drawable\historie_4.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_about.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_event.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_group.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_map.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_refresh.png" />
+    <AndroidResource Include="Resources\Drawable-xxhdpi\ic_action_time.png" />
+    <AndroidResource Include="Resources\Drawable\room_bg.xml" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
