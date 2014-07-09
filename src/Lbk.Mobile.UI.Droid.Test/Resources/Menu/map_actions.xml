@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/map_actions"
+        android:title="Map Mode"
+        android:icon="@drawable/ic_action_map"
+        android:orderInCategory="100"
+        android:showAsAction="always" >
+      <menu>
+          <group android:checkableBehavior="single">
+            <item android:id="@+id/map_normal"
+                  android:title="Normal"  android:checked="true"/>
+            <item android:id="@+id/map_satellite"
+                   android:title="Satellite" />
+            <item android:id="@+id/map_hybrid"
+                  android:title="Hybrid" />
+          </group>
+        </menu>
+  </item>
+</menu>

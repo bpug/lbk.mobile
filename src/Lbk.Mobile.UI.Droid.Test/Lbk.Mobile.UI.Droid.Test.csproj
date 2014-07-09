@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{537BF96B-F6E4-4B3D-9D4C-6F2C655B66F2}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lbk.Mobile.UI.Droid.Test</RootNamespace>
+    <AssemblyName>Lbk.Mobile.UI.Droid.Test</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>true</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidSupportedAbis>armeabi%3barmeabi-v7a%3bx86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize />
+    <JavaOptions />
+    <AndroidUseLatestPlatformSdk />
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\MonoAndroid16\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\MonoAndroid16\Cirrious.CrossCore.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Binding.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Binding.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid.Fragging">
+      <HintPath>..\packages\MvvmCross.HotTuna.Droid.Fragging.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Droid.Fragging.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.DownloadCache.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.DownloadCache.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.DownloadCache.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.DownloadCache.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Email, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Email.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Email.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Email.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Email.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.File.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Json">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Location, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Location.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Location.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Location.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Location.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Network, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Network.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Network.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Network.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Network.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.PhoneCall, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.PhoneCall.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.PhoneCall.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.PhoneCall.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.PhoneCall.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.PhoneCall.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.ResourceLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.ResourceLoader.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.ResourceLoader.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.ResourceLoader.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Sqlite.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Sqlite.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Sqlite.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Visibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Visibility.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Visibility.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.Visibility.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.WebBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.WebBrowser.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.WebBrowser.3.0.13\lib\MonoAndroid16\Cirrious.MvvmCross.Plugins.WebBrowser.Droid.dll</HintPath>
+    </Reference>
+    <Reference Include="GooglePlayServicesFroyoLib">
+      <HintPath>..\Components\googleplayservicesfroyo12-12.0.1\lib\android\GooglePlayServicesFroyoLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Mono.Android.Support.v4" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Json.3.0.13\lib\MonoAndroid16\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net">
+      <Private>True</Private>
+      <HintPath>..\packages\MvvmCross.PortableSupport.3.0.13\lib\MonoAndroid16\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows">
+      <Private>True</Private>
+      <HintPath>..\packages\MvvmCross.PortableSupport.3.0.13\lib\MonoAndroid16\System.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization">
+      <Private>True</Private>
+      <HintPath>..\packages\MvvmCross.PortableSupport.3.0.13\lib\MonoAndroid16\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bindings\BaseWebViewTargetBinding.cs" />
+    <Compile Include="Bindings\MvxImageViewDrawableTargetBinding.cs" />
+    <Compile Include="Bindings\NumberPickerTargetBinding.cs" />
+    <Compile Include="Bindings\WebViewLoadUrlTargetBinding.cs" />
+    <Compile Include="Bootstrap\AppSettingsBootstrap.cs" />
+    <Compile Include="Bootstrap\DeviceIdentifierPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DocumentViewerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\EmailPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\LocationPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\PhoneCallPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ResourceLoaderPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\SqlitePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\UserInteractionBootstrap.cs" />
+    <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\WebBrowserPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\WebVideoPluginBootstrap.cs" />
+    <Compile Include="Controls\ProgressBarDialog\BindableProgress.cs" />
+    <Compile Include="Controls\ProgressBarDialog\ProgressBarDialog.cs" />
+    <Compile Include="Controls\SectionFooter.cs" />
+    <Compile Include="DebugTrace.cs" />
+    <Compile Include="Extensions\ActivityExtensions.cs" />
+    <Compile Include="Extensions\BaseViewExtensions.cs" />
+    <Compile Include="Extensions\BitmapExtensions.cs" />
+    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="SplashScreen.cs" />
+    <Compile Include="Views\BaseView.cs" />
+    <Compile Include="Views\HomeView.cs" />
+    <Compile Include="Views\IBaseView.cs" />
+    <Compile Include="Views\TodaysMenu\TodaysMenuListAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\TodaysMenu\TodaysMenuView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\btn_disabled.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_disabled_and_focused.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_focused.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_lbk.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_normal.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_pressed.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_selector_color.xml" />
+    <AndroidResource Include="Resources\Drawable\btn_selector_gradient.xml" />
+    <AndroidResource Include="Resources\Drawable\divider.xml" />
+    <AndroidResource Include="Resources\Drawable\divider_transparent.xml" />
+    <AndroidResource Include="Resources\Drawable\edittext_bg.xml" />
+    <AndroidResource Include="Resources\Drawable\list_item_bg.xml" />
+    <AndroidResource Include="Resources\Drawable\list_item_middle.xml" />
+    <AndroidResource Include="Resources\Drawable\list_rounded_item.xml" />
+    <AndroidResource Include="Resources\Drawable\list_rounded_item_top.xml" />
+    <AndroidResource Include="Resources\Drawable\picture_title_bg.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\runde_ecken.xml" />
+    <AndroidResource Include="Resources\Drawable\runde_ecken_bottom.xml" />
+    <AndroidResource Include="Resources\Drawable\runde_ecken_top.xml" />
+    <AndroidResource Include="Resources\Drawable\runde_ecken_top_grey.xml" />
+    <AndroidResource Include="Resources\Values\Atts.xml" />
+    <AndroidResource Include="Resources\Values\dimens.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\Layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\Layout\Home.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Footer.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListItem_Header.axml" />
+    <AndroidResource Include="Resources\Layout\TodaysMenu_ListView.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\Main.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\ProgressBarStyle.xml" />
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Values\SplashStyle.xml" />
+    <AndroidResource Include="Resources\Drawable\splash.png" />
+    <AndroidResource Include="Resources\Drawable\ic_advise.png" />
+    <AndroidResource Include="Resources\Drawable\ic_events.png" />
+    <AndroidResource Include="Resources\Drawable\ic_facebook.png" />
+    <AndroidResource Include="Resources\Drawable\ic_galery.png" />
+    <AndroidResource Include="Resources\Drawable\ic_historie.png" />
+    <AndroidResource Include="Resources\Drawable\ic_kontakt.png" />
+    <AndroidResource Include="Resources\Drawable\ic_launcher.png" />
+    <AndroidResource Include="Resources\Drawable\ic_mail.png" />
+    <AndroidResource Include="Resources\Drawable\ic_map.png" />
+    <AndroidResource Include="Resources\Drawable\ic_phone.png" />
+    <AndroidResource Include="Resources\Drawable\ic_pulltorefresh_arrow.png" />
+    <AndroidResource Include="Resources\Drawable\ic_quiz.png" />
+    <AndroidResource Include="Resources\Drawable\ic_reservierung.png" />
+    <AndroidResource Include="Resources\Drawable\ic_rooms.png" />
+    <AndroidResource Include="Resources\Drawable\ic_speisekarte.png" />
+    <AndroidResource Include="Resources\Drawable\ic_tageskarte.png" />
+    <AndroidResource Include="Resources\Drawable\ic_videos.png" />
+    <AndroidResource Include="Resources\Values\Colors.xml" />
+    <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
+    <AndroidResource Include="Resources\Drawable\background.png" />
+    <AndroidResource Include="Resources\Menu\contact_actions.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Menu\map_actions.xml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\ic_action_about.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_time.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_refresh.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_map.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_group.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_event.png" />
+    <AndroidResource Include="Resources\Drawable\bg.xml" />
+    <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lbk.Mobile.Core\Lbk.Mobile.Core.csproj">
+      <Project>{64e36d12-5247-4d85-b9c4-be09937b9185}</Project>
+      <Name>Lbk.Mobile.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lbk.Mobile.Model\Lbk.Mobile.Model.csproj">
+      <Project>{8a5c8e87-48f9-4acc-9ab3-ca91b34772ee}</Project>
+      <Name>Lbk.Mobile.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\AppSettings\Lbk.Mobile.Plugin.AppSettings.Droid\Lbk.Mobile.Plugin.AppSettings.Droid.csproj">
+      <Project>{9158fab6-34cf-4e6f-9150-ded9491e2a75}</Project>
+      <Name>Lbk.Mobile.Plugin.AppSettings.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\AppSettings\Lbk.Mobile.Plugin.AppSettings\Lbk.Mobile.Plugin.AppSettings.csproj">
+      <Project>{1a39bdf5-05d8-4f35-a274-ede24ff2285a}</Project>
+      <Name>Lbk.Mobile.Plugin.AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.Droid\Lbk.Mobile.Plugin.DeviceIdentifier.Droid.csproj">
+      <Project>{46ce9cf2-e7c6-4d5c-8b36-23d4fc2c9d98}</Project>
+      <Name>Lbk.Mobile.Plugin.DeviceIdentifier.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier\Lbk.Mobile.Plugin.DeviceIdentifier.csproj">
+      <Project>{771f2e74-9365-4c8c-8c62-c8e3a5f08d8b}</Project>
+      <Name>Lbk.Mobile.Plugin.DeviceIdentifier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer.Droid\Lbk.Mobile.Plugin.DocumentViewer.Droid.csproj">
+      <Project>{3d13d930-55f0-4505-8938-490128e16779}</Project>
+      <Name>Lbk.Mobile.Plugin.DocumentViewer.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer\Lbk.Mobile.Plugin.DocumentViewer.csproj">
+      <Project>{36a79756-82ba-4c27-ba04-6b38f8c3d0e8}</Project>
+      <Name>Lbk.Mobile.Plugin.DocumentViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Settings\Lbk.Mobile.Plugin.Settings.Droid\Lbk.Mobile.Plugin.Settings.Droid.csproj">
+      <Project>{8f41fc68-5a72-4dcb-950a-f52cdca41d80}</Project>
+      <Name>Lbk.Mobile.Plugin.Settings.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Settings\Lbk.Mobile.Plugin.Settings\Lbk.Mobile.Plugin.Settings.csproj">
+      <Project>{98b92483-7a7e-4da4-b7ea-0dd5f132264d}</Project>
+      <Name>Lbk.Mobile.Plugin.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction.Droid\Lbk.Mobile.Plugin.UserInteraction.Droid.csproj">
+      <Project>{9d692b92-3acc-4219-b8c5-481350035766}</Project>
+      <Name>Lbk.Mobile.Plugin.UserInteraction.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\UserInteraction\Lbk.Mobile.Plugin.UserInteraction\Lbk.Mobile.Plugin.UserInteraction.csproj">
+      <Project>{c4d307ea-3f84-48da-8159-aed94655cd7b}</Project>
+      <Name>Lbk.Mobile.Plugin.UserInteraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\WebVideo\Lbk.Mobile.Plugin.WebVideo.Droid\Lbk.Mobile.Plugin.WebVideo.Droid.csproj">
+      <Project>{8979480e-7b11-403f-bee2-6346a42f7943}</Project>
+      <Name>Lbk.Mobile.Plugin.WebVideo.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\WebVideo\Lbk.Mobile.Plugin.WebVideo\Lbk.Mobile.Plugin.WebVideo.csproj">
+      <Project>{d96449d7-1002-4496-a415-658263f25c26}</Project>
+      <Name>Lbk.Mobile.Plugin.WebVideo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\BindableViewPager.Droid\BindableViewPager.Droid.csproj">
+      <Project>{b7748adc-59ae-4800-9dea-91ce95c64d43}</Project>
+      <Name>BindableViewPager.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\UrlImageViewHelper.Droid\UrlImageViewHelper.Droid.csproj">
+      <Project>{57444e6a-23d9-443a-ba83-040cb9561e66}</Project>
+      <Name>UrlImageViewHelper.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\ViewPagerIndicator.Droid\ViewPagerIndicator.Droid.csproj">
+      <Project>{fa322a14-2b8e-4496-b950-4d8263ca0a2d}</Project>
+      <Name>ViewPagerIndicator.Droid</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="googleplayservicesfroyo12">
+      <Visible>False</Visible>
+      <Version>12.0.1</Version>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\PullToRefresh\" />
+    <Folder Include="Resources\Anim\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
